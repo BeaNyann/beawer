@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/whisk.obj-6ae48899775f432617141a0e73da31f2.mesh"
+
+[deps]
+
+files=[ "res://.import/whisk.obj-6ae48899775f432617141a0e73da31f2.mesh" ]
+
+source_file="res://Assets/foodKit/whisk.obj"
+dest_files=[ "res://.import/whisk.obj-6ae48899775f432617141a0e73da31f2.mesh", "res://.import/whisk.obj-6ae48899775f432617141a0e73da31f2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

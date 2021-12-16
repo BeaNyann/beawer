@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_steps_stone.obj-64dacf3069f1a03837207973580083ed.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_steps_stone.obj-64dacf3069f1a03837207973580083ed.mesh" ]
+
+source_file="res://Assets/natureKit/cliff_steps_stone.obj"
+dest_files=[ "res://.import/cliff_steps_stone.obj-64dacf3069f1a03837207973580083ed.mesh", "res://.import/cliff_steps_stone.obj-64dacf3069f1a03837207973580083ed.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

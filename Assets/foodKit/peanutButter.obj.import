@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/peanutButter.obj-b52fa988e041e161712bb53e8044aa37.mesh"
+
+[deps]
+
+files=[ "res://.import/peanutButter.obj-b52fa988e041e161712bb53e8044aa37.mesh" ]
+
+source_file="res://Assets/foodKit/peanutButter.obj"
+dest_files=[ "res://.import/peanutButter.obj-b52fa988e041e161712bb53e8044aa37.mesh", "res://.import/peanutButter.obj-b52fa988e041e161712bb53e8044aa37.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

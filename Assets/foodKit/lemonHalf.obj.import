@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lemonHalf.obj-7a7ed2151a4ab2ceb74c53a76b669544.mesh"
+
+[deps]
+
+files=[ "res://.import/lemonHalf.obj-7a7ed2151a4ab2ceb74c53a76b669544.mesh" ]
+
+source_file="res://Assets/foodKit/lemonHalf.obj"
+dest_files=[ "res://.import/lemonHalf.obj-7a7ed2151a4ab2ceb74c53a76b669544.mesh", "res://.import/lemonHalf.obj-7a7ed2151a4ab2ceb74c53a76b669544.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

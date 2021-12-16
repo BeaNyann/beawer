@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/loaf.obj-19a498c32efbbe065e4afae0dedb0431.mesh"
+
+[deps]
+
+files=[ "res://.import/loaf.obj-19a498c32efbbe065e4afae0dedb0431.mesh" ]
+
+source_file="res://Assets/foodKit/loaf.obj"
+dest_files=[ "res://.import/loaf.obj-19a498c32efbbe065e4afae0dedb0431.mesh", "res://.import/loaf.obj-19a498c32efbbe065e4afae0dedb0431.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

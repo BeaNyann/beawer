@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lily_small.obj-25ba185fd448e8f022bea9e4500519a1.mesh"
+
+[deps]
+
+files=[ "res://.import/lily_small.obj-25ba185fd448e8f022bea9e4500519a1.mesh" ]
+
+source_file="res://Assets/natureKit/lily_small.obj"
+dest_files=[ "res://.import/lily_small.obj-25ba185fd448e8f022bea9e4500519a1.mesh", "res://.import/lily_small.obj-25ba185fd448e8f022bea9e4500519a1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

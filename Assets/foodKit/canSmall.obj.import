@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/canSmall.obj-e67639e8675a12dda622c7398aca7d29.mesh"
+
+[deps]
+
+files=[ "res://.import/canSmall.obj-e67639e8675a12dda622c7398aca7d29.mesh" ]
+
+source_file="res://Assets/foodKit/canSmall.obj"
+dest_files=[ "res://.import/canSmall.obj-e67639e8675a12dda622c7398aca7d29.mesh", "res://.import/canSmall.obj-e67639e8675a12dda622c7398aca7d29.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

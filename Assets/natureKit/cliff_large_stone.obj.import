@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_large_stone.obj-f692ed3ebdb7c51bfa92ad87488a260e.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_large_stone.obj-f692ed3ebdb7c51bfa92ad87488a260e.mesh" ]
+
+source_file="res://Assets/natureKit/cliff_large_stone.obj"
+dest_files=[ "res://.import/cliff_large_stone.obj-f692ed3ebdb7c51bfa92ad87488a260e.mesh", "res://.import/cliff_large_stone.obj-f692ed3ebdb7c51bfa92ad87488a260e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

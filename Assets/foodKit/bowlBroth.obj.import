@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bowlBroth.obj-5aa3d6f1964b4450057b400edfc9127b.mesh"
+
+[deps]
+
+files=[ "res://.import/bowlBroth.obj-5aa3d6f1964b4450057b400edfc9127b.mesh" ]
+
+source_file="res://Assets/foodKit/bowlBroth.obj"
+dest_files=[ "res://.import/bowlBroth.obj-5aa3d6f1964b4450057b400edfc9127b.mesh", "res://.import/bowlBroth.obj-5aa3d6f1964b4450057b400edfc9127b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

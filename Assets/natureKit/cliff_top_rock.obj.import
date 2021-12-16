@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_top_rock.obj-7acf67ec7ca9934d938d1c570e3cfb34.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_top_rock.obj-7acf67ec7ca9934d938d1c570e3cfb34.mesh" ]
+
+source_file="res://Assets/natureKit/cliff_top_rock.obj"
+dest_files=[ "res://.import/cliff_top_rock.obj-7acf67ec7ca9934d938d1c570e3cfb34.mesh", "res://.import/cliff_top_rock.obj-7acf67ec7ca9934d938d1c570e3cfb34.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

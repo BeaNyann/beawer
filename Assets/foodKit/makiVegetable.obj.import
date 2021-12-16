@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/makiVegetable.obj-a9915e652e6f1492d3db44a13656b97b.mesh"
+
+[deps]
+
+files=[ "res://.import/makiVegetable.obj-a9915e652e6f1492d3db44a13656b97b.mesh" ]
+
+source_file="res://Assets/foodKit/makiVegetable.obj"
+dest_files=[ "res://.import/makiVegetable.obj-a9915e652e6f1492d3db44a13656b97b.mesh", "res://.import/makiVegetable.obj-a9915e652e6f1492d3db44a13656b97b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

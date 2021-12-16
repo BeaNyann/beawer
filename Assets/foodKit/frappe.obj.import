@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/frappe.obj-e05f46a28beba24fe1bb1a7f9a8b2bfc.mesh"
+
+[deps]
+
+files=[ "res://.import/frappe.obj-e05f46a28beba24fe1bb1a7f9a8b2bfc.mesh" ]
+
+source_file="res://Assets/foodKit/frappe.obj"
+dest_files=[ "res://.import/frappe.obj-e05f46a28beba24fe1bb1a7f9a8b2bfc.mesh", "res://.import/frappe.obj-e05f46a28beba24fe1bb1a7f9a8b2bfc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

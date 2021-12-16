@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bathroomCabinet.obj-ca8ecdaff1813487b4cbdcb05368af03.mesh"
+
+[deps]
+
+files=[ "res://.import/bathroomCabinet.obj-ca8ecdaff1813487b4cbdcb05368af03.mesh" ]
+
+source_file="res://Assets/furnitureKit/bathroomCabinet.obj"
+dest_files=[ "res://.import/bathroomCabinet.obj-ca8ecdaff1813487b4cbdcb05368af03.mesh", "res://.import/bathroomCabinet.obj-ca8ecdaff1813487b4cbdcb05368af03.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

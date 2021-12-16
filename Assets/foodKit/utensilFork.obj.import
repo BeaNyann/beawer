@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/utensilFork.obj-1ef5d17029135ff65e44399293740903.mesh"
+
+[deps]
+
+files=[ "res://.import/utensilFork.obj-1ef5d17029135ff65e44399293740903.mesh" ]
+
+source_file="res://Assets/foodKit/utensilFork.obj"
+dest_files=[ "res://.import/utensilFork.obj-1ef5d17029135ff65e44399293740903.mesh", "res://.import/utensilFork.obj-1ef5d17029135ff65e44399293740903.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

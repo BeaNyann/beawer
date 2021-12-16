@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bottleKetchup.obj-2f8a0ac959d2e7c8025a7b5017576a87.mesh"
+
+[deps]
+
+files=[ "res://.import/bottleKetchup.obj-2f8a0ac959d2e7c8025a7b5017576a87.mesh" ]
+
+source_file="res://Assets/foodKit/bottleKetchup.obj"
+dest_files=[ "res://.import/bottleKetchup.obj-2f8a0ac959d2e7c8025a7b5017576a87.mesh", "res://.import/bottleKetchup.obj-2f8a0ac959d2e7c8025a7b5017576a87.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

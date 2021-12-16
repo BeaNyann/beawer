@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stump_oldTall.obj-6ccc9591609ce0b83260f5a395cbd7ac.mesh"
+
+[deps]
+
+files=[ "res://.import/stump_oldTall.obj-6ccc9591609ce0b83260f5a395cbd7ac.mesh" ]
+
+source_file="res://Assets/natureKit/stump_oldTall.obj"
+dest_files=[ "res://.import/stump_oldTall.obj-6ccc9591609ce0b83260f5a395cbd7ac.mesh", "res://.import/stump_oldTall.obj-6ccc9591609ce0b83260f5a395cbd7ac.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

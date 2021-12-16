@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/toaster.obj-e673168e0edd9dd13d56f3b5248cb644.mesh"
+
+[deps]
+
+files=[ "res://.import/toaster.obj-e673168e0edd9dd13d56f3b5248cb644.mesh" ]
+
+source_file="res://Assets/furnitureKit/toaster.obj"
+dest_files=[ "res://.import/toaster.obj-e673168e0edd9dd13d56f3b5248cb644.mesh", "res://.import/toaster.obj-e673168e0edd9dd13d56f3b5248cb644.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

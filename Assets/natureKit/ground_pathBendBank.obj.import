@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_pathBendBank.obj-52235e78d7cf212e660becbfb7a158de.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_pathBendBank.obj-52235e78d7cf212e660becbfb7a158de.mesh" ]
+
+source_file="res://Assets/natureKit/ground_pathBendBank.obj"
+dest_files=[ "res://.import/ground_pathBendBank.obj-52235e78d7cf212e660becbfb7a158de.mesh", "res://.import/ground_pathBendBank.obj-52235e78d7cf212e660becbfb7a158de.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

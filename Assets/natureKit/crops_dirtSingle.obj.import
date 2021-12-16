@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crops_dirtSingle.obj-2057879a4e36bd09523ab564ed0e191e.mesh"
+
+[deps]
+
+files=[ "res://.import/crops_dirtSingle.obj-2057879a4e36bd09523ab564ed0e191e.mesh" ]
+
+source_file="res://Assets/natureKit/crops_dirtSingle.obj"
+dest_files=[ "res://.import/crops_dirtSingle.obj-2057879a4e36bd09523ab564ed0e191e.mesh", "res://.import/crops_dirtSingle.obj-2057879a4e36bd09523ab564ed0e191e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

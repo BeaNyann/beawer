@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cupcake.obj-f19d2bc6e31455aba2fc2bcddfd9e5f1.mesh"
+
+[deps]
+
+files=[ "res://.import/cupcake.obj-f19d2bc6e31455aba2fc2bcddfd9e5f1.mesh" ]
+
+source_file="res://Assets/foodKit/cupcake.obj"
+dest_files=[ "res://.import/cupcake.obj-f19d2bc6e31455aba2fc2bcddfd9e5f1.mesh", "res://.import/cupcake.obj-f19d2bc6e31455aba2fc2bcddfd9e5f1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

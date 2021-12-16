@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/eggHalf.obj-562d0ca1890a759012a72a6db8d4345a.mesh"
+
+[deps]
+
+files=[ "res://.import/eggHalf.obj-562d0ca1890a759012a72a6db8d4345a.mesh" ]
+
+source_file="res://Assets/foodKit/eggHalf.obj"
+dest_files=[ "res://.import/eggHalf.obj-562d0ca1890a759012a72a6db8d4345a.mesh", "res://.import/eggHalf.obj-562d0ca1890a759012a72a6db8d4345a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

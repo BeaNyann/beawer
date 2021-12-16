@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cookingFork.obj-7170388d515893ba80a7356180853f24.mesh"
+
+[deps]
+
+files=[ "res://.import/cookingFork.obj-7170388d515893ba80a7356180853f24.mesh" ]
+
+source_file="res://Assets/foodKit/cookingFork.obj"
+dest_files=[ "res://.import/cookingFork.obj-7170388d515893ba80a7356180853f24.mesh", "res://.import/cookingFork.obj-7170388d515893ba80a7356180853f24.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

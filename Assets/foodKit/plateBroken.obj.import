@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plateBroken.obj-920f86d09f5002131694b3689ccaa0c7.mesh"
+
+[deps]
+
+files=[ "res://.import/plateBroken.obj-920f86d09f5002131694b3689ccaa0c7.mesh" ]
+
+source_file="res://Assets/foodKit/plateBroken.obj"
+dest_files=[ "res://.import/plateBroken.obj-920f86d09f5002131694b3689ccaa0c7.mesh", "res://.import/plateBroken.obj-920f86d09f5002131694b3689ccaa0c7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

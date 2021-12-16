@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/eggCup.obj-fd726b5270e6840cb43f183428ba984a.mesh"
+
+[deps]
+
+files=[ "res://.import/eggCup.obj-fd726b5270e6840cb43f183428ba984a.mesh" ]
+
+source_file="res://Assets/foodKit/eggCup.obj"
+dest_files=[ "res://.import/eggCup.obj-fd726b5270e6840cb43f183428ba984a.mesh", "res://.import/eggCup.obj-fd726b5270e6840cb43f183428ba984a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

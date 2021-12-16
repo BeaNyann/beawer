@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/gingerBreadCutter.obj-42543547f5759395b1b6ff78701ff249.mesh"
+
+[deps]
+
+files=[ "res://.import/gingerBreadCutter.obj-42543547f5759395b1b6ff78701ff249.mesh" ]
+
+source_file="res://Assets/foodKit/gingerBreadCutter.obj"
+dest_files=[ "res://.import/gingerBreadCutter.obj-42543547f5759395b1b6ff78701ff249.mesh", "res://.import/gingerBreadCutter.obj-42543547f5759395b1b6ff78701ff249.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

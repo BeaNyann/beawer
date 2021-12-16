@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hoodLarge.obj-4b2b02434e18bd7cd8f333545056bd4b.mesh"
+
+[deps]
+
+files=[ "res://.import/hoodLarge.obj-4b2b02434e18bd7cd8f333545056bd4b.mesh" ]
+
+source_file="res://Assets/furnitureKit/hoodLarge.obj"
+dest_files=[ "res://.import/hoodLarge.obj-4b2b02434e18bd7cd8f333545056bd4b.mesh", "res://.import/hoodLarge.obj-4b2b02434e18bd7cd8f333545056bd4b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

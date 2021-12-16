@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kitchenMicrowave.obj-fb4489d50e52aded57691cb2c8928240.mesh"
+
+[deps]
+
+files=[ "res://.import/kitchenMicrowave.obj-fb4489d50e52aded57691cb2c8928240.mesh" ]
+
+source_file="res://Assets/furnitureKit/kitchenMicrowave.obj"
+dest_files=[ "res://.import/kitchenMicrowave.obj-fb4489d50e52aded57691cb2c8928240.mesh", "res://.import/kitchenMicrowave.obj-fb4489d50e52aded57691cb2c8928240.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

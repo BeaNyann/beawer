@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/potStew.obj-db6256fe20d21d383c8a5ac5f8a9a623.mesh"
+
+[deps]
+
+files=[ "res://.import/potStew.obj-db6256fe20d21d383c8a5ac5f8a9a623.mesh" ]
+
+source_file="res://Assets/foodKit/potStew.obj"
+dest_files=[ "res://.import/potStew.obj-db6256fe20d21d383c8a5ac5f8a9a623.mesh", "res://.import/potStew.obj-db6256fe20d21d383c8a5ac5f8a9a623.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/televisionAntenna.obj-f82ec3d18823ba3fd3a8cbcdb02097b3.mesh"
+
+[deps]
+
+files=[ "res://.import/televisionAntenna.obj-f82ec3d18823ba3fd3a8cbcdb02097b3.mesh" ]
+
+source_file="res://Assets/furnitureKit/televisionAntenna.obj"
+dest_files=[ "res://.import/televisionAntenna.obj-f82ec3d18823ba3fd3a8cbcdb02097b3.mesh", "res://.import/televisionAntenna.obj-f82ec3d18823ba3fd3a8cbcdb02097b3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

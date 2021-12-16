@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/knifeBlock.obj-6f5a8786408d1f820201750985053e5a.mesh"
+
+[deps]
+
+files=[ "res://.import/knifeBlock.obj-6f5a8786408d1f820201750985053e5a.mesh" ]
+
+source_file="res://Assets/foodKit/knifeBlock.obj"
+dest_files=[ "res://.import/knifeBlock.obj-6f5a8786408d1f820201750985053e5a.mesh", "res://.import/knifeBlock.obj-6f5a8786408d1f820201750985053e5a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

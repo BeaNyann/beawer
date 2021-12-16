@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/riceBall.obj-dc8edc3f91f56d0e4a47bd7e155bdafb.mesh"
+
+[deps]
+
+files=[ "res://.import/riceBall.obj-dc8edc3f91f56d0e4a47bd7e155bdafb.mesh" ]
+
+source_file="res://Assets/foodKit/riceBall.obj"
+dest_files=[ "res://.import/riceBall.obj-dc8edc3f91f56d0e4a47bd7e155bdafb.mesh", "res://.import/riceBall.obj-dc8edc3f91f56d0e4a47bd7e155bdafb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

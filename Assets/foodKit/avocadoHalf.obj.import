@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/avocadoHalf.obj-3e076d78749b8ea68e8ca7c8bb47dd3a.mesh"
+
+[deps]
+
+files=[ "res://.import/avocadoHalf.obj-3e076d78749b8ea68e8ca7c8bb47dd3a.mesh" ]
+
+source_file="res://Assets/foodKit/avocadoHalf.obj"
+dest_files=[ "res://.import/avocadoHalf.obj-3e076d78749b8ea68e8ca7c8bb47dd3a.mesh", "res://.import/avocadoHalf.obj-3e076d78749b8ea68e8ca7c8bb47dd3a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

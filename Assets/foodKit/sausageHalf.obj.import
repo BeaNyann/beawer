@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sausageHalf.obj-72741c413af0de787774ddb33983864c.mesh"
+
+[deps]
+
+files=[ "res://.import/sausageHalf.obj-72741c413af0de787774ddb33983864c.mesh" ]
+
+source_file="res://Assets/foodKit/sausageHalf.obj"
+dest_files=[ "res://.import/sausageHalf.obj-72741c413af0de787774ddb33983864c.mesh", "res://.import/sausageHalf.obj-72741c413af0de787774ddb33983864c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

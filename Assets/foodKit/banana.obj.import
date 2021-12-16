@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/banana.obj-64c1c6e207825e6d3f56c1e2edf7dcfa.mesh"
+
+[deps]
+
+files=[ "res://.import/banana.obj-64c1c6e207825e6d3f56c1e2edf7dcfa.mesh" ]
+
+source_file="res://Assets/foodKit/banana.obj"
+dest_files=[ "res://.import/banana.obj-64c1c6e207825e6d3f56c1e2edf7dcfa.mesh", "res://.import/banana.obj-64c1c6e207825e6d3f56c1e2edf7dcfa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

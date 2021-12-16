@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plant_bushLargeTriangle.obj-d37039149dd52e71341bfcfef0cec6f4.mesh"
+
+[deps]
+
+files=[ "res://.import/plant_bushLargeTriangle.obj-d37039149dd52e71341bfcfef0cec6f4.mesh" ]
+
+source_file="res://Assets/natureKit/plant_bushLargeTriangle.obj"
+dest_files=[ "res://.import/plant_bushLargeTriangle.obj-d37039149dd52e71341bfcfef0cec6f4.mesh", "res://.import/plant_bushLargeTriangle.obj-d37039149dd52e71341bfcfef0cec6f4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

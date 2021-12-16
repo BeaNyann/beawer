@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/loungeSofaOttoman.obj-fe4fcf25bc9ac2317713e421b5d259e2.mesh"
+
+[deps]
+
+files=[ "res://.import/loungeSofaOttoman.obj-fe4fcf25bc9ac2317713e421b5d259e2.mesh" ]
+
+source_file="res://Assets/furnitureKit/loungeSofaOttoman.obj"
+dest_files=[ "res://.import/loungeSofaOttoman.obj-fe4fcf25bc9ac2317713e421b5d259e2.mesh", "res://.import/loungeSofaOttoman.obj-fe4fcf25bc9ac2317713e421b5d259e2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

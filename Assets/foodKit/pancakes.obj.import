@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pancakes.obj-b692baa5a541968503a71d61bb6ac1a3.mesh"
+
+[deps]
+
+files=[ "res://.import/pancakes.obj-b692baa5a541968503a71d61bb6ac1a3.mesh" ]
+
+source_file="res://Assets/foodKit/pancakes.obj"
+dest_files=[ "res://.import/pancakes.obj-b692baa5a541968503a71d61bb6ac1a3.mesh", "res://.import/pancakes.obj-b692baa5a541968503a71d61bb6ac1a3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

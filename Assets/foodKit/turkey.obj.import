@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/turkey.obj-98f380c7e720d055c730dbdbb096ae5f.mesh"
+
+[deps]
+
+files=[ "res://.import/turkey.obj-98f380c7e720d055c730dbdbb096ae5f.mesh" ]
+
+source_file="res://Assets/foodKit/turkey.obj"
+dest_files=[ "res://.import/turkey.obj-98f380c7e720d055c730dbdbb096ae5f.mesh", "res://.import/turkey.obj-98f380c7e720d055c730dbdbb096ae5f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

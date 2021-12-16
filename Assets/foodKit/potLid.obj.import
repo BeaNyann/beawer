@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/potLid.obj-708dd5c3f202f110240a8b80b7167f18.mesh"
+
+[deps]
+
+files=[ "res://.import/potLid.obj-708dd5c3f202f110240a8b80b7167f18.mesh" ]
+
+source_file="res://Assets/foodKit/potLid.obj"
+dest_files=[ "res://.import/potLid.obj-708dd5c3f202f110240a8b80b7167f18.mesh", "res://.import/potLid.obj-708dd5c3f202f110240a8b80b7167f18.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

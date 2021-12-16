@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rugRound.obj-7d7642b0ec754c9405e0db689e69a9de.mesh"
+
+[deps]
+
+files=[ "res://.import/rugRound.obj-7d7642b0ec754c9405e0db689e69a9de.mesh" ]
+
+source_file="res://Assets/furnitureKit/rugRound.obj"
+dest_files=[ "res://.import/rugRound.obj-7d7642b0ec754c9405e0db689e69a9de.mesh", "res://.import/rugRound.obj-7d7642b0ec754c9405e0db689e69a9de.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

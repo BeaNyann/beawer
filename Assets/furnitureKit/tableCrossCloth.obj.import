@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tableCrossCloth.obj-ff93efe95c8cce6f1b2f21d097263ec3.mesh"
+
+[deps]
+
+files=[ "res://.import/tableCrossCloth.obj-ff93efe95c8cce6f1b2f21d097263ec3.mesh" ]
+
+source_file="res://Assets/furnitureKit/tableCrossCloth.obj"
+dest_files=[ "res://.import/tableCrossCloth.obj-ff93efe95c8cce6f1b2f21d097263ec3.mesh", "res://.import/tableCrossCloth.obj-ff93efe95c8cce6f1b2f21d097263ec3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

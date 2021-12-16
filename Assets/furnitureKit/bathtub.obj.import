@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bathtub.obj-72ee79dec9f20342e22c57ca4f3c1263.mesh"
+
+[deps]
+
+files=[ "res://.import/bathtub.obj-72ee79dec9f20342e22c57ca4f3c1263.mesh" ]
+
+source_file="res://Assets/furnitureKit/bathtub.obj"
+dest_files=[ "res://.import/bathtub.obj-72ee79dec9f20342e22c57ca4f3c1263.mesh", "res://.import/bathtub.obj-72ee79dec9f20342e22c57ca4f3c1263.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

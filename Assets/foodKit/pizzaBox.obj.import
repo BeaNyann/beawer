@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pizzaBox.obj-ce04fd2aee811b6570a81d83cfb52e1a.mesh"
+
+[deps]
+
+files=[ "res://.import/pizzaBox.obj-ce04fd2aee811b6570a81d83cfb52e1a.mesh" ]
+
+source_file="res://Assets/foodKit/pizzaBox.obj"
+dest_files=[ "res://.import/pizzaBox.obj-ce04fd2aee811b6570a81d83cfb52e1a.mesh", "res://.import/pizzaBox.obj-ce04fd2aee811b6570a81d83cfb52e1a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rugSquare.obj-d307c07bb7871083fe4f2e95256c23dc.mesh"
+
+[deps]
+
+files=[ "res://.import/rugSquare.obj-d307c07bb7871083fe4f2e95256c23dc.mesh" ]
+
+source_file="res://Assets/furnitureKit/rugSquare.obj"
+dest_files=[ "res://.import/rugSquare.obj-d307c07bb7871083fe4f2e95256c23dc.mesh", "res://.import/rugSquare.obj-d307c07bb7871083fe4f2e95256c23dc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

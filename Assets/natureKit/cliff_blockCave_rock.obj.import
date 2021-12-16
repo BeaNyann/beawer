@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_blockCave_rock.obj-6fe3006b3f7d88a8f2eb7080ac9639a1.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_blockCave_rock.obj-6fe3006b3f7d88a8f2eb7080ac9639a1.mesh" ]
+
+source_file="res://Assets/natureKit/cliff_blockCave_rock.obj"
+dest_files=[ "res://.import/cliff_blockCave_rock.obj-6fe3006b3f7d88a8f2eb7080ac9639a1.mesh", "res://.import/cliff_blockCave_rock.obj-6fe3006b3f7d88a8f2eb7080ac9639a1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sundae.obj-c33c5e6875b7a557f075b6543fe2896d.mesh"
+
+[deps]
+
+files=[ "res://.import/sundae.obj-c33c5e6875b7a557f075b6543fe2896d.mesh" ]
+
+source_file="res://Assets/foodKit/sundae.obj"
+dest_files=[ "res://.import/sundae.obj-c33c5e6875b7a557f075b6543fe2896d.mesh", "res://.import/sundae.obj-c33c5e6875b7a557f075b6543fe2896d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

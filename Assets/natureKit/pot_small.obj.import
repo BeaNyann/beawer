@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pot_small.obj-131d7620ab080e243ed5f9814e4fd38a.mesh"
+
+[deps]
+
+files=[ "res://.import/pot_small.obj-131d7620ab080e243ed5f9814e4fd38a.mesh" ]
+
+source_file="res://Assets/natureKit/pot_small.obj"
+dest_files=[ "res://.import/pot_small.obj-131d7620ab080e243ed5f9814e4fd38a.mesh", "res://.import/pot_small.obj-131d7620ab080e243ed5f9814e4fd38a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

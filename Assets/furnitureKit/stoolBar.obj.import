@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stoolBar.obj-52cc32fc54fabb417de237e5ec3f490f.mesh"
+
+[deps]
+
+files=[ "res://.import/stoolBar.obj-52cc32fc54fabb417de237e5ec3f490f.mesh" ]
+
+source_file="res://Assets/furnitureKit/stoolBar.obj"
+dest_files=[ "res://.import/stoolBar.obj-52cc32fc54fabb417de237e5ec3f490f.mesh", "res://.import/stoolBar.obj-52cc32fc54fabb417de237e5ec3f490f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

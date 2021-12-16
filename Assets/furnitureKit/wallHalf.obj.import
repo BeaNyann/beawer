@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wallHalf.obj-2b4915e485d4066dbbd276d915f3caba.mesh"
+
+[deps]
+
+files=[ "res://.import/wallHalf.obj-2b4915e485d4066dbbd276d915f3caba.mesh" ]
+
+source_file="res://Assets/furnitureKit/wallHalf.obj"
+dest_files=[ "res://.import/wallHalf.obj-2b4915e485d4066dbbd276d915f3caba.mesh", "res://.import/wallHalf.obj-2b4915e485d4066dbbd276d915f3caba.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

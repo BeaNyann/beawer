@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/loungeDesignChair.obj-4709716fc17f90dcf271a1a10da06f2a.mesh"
+
+[deps]
+
+files=[ "res://.import/loungeDesignChair.obj-4709716fc17f90dcf271a1a10da06f2a.mesh" ]
+
+source_file="res://Assets/furnitureKit/loungeDesignChair.obj"
+dest_files=[ "res://.import/loungeDesignChair.obj-4709716fc17f90dcf271a1a10da06f2a.mesh", "res://.import/loungeDesignChair.obj-4709716fc17f90dcf271a1a10da06f2a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

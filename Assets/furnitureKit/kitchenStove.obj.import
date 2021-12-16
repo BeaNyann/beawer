@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kitchenStove.obj-b19415a323cbaa84dd5d0e931c62ecd5.mesh"
+
+[deps]
+
+files=[ "res://.import/kitchenStove.obj-b19415a323cbaa84dd5d0e931c62ecd5.mesh" ]
+
+source_file="res://Assets/furnitureKit/kitchenStove.obj"
+dest_files=[ "res://.import/kitchenStove.obj-b19415a323cbaa84dd5d0e931c62ecd5.mesh", "res://.import/kitchenStove.obj-b19415a323cbaa84dd5d0e931c62ecd5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

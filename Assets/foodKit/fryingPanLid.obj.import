@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fryingPanLid.obj-dba624b532bfd8442c1bfa7aea643098.mesh"
+
+[deps]
+
+files=[ "res://.import/fryingPanLid.obj-dba624b532bfd8442c1bfa7aea643098.mesh" ]
+
+source_file="res://Assets/foodKit/fryingPanLid.obj"
+dest_files=[ "res://.import/fryingPanLid.obj-dba624b532bfd8442c1bfa7aea643098.mesh", "res://.import/fryingPanLid.obj-dba624b532bfd8442c1bfa7aea643098.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

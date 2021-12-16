@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sandwich.obj-94e6a0e0602ab139921e21a6f8a301bd.mesh"
+
+[deps]
+
+files=[ "res://.import/sandwich.obj-94e6a0e0602ab139921e21a6f8a301bd.mesh" ]
+
+source_file="res://Assets/foodKit/sandwich.obj"
+dest_files=[ "res://.import/sandwich.obj-94e6a0e0602ab139921e21a6f8a301bd.mesh", "res://.import/sandwich.obj-94e6a0e0602ab139921e21a6f8a301bd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cake.obj-723bc4d9c3a38c74536f55d59cc24db8.mesh"
+
+[deps]
+
+files=[ "res://.import/cake.obj-723bc4d9c3a38c74536f55d59cc24db8.mesh" ]
+
+source_file="res://Assets/foodKit/cake.obj"
+dest_files=[ "res://.import/cake.obj-723bc4d9c3a38c74536f55d59cc24db8.mesh", "res://.import/cake.obj-723bc4d9c3a38c74536f55d59cc24db8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

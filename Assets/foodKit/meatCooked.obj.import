@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/meatCooked.obj-2f9dc5ee3785d8b93d69d9e2a18d50ae.mesh"
+
+[deps]
+
+files=[ "res://.import/meatCooked.obj-2f9dc5ee3785d8b93d69d9e2a18d50ae.mesh" ]
+
+source_file="res://Assets/foodKit/meatCooked.obj"
+dest_files=[ "res://.import/meatCooked.obj-2f9dc5ee3785d8b93d69d9e2a18d50ae.mesh", "res://.import/meatCooked.obj-2f9dc5ee3785d8b93d69d9e2a18d50ae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

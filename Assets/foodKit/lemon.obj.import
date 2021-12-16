@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lemon.obj-2c3b7da54f919291c5e08318d00dfedb.mesh"
+
+[deps]
+
+files=[ "res://.import/lemon.obj-2c3b7da54f919291c5e08318d00dfedb.mesh" ]
+
+source_file="res://Assets/foodKit/lemon.obj"
+dest_files=[ "res://.import/lemon.obj-2c3b7da54f919291c5e08318d00dfedb.mesh", "res://.import/lemon.obj-2c3b7da54f919291c5e08318d00dfedb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cookingKnife.obj-f42cc7f3904ec2c4bed8b466aade24f9.mesh"
+
+[deps]
+
+files=[ "res://.import/cookingKnife.obj-f42cc7f3904ec2c4bed8b466aade24f9.mesh" ]
+
+source_file="res://Assets/foodKit/cookingKnife.obj"
+dest_files=[ "res://.import/cookingKnife.obj-f42cc7f3904ec2c4bed8b466aade24f9.mesh", "res://.import/cookingKnife.obj-f42cc7f3904ec2c4bed8b466aade24f9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

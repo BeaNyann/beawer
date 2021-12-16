@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/skewer.obj-fcac4522b24f595620226f14b7a3ef93.mesh"
+
+[deps]
+
+files=[ "res://.import/skewer.obj-fcac4522b24f595620226f14b7a3ef93.mesh" ]
+
+source_file="res://Assets/foodKit/skewer.obj"
+dest_files=[ "res://.import/skewer.obj-fcac4522b24f595620226f14b7a3ef93.mesh", "res://.import/skewer.obj-fcac4522b24f595620226f14b7a3ef93.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

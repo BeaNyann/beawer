@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plate.obj-4076992e72f72dbaffcfdbcc1765abee.mesh"
+
+[deps]
+
+files=[ "res://.import/plate.obj-4076992e72f72dbaffcfdbcc1765abee.mesh" ]
+
+source_file="res://Assets/foodKit/plate.obj"
+dest_files=[ "res://.import/plate.obj-4076992e72f72dbaffcfdbcc1765abee.mesh", "res://.import/plate.obj-4076992e72f72dbaffcfdbcc1765abee.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

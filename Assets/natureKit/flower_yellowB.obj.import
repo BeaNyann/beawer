@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flower_yellowB.obj-2466980eeccbd20cffce279c3e49937f.mesh"
+
+[deps]
+
+files=[ "res://.import/flower_yellowB.obj-2466980eeccbd20cffce279c3e49937f.mesh" ]
+
+source_file="res://Assets/natureKit/flower_yellowB.obj"
+dest_files=[ "res://.import/flower_yellowB.obj-2466980eeccbd20cffce279c3e49937f.mesh", "res://.import/flower_yellowB.obj-2466980eeccbd20cffce279c3e49937f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

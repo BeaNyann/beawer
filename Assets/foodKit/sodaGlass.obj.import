@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sodaGlass.obj-cf432a01ce68bf27e451e72f677a939a.mesh"
+
+[deps]
+
+files=[ "res://.import/sodaGlass.obj-cf432a01ce68bf27e451e72f677a939a.mesh" ]
+
+source_file="res://Assets/foodKit/sodaGlass.obj"
+dest_files=[ "res://.import/sodaGlass.obj-cf432a01ce68bf27e451e72f677a939a.mesh", "res://.import/sodaGlass.obj-cf432a01ce68bf27e451e72f677a939a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

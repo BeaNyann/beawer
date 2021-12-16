@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wineRed.obj-cf06f1540a3abf44c5509d052a8fd35a.mesh"
+
+[deps]
+
+files=[ "res://.import/wineRed.obj-cf06f1540a3abf44c5509d052a8fd35a.mesh" ]
+
+source_file="res://Assets/foodKit/wineRed.obj"
+dest_files=[ "res://.import/wineRed.obj-cf06f1540a3abf44c5509d052a8fd35a.mesh", "res://.import/wineRed.obj-cf06f1540a3abf44c5509d052a8fd35a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

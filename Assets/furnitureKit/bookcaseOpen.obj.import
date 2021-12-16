@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bookcaseOpen.obj-b3ccf2ed3584a40df310eeb392161049.mesh"
+
+[deps]
+
+files=[ "res://.import/bookcaseOpen.obj-b3ccf2ed3584a40df310eeb392161049.mesh" ]
+
+source_file="res://Assets/furnitureKit/bookcaseOpen.obj"
+dest_files=[ "res://.import/bookcaseOpen.obj-b3ccf2ed3584a40df310eeb392161049.mesh", "res://.import/bookcaseOpen.obj-b3ccf2ed3584a40df310eeb392161049.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ceilingFan.obj-d8222f75a03c7a466abe8c1cd860e20a.mesh"
+
+[deps]
+
+files=[ "res://.import/ceilingFan.obj-d8222f75a03c7a466abe8c1cd860e20a.mesh" ]
+
+source_file="res://Assets/furnitureKit/ceilingFan.obj"
+dest_files=[ "res://.import/ceilingFan.obj-d8222f75a03c7a466abe8c1cd860e20a.mesh", "res://.import/ceilingFan.obj-d8222f75a03c7a466abe8c1cd860e20a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

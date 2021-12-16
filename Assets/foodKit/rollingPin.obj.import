@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rollingPin.obj-2b3244e69e51c537f7c91d72c69b7a04.mesh"
+
+[deps]
+
+files=[ "res://.import/rollingPin.obj-2b3244e69e51c537f7c91d72c69b7a04.mesh" ]
+
+source_file="res://Assets/foodKit/rollingPin.obj"
+dest_files=[ "res://.import/rollingPin.obj-2b3244e69e51c537f7c91d72c69b7a04.mesh", "res://.import/rollingPin.obj-2b3244e69e51c537f7c91d72c69b7a04.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

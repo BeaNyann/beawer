@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cactus_short.obj-f035b17016c5042164f846e9b4e24f09.mesh"
+
+[deps]
+
+files=[ "res://.import/cactus_short.obj-f035b17016c5042164f846e9b4e24f09.mesh" ]
+
+source_file="res://Assets/natureKit/cactus_short.obj"
+dest_files=[ "res://.import/cactus_short.obj-f035b17016c5042164f846e9b4e24f09.mesh", "res://.import/cactus_short.obj-f035b17016c5042164f846e9b4e24f09.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

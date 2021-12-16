@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/speakerSmall.obj-00786fede85c411efd69d69b38e6b1bf.mesh"
+
+[deps]
+
+files=[ "res://.import/speakerSmall.obj-00786fede85c411efd69d69b38e6b1bf.mesh" ]
+
+source_file="res://Assets/furnitureKit/speakerSmall.obj"
+dest_files=[ "res://.import/speakerSmall.obj-00786fede85c411efd69d69b38e6b1bf.mesh", "res://.import/speakerSmall.obj-00786fede85c411efd69d69b38e6b1bf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

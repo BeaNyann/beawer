@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/beet.obj-6d0e71134a72fb00308fffde1ee7c40c.mesh"
+
+[deps]
+
+files=[ "res://.import/beet.obj-6d0e71134a72fb00308fffde1ee7c40c.mesh" ]
+
+source_file="res://Assets/foodKit/beet.obj"
+dest_files=[ "res://.import/beet.obj-6d0e71134a72fb00308fffde1ee7c40c.mesh", "res://.import/beet.obj-6d0e71134a72fb00308fffde1ee7c40c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

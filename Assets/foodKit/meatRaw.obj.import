@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/meatRaw.obj-1b1af8da5e661fb6f693055db81bb95c.mesh"
+
+[deps]
+
+files=[ "res://.import/meatRaw.obj-1b1af8da5e661fb6f693055db81bb95c.mesh" ]
+
+source_file="res://Assets/foodKit/meatRaw.obj"
+dest_files=[ "res://.import/meatRaw.obj-1b1af8da5e661fb6f693055db81bb95c.mesh", "res://.import/meatRaw.obj-1b1af8da5e661fb6f693055db81bb95c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

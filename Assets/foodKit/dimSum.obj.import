@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/dimSum.obj-1ffda90733a6efd40f0630228895acab.mesh"
+
+[deps]
+
+files=[ "res://.import/dimSum.obj-1ffda90733a6efd40f0630228895acab.mesh" ]
+
+source_file="res://Assets/foodKit/dimSum.obj"
+dest_files=[ "res://.import/dimSum.obj-1ffda90733a6efd40f0630228895acab.mesh", "res://.import/dimSum.obj-1ffda90733a6efd40f0630228895acab.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tajine.obj-d376e7ae97b4171b373e98411603e95f.mesh"
+
+[deps]
+
+files=[ "res://.import/tajine.obj-d376e7ae97b4171b373e98411603e95f.mesh" ]
+
+source_file="res://Assets/foodKit/tajine.obj"
+dest_files=[ "res://.import/tajine.obj-d376e7ae97b4171b373e98411603e95f.mesh", "res://.import/tajine.obj-d376e7ae97b4171b373e98411603e95f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

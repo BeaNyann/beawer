@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/coconutHalf.obj-ca04846070272cab6dc8fbd96e4b60b0.mesh"
+
+[deps]
+
+files=[ "res://.import/coconutHalf.obj-ca04846070272cab6dc8fbd96e4b60b0.mesh" ]
+
+source_file="res://Assets/foodKit/coconutHalf.obj"
+dest_files=[ "res://.import/coconutHalf.obj-ca04846070272cab6dc8fbd96e4b60b0.mesh", "res://.import/coconutHalf.obj-ca04846070272cab6dc8fbd96e4b60b0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

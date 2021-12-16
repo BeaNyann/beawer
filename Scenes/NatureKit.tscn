@@ -1,0 +1,2589 @@
+[gd_scene load_steps=360 format=2]
+
+[ext_resource path="res://Assets/natureKit/bridge_center_wood.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/natureKit/bridge_woodNarrow.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/natureKit/cactus_short.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/natureKit/bed.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/natureKit/bridge_center_woodRound.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/natureKit/bridge_stoneNarrow.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://Assets/natureKit/campfire_bricks.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://Assets/natureKit/campfire_logs.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://Assets/natureKit/bed_floor.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://Assets/natureKit/cactus_tall.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://Assets/natureKit/bridge_center_stoneRound.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://Assets/natureKit/bridge_center_stone.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://Assets/natureKit/bridge_side_wood.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://Assets/natureKit/bridge_stoneRoundNarrow.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://Assets/natureKit/campfire_planks.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://Assets/natureKit/bridge_side_stoneRound.obj" type="ArrayMesh" id=16]
+[ext_resource path="res://Assets/natureKit/bridge_side_stone.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://Assets/natureKit/canoe_paddle.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://Assets/natureKit/bridge_wood.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://Assets/natureKit/bridge_woodRoundNarrow.obj" type="ArrayMesh" id=20]
+[ext_resource path="res://Assets/natureKit/campfire_stones.obj" type="ArrayMesh" id=21]
+[ext_resource path="res://Assets/natureKit/canoe.obj" type="ArrayMesh" id=22]
+[ext_resource path="res://Assets/natureKit/cliff_blockCave_rock.obj" type="ArrayMesh" id=23]
+[ext_resource path="res://Assets/natureKit/cliff_blockCave_stone.obj" type="ArrayMesh" id=24]
+[ext_resource path="res://Assets/natureKit/cliff_blockDiagonal_rock.obj" type="ArrayMesh" id=25]
+[ext_resource path="res://Assets/natureKit/bridge_stoneRound.obj" type="ArrayMesh" id=26]
+[ext_resource path="res://Assets/natureKit/bridge_side_woodRound.obj" type="ArrayMesh" id=27]
+[ext_resource path="res://Assets/natureKit/bridge_stone.obj" type="ArrayMesh" id=28]
+[ext_resource path="res://Assets/natureKit/bridge_woodRound.obj" type="ArrayMesh" id=29]
+[ext_resource path="res://Assets/natureKit/cliff_blockSlope_rock.obj" type="ArrayMesh" id=30]
+[ext_resource path="res://Assets/natureKit/cliff_waterfallTop_rock.obj" type="ArrayMesh" id=31]
+[ext_resource path="res://Assets/natureKit/cliff_block_stone.obj" type="ArrayMesh" id=32]
+[ext_resource path="res://Assets/natureKit/cliff_corner_rock.obj" type="ArrayMesh" id=33]
+[ext_resource path="res://Assets/natureKit/cliff_blockSlopeWalls_stone.obj" type="ArrayMesh" id=34]
+[ext_resource path="res://Assets/natureKit/cliff_halfCornerInner_rock.obj" type="ArrayMesh" id=35]
+[ext_resource path="res://Assets/natureKit/cliff_stepsCornerInner_rock.obj" type="ArrayMesh" id=36]
+[ext_resource path="res://Assets/natureKit/cliff_cornerInnerTop_stone.obj" type="ArrayMesh" id=37]
+[ext_resource path="res://Assets/natureKit/cliff_cornerInner_stone.obj" type="ArrayMesh" id=38]
+[ext_resource path="res://Assets/natureKit/cliff_cornerInnerLarge_stone.obj" type="ArrayMesh" id=39]
+[ext_resource path="res://Assets/natureKit/cliff_cornerInner_rock.obj" type="ArrayMesh" id=40]
+[ext_resource path="res://Assets/natureKit/cliff_corner_stone.obj" type="ArrayMesh" id=41]
+[ext_resource path="res://Assets/natureKit/cliff_halfCornerInner_stone.obj" type="ArrayMesh" id=42]
+[ext_resource path="res://Assets/natureKit/cliff_stepsCorner_stone.obj" type="ArrayMesh" id=43]
+[ext_resource path="res://Assets/natureKit/cliff_large_stone.obj" type="ArrayMesh" id=44]
+[ext_resource path="res://Assets/natureKit/cliff_topDiagonal_stone.obj" type="ArrayMesh" id=45]
+[ext_resource path="res://Assets/natureKit/cliff_top_stone.obj" type="ArrayMesh" id=46]
+[ext_resource path="res://Assets/natureKit/cliff_block_rock.obj" type="ArrayMesh" id=47]
+[ext_resource path="res://Assets/natureKit/cliff_waterfallTop_stone.obj" type="ArrayMesh" id=48]
+[ext_resource path="res://Assets/natureKit/cliff_stepsCornerInner_stone.obj" type="ArrayMesh" id=49]
+[ext_resource path="res://Assets/natureKit/cliff_waterfall_rock.obj" type="ArrayMesh" id=50]
+[ext_resource path="res://Assets/natureKit/cliff_waterfall_stone.obj" type="ArrayMesh" id=51]
+[ext_resource path="res://Assets/natureKit/crops_bambooStageA.obj" type="ArrayMesh" id=52]
+[ext_resource path="res://Assets/natureKit/crops_bambooStageB.obj" type="ArrayMesh" id=53]
+[ext_resource path="res://Assets/natureKit/cliff_blockDiagonal_stone.obj" type="ArrayMesh" id=54]
+[ext_resource path="res://Assets/natureKit/cliff_blockSlopeWalls_rock.obj" type="ArrayMesh" id=55]
+[ext_resource path="res://Assets/natureKit/crops_cornStageA.obj" type="ArrayMesh" id=56]
+[ext_resource path="res://Assets/natureKit/cliff_steps_rock.obj" type="ArrayMesh" id=57]
+[ext_resource path="res://Assets/natureKit/cliff_blockQuarter_rock.obj" type="ArrayMesh" id=58]
+[ext_resource path="res://Assets/natureKit/cliff_stepsCorner_rock.obj" type="ArrayMesh" id=59]
+[ext_resource path="res://Assets/natureKit/cliff_steps_stone.obj" type="ArrayMesh" id=60]
+[ext_resource path="res://Assets/natureKit/cliff_blockSlopeHalfWalls_rock.obj" type="ArrayMesh" id=61]
+[ext_resource path="res://Assets/natureKit/cliff_cornerLarge_rock.obj" type="ArrayMesh" id=62]
+[ext_resource path="res://Assets/natureKit/cliff_diagonal_stone.obj" type="ArrayMesh" id=63]
+[ext_resource path="res://Assets/natureKit/cliff_half_rock.obj" type="ArrayMesh" id=64]
+[ext_resource path="res://Assets/natureKit/cliff_half_stone.obj" type="ArrayMesh" id=65]
+[ext_resource path="res://Assets/natureKit/cliff_cornerInnerTop_rock.obj" type="ArrayMesh" id=66]
+[ext_resource path="res://Assets/natureKit/cliff_cornerTop_rock.obj" type="ArrayMesh" id=67]
+[ext_resource path="res://Assets/natureKit/cliff_cornerTop_stone.obj" type="ArrayMesh" id=68]
+[ext_resource path="res://Assets/natureKit/cliff_cornerLarge_stone.obj" type="ArrayMesh" id=69]
+[ext_resource path="res://Assets/natureKit/cliff_blockHalf_stone.obj" type="ArrayMesh" id=70]
+[ext_resource path="res://Assets/natureKit/cliff_blockSlopeHalfWalls_stone.obj" type="ArrayMesh" id=71]
+[ext_resource path="res://Assets/natureKit/cliff_rock.obj" type="ArrayMesh" id=72]
+[ext_resource path="res://Assets/natureKit/cliff_stone.obj" type="ArrayMesh" id=73]
+[ext_resource path="res://Assets/natureKit/cliff_topDiagonal_rock.obj" type="ArrayMesh" id=74]
+[ext_resource path="res://Assets/natureKit/cliff_diagonal_rock.obj" type="ArrayMesh" id=75]
+[ext_resource path="res://Assets/natureKit/cliff_blockQuarter_stone.obj" type="ArrayMesh" id=76]
+[ext_resource path="res://Assets/natureKit/cliff_cave_rock.obj" type="ArrayMesh" id=77]
+[ext_resource path="res://Assets/natureKit/cliff_blockHalf_rock.obj" type="ArrayMesh" id=78]
+[ext_resource path="res://Assets/natureKit/cliff_halfCorner_stone.obj" type="ArrayMesh" id=79]
+[ext_resource path="res://Assets/natureKit/cliff_cave_stone.obj" type="ArrayMesh" id=80]
+[ext_resource path="res://Assets/natureKit/cliff_halfCorner_rock.obj" type="ArrayMesh" id=81]
+[ext_resource path="res://Assets/natureKit/cliff_blockSlope_stone.obj" type="ArrayMesh" id=82]
+[ext_resource path="res://Assets/natureKit/cliff_cornerInnerLarge_rock.obj" type="ArrayMesh" id=83]
+[ext_resource path="res://Assets/natureKit/cliff_large_rock.obj" type="ArrayMesh" id=84]
+[ext_resource path="res://Assets/natureKit/cliff_top_rock.obj" type="ArrayMesh" id=85]
+[ext_resource path="res://Assets/natureKit/fence_bend.obj" type="ArrayMesh" id=86]
+[ext_resource path="res://Assets/natureKit/crop_melon.obj" type="ArrayMesh" id=87]
+[ext_resource path="res://Assets/natureKit/crops_cornStageC.obj" type="ArrayMesh" id=88]
+[ext_resource path="res://Assets/natureKit/crop_pumpkin.obj" type="ArrayMesh" id=89]
+[ext_resource path="res://Assets/natureKit/fence_planksDouble.obj" type="ArrayMesh" id=90]
+[ext_resource path="res://Assets/natureKit/fence_simple.obj" type="ArrayMesh" id=91]
+[ext_resource path="res://Assets/natureKit/fence_simpleDiagonal.obj" type="ArrayMesh" id=92]
+[ext_resource path="res://Assets/natureKit/flower_purpleC.obj" type="ArrayMesh" id=93]
+[ext_resource path="res://Assets/natureKit/crops_dirtRowEnd.obj" type="ArrayMesh" id=94]
+[ext_resource path="res://Assets/natureKit/fence_simpleLow.obj" type="ArrayMesh" id=95]
+[ext_resource path="res://Assets/natureKit/flower_yellowC.obj" type="ArrayMesh" id=96]
+[ext_resource path="res://Assets/natureKit/grass_leafsLarge.obj" type="ArrayMesh" id=97]
+[ext_resource path="res://Assets/natureKit/ground_grass.obj" type="ArrayMesh" id=98]
+[ext_resource path="res://Assets/natureKit/fence_corner.obj" type="ArrayMesh" id=99]
+[ext_resource path="res://Assets/natureKit/ground_pathCorner.obj" type="ArrayMesh" id=100]
+[ext_resource path="res://Assets/natureKit/ground_pathCornerSmall.obj" type="ArrayMesh" id=101]
+[ext_resource path="res://Assets/natureKit/ground_pathCross.obj" type="ArrayMesh" id=102]
+[ext_resource path="res://Assets/natureKit/flower_yellowA.obj" type="ArrayMesh" id=103]
+[ext_resource path="res://Assets/natureKit/ground_pathBendBank.obj" type="ArrayMesh" id=104]
+[ext_resource path="res://Assets/natureKit/ground_pathEndClosed.obj" type="ArrayMesh" id=105]
+[ext_resource path="res://Assets/natureKit/ground_pathOpen.obj" type="ArrayMesh" id=106]
+[ext_resource path="res://Assets/natureKit/ground_pathRocks.obj" type="ArrayMesh" id=107]
+[ext_resource path="res://Assets/natureKit/ground_pathSide.obj" type="ArrayMesh" id=108]
+[ext_resource path="res://Assets/natureKit/flower_purpleB.obj" type="ArrayMesh" id=109]
+[ext_resource path="res://Assets/natureKit/crops_dirtRowCorner.obj" type="ArrayMesh" id=110]
+[ext_resource path="res://Assets/natureKit/crops_dirtDoubleRowEnd.obj" type="ArrayMesh" id=111]
+[ext_resource path="res://Assets/natureKit/crops_cornStageB.obj" type="ArrayMesh" id=112]
+[ext_resource path="res://Assets/natureKit/crops_leafsStageA.obj" type="ArrayMesh" id=113]
+[ext_resource path="res://Assets/natureKit/fence_simpleDiagonalCenter.obj" type="ArrayMesh" id=114]
+[ext_resource path="res://Assets/natureKit/flower_purpleA.obj" type="ArrayMesh" id=115]
+[ext_resource path="res://Assets/natureKit/fence_simpleHigh.obj" type="ArrayMesh" id=116]
+[ext_resource path="res://Assets/natureKit/flower_redB.obj" type="ArrayMesh" id=117]
+[ext_resource path="res://Assets/natureKit/fence_gate.obj" type="ArrayMesh" id=118]
+[ext_resource path="res://Assets/natureKit/ground_pathSideOpen.obj" type="ArrayMesh" id=119]
+[ext_resource path="res://Assets/natureKit/ground_pathSplit.obj" type="ArrayMesh" id=120]
+[ext_resource path="res://Assets/natureKit/crops_leafsStageB.obj" type="ArrayMesh" id=121]
+[ext_resource path="res://Assets/natureKit/crop_turnip.obj" type="ArrayMesh" id=122]
+[ext_resource path="res://Assets/natureKit/fence_planks.obj" type="ArrayMesh" id=123]
+[ext_resource path="res://Assets/natureKit/fence_simpleCenter.obj" type="ArrayMesh" id=124]
+[ext_resource path="res://Assets/natureKit/flower_redC.obj" type="ArrayMesh" id=125]
+[ext_resource path="res://Assets/natureKit/fence_bendCenter.obj" type="ArrayMesh" id=126]
+[ext_resource path="res://Assets/natureKit/ground_pathBend.obj" type="ArrayMesh" id=127]
+[ext_resource path="res://Assets/natureKit/grass_leafs.obj" type="ArrayMesh" id=128]
+[ext_resource path="res://Assets/natureKit/ground_pathEnd.obj" type="ArrayMesh" id=129]
+[ext_resource path="res://Assets/natureKit/crops_dirtRow.obj" type="ArrayMesh" id=130]
+[ext_resource path="res://Assets/natureKit/crops_dirtDoubleRowCorner.obj" type="ArrayMesh" id=131]
+[ext_resource path="res://Assets/natureKit/crop_carrot.obj" type="ArrayMesh" id=132]
+[ext_resource path="res://Assets/natureKit/crops_dirtDoubleRow.obj" type="ArrayMesh" id=133]
+[ext_resource path="res://Assets/natureKit/flower_yellowB.obj" type="ArrayMesh" id=134]
+[ext_resource path="res://Assets/natureKit/flower_redA.obj" type="ArrayMesh" id=135]
+[ext_resource path="res://Assets/natureKit/grass.obj" type="ArrayMesh" id=136]
+[ext_resource path="res://Assets/natureKit/grass_large.obj" type="ArrayMesh" id=137]
+[ext_resource path="res://Assets/natureKit/crops_dirtSingle.obj" type="ArrayMesh" id=138]
+[ext_resource path="res://Assets/natureKit/crops_cornStageD.obj" type="ArrayMesh" id=139]
+[ext_resource path="res://Assets/natureKit/crops_wheatStageA.obj" type="ArrayMesh" id=140]
+[ext_resource path="res://Assets/natureKit/crops_wheatStageB.obj" type="ArrayMesh" id=141]
+[ext_resource path="res://Assets/natureKit/ground_riverEndClosed.obj" type="ArrayMesh" id=142]
+[ext_resource path="res://Assets/natureKit/log_stackLarge.obj" type="ArrayMesh" id=143]
+[ext_resource path="res://Assets/natureKit/mushroom_tan.obj" type="ArrayMesh" id=144]
+[ext_resource path="res://Assets/natureKit/mushroom_tanTall.obj" type="ArrayMesh" id=145]
+[ext_resource path="res://Assets/natureKit/plant_bushSmall.obj" type="ArrayMesh" id=146]
+[ext_resource path="res://Assets/natureKit/mushroom_tanGroup.obj" type="ArrayMesh" id=147]
+[ext_resource path="res://Assets/natureKit/platform_grass.obj" type="ArrayMesh" id=148]
+[ext_resource path="res://Assets/natureKit/pot_large.obj" type="ArrayMesh" id=149]
+[ext_resource path="res://Assets/natureKit/ground_riverCornerSmall.obj" type="ArrayMesh" id=150]
+[ext_resource path="res://Assets/natureKit/ground_riverEnd.obj" type="ArrayMesh" id=151]
+[ext_resource path="res://Assets/natureKit/ground_riverSide.obj" type="ArrayMesh" id=152]
+[ext_resource path="res://Assets/natureKit/ground_pathStraight.obj" type="ArrayMesh" id=153]
+[ext_resource path="res://Assets/natureKit/ground_riverBendBank.obj" type="ArrayMesh" id=154]
+[ext_resource path="res://Assets/natureKit/plant_bushLargeTriangle.obj" type="ArrayMesh" id=155]
+[ext_resource path="res://Assets/natureKit/pot_small.obj" type="ArrayMesh" id=156]
+[ext_resource path="res://Assets/natureKit/rock_largeC.obj" type="ArrayMesh" id=157]
+[ext_resource path="res://Assets/natureKit/rock_largeD.obj" type="ArrayMesh" id=158]
+[ext_resource path="res://Assets/natureKit/platform_beach.obj" type="ArrayMesh" id=159]
+[ext_resource path="res://Assets/natureKit/path_stoneCorner.obj" type="ArrayMesh" id=160]
+[ext_resource path="res://Assets/natureKit/path_stone.obj" type="ArrayMesh" id=161]
+[ext_resource path="res://Assets/natureKit/plant_flatShort.obj" type="ArrayMesh" id=162]
+[ext_resource path="res://Assets/natureKit/platform_stone.obj" type="ArrayMesh" id=163]
+[ext_resource path="res://Assets/natureKit/rock_largeE.obj" type="ArrayMesh" id=164]
+[ext_resource path="res://Assets/natureKit/ground_riverBend.obj" type="ArrayMesh" id=165]
+[ext_resource path="res://Assets/natureKit/lily_small.obj" type="ArrayMesh" id=166]
+[ext_resource path="res://Assets/natureKit/ground_riverSplit.obj" type="ArrayMesh" id=167]
+[ext_resource path="res://Assets/natureKit/hanging_moss.obj" type="ArrayMesh" id=168]
+[ext_resource path="res://Assets/natureKit/ground_riverRocks.obj" type="ArrayMesh" id=169]
+[ext_resource path="res://Assets/natureKit/log_large.obj" type="ArrayMesh" id=170]
+[ext_resource path="res://Assets/natureKit/ground_riverOpen.obj" type="ArrayMesh" id=171]
+[ext_resource path="res://Assets/natureKit/ground_riverSideOpen.obj" type="ArrayMesh" id=172]
+[ext_resource path="res://Assets/natureKit/lily_large.obj" type="ArrayMesh" id=173]
+[ext_resource path="res://Assets/natureKit/ground_riverCross.obj" type="ArrayMesh" id=174]
+[ext_resource path="res://Assets/natureKit/log_stack.obj" type="ArrayMesh" id=175]
+[ext_resource path="res://Assets/natureKit/mushroom_redGroup.obj" type="ArrayMesh" id=176]
+[ext_resource path="res://Assets/natureKit/mushroom_redTall.obj" type="ArrayMesh" id=177]
+[ext_resource path="res://Assets/natureKit/ground_pathTile.obj" type="ArrayMesh" id=178]
+[ext_resource path="res://Assets/natureKit/path_stoneCircle.obj" type="ArrayMesh" id=179]
+[ext_resource path="res://Assets/natureKit/path_stoneEnd.obj" type="ArrayMesh" id=180]
+[ext_resource path="res://Assets/natureKit/path_woodCorner.obj" type="ArrayMesh" id=181]
+[ext_resource path="res://Assets/natureKit/log.obj" type="ArrayMesh" id=182]
+[ext_resource path="res://Assets/natureKit/plant_bush.obj" type="ArrayMesh" id=183]
+[ext_resource path="res://Assets/natureKit/plant_bushLarge.obj" type="ArrayMesh" id=184]
+[ext_resource path="res://Assets/natureKit/path_woodEnd.obj" type="ArrayMesh" id=185]
+[ext_resource path="res://Assets/natureKit/path_wood.obj" type="ArrayMesh" id=186]
+[ext_resource path="res://Assets/natureKit/plant_bushDetailed.obj" type="ArrayMesh" id=187]
+[ext_resource path="res://Assets/natureKit/ground_riverTile.obj" type="ArrayMesh" id=188]
+[ext_resource path="res://Assets/natureKit/plant_bushTriangle.obj" type="ArrayMesh" id=189]
+[ext_resource path="res://Assets/natureKit/plant_flatTall.obj" type="ArrayMesh" id=190]
+[ext_resource path="res://Assets/natureKit/rock_largeA.obj" type="ArrayMesh" id=191]
+[ext_resource path="res://Assets/natureKit/ground_riverStraight.obj" type="ArrayMesh" id=192]
+[ext_resource path="res://Assets/natureKit/rock_largeB.obj" type="ArrayMesh" id=193]
+[ext_resource path="res://Assets/natureKit/ground_riverCorner.obj" type="ArrayMesh" id=194]
+[ext_resource path="res://Assets/natureKit/mushroom_red.obj" type="ArrayMesh" id=195]
+[ext_resource path="res://Assets/natureKit/stone_smallA.obj" type="ArrayMesh" id=196]
+[ext_resource path="res://Assets/natureKit/rock_smallB.obj" type="ArrayMesh" id=197]
+[ext_resource path="res://Assets/natureKit/stone_smallTopB.obj" type="ArrayMesh" id=198]
+[ext_resource path="res://Assets/natureKit/statue_column.obj" type="ArrayMesh" id=199]
+[ext_resource path="res://Assets/natureKit/statue_ring.obj" type="ArrayMesh" id=200]
+[ext_resource path="res://Assets/natureKit/stone_smallI.obj" type="ArrayMesh" id=201]
+[ext_resource path="res://Assets/natureKit/stone_tallD.obj" type="ArrayMesh" id=202]
+[ext_resource path="res://Assets/natureKit/stone_smallE.obj" type="ArrayMesh" id=203]
+[ext_resource path="res://Assets/natureKit/rock_smallG.obj" type="ArrayMesh" id=204]
+[ext_resource path="res://Assets/natureKit/rock_tallE.obj" type="ArrayMesh" id=205]
+[ext_resource path="res://Assets/natureKit/rock_smallA.obj" type="ArrayMesh" id=206]
+[ext_resource path="res://Assets/natureKit/statue_columnDamaged.obj" type="ArrayMesh" id=207]
+[ext_resource path="res://Assets/natureKit/rock_smallI.obj" type="ArrayMesh" id=208]
+[ext_resource path="res://Assets/natureKit/stone_largeD.obj" type="ArrayMesh" id=209]
+[ext_resource path="res://Assets/natureKit/stone_largeF.obj" type="ArrayMesh" id=210]
+[ext_resource path="res://Assets/natureKit/stone_smallTopA.obj" type="ArrayMesh" id=211]
+[ext_resource path="res://Assets/natureKit/rock_smallFlatC.obj" type="ArrayMesh" id=212]
+[ext_resource path="res://Assets/natureKit/rock_tallA.obj" type="ArrayMesh" id=213]
+[ext_resource path="res://Assets/natureKit/rock_tallI.obj" type="ArrayMesh" id=214]
+[ext_resource path="res://Assets/natureKit/stone_largeE.obj" type="ArrayMesh" id=215]
+[ext_resource path="res://Assets/natureKit/stone_smallD.obj" type="ArrayMesh" id=216]
+[ext_resource path="res://Assets/natureKit/stone_smallFlatC.obj" type="ArrayMesh" id=217]
+[ext_resource path="res://Assets/natureKit/stone_tallB.obj" type="ArrayMesh" id=218]
+[ext_resource path="res://Assets/natureKit/stone_tallF.obj" type="ArrayMesh" id=219]
+[ext_resource path="res://Assets/natureKit/rock_tallC.obj" type="ArrayMesh" id=220]
+[ext_resource path="res://Assets/natureKit/stone_tallA.obj" type="ArrayMesh" id=221]
+[ext_resource path="res://Assets/natureKit/stone_tallG.obj" type="ArrayMesh" id=222]
+[ext_resource path="res://Assets/natureKit/stone_tallH.obj" type="ArrayMesh" id=223]
+[ext_resource path="res://Assets/natureKit/rock_smallTopA.obj" type="ArrayMesh" id=224]
+[ext_resource path="res://Assets/natureKit/rock_smallH.obj" type="ArrayMesh" id=225]
+[ext_resource path="res://Assets/natureKit/sign.obj" type="ArrayMesh" id=226]
+[ext_resource path="res://Assets/natureKit/statue_block.obj" type="ArrayMesh" id=227]
+[ext_resource path="res://Assets/natureKit/stone_tallI.obj" type="ArrayMesh" id=228]
+[ext_resource path="res://Assets/natureKit/rock_largeF.obj" type="ArrayMesh" id=229]
+[ext_resource path="res://Assets/natureKit/statue_head.obj" type="ArrayMesh" id=230]
+[ext_resource path="res://Assets/natureKit/stone_tallJ.obj" type="ArrayMesh" id=231]
+[ext_resource path="res://Assets/natureKit/stump_old.obj" type="ArrayMesh" id=232]
+[ext_resource path="res://Assets/natureKit/rock_smallTopB.obj" type="ArrayMesh" id=233]
+[ext_resource path="res://Assets/natureKit/rock_smallFlatB.obj" type="ArrayMesh" id=234]
+[ext_resource path="res://Assets/natureKit/rock_tallB.obj" type="ArrayMesh" id=235]
+[ext_resource path="res://Assets/natureKit/rock_tallG.obj" type="ArrayMesh" id=236]
+[ext_resource path="res://Assets/natureKit/rock_tallH.obj" type="ArrayMesh" id=237]
+[ext_resource path="res://Assets/natureKit/rock_tallJ.obj" type="ArrayMesh" id=238]
+[ext_resource path="res://Assets/natureKit/rock_smallC.obj" type="ArrayMesh" id=239]
+[ext_resource path="res://Assets/natureKit/rock_smallE.obj" type="ArrayMesh" id=240]
+[ext_resource path="res://Assets/natureKit/rock_smallF.obj" type="ArrayMesh" id=241]
+[ext_resource path="res://Assets/natureKit/rock_smallFlatA.obj" type="ArrayMesh" id=242]
+[ext_resource path="res://Assets/natureKit/statue_obelisk.obj" type="ArrayMesh" id=243]
+[ext_resource path="res://Assets/natureKit/stone_largeB.obj" type="ArrayMesh" id=244]
+[ext_resource path="res://Assets/natureKit/stone_largeC.obj" type="ArrayMesh" id=245]
+[ext_resource path="res://Assets/natureKit/stone_smallB.obj" type="ArrayMesh" id=246]
+[ext_resource path="res://Assets/natureKit/stone_smallF.obj" type="ArrayMesh" id=247]
+[ext_resource path="res://Assets/natureKit/rock_tallD.obj" type="ArrayMesh" id=248]
+[ext_resource path="res://Assets/natureKit/rock_tallF.obj" type="ArrayMesh" id=249]
+[ext_resource path="res://Assets/natureKit/stone_smallFlatA.obj" type="ArrayMesh" id=250]
+[ext_resource path="res://Assets/natureKit/stone_smallC.obj" type="ArrayMesh" id=251]
+[ext_resource path="res://Assets/natureKit/rock_smallD.obj" type="ArrayMesh" id=252]
+[ext_resource path="res://Assets/natureKit/stone_largeA.obj" type="ArrayMesh" id=253]
+[ext_resource path="res://Assets/natureKit/stone_smallFlatB.obj" type="ArrayMesh" id=254]
+[ext_resource path="res://Assets/natureKit/stone_smallG.obj" type="ArrayMesh" id=255]
+[ext_resource path="res://Assets/natureKit/stone_smallH.obj" type="ArrayMesh" id=256]
+[ext_resource path="res://Assets/natureKit/stone_tallC.obj" type="ArrayMesh" id=257]
+[ext_resource path="res://Assets/natureKit/stone_tallE.obj" type="ArrayMesh" id=258]
+[ext_resource path="res://Assets/natureKit/tent_smallClosed.obj" type="ArrayMesh" id=259]
+[ext_resource path="res://Assets/natureKit/tree_palmDetailedTall.obj" type="ArrayMesh" id=260]
+[ext_resource path="res://Assets/natureKit/stump_squareDetailed.obj" type="ArrayMesh" id=261]
+[ext_resource path="res://Assets/natureKit/tree_pineRoundC.obj" type="ArrayMesh" id=262]
+[ext_resource path="res://Assets/natureKit/tent_detailedClosed.obj" type="ArrayMesh" id=263]
+[ext_resource path="res://Assets/natureKit/tree_pineRoundB.obj" type="ArrayMesh" id=264]
+[ext_resource path="res://Assets/natureKit/tree_pineRoundD.obj" type="ArrayMesh" id=265]
+[ext_resource path="res://Assets/natureKit/tree_cone_dark.obj" type="ArrayMesh" id=266]
+[ext_resource path="res://Assets/natureKit/tree_oak_dark.obj" type="ArrayMesh" id=267]
+[ext_resource path="res://Assets/natureKit/tree_palmShort.obj" type="ArrayMesh" id=268]
+[ext_resource path="res://Assets/natureKit/stump_squareDetailedWide.obj" type="ArrayMesh" id=269]
+[ext_resource path="res://Assets/natureKit/tree_pineSmallA.obj" type="ArrayMesh" id=270]
+[ext_resource path="res://Assets/natureKit/tree_pineDefaultA.obj" type="ArrayMesh" id=271]
+[ext_resource path="res://Assets/natureKit/tree_pineSmallD.obj" type="ArrayMesh" id=272]
+[ext_resource path="res://Assets/natureKit/tree_palmTall.obj" type="ArrayMesh" id=273]
+[ext_resource path="res://Assets/natureKit/tree_pineGroundB.obj" type="ArrayMesh" id=274]
+[ext_resource path="res://Assets/natureKit/tree_fat_darkh.obj" type="ArrayMesh" id=275]
+[ext_resource path="res://Assets/natureKit/tent_detailedOpen.obj" type="ArrayMesh" id=276]
+[ext_resource path="res://Assets/natureKit/tent_smallOpen.obj" type="ArrayMesh" id=277]
+[ext_resource path="res://Assets/natureKit/tree_pineDefaultB.obj" type="ArrayMesh" id=278]
+[ext_resource path="res://Assets/natureKit/tree_pineRoundF.obj" type="ArrayMesh" id=279]
+[ext_resource path="res://Assets/natureKit/tree_blocks.obj" type="ArrayMesh" id=280]
+[ext_resource path="res://Assets/natureKit/tree_default.obj" type="ArrayMesh" id=281]
+[ext_resource path="res://Assets/natureKit/tree_blocks_dark.obj" type="ArrayMesh" id=282]
+[ext_resource path="res://Assets/natureKit/tree_default_fall.obj" type="ArrayMesh" id=283]
+[ext_resource path="res://Assets/natureKit/stump_roundDetailed.obj" type="ArrayMesh" id=284]
+[ext_resource path="res://Assets/natureKit/tree_default_dark.obj" type="ArrayMesh" id=285]
+[ext_resource path="res://Assets/natureKit/tree_detailed.obj" type="ArrayMesh" id=286]
+[ext_resource path="res://Assets/natureKit/tree_detailed_dark.obj" type="ArrayMesh" id=287]
+[ext_resource path="res://Assets/natureKit/tree_fat.obj" type="ArrayMesh" id=288]
+[ext_resource path="res://Assets/natureKit/tree_fat_fall.obj" type="ArrayMesh" id=289]
+[ext_resource path="res://Assets/natureKit/tree_cone.obj" type="ArrayMesh" id=290]
+[ext_resource path="res://Assets/natureKit/tree_blocks_fall.obj" type="ArrayMesh" id=291]
+[ext_resource path="res://Assets/natureKit/tree_oak.obj" type="ArrayMesh" id=292]
+[ext_resource path="res://Assets/natureKit/tree_palm.obj" type="ArrayMesh" id=293]
+[ext_resource path="res://Assets/natureKit/tree_palmBend.obj" type="ArrayMesh" id=294]
+[ext_resource path="res://Assets/natureKit/tree_palmDetailedShort.obj" type="ArrayMesh" id=295]
+[ext_resource path="res://Assets/natureKit/tree_pineRoundA.obj" type="ArrayMesh" id=296]
+[ext_resource path="res://Assets/natureKit/tree_pineRoundE.obj" type="ArrayMesh" id=297]
+[ext_resource path="res://Assets/natureKit/stump_square.obj" type="ArrayMesh" id=298]
+[ext_resource path="res://Assets/natureKit/tree_pineSmallB.obj" type="ArrayMesh" id=299]
+[ext_resource path="res://Assets/natureKit/stump_oldTall.obj" type="ArrayMesh" id=300]
+[ext_resource path="res://Assets/natureKit/tree_pineSmallC.obj" type="ArrayMesh" id=301]
+[ext_resource path="res://Assets/natureKit/stump_round.obj" type="ArrayMesh" id=302]
+[ext_resource path="res://Assets/natureKit/tree_cone_fall.obj" type="ArrayMesh" id=303]
+[ext_resource path="res://Assets/natureKit/tree_detailed_fall.obj" type="ArrayMesh" id=304]
+[ext_resource path="res://Assets/natureKit/tree_pineTallA.obj" type="ArrayMesh" id=305]
+[ext_resource path="res://Assets/natureKit/tree_pineTallA_detailed.obj" type="ArrayMesh" id=306]
+[ext_resource path="res://Assets/natureKit/tree_pineTallB.obj" type="ArrayMesh" id=307]
+[ext_resource path="res://Assets/natureKit/tree_pineTallB_detailed.obj" type="ArrayMesh" id=308]
+[ext_resource path="res://Assets/natureKit/tree_oak_fall.obj" type="ArrayMesh" id=309]
+[ext_resource path="res://Assets/natureKit/tree_pineGroundA.obj" type="ArrayMesh" id=310]
+[ext_resource path="res://Assets/natureKit/tree_thin_dark.obj" type="ArrayMesh" id=311]
+[ext_resource path="res://Assets/natureKit/tree_pineTallD_detailed.obj" type="ArrayMesh" id=312]
+[ext_resource path="res://Assets/natureKit/tree_small_dark.obj" type="ArrayMesh" id=313]
+[ext_resource path="res://Assets/natureKit/tree_simple_fall.obj" type="ArrayMesh" id=314]
+[ext_resource path="res://Assets/natureKit/tree_thin.obj" type="ArrayMesh" id=315]
+[ext_resource path="res://Assets/natureKit/tree_thin_fall.obj" type="ArrayMesh" id=316]
+[ext_resource path="res://Assets/natureKit/tree_tall.obj" type="ArrayMesh" id=317]
+[ext_resource path="res://Assets/natureKit/tree_simple.obj" type="ArrayMesh" id=318]
+[ext_resource path="res://Assets/natureKit/tree_pineTallC_detailed.obj" type="ArrayMesh" id=319]
+[ext_resource path="res://Assets/natureKit/tree_tall_fall.obj" type="ArrayMesh" id=320]
+[ext_resource path="res://Assets/natureKit/tree_plateau.obj" type="ArrayMesh" id=321]
+[ext_resource path="res://Assets/natureKit/tree_tall_dark.obj" type="ArrayMesh" id=322]
+[ext_resource path="res://Assets/natureKit/tree_pineTallC.obj" type="ArrayMesh" id=323]
+[ext_resource path="res://Assets/natureKit/tree_plateau_dark.obj" type="ArrayMesh" id=324]
+[ext_resource path="res://Assets/natureKit/tree_simple_dark.obj" type="ArrayMesh" id=325]
+[ext_resource path="res://Assets/natureKit/tree_pineTallD.obj" type="ArrayMesh" id=326]
+[ext_resource path="res://Assets/natureKit/tree_plateau_fall.obj" type="ArrayMesh" id=327]
+[ext_resource path="res://Assets/natureKit/tree_small.obj" type="ArrayMesh" id=328]
+[ext_resource path="res://Assets/natureKit/tree_small_fall.obj" type="ArrayMesh" id=329]
+
+[sub_resource type="BoxShape" id=1995]
+extents = Vector3( 0.501699, 0.180429, 0.369783 )
+
+[sub_resource type="ConcavePolygonShape" id=2059]
+data = PoolVector3Array( 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5 )
+
+[sub_resource type="ConcavePolygonShape" id=2063]
+data = PoolVector3Array( -0.3491, 0, -0.3491, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.3491, 0, -0.3491, -0.4174, 0, -0.4174, -0.4174, 0, -0.4174, -0.3491, 0, -0.3491, -0.5, 0, -0.279, -0.4174, 0, -0.4174, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.1209, -0.05, -0.1415, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1209, -0.05, -0.1415, -0.1415, -0.05, 0.1209, -0.217, -0.05, -0.5, -0.1415, -0.05, 0.1209, -0.5, -0.05, 0.217, -0.217, -0.05, -0.5, -0.5, -0.05, 0.217, -0.3067, -0.05, -0.3067, -0.3067, -0.05, -0.3067, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.2612, 0, -0.0605, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.2612, 0, -0.0605, 0.1746, 0, -0.1105, 0.1746, 0, -0.1105, 0.2612, 0, -0.0605, -0.0605, 0, 0.2612, 0.1746, 0, -0.1105, -0.0605, 0, 0.2612, -0.1105, 0, 0.1746, -0.1105, 0, 0.1746, -0.0605, 0, 0.2612, -0.5, 0, 0.379, -0.1105, 0, 0.1746, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.4174, 0, -0.4174, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.4174, 0, -0.4174, -0.5, 0, -0.379, -0.0605, 0, 0.2612, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.0605, 0, 0.2612, 0.2612, 0, -0.0605, 0.5, 0, 0.5, 0.2612, 0, -0.0605, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.2612, 0, -0.0605, 0.379, 0, -0.5, -0.0605, 0, 0.2612, -0.5, 0, 0.5, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.1415, -0.05, 0.1209, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.5, 0, 0.279, -0.5, -0.05, 0.217, -0.1105, 0, 0.1746, 0.1209, -0.05, -0.1415, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, 0.1746, 0, -0.1105, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.5, -0.05, -0.217, -0.3491, 0, -0.3491, -0.3067, -0.05, -0.3067, -0.3491, 0, -0.3491, -0.5, -0.05, -0.217, -0.5, 0, -0.279, -0.3067, -0.05, -0.3067, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.3067, -0.05, -0.3067, -0.3491, 0, -0.3491 )
+
+[sub_resource type="ConcavePolygonShape" id=2067]
+data = PoolVector3Array( -0.3491, 0, -0.3491, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.3491, 0, -0.3491, -0.4174, 0, -0.4174, -0.4174, 0, -0.4174, -0.3491, 0, -0.3491, -0.5, 0, -0.279, -0.4174, 0, -0.4174, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.1209, -0.05, -0.1415, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1209, -0.05, -0.1415, -0.1415, -0.05, 0.1209, -0.217, -0.05, -0.5, -0.1415, -0.05, 0.1209, -0.5, -0.05, 0.217, -0.217, -0.05, -0.5, -0.5, -0.05, 0.217, -0.3067, -0.05, -0.3067, -0.3067, -0.05, -0.3067, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.366, 0, 0, 0.379, 0, -0.5, 0.4659, 0, -0.2412, 0.379, 0, -0.5, 0.366, 0, 0, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.366, 0, 0, 0.2071, 0, 0.2071, 0.279, 0, -0.5, 0.2071, 0, 0.2071, 0.1746, 0, -0.1105, 0.1746, 0, -0.1105, 0.2071, 0, 0.2071, 0, 0, 0.366, 0.1746, 0, -0.1105, 0, 0, 0.366, -0.1105, 0, 0.1746, -0.1105, 0, 0.1746, 0, 0, 0.366, -0.2412, 0, 0.4659, -0.1105, 0, 0.1746, -0.2412, 0, 0.4659, -0.5, 0, 0.279, -0.5, 0, 0.279, -0.2412, 0, 0.4659, -0.5, 0, 0.379, -0.4174, 0, -0.4174, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.4174, 0, -0.4174, -0.5, 0, -0.379, 0.4659, 0, -0.2412, 0.379, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.4659, 0, -0.2412, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.366, 0, 0, 0.4659, 0, -0.2412, 0.5, 0, 0.5, 0.2071, 0, 0.2071, 0.366, 0, 0, 0.5, 0, 0.5, 0, 0, 0.366, 0.2071, 0, 0.2071, 0.5, 0, 0.5, -0.2412, 0, 0.4659, 0, 0, 0.366, -0.2412, 0, 0.4659, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.2412, 0, 0.4659, -0.5, 0, 0.5, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.1415, -0.05, 0.1209, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.5, 0, 0.279, -0.5, -0.05, 0.217, -0.1105, 0, 0.1746, 0.1209, -0.05, -0.1415, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, 0.1746, 0, -0.1105, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.5, -0.05, -0.217, -0.3491, 0, -0.3491, -0.3067, -0.05, -0.3067, -0.3491, 0, -0.3491, -0.5, -0.05, -0.217, -0.5, 0, -0.279, -0.3067, -0.05, -0.3067, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.3067, -0.05, -0.3067, -0.3491, 0, -0.3491 )
+
+[sub_resource type="ConcavePolygonShape" id=2071]
+data = PoolVector3Array( 0.1209, -0.05, -0.1415, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1209, -0.05, -0.1415, -0.1415, -0.05, 0.1209, -0.217, -0.05, -0.5, -0.1415, -0.05, 0.1209, -0.5, -0.05, 0.217, -0.217, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.2612, 0, -0.0605, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.2612, 0, -0.0605, 0.1746, 0, -0.1105, 0.1746, 0, -0.1105, 0.2612, 0, -0.0605, -0.0605, 0, 0.2612, 0.1746, 0, -0.1105, -0.0605, 0, 0.2612, -0.1105, 0, 0.1746, -0.1105, 0, 0.1746, -0.0605, 0, 0.2612, -0.5, 0, 0.379, -0.1105, 0, 0.1746, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.5, 0, 0.279, -0.1415, -0.05, 0.1209, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.5, 0, 0.279, -0.5, -0.05, 0.217, -0.1105, 0, 0.1746, 0.1209, -0.05, -0.1415, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, 0.1746, 0, -0.1105, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.0605, 0, 0.2612, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.0605, 0, 0.2612, 0.2612, 0, -0.0605, 0.5, 0, 0.5, 0.2612, 0, -0.0605, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.2612, 0, -0.0605, 0.379, 0, -0.5, -0.0605, 0, 0.2612, -0.5, 0, 0.5, -0.5, 0, 0.379 )
+
+[sub_resource type="ConcavePolygonShape" id=2075]
+data = PoolVector3Array( 0.4395, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.4395, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, 0.217, -0.05, -0.375, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.375, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.217, -0.05, -0.5, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, -0.05, 0.217, 0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.5, -0.05, 0.5, 0.217, -0.05, -0.5, 0.375, -0.05, -0.217, -0.5, -0.05, 0.5, 0.217, -0.05, -0.375, 0.5, -0.05, -0.217, -0.5, -0.05, 0.5, 0.375, -0.05, -0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.5, -0.5, -0.05, 0.5, 0.5, -0.05, 0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.4395, 0, -0.379, 0.4395, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.4395, 0.379, 0, -0.4395, 0.375, 0, -0.279, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.375 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.4395, 0, -0.379, 0.4395, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.4395, 0.379, 0, -0.4395, 0.375, 0, -0.279, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.375, -0.279, 0, -0.375, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.279, 0, -0.375, -0.375, 0, -0.279, -0.379, 0, -0.5, -0.375, 0, -0.279, -0.379, 0, -0.4395, -0.379, 0, -0.4395, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.379, 0, -0.4395, -0.5, 0, -0.279, -0.4395, 0, -0.379, -0.4395, 0, -0.379, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.5, 0, 0.379, 0.375, 0, 0.279, 0.5, 0, 0.279, 0.375, 0, 0.279, 0.5, 0, 0.379, 0.4395, 0, 0.379, 0.375, 0, 0.279, 0.4395, 0, 0.379, 0.379, 0, 0.4395, 0.375, 0, 0.279, 0.379, 0, 0.4395, 0.379, 0, 0.5, 0.375, 0, 0.279, 0.379, 0, 0.5, 0.279, 0, 0.5, 0.375, 0, 0.279, 0.279, 0, 0.5, 0.279, 0, 0.375, -0.379, 0, 0.5, -0.279, 0, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, -0.379, 0, 0.5, -0.375, 0, 0.279, -0.375, 0, 0.279, -0.379, 0, 0.5, -0.379, 0, 0.4395, -0.375, 0, 0.279, -0.379, 0, 0.4395, -0.5, 0, 0.279, -0.5, 0, 0.279, -0.379, 0, 0.4395, -0.4395, 0, 0.379, -0.5, 0, 0.279, -0.4395, 0, 0.379, -0.5, 0, 0.379, 0.217, -0.05, -0.375, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.217, -0.05, 0.375, -0.217, -0.05, 0.375, 0.217, -0.05, -0.375, -0.217, -0.05, 0.5, -0.217, -0.05, -0.5, -0.217, -0.05, 0.375, -0.217, -0.05, -0.375, -0.217, -0.05, -0.375, -0.217, -0.05, 0.375, -0.375, -0.05, 0.217, -0.217, -0.05, -0.375, -0.375, -0.05, 0.217, -0.375, -0.05, -0.217, -0.375, -0.05, -0.217, -0.375, -0.05, 0.217, -0.5, -0.05, 0.217, -0.375, -0.05, -0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.217, -0.05, -0.375, 0.217, -0.05, 0.5, -0.217, -0.05, 0.5, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.217, -0.05, 0.5, 0.375, -0.05, -0.217, 0.217, -0.05, 0.375, 0.217, -0.05, -0.375, 0.375, -0.05, -0.217, 0.375, -0.05, 0.217, 0.217, -0.05, 0.375, 0.5, -0.05, -0.217, 0.375, -0.05, 0.217, 0.375, -0.05, -0.217, 0.375, -0.05, 0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, -0.375, -0.05, -0.217, -0.5, 0, -0.279, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.375, -0.05, -0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.375, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.279, 0, 0.5, -0.217, -0.05, 0.375, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, -0.5, 0, 0.279, -0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.5, -0.05, 0.217, 0.5, 0, 0.279, 0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, 0.279, 0, 0.5, 0.217, -0.05, 0.375, 0.279, 0, 0.375, 0.217, -0.05, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.5, 0.375, 0, 0.279, 0.217, -0.05, 0.375, 0.375, -0.05, 0.217, 0.217, -0.05, 0.375, 0.375, 0, 0.279, 0.279, 0, 0.375, -0.375, -0.05, -0.217, -0.279, 0, -0.375, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.375, -0.05, -0.217, -0.375, 0, -0.279, -0.279, 0, 0.375, -0.375, -0.05, 0.217, -0.217, -0.05, 0.375, -0.375, -0.05, 0.217, -0.279, 0, 0.375, -0.375, 0, 0.279, 0.217, -0.05, -0.375, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.375, -0.5, 0, 0.5, -0.379, 0, 0.4395, -0.379, 0, 0.5, -0.379, 0, 0.4395, -0.5, 0, 0.5, -0.4395, 0, 0.379, -0.4395, 0, 0.379, -0.5, 0, 0.5, -0.5, 0, 0.379, 0.5, 0, 0.5, 0.4395, 0, 0.379, 0.5, 0, 0.379, 0.4395, 0, 0.379, 0.5, 0, 0.5, 0.379, 0, 0.5, 0.4395, 0, 0.379, 0.379, 0, 0.5, 0.379, 0, 0.4395, -0.379, 0, -0.4395, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.379, 0, -0.4395, -0.4395, 0, -0.379, -0.5, 0, -0.5, -0.4395, 0, -0.379, -0.5, 0, -0.379, 0.4395, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.4395 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( 0.279, -0.05, -0.125, 0.279, 0, -0.375, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, -0.217, 0, -0.125, -0.217, -0.05, -0.375, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.279, 0, -0.375, -0.217, -0.05, -0.5, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, -0.279, 0, -0.375, -0.279, 0, -0.5, -0.186, -0.025, 0.125, -0.217, 0, -0.125, -0.155, -0.05, -0.125, -0.217, 0, -0.125, -0.186, -0.025, 0.125, -0.217, 0, 0.125, -0.186, -0.025, 0.125, -0.279, 0, 0.375, -0.217, 0, 0.125, 0.31, -0.025, 0.125, 0.341, 0, -0.125, 0.341, 0, 0.125, 0.341, 0, -0.125, 0.31, -0.025, 0.125, 0.279, -0.05, -0.125, 0.341, 0, 0.125, 0.279, 0, 0.375, 0.31, -0.025, 0.125, 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.5, 0, 0.5, 0.329, 0, 0.375, 0.441, 0, 0.125, 0.329, 0, 0.375, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.329, 0, 0.375, -0.5, 0, 0.5, 0.279, 0, 0.375, 0.279, 0, 0.375, -0.5, 0, 0.5, -0.279, 0, 0.375, -0.279, 0, 0.375, -0.5, 0, 0.5, -0.329, 0, 0.375, -0.329, 0, 0.375, -0.5, 0, 0.5, -0.379, 0, -0.375, -0.317, 0, -0.125, -0.329, 0, 0.375, -0.379, 0, -0.375, -0.329, 0, 0.375, -0.317, 0, -0.125, -0.317, 0, 0.125, -0.379, 0, -0.375, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.155, -0.05, -0.125, 0.217, -0.05, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, -0.155, -0.05, -0.125, 0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.186, -0.025, 0.125, 0.279, -0.05, -0.125, 0.31, -0.025, 0.125, 0.279, -0.05, -0.125, -0.186, -0.025, 0.125, -0.155, -0.05, -0.125, 0.279, 0, 0.375, -0.186, -0.025, 0.125, 0.31, -0.025, 0.125, -0.186, -0.025, 0.125, 0.279, 0, 0.375, -0.279, 0, 0.375, -0.317, 0, -0.125, -0.279, 0, -0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, -0.279, 0, -0.5, -0.329, 0, 0.375, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.279, 0, 0.375, -0.329, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.279, 0, -0.5, -0.217, 0, -0.125, -0.279, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.217, 0, -0.125, -0.217, 0, 0.125, 0.341, 0, -0.125, 0.379, 0, -0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.379, 0, -0.5, 0.329, 0, 0.375, 0.341, 0, 0.125, 0.379, 0, -0.375, 0.329, 0, 0.375, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.329, 0, 0.375, 0.379, 0, -0.375, 0.329, 0, 0.375, 0.441, 0, -0.125, 0.441, 0, 0.125, 0.341, 0, 0.125, 0.329, 0, 0.375, 0.279, 0, 0.375 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.5, 0, 0.5, 0.3973, 0, 0.1983, 0.441, 0, 0, 0.5, 0, 0.5, 0.1598, 0, 0.3728, 0.3973, 0, 0.1983, 0.1598, 0, 0.3728, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.1598, 0, 0.3728, -0.5, 0, 0.5, -0.0358, 0, 0.3728, -0.0358, 0, 0.3728, -0.5, 0, 0.5, -0.2733, 0, 0.1983, -0.2733, 0, 0.1983, -0.5, 0, 0.5, -0.317, 0, 0, -0.317, 0, 0, -0.5, 0, 0.5, -0.317, 0, -0.125, -0.317, 0, -0.125, -0.5, 0, 0.5, -0.379, 0, -0.375, -0.379, 0, -0.375, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.217, -0.05, -0.3948, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.3948, -0.279, 0, -0.3872, -0.217, 0, -0.1372, -0.217, -0.05, -0.3948, -0.155, -0.05, -0.1448, -0.217, -0.05, -0.3948, -0.217, 0, -0.1372, -0.279, 0, -0.3872, 0.279, -0.05, -0.1052, 0.279, 0, -0.3628, 0.341, 0, -0.1128, 0.279, 0, -0.3628, 0.279, -0.05, -0.1052, 0.217, -0.05, -0.3552, 0.217, -0.05, -0.3552, 0.279, 0, -0.5, 0.279, 0, -0.3628, 0.279, 0, -0.5, 0.217, -0.05, -0.3552, 0.217, -0.05, -0.5, -0.217, 0, -0.0109, -0.155, -0.05, -0.1448, -0.155, -0.05, -0.0176, -0.155, -0.05, -0.1448, -0.217, 0, -0.0109, -0.217, 0, -0.1372, -0.1816, 0, 0.1497, -0.155, -0.05, -0.0176, -0.1248, -0.05, 0.1195, -0.155, -0.05, -0.0176, -0.1816, 0, 0.1497, -0.217, 0, -0.0109, 0.279, -0.05, -0.0176, 0.341, 0, -0.1128, 0.341, 0, -0.0109, 0.341, 0, -0.1128, 0.279, -0.05, -0.0176, 0.279, -0.05, -0.1052, 0.3056, 0, 0.1497, 0.279, -0.05, -0.0176, 0.341, 0, -0.0109, 0.279, -0.05, -0.0176, 0.3056, 0, 0.1497, 0.2488, -0.05, 0.1195, -0.0091, 0, 0.2765, -0.1248, -0.05, 0.1195, 0.0075, -0.05, 0.2167, -0.1248, -0.05, 0.1195, -0.0091, 0, 0.2765, -0.1816, 0, 0.1497, 0.1331, 0, 0.2765, 0.2488, -0.05, 0.1195, 0.3056, 0, 0.1497, 0.2488, -0.05, 0.1195, 0.1331, 0, 0.2765, 0.1165, -0.05, 0.2167, -0.0091, 0, 0.2765, 0.1165, -0.05, 0.2167, 0.1331, 0, 0.2765, 0.1165, -0.05, 0.2167, -0.0091, 0, 0.2765, 0.0075, -0.05, 0.2167, 0.2488, -0.05, 0.1195, 0.279, -0.05, -0.1052, 0.279, -0.05, -0.0176, 0.279, -0.05, -0.1052, 0.2488, -0.05, 0.1195, 0.217, -0.05, -0.3552, 0.217, -0.05, -0.3552, 0.2488, -0.05, 0.1195, 0.1165, -0.05, 0.2167, 0.217, -0.05, -0.3552, 0.1165, -0.05, 0.2167, 0.217, -0.05, -0.5, 0.217, -0.05, -0.5, 0.1165, -0.05, 0.2167, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1165, -0.05, 0.2167, 0.0075, -0.05, 0.2167, -0.217, -0.05, -0.5, 0.0075, -0.05, 0.2167, -0.155, -0.05, -0.1448, -0.155, -0.05, -0.1448, 0.0075, -0.05, 0.2167, -0.1248, -0.05, 0.1195, -0.155, -0.05, -0.1448, -0.1248, -0.05, 0.1195, -0.155, -0.05, -0.0176, -0.217, -0.05, -0.5, -0.155, -0.05, -0.1448, -0.217, -0.05, -0.3948, 0.341, 0, -0.1128, 0.379, 0, -0.5, 0.341, 0, -0.0109, 0.379, 0, -0.5, 0.341, 0, -0.1128, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.1128, 0.279, 0, -0.3628, 0.379, 0, -0.375, 0.341, 0, -0.0109, 0.379, 0, -0.5, 0.379, 0, -0.375, 0.3973, 0, 0.1983, 0.341, 0, -0.0109, 0.441, 0, -0.125, 0.3973, 0, 0.1983, 0.379, 0, -0.375, 0.3973, 0, 0.1983, 0.441, 0, -0.125, 0.441, 0, 0, 0.341, 0, -0.0109, 0.3973, 0, 0.1983, 0.3056, 0, 0.1497, 0.3056, 0, 0.1497, 0.3973, 0, 0.1983, 0.1598, 0, 0.3728, 0.3056, 0, 0.1497, 0.1598, 0, 0.3728, 0.1331, 0, 0.2765, 0.1331, 0, 0.2765, 0.1598, 0, 0.3728, -0.0358, 0, 0.3728, 0.1331, 0, 0.2765, -0.0358, 0, 0.3728, -0.0091, 0, 0.2765, -0.0091, 0, 0.2765, -0.0358, 0, 0.3728, -0.1816, 0, 0.1497, -0.1816, 0, 0.1497, -0.0358, 0, 0.3728, -0.2733, 0, 0.1983, -0.1816, 0, 0.1497, -0.2733, 0, 0.1983, -0.217, 0, -0.0109, -0.217, 0, -0.0109, -0.2733, 0, 0.1983, -0.217, 0, -0.1372, -0.217, 0, -0.1372, -0.2733, 0, 0.1983, -0.279, 0, -0.3872, -0.279, 0, -0.3872, -0.2733, 0, 0.1983, -0.317, 0, 0, -0.317, 0, -0.125, -0.279, 0, -0.3872, -0.317, 0, 0, -0.379, 0, -0.5, -0.279, 0, -0.3872, -0.317, 0, -0.125, -0.279, 0, -0.3872, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375 )
+
+[sub_resource type="ConcavePolygonShape" id=2088]
+data = PoolVector3Array( 0.5, -0.05, -0.217, 0.217, -0.05, -0.5, 0.5, -0.05, -0.5, 0.5, -0.05, -0.217, -0.5, -0.05, 0.5, 0.217, -0.05, -0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.5, -0.5, -0.05, 0.5, 0.5, -0.05, 0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, -0.05, 0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.217, -0.05, -0.5, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=2092]
+data = PoolVector3Array( 0.279, -0.05, 0.125, 0.341, 0, -0.125, 0.341, 0, 0.125, 0.341, 0, -0.125, 0.279, -0.05, 0.125, 0.279, -0.05, -0.125, 0.279, -0.05, -0.125, 0.279, 0, -0.375, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, 0.279, 0, 0.375, 0.279, -0.05, 0.125, 0.341, 0, 0.125, 0.279, -0.05, 0.125, 0.279, 0, 0.375, 0.217, -0.05, 0.375, -0.217, 0, -0.125, -0.217, -0.05, -0.375, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.279, 0, 0.5, -0.217, -0.05, 0.375, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.375, 0.279, 0, 0.375, 0.217, -0.05, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.5, -0.217, 0, 0.125, -0.155, -0.05, -0.125, -0.155, -0.05, 0.125, -0.155, -0.05, -0.125, -0.217, 0, 0.125, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.217, -0.05, -0.5, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, -0.279, 0, -0.375, -0.279, 0, -0.5, -0.217, -0.05, 0.375, -0.217, 0, 0.125, -0.155, -0.05, 0.125, -0.217, 0, 0.125, -0.217, -0.05, 0.375, -0.279, 0, 0.375, 0.069, -0.05, -0.191, 0.1443, 0, -0.2187, 0.1652, -0.05, -0.1736, 0.1443, 0, -0.2187, 0.069, -0.05, -0.191, 0.1065, 0, -0.2255, 0.1578, 0, -0.2421, 0.1301, -0.05, -0.3174, 0.2103, -0.05, -0.2517, 0.1301, -0.05, -0.3174, 0.1578, 0, -0.2421, 0.123, 0, -0.2706, 0.1301, -0.05, -0.3174, 0.1028, 0, -0.2624, 0.0593, -0.05, -0.2887, 0.1028, 0, -0.2624, 0.1301, -0.05, -0.3174, 0.123, 0, -0.2706, 0.1028, 0, -0.2624, 0.069, -0.05, -0.191, 0.0593, -0.05, -0.2887, 0.069, -0.05, -0.191, 0.1028, 0, -0.2624, 0.1065, 0, -0.2255, 0.1652, -0.05, -0.1736, 0.1578, 0, -0.2421, 0.2103, -0.05, -0.2517, 0.1578, 0, -0.2421, 0.1652, -0.05, -0.1736, 0.1443, 0, -0.2187, -0.1325, -0.05, 0.3632, -0.0491, 0, 0.313, -0.0113, -0.05, 0.3632, -0.0491, 0, 0.313, -0.1325, -0.05, 0.3632, -0.0949, 0, 0.313, -0.0113, -0.05, 0.3632, -0.0361, 0, 0.2673, 0.0219, -0.05, 0.2471, -0.0361, 0, 0.2673, -0.0113, -0.05, 0.3632, -0.0491, 0, 0.313, -0.1025, 0, 0.2871, -0.0686, -0.05, 0.1822, -0.0632, 0, 0.2479, -0.0686, -0.05, 0.1822, -0.1025, 0, 0.2871, -0.1591, -0.05, 0.2727, -0.0361, 0, 0.2673, -0.0686, -0.05, 0.1822, 0.0219, -0.05, 0.2471, -0.0686, -0.05, 0.1822, -0.0361, 0, 0.2673, -0.0632, 0, 0.2479, -0.1325, -0.05, 0.3632, -0.1025, 0, 0.2871, -0.0949, 0, 0.313, -0.1025, 0, 0.2871, -0.1325, -0.05, 0.3632, -0.1591, -0.05, 0.2727, -0.379, 0, 0.375, -0.317, 0, -0.125, -0.317, 0, 0.125, -0.317, 0, -0.125, -0.379, 0, 0.375, -0.379, 0, -0.375, -0.379, 0, -0.375, -0.379, 0, 0.375, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.379, 0, 0.375, -0.379, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, 0.5, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.379, 0, 0.5, 0.441, 0, 0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, 0.5, 0.379, 0, 0.375, -0.317, 0, -0.125, -0.279, 0, -0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, -0.279, 0, -0.5, -0.279, 0, 0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.279, 0, 0.375, -0.279, 0, 0.5, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.279, 0, -0.5, -0.217, 0, -0.125, -0.279, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.217, 0, -0.125, -0.217, 0, 0.125, -0.317, 0, 0.125, -0.279, 0, 0.5, -0.379, 0, 0.5, -0.317, 0, 0.125, -0.379, 0, 0.5, -0.379, 0, 0.375, 0.341, 0, -0.125, 0.379, 0, -0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.379, 0, -0.5, 0.379, 0, 0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.379, 0, 0.375, 0.379, 0, 0.5, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, 0.375, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.441, 0, -0.125, 0.441, 0, 0.125, 0.341, 0, 0.125, 0.379, 0, 0.5, 0.279, 0, 0.5, 0.341, 0, 0.125, 0.279, 0, 0.5, 0.279, 0, 0.375, 0.1443, 0, -0.2187, 0.123, 0, -0.2706, 0.1578, 0, -0.2421, 0.123, 0, -0.2706, 0.1443, 0, -0.2187, 0.1065, 0, -0.2255, 0.123, 0, -0.2706, 0.1065, 0, -0.2255, 0.1028, 0, -0.2624, -0.0491, 0, 0.313, -0.0632, 0, 0.2479, -0.0361, 0, 0.2673, -0.0632, 0, 0.2479, -0.0491, 0, 0.313, -0.0949, 0, 0.313, -0.0632, 0, 0.2479, -0.0949, 0, 0.313, -0.1025, 0, 0.2871, 0.1301, -0.05, -0.3174, 0.217, -0.05, -0.5, 0.2103, -0.05, -0.2517, 0.217, -0.05, -0.5, 0.1301, -0.05, -0.3174, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1301, -0.05, -0.3174, 0.0593, -0.05, -0.2887, -0.217, -0.05, -0.5, 0.0593, -0.05, -0.2887, 0.0219, -0.05, 0.2471, -0.217, -0.05, -0.5, 0.0219, -0.05, 0.2471, -0.0686, -0.05, 0.1822, -0.217, -0.05, -0.5, -0.0686, -0.05, 0.1822, -0.155, -0.05, -0.125, -0.155, -0.05, -0.125, -0.0686, -0.05, 0.1822, -0.155, -0.05, 0.125, -0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.1591, -0.05, 0.2727, -0.155, -0.05, 0.125, -0.0686, -0.05, 0.1822, -0.155, -0.05, 0.125, -0.1591, -0.05, 0.2727, -0.217, -0.05, 0.375, -0.217, -0.05, 0.375, -0.1591, -0.05, 0.2727, -0.217, -0.05, 0.5, 0.217, -0.05, -0.5, 0.217, -0.05, 0.5, 0.2103, -0.05, -0.2517, 0.217, -0.05, -0.5, 0.217, -0.05, 0.375, 0.217, -0.05, 0.5, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.217, -0.05, -0.5, 0.279, -0.05, -0.125, 0.217, -0.05, 0.375, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.279, -0.05, -0.125, 0.279, -0.05, 0.125, -0.0113, -0.05, 0.3632, 0.217, -0.05, 0.5, -0.217, -0.05, 0.5, 0.2103, -0.05, -0.2517, 0.217, -0.05, 0.5, -0.0113, -0.05, 0.3632, 0.2103, -0.05, -0.2517, -0.0113, -0.05, 0.3632, 0.1652, -0.05, -0.1736, 0.1652, -0.05, -0.1736, -0.0113, -0.05, 0.3632, 0.0219, -0.05, 0.2471, 0.1652, -0.05, -0.1736, 0.0219, -0.05, 0.2471, 0.069, -0.05, -0.191, 0.069, -0.05, -0.191, 0.0219, -0.05, 0.2471, 0.0593, -0.05, -0.2887, -0.0113, -0.05, 0.3632, -0.217, -0.05, 0.5, -0.1325, -0.05, 0.3632, -0.1325, -0.05, 0.3632, -0.217, -0.05, 0.5, -0.1591, -0.05, 0.2727 )
+
+[sub_resource type="ConcavePolygonShape" id=2096]
+data = PoolVector3Array( 0.375, 0, 0.379, 0.5, 0, 0.279, 0.5, 0, 0.379, 0.5, 0, 0.279, 0.375, 0, 0.379, 0.375, 0, 0.279, 0.375, 0, 0.279, 0.375, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.279, 0.125, 0, 0.441, 0.125, 0, 0.341, 0.125, 0, 0.341, 0.125, 0, 0.441, -0.125, 0, 0.441, 0.125, 0, 0.341, -0.125, 0, 0.441, -0.125, 0, 0.341, -0.125, 0, 0.341, -0.125, 0, 0.441, -0.375, 0, 0.379, -0.125, 0, 0.341, -0.375, 0, 0.379, -0.375, 0, 0.279, -0.375, 0, 0.279, -0.375, 0, 0.379, -0.5, 0, 0.379, -0.375, 0, 0.279, -0.5, 0, 0.379, -0.5, 0, 0.279, 0.5, -0.05, -0.217, -0.5, -0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, -0.5, 0.5, -0.05, -0.217, 0.375, -0.05, 0.217, -0.5, -0.05, -0.5, 0.375, -0.05, 0.217, 0.125, -0.05, 0.279, -0.5, -0.05, -0.5, 0.125, -0.05, 0.279, -0.125, -0.05, 0.279, -0.5, -0.05, -0.5, -0.125, -0.05, 0.279, -0.375, -0.05, 0.217, -0.5, -0.05, -0.5, -0.375, -0.05, 0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.375, -0.05, 0.217, 0.5, -0.05, -0.217, -0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.375, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, 0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.375, 0, 0.279, 0.5, -0.05, 0.217, 0.5, 0, 0.279, 0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.125, 0, 0.441, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.125, 0, 0.441, 0.5, 0, 0.379, 0.5, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.379, 0.125, 0, 0.441, -0.5, 0, 0.5, -0.125, 0, 0.441, -0.125, 0, 0.441, -0.5, 0, 0.5, -0.375, 0, 0.379, -0.375, 0, 0.379, -0.5, 0, 0.5, -0.5, 0, 0.379 )
+
+[sub_resource type="ConcavePolygonShape" id=13]
+data = PoolVector3Array( 0.4395, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.4395, -0.379, 0, -0.4395, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.379, 0, -0.4395, -0.4395, 0, -0.379, -0.5, 0, -0.5, -0.4395, 0, -0.379, -0.5, 0, -0.379, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.279, 0, -0.375, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.279, 0, -0.375, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.5, 0, -0.279, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.375, -0.05, -0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.375, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.375, -0.05, -0.217, -0.279, 0, -0.375, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.375, -0.05, -0.217, -0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.375, 0.217, -0.05, -0.375, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.5, -0.05, 0.5, -0.217, -0.05, -0.375, 0.375, -0.05, -0.217, -0.5, -0.05, 0.5, 0.217, -0.05, -0.375, 0.5, -0.05, -0.217, -0.5, -0.05, 0.5, 0.375, -0.05, -0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.5, -0.5, -0.05, 0.5, 0.5, -0.05, 0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, -0.217, -0.05, -0.375, -0.5, -0.05, 0.5, -0.375, -0.05, -0.217, -0.375, -0.05, -0.217, -0.5, -0.05, 0.5, -0.5, -0.05, 0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.375, -0.05, -0.217, -0.279, 0, -0.375, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.279, 0, -0.375, -0.375, 0, -0.279, -0.379, 0, -0.5, -0.375, 0, -0.279, -0.379, 0, -0.4395, -0.379, 0, -0.4395, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.379, 0, -0.4395, -0.5, 0, -0.279, -0.4395, 0, -0.379, -0.4395, 0, -0.379, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.379, 0, -0.4395, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.379, 0, -0.4395, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.375, 0.4395, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.4395, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.4395, 0, -0.379, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279 )
+
+[sub_resource type="ConcavePolygonShape" id=14]
+data = PoolVector3Array( 0.375, 0, 0.379, 0.5, 0, 0.279, 0.5, 0, 0.379, 0.5, 0, 0.279, 0.375, 0, 0.379, 0.375, 0, 0.279, 0.375, 0, 0.279, 0.375, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.279, 0.125, 0, 0.441, 0.125, 0, 0.341, 0.125, 0, 0.341, 0.125, 0, 0.441, -0.125, 0, 0.441, 0.125, 0, 0.341, -0.125, 0, 0.441, -0.125, 0, 0.341, -0.125, 0, 0.341, -0.125, 0, 0.441, -0.375, 0, 0.379, -0.125, 0, 0.341, -0.375, 0, 0.379, -0.375, 0, 0.279, -0.375, 0, 0.279, -0.375, 0, 0.379, -0.5, 0, 0.379, -0.375, 0, 0.279, -0.5, 0, 0.379, -0.5, 0, 0.279, 0.375, -0.05, 0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.5, -0.05, -0.217, 0.375, -0.05, 0.217, 0.375, -0.05, -0.217, 0.375, -0.05, -0.217, 0.375, -0.05, 0.217, 0.125, -0.05, 0.279, 0.375, -0.05, -0.217, 0.125, -0.05, 0.279, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.125, -0.05, 0.279, 0.217, -0.05, -0.5, 0.217, -0.05, -0.5, 0.125, -0.05, 0.279, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.125, -0.05, 0.279, -0.125, -0.05, 0.279, -0.217, -0.05, -0.5, -0.125, -0.05, 0.279, -0.217, -0.05, -0.375, -0.217, -0.05, -0.375, -0.125, -0.05, 0.279, -0.375, -0.05, 0.217, -0.217, -0.05, -0.375, -0.375, -0.05, 0.217, -0.375, -0.05, -0.217, -0.375, -0.05, -0.217, -0.375, -0.05, 0.217, -0.5, -0.05, 0.217, -0.375, -0.05, -0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.279, 0, -0.375, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.279, 0, -0.375, -0.375, 0, -0.279, -0.379, 0, -0.5, -0.375, 0, -0.279, -0.379, 0, -0.4395, -0.379, 0, -0.4395, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.379, 0, -0.4395, -0.5, 0, -0.279, -0.4395, 0, -0.379, -0.4395, 0, -0.379, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.379, 0, -0.4395, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.379, 0, -0.4395, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.375, 0.4395, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.4395, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.4395, 0, -0.379, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, -0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.375, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, 0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.375, 0, 0.279, 0.5, -0.05, 0.217, 0.5, 0, 0.279, 0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.279, 0, -0.375, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.279, 0, -0.375, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.5, 0, -0.279, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.375, -0.05, -0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.375, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.375, -0.05, -0.217, -0.279, 0, -0.375, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.375, -0.05, -0.217, -0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.375, 0.4395, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.4395, 0, -0.379, 0.379, 0, -0.4395, 0.125, 0, 0.441, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.125, 0, 0.441, 0.5, 0, 0.379, 0.5, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.379, 0.125, 0, 0.441, -0.5, 0, 0.5, -0.125, 0, 0.441, -0.125, 0, 0.441, -0.5, 0, 0.5, -0.375, 0, 0.379, -0.375, 0, 0.379, -0.5, 0, 0.5, -0.5, 0, 0.379, -0.379, 0, -0.4395, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.379, 0, -0.4395, -0.4395, 0, -0.379, -0.5, 0, -0.5, -0.4395, 0, -0.379, -0.5, 0, -0.379 )
+
+[sub_resource type="ConcavePolygonShape" id=15]
+data = PoolVector3Array( 0.279, -0.05, 0.125, 0.341, 0, -0.125, 0.341, 0, 0.125, 0.341, 0, -0.125, 0.279, -0.05, 0.125, 0.279, -0.05, -0.125, 0.279, -0.05, -0.125, 0.279, 0, -0.375, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, 0.279, 0, 0.375, 0.279, -0.05, 0.125, 0.341, 0, 0.125, 0.279, -0.05, 0.125, 0.279, 0, 0.375, 0.217, -0.05, 0.375, -0.217, 0, -0.125, -0.217, -0.05, -0.375, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.279, 0, 0.5, -0.217, -0.05, 0.375, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.375, 0.279, 0, 0.375, 0.217, -0.05, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.5, -0.217, 0, 0.125, -0.155, -0.05, -0.125, -0.155, -0.05, 0.125, -0.155, -0.05, -0.125, -0.217, 0, 0.125, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.217, -0.05, -0.5, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, -0.279, 0, -0.375, -0.279, 0, -0.5, -0.217, -0.05, 0.375, -0.217, 0, 0.125, -0.155, -0.05, 0.125, -0.217, 0, 0.125, -0.217, -0.05, 0.375, -0.279, 0, 0.375, -0.379, 0, 0.375, -0.317, 0, -0.125, -0.317, 0, 0.125, -0.317, 0, -0.125, -0.379, 0, 0.375, -0.379, 0, -0.375, -0.379, 0, -0.375, -0.379, 0, 0.375, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.379, 0, 0.375, -0.379, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, 0.5, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.379, 0, 0.5, 0.441, 0, 0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, 0.5, 0.379, 0, 0.375, -0.155, -0.05, -0.125, 0.217, -0.05, -0.5, -0.155, -0.05, 0.125, 0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, 0.217, -0.05, -0.5, -0.217, -0.05, 0.5, -0.155, -0.05, 0.125, 0.217, -0.05, -0.5, 0.217, -0.05, 0.5, -0.217, -0.05, 0.5, 0.217, -0.05, -0.5, 0.217, -0.05, 0.375, 0.217, -0.05, 0.5, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.217, -0.05, -0.5, 0.279, -0.05, -0.125, 0.217, -0.05, 0.375, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.279, -0.05, -0.125, 0.279, -0.05, 0.125, -0.155, -0.05, 0.125, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.317, 0, -0.125, -0.279, 0, -0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, -0.279, 0, -0.5, -0.279, 0, 0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.279, 0, 0.375, -0.279, 0, 0.5, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.279, 0, -0.5, -0.217, 0, -0.125, -0.279, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.217, 0, -0.125, -0.217, 0, 0.125, -0.317, 0, 0.125, -0.279, 0, 0.5, -0.379, 0, 0.5, -0.317, 0, 0.125, -0.379, 0, 0.5, -0.379, 0, 0.375, 0.341, 0, -0.125, 0.379, 0, -0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.379, 0, -0.5, 0.379, 0, 0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.379, 0, 0.375, 0.379, 0, 0.5, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, 0.375, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.441, 0, -0.125, 0.441, 0, 0.125, 0.341, 0, 0.125, 0.379, 0, 0.5, 0.279, 0, 0.5, 0.341, 0, 0.125, 0.279, 0, 0.5, 0.279, 0, 0.375 )
+
+[sub_resource type="ConcavePolygonShape" id=2109]
+data = PoolVector3Array( 0.3412, 0, -0.0274, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.3412, 0, -0.0274, 0.2276, 0, -0.2225, 0.5, 0, -0.5, 0.2276, 0, -0.2225, 0.072, 0, -0.3781, 0.5, 0, -0.5, 0.072, 0, -0.3781, -0.5, 0, -0.5, 0.3412, 0, -0.0274, 0.5, 0, 0.5, 0.3976, 0, 0.19, 0.2276, 0, -0.2225, 0.3412, 0, -0.0274, 0.2609, 0, -0.1117, -0.5, 0, -0.5, 0.072, 0, -0.3781, -0.1405, 0, -0.3211, -0.5, 0, -0.5, -0.1405, 0, -0.3211, -0.2155, 0, -0.2071, -0.5, 0, -0.5, -0.2155, 0, -0.2071, -0.253, 0, -0.0831, -0.5, 0, -0.5, -0.253, 0, -0.0831, -0.3512, 0, 0.0428, -0.5, 0, -0.5, -0.3512, 0, 0.0428, -0.3512, 0, 0.2428, 0.5, 0, 0.5, 0.2494, 0, 0.3525, 0.3976, 0, 0.19, 0.2494, 0, 0.3525, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.3512, 0, 0.2428, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.2494, 0, 0.3525, -0.5, 0, 0.5, 0.0498, 0, 0.316, 0.0498, 0, 0.316, -0.5, 0, 0.5, -0.0681, 0, 0.3109, -0.0681, 0, 0.3109, -0.5, 0, 0.5, -0.178, 0, 0.3428, -0.178, 0, 0.3428, -0.5, 0, 0.5, -0.3512, 0, 0.2428, 0.2908, 0, 0.1635, 0.2609, 0, -0.1117, 0.3412, 0, -0.0274, 0.2609, 0, -0.1117, 0.2908, 0, 0.1635, 0.2538, 0, 0.0212, 0.2609, 0, -0.1117, 0.2538, 0, 0.0212, 0.2276, 0, -0.2225, 0.2276, 0, -0.2225, 0.2538, 0, 0.0212, 0.1749, 0, -0.0617, 0.2276, 0, -0.2225, 0.1749, 0, -0.0617, 0.1419, 0, -0.1713, 0.2276, 0, -0.2225, 0.1419, 0, -0.1713, 0.072, 0, -0.3781, 0.072, 0, -0.3781, 0.1419, 0, -0.1713, 0.0431, 0, -0.2701, 0.072, 0, -0.3781, 0.0431, 0, -0.2701, -0.1405, 0, -0.3211, -0.1405, 0, -0.3211, 0.0431, 0, -0.2701, -0.0799, 0, -0.2372, -0.1405, 0, -0.3211, -0.0799, 0, -0.2372, -0.1269, 0, -0.1657, -0.1405, 0, -0.3211, -0.1269, 0, -0.1657, -0.1656, 0, -0.0378, -0.1405, 0, -0.3211, -0.1656, 0, -0.0378, -0.2155, 0, -0.2071, -0.2155, 0, -0.2071, -0.1656, 0, -0.0378, -0.2544, 0, 0.0761, -0.2155, 0, -0.2071, -0.2544, 0, 0.0761, -0.253, 0, -0.0831, -0.253, 0, -0.0831, -0.2544, 0, 0.0761, -0.3512, 0, 0.0428, -0.3512, 0, 0.0428, -0.2544, 0, 0.0761, -0.2544, 0, 0.1869, -0.2544, 0, 0.1869, -0.3512, 0, 0.2428, -0.3512, 0, 0.0428, -0.2544, 0, 0.1869, -0.178, 0, 0.3428, -0.3512, 0, 0.2428, -0.1653, 0, 0.2384, -0.178, 0, 0.3428, -0.2544, 0, 0.1869, -0.0798, 0, 0.2135, -0.178, 0, 0.3428, -0.1653, 0, 0.2384, -0.0798, 0, 0.2135, -0.0681, 0, 0.3109, -0.178, 0, 0.3428, -0.0798, 0, 0.2135, 0.0498, 0, 0.316, -0.0681, 0, 0.3109, 0.0607, 0, 0.2196, 0.0498, 0, 0.316, -0.0798, 0, 0.2135, 0.214, 0, 0.2476, 0.0498, 0, 0.316, 0.0607, 0, 0.2196, 0.214, 0, 0.2476, 0.2494, 0, 0.3525, 0.0498, 0, 0.316, 0.2908, 0, 0.1635, 0.2494, 0, 0.3525, 0.214, 0, 0.2476, 0.3412, 0, -0.0274, 0.2494, 0, 0.3525, 0.2908, 0, 0.1635, 0.2494, 0, 0.3525, 0.3412, 0, -0.0274, 0.3976, 0, 0.19, 0.1748, -0.05, 0.1959, 0.2067, -0.05, 0.0147, 0.2363, -0.05, 0.1286, 0.2067, -0.05, 0.0147, 0.1748, -0.05, 0.1959, 0.1435, -0.05, -0.0516, 0.1435, -0.05, -0.0516, 0.1748, -0.05, 0.1959, 0.0522, -0.05, 0.1734, 0.1435, -0.05, -0.0516, 0.0522, -0.05, 0.1734, 0.1172, -0.05, -0.1393, 0.1172, -0.05, -0.1393, 0.0522, -0.05, 0.1734, 0.0381, -0.05, -0.2183, 0.0381, -0.05, -0.2183, 0.0522, -0.05, 0.1734, -0.0602, -0.05, 0.1685, 0.0381, -0.05, -0.2183, -0.0602, -0.05, 0.1685, -0.0603, -0.05, -0.192, -0.0603, -0.05, -0.192, -0.0602, -0.05, 0.1685, -0.1286, -0.05, 0.1884, -0.0603, -0.05, -0.192, -0.1286, -0.05, 0.1884, -0.0979, -0.05, -0.1348, -0.0979, -0.05, -0.1348, -0.1286, -0.05, 0.1884, -0.1288, -0.05, -0.0325, -0.1288, -0.05, -0.0325, -0.1286, -0.05, 0.1884, -0.1999, -0.05, 0.1473, -0.1288, -0.05, -0.0325, -0.1999, -0.05, 0.1473, -0.1999, -0.05, 0.0586, 0.1748, -0.05, 0.1959, 0.0607, 0, 0.2196, 0.0522, -0.05, 0.1734, 0.0607, 0, 0.2196, 0.1748, -0.05, 0.1959, 0.214, 0, 0.2476, -0.0603, -0.05, -0.192, -0.1269, 0, -0.1657, -0.0799, 0, -0.2372, -0.1269, 0, -0.1657, -0.0603, -0.05, -0.192, -0.0979, -0.05, -0.1348, 0.1172, -0.05, -0.1393, 0.0431, 0, -0.2701, 0.1419, 0, -0.1713, 0.0431, 0, -0.2701, 0.1172, -0.05, -0.1393, 0.0381, -0.05, -0.2183, -0.1999, -0.05, 0.1473, -0.2544, 0, 0.0761, -0.1999, -0.05, 0.0586, -0.2544, 0, 0.0761, -0.1999, -0.05, 0.1473, -0.2544, 0, 0.1869, 0.2538, 0, 0.0212, 0.1435, -0.05, -0.0516, 0.1749, 0, -0.0617, 0.1435, -0.05, -0.0516, 0.2538, 0, 0.0212, 0.2067, -0.05, 0.0147, -0.1653, 0, 0.2384, -0.1999, -0.05, 0.1473, -0.1286, -0.05, 0.1884, -0.1999, -0.05, 0.1473, -0.1653, 0, 0.2384, -0.2544, 0, 0.1869, -0.0602, -0.05, 0.1685, -0.1653, 0, 0.2384, -0.1286, -0.05, 0.1884, -0.1653, 0, 0.2384, -0.0602, -0.05, 0.1685, -0.0798, 0, 0.2135, 0.214, 0, 0.2476, 0.2363, -0.05, 0.1286, 0.2908, 0, 0.1635, 0.2363, -0.05, 0.1286, 0.214, 0, 0.2476, 0.1748, -0.05, 0.1959, -0.0979, -0.05, -0.1348, -0.1656, 0, -0.0378, -0.1269, 0, -0.1657, -0.1656, 0, -0.0378, -0.0979, -0.05, -0.1348, -0.1288, -0.05, -0.0325, 0.2538, 0, 0.0212, 0.2363, -0.05, 0.1286, 0.2067, -0.05, 0.0147, 0.2363, -0.05, 0.1286, 0.2538, 0, 0.0212, 0.2908, 0, 0.1635, -0.1288, -0.05, -0.0325, -0.2544, 0, 0.0761, -0.1656, 0, -0.0378, -0.2544, 0, 0.0761, -0.1288, -0.05, -0.0325, -0.1999, -0.05, 0.0586, 0.0381, -0.05, -0.2183, -0.0799, 0, -0.2372, 0.0431, 0, -0.2701, -0.0799, 0, -0.2372, 0.0381, -0.05, -0.2183, -0.0603, -0.05, -0.192, 0.0522, -0.05, 0.1734, -0.0798, 0, 0.2135, -0.0602, -0.05, 0.1685, -0.0798, 0, 0.2135, 0.0522, -0.05, 0.1734, 0.0607, 0, 0.2196, 0.1749, 0, -0.0617, 0.1172, -0.05, -0.1393, 0.1419, 0, -0.1713, 0.1172, -0.05, -0.1393, 0.1749, 0, -0.0617, 0.1435, -0.05, -0.0516 )
+
+[sub_resource type="ConcavePolygonShape" id=2113]
+data = PoolVector3Array( 0.1746, 0, -0.1105, 0.1926, -0.05, -0.3144, 0.2525, 0, -0.2984, 0.1926, -0.05, -0.3144, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.2984, 0, 0.2525, -0.1415, -0.05, 0.1209, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.2984, 0, 0.2525, -0.3144, -0.05, 0.1926, -0.1105, 0, 0.1746, 0.007, -0.05, 0.007, 0.0508, 0, 0.0508, 0.007, -0.05, 0.007, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.2549, -0.05, -0.3585, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.2549, -0.05, -0.3585, -0.3086, 0, -0.3895, -0.3585, -0.05, -0.2549, -0.3086, 0, -0.3895, -0.2549, -0.05, -0.3585, -0.3086, 0, -0.3895, -0.3585, -0.05, -0.2549, -0.3895, 0, -0.3086, 0.2525, 0, -0.2984, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.2525, 0, -0.2984, 0.1926, -0.05, -0.3144, -0.5, 0, 0.279, -0.3144, -0.05, 0.1926, -0.2984, 0, 0.2525, -0.3144, -0.05, 0.1926, -0.5, 0, 0.279, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.3895, 0, -0.3086, -0.3585, -0.05, -0.2549, -0.3895, 0, -0.3086, -0.5, -0.05, -0.217, -0.5, 0, -0.279, 0.0508, 0, 0.0508, 0.1209, -0.05, -0.1415, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, 0.0508, 0, 0.0508, 0.007, -0.05, 0.007, 0.349, 0, -0.2725, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.349, 0, -0.2725, 0.2612, 0, -0.0605, 0.279, 0, -0.5, 0.2612, 0, -0.0605, 0.2525, 0, -0.2984, 0.2525, 0, -0.2984, 0.2612, 0, -0.0605, 0.1215, 0, 0.1215, 0.2525, 0, -0.2984, 0.1215, 0, 0.1215, 0.1746, 0, -0.1105, 0.1746, 0, -0.1105, 0.1215, 0, 0.1215, 0.0508, 0, 0.0508, 0.0508, 0, 0.0508, 0.1215, 0, 0.1215, -0.0605, 0, 0.2612, 0.0508, 0, 0.0508, -0.0605, 0, 0.2612, -0.1105, 0, 0.1746, -0.1105, 0, 0.1746, -0.0605, 0, 0.2612, -0.2725, 0, 0.349, -0.1105, 0, 0.1746, -0.2725, 0, 0.349, -0.2984, 0, 0.2525, -0.2984, 0, 0.2525, -0.2725, 0, 0.349, -0.5, 0, 0.379, -0.2984, 0, 0.2525, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.3086, 0, -0.3895, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.3086, 0, -0.3895, -0.3895, 0, -0.3086, -0.379, 0, -0.5, -0.3895, 0, -0.3086, -0.4174, 0, -0.4174, -0.4174, 0, -0.4174, -0.3895, 0, -0.3086, -0.5, 0, -0.279, -0.4174, 0, -0.4174, -0.5, 0, -0.279, -0.5, 0, -0.379, -0.4174, 0, -0.4174, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.4174, 0, -0.4174, -0.5, 0, -0.379, -0.0605, 0, 0.2612, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.0605, 0, 0.2612, 0.1215, 0, 0.1215, 0.5, 0, 0.5, 0.1215, 0, 0.1215, 0.2612, 0, -0.0605, 0.5, 0, 0.5, 0.2612, 0, -0.0605, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.2612, 0, -0.0605, 0.349, 0, -0.2725, 0.5, 0, -0.5, 0.349, 0, -0.2725, 0.379, 0, -0.5, -0.0605, 0, 0.2612, -0.5, 0, 0.5, -0.2725, 0, 0.349, -0.2725, 0, 0.349, -0.5, 0, 0.5, -0.5, 0, 0.379, 0.1926, -0.05, -0.3144, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1926, -0.05, -0.3144, 0.1209, -0.05, -0.1415, -0.217, -0.05, -0.5, 0.1209, -0.05, -0.1415, 0.007, -0.05, 0.007, -0.217, -0.05, -0.5, 0.007, -0.05, 0.007, -0.1415, -0.05, 0.1209, -0.217, -0.05, -0.5, -0.1415, -0.05, 0.1209, -0.3144, -0.05, 0.1926, -0.217, -0.05, -0.5, -0.3144, -0.05, 0.1926, -0.2549, -0.05, -0.3585, -0.2549, -0.05, -0.3585, -0.3144, -0.05, 0.1926, -0.3585, -0.05, -0.2549, -0.3585, -0.05, -0.2549, -0.3144, -0.05, 0.1926, -0.5, -0.05, 0.217, -0.3585, -0.05, -0.2549, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=18]
+data = PoolVector3Array( 0.1746, 0, -0.1105, 0.1926, -0.05, -0.3144, 0.2525, 0, -0.2984, 0.1926, -0.05, -0.3144, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.2984, 0, 0.2525, -0.1415, -0.05, 0.1209, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.2984, 0, 0.2525, -0.3144, -0.05, 0.1926, -0.1105, 0, 0.1746, 0.007, -0.05, 0.007, 0.0508, 0, 0.0508, 0.007, -0.05, 0.007, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.2549, -0.05, -0.3585, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.2549, -0.05, -0.3585, -0.3086, 0, -0.3895, -0.3585, -0.05, -0.2549, -0.3086, 0, -0.3895, -0.2549, -0.05, -0.3585, -0.3086, 0, -0.3895, -0.3585, -0.05, -0.2549, -0.3895, 0, -0.3086, 0.2525, 0, -0.2984, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.2525, 0, -0.2984, 0.1926, -0.05, -0.3144, -0.5, 0, 0.279, -0.3144, -0.05, 0.1926, -0.2984, 0, 0.2525, -0.3144, -0.05, 0.1926, -0.5, 0, 0.279, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.3895, 0, -0.3086, -0.3585, -0.05, -0.2549, -0.3895, 0, -0.3086, -0.5, -0.05, -0.217, -0.5, 0, -0.279, 0.0508, 0, 0.0508, 0.1209, -0.05, -0.1415, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, 0.0508, 0, 0.0508, 0.007, -0.05, 0.007, -0.3086, 0, -0.3895, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.3086, 0, -0.3895, -0.3895, 0, -0.3086, -0.379, 0, -0.5, -0.3895, 0, -0.3086, -0.4174, 0, -0.4174, -0.4174, 0, -0.4174, -0.3895, 0, -0.3086, -0.5, 0, -0.279, -0.4174, 0, -0.4174, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.366, 0, 0, 0.379, 0, -0.5, 0.4659, 0, -0.2412, 0.379, 0, -0.5, 0.366, 0, 0, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.366, 0, 0, 0.2071, 0, 0.2071, 0.279, 0, -0.5, 0.2071, 0, 0.2071, 0.2525, 0, -0.2984, 0.2525, 0, -0.2984, 0.2071, 0, 0.2071, 0.1746, 0, -0.1105, 0.1746, 0, -0.1105, 0.2071, 0, 0.2071, 0, 0, 0.366, 0.1746, 0, -0.1105, 0, 0, 0.366, 0.0508, 0, 0.0508, 0.0508, 0, 0.0508, 0, 0, 0.366, -0.1105, 0, 0.1746, -0.1105, 0, 0.1746, 0, 0, 0.366, -0.2412, 0, 0.4659, -0.1105, 0, 0.1746, -0.2412, 0, 0.4659, -0.2984, 0, 0.2525, -0.2984, 0, 0.2525, -0.2412, 0, 0.4659, -0.5, 0, 0.379, -0.2984, 0, 0.2525, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.4174, 0, -0.4174, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.4174, 0, -0.4174, -0.5, 0, -0.379, 0.4659, 0, -0.2412, 0.379, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.4659, 0, -0.2412, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.366, 0, 0, 0.4659, 0, -0.2412, 0.5, 0, 0.5, 0.2071, 0, 0.2071, 0.366, 0, 0, 0.5, 0, 0.5, 0, 0, 0.366, 0.2071, 0, 0.2071, 0.5, 0, 0.5, -0.2412, 0, 0.4659, 0, 0, 0.366, -0.2412, 0, 0.4659, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.2412, 0, 0.4659, -0.5, 0, 0.5, -0.5, 0, 0.379, 0.1926, -0.05, -0.3144, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1926, -0.05, -0.3144, 0.1209, -0.05, -0.1415, -0.217, -0.05, -0.5, 0.1209, -0.05, -0.1415, 0.007, -0.05, 0.007, -0.217, -0.05, -0.5, 0.007, -0.05, 0.007, -0.1415, -0.05, 0.1209, -0.217, -0.05, -0.5, -0.1415, -0.05, 0.1209, -0.3144, -0.05, 0.1926, -0.217, -0.05, -0.5, -0.3144, -0.05, 0.1926, -0.2549, -0.05, -0.3585, -0.2549, -0.05, -0.3585, -0.3144, -0.05, 0.1926, -0.3585, -0.05, -0.2549, -0.3585, -0.05, -0.2549, -0.3144, -0.05, 0.1926, -0.5, -0.05, 0.217, -0.3585, -0.05, -0.2549, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=19]
+data = PoolVector3Array( 0.1746, 0, -0.1105, 0.1926, -0.05, -0.3144, 0.2525, 0, -0.2984, 0.1926, -0.05, -0.3144, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, -0.2984, 0, 0.2525, -0.1415, -0.05, 0.1209, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, -0.2984, 0, 0.2525, -0.3144, -0.05, 0.1926, -0.1105, 0, 0.1746, 0.007, -0.05, 0.007, 0.0508, 0, 0.0508, 0.007, -0.05, 0.007, -0.1105, 0, 0.1746, -0.1415, -0.05, 0.1209, 0.2525, 0, -0.2984, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.2525, 0, -0.2984, 0.1926, -0.05, -0.3144, -0.5, 0, 0.279, -0.3144, -0.05, 0.1926, -0.2984, 0, 0.2525, -0.3144, -0.05, 0.1926, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.0508, 0, 0.0508, 0.1209, -0.05, -0.1415, 0.1746, 0, -0.1105, 0.1209, -0.05, -0.1415, 0.0508, 0, 0.0508, 0.007, -0.05, 0.007, 0.349, 0, -0.2725, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.349, 0, -0.2725, 0.2612, 0, -0.0605, 0.279, 0, -0.5, 0.2612, 0, -0.0605, 0.2525, 0, -0.2984, 0.2525, 0, -0.2984, 0.2612, 0, -0.0605, 0.1215, 0, 0.1215, 0.2525, 0, -0.2984, 0.1215, 0, 0.1215, 0.1746, 0, -0.1105, 0.1746, 0, -0.1105, 0.1215, 0, 0.1215, 0.0508, 0, 0.0508, 0.0508, 0, 0.0508, 0.1215, 0, 0.1215, -0.0605, 0, 0.2612, 0.0508, 0, 0.0508, -0.0605, 0, 0.2612, -0.1105, 0, 0.1746, -0.1105, 0, 0.1746, -0.0605, 0, 0.2612, -0.2725, 0, 0.349, -0.1105, 0, 0.1746, -0.2725, 0, 0.349, -0.2984, 0, 0.2525, -0.2984, 0, 0.2525, -0.2725, 0, 0.349, -0.5, 0, 0.379, -0.2984, 0, 0.2525, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.0605, 0, 0.2612, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.0605, 0, 0.2612, 0.1215, 0, 0.1215, 0.5, 0, 0.5, 0.1215, 0, 0.1215, 0.2612, 0, -0.0605, 0.5, 0, 0.5, 0.2612, 0, -0.0605, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.2612, 0, -0.0605, 0.349, 0, -0.2725, 0.5, 0, -0.5, 0.349, 0, -0.2725, 0.379, 0, -0.5, -0.0605, 0, 0.2612, -0.5, 0, 0.5, -0.2725, 0, 0.349, -0.2725, 0, 0.349, -0.5, 0, 0.5, -0.5, 0, 0.379, 0.1926, -0.05, -0.3144, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1926, -0.05, -0.3144, 0.1209, -0.05, -0.1415, -0.217, -0.05, -0.5, 0.1209, -0.05, -0.1415, 0.007, -0.05, 0.007, -0.217, -0.05, -0.5, 0.007, -0.05, 0.007, -0.1415, -0.05, 0.1209, -0.217, -0.05, -0.5, -0.1415, -0.05, 0.1209, -0.3144, -0.05, 0.1926, -0.217, -0.05, -0.5, -0.3144, -0.05, 0.1926, -0.5, -0.05, -0.5, -0.5, -0.05, -0.5, -0.3144, -0.05, 0.1926, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=20]
+data = PoolVector3Array( 0.379, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.379, 0, -0.379, 0.379, 0, -0.5, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, 0.24, -0.05, -0.2821, 0.279, 0, -0.375, 0.293, 0, -0.3186, 0.279, 0, -0.375, 0.24, -0.05, -0.2821, 0.217, -0.05, -0.375, 0.24, -0.05, -0.2821, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.293, 0, -0.3186, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.379, 0.379, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.293, 0, -0.3186, 0.279, 0, -0.5, 0.293, 0, -0.3186, 0.279, 0, -0.375, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.217, -0.05, -0.5, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, -0.05, 0.217, 0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.5, -0.05, 0.5, 0.217, -0.05, -0.5, 0.24, -0.05, -0.2821, -0.5, -0.05, 0.5, 0.217, -0.05, -0.375, 0.375, -0.05, -0.217, -0.5, -0.05, 0.5, 0.24, -0.05, -0.2821, 0.5, -0.05, -0.217, -0.5, -0.05, 0.5, 0.375, -0.05, -0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.5, -0.5, -0.05, 0.5, 0.5, -0.05, 0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=2126]
+data = PoolVector3Array( 0.379, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.379, 0, -0.379, 0.379, 0, -0.5, -0.379, 0, -0.379, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.379, 0, -0.379, -0.5, 0, -0.379, -0.5, 0, 0.5, -0.379, 0, 0.379, -0.379, 0, 0.5, -0.379, 0, 0.379, -0.5, 0, 0.5, -0.5, 0, 0.379, 0.5, 0, 0.5, 0.379, 0, 0.379, 0.5, 0, 0.379, 0.379, 0, 0.379, 0.5, 0, 0.5, 0.379, 0, 0.5, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, -0.375, -0.05, -0.217, -0.5, 0, -0.279, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.375, -0.05, -0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.375, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.24, -0.05, -0.2821, -0.279, 0, -0.375, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.24, -0.05, -0.2821, -0.293, 0, -0.3186, 0.24, -0.05, -0.2821, 0.279, 0, -0.375, 0.293, 0, -0.3186, 0.279, 0, -0.375, 0.24, -0.05, -0.2821, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.293, 0, -0.3186, -0.24, -0.05, -0.2821, -0.293, 0, -0.3186, -0.375, -0.05, -0.217, -0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.293, 0, -0.3186, -0.279, 0, 0.5, -0.217, -0.05, 0.375, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, 0.375, 0, 0.279, 0.24, -0.05, 0.2821, 0.375, -0.05, 0.217, 0.24, -0.05, 0.2821, 0.375, 0, 0.279, 0.293, 0, 0.3186, -0.279, 0, 0.375, -0.24, -0.05, 0.2821, -0.217, -0.05, 0.375, -0.24, -0.05, 0.2821, -0.279, 0, 0.375, -0.293, 0, 0.3186, 0.279, 0, 0.375, 0.24, -0.05, 0.2821, 0.293, 0, 0.3186, 0.24, -0.05, 0.2821, 0.279, 0, 0.375, 0.217, -0.05, 0.375, -0.5, 0, 0.279, -0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.5, -0.05, 0.217, 0.5, 0, 0.279, 0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, 0.279, 0, 0.5, 0.217, -0.05, 0.375, 0.279, 0, 0.375, 0.217, -0.05, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.5, -0.293, 0, 0.3186, -0.375, -0.05, 0.217, -0.24, -0.05, 0.2821, -0.375, -0.05, 0.217, -0.293, 0, 0.3186, -0.375, 0, 0.279, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.379, 0.379, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.5, 0.379, 0, -0.5, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.293, 0, -0.3186, 0.279, 0, -0.5, 0.293, 0, -0.3186, 0.279, 0, -0.375, -0.279, 0, -0.375, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.279, 0, -0.375, -0.293, 0, -0.3186, -0.379, 0, -0.5, -0.293, 0, -0.3186, -0.375, 0, -0.279, -0.379, 0, -0.5, -0.375, 0, -0.279, -0.379, 0, -0.379, -0.379, 0, -0.379, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.379, 0, -0.379, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.5, 0, 0.379, 0.375, 0, 0.279, 0.5, 0, 0.279, 0.375, 0, 0.279, 0.5, 0, 0.379, 0.379, 0, 0.379, 0.375, 0, 0.279, 0.379, 0, 0.379, 0.379, 0, 0.5, 0.375, 0, 0.279, 0.379, 0, 0.5, 0.279, 0, 0.5, 0.375, 0, 0.279, 0.279, 0, 0.5, 0.293, 0, 0.3186, 0.293, 0, 0.3186, 0.279, 0, 0.5, 0.279, 0, 0.375, -0.379, 0, 0.5, -0.279, 0, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, -0.379, 0, 0.5, -0.293, 0, 0.3186, -0.293, 0, 0.3186, -0.379, 0, 0.5, -0.375, 0, 0.279, -0.375, 0, 0.279, -0.379, 0, 0.5, -0.379, 0, 0.379, -0.375, 0, 0.279, -0.379, 0, 0.379, -0.5, 0, 0.279, -0.5, 0, 0.279, -0.379, 0, 0.379, -0.5, 0, 0.379, 0.217, -0.05, -0.375, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.217, -0.05, 0.375, -0.217, -0.05, 0.375, 0.217, -0.05, -0.375, -0.217, -0.05, 0.5, -0.217, -0.05, -0.5, -0.217, -0.05, 0.375, -0.217, -0.05, -0.375, -0.217, -0.05, -0.375, -0.217, -0.05, 0.375, -0.24, -0.05, 0.2821, -0.217, -0.05, -0.375, -0.24, -0.05, 0.2821, -0.24, -0.05, -0.2821, -0.24, -0.05, -0.2821, -0.24, -0.05, 0.2821, -0.375, -0.05, 0.217, -0.24, -0.05, -0.2821, -0.375, -0.05, 0.217, -0.375, -0.05, -0.217, -0.375, -0.05, -0.217, -0.375, -0.05, 0.217, -0.5, -0.05, 0.217, -0.375, -0.05, -0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.217, -0.05, -0.375, 0.217, -0.05, 0.5, -0.217, -0.05, 0.5, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.217, -0.05, 0.5, 0.24, -0.05, -0.2821, 0.217, -0.05, 0.375, 0.217, -0.05, -0.375, 0.24, -0.05, -0.2821, 0.24, -0.05, 0.2821, 0.217, -0.05, 0.375, 0.375, -0.05, -0.217, 0.24, -0.05, 0.2821, 0.24, -0.05, -0.2821, 0.375, -0.05, -0.217, 0.375, -0.05, 0.217, 0.24, -0.05, 0.2821, 0.5, -0.05, -0.217, 0.375, -0.05, 0.217, 0.375, -0.05, -0.217, 0.375, -0.05, 0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=2130]
+data = PoolVector3Array( 0.279, -0.05, -0.125, 0.279, 0, -0.375, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, -0.217, 0, -0.125, -0.217, -0.05, -0.375, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.279, 0, -0.375, -0.217, -0.05, -0.5, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, -0.279, 0, -0.375, -0.279, 0, -0.5, -0.186, -0.025, 0.125, -0.217, 0, -0.125, -0.155, -0.05, -0.125, -0.217, 0, -0.125, -0.186, -0.025, 0.125, -0.217, 0, 0.125, -0.186, -0.025, 0.125, -0.279, 0, 0.375, -0.217, 0, 0.125, 0.31, -0.025, 0.125, 0.341, 0, -0.125, 0.341, 0, 0.125, 0.341, 0, -0.125, 0.31, -0.025, 0.125, 0.279, -0.05, -0.125, 0.341, 0, 0.125, 0.279, 0, 0.375, 0.31, -0.025, 0.125, 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.5, 0, 0.5, 0.329, 0, 0.375, 0.441, 0, 0.125, 0.329, 0, 0.375, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.329, 0, 0.375, -0.5, 0, 0.5, 0.279, 0, 0.375, 0.279, 0, 0.375, -0.5, 0, 0.5, -0.279, 0, 0.375, -0.279, 0, 0.375, -0.5, 0, 0.5, -0.329, 0, 0.375, -0.329, 0, 0.375, -0.5, 0, 0.5, -0.379, 0, -0.375, -0.317, 0, -0.125, -0.329, 0, 0.375, -0.379, 0, -0.375, -0.329, 0, 0.375, -0.317, 0, -0.125, -0.317, 0, 0.125, -0.379, 0, -0.375, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.155, -0.05, -0.125, 0.217, -0.05, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, -0.155, -0.05, -0.125, 0.217, -0.05, -0.5, 0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.186, -0.025, 0.125, 0.279, -0.05, -0.125, 0.31, -0.025, 0.125, 0.279, -0.05, -0.125, -0.186, -0.025, 0.125, -0.155, -0.05, -0.125, 0.279, 0, 0.375, -0.186, -0.025, 0.125, 0.31, -0.025, 0.125, -0.186, -0.025, 0.125, 0.279, 0, 0.375, -0.279, 0, 0.375, -0.317, 0, -0.125, -0.279, 0, -0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, -0.279, 0, -0.5, -0.329, 0, 0.375, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.279, 0, 0.375, -0.329, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.279, 0, -0.5, -0.217, 0, -0.125, -0.279, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.217, 0, -0.125, -0.217, 0, 0.125, 0.341, 0, -0.125, 0.379, 0, -0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.379, 0, -0.5, 0.329, 0, 0.375, 0.341, 0, 0.125, 0.379, 0, -0.375, 0.329, 0, 0.375, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.329, 0, 0.375, 0.379, 0, -0.375, 0.329, 0, 0.375, 0.441, 0, -0.125, 0.441, 0, 0.125, 0.341, 0, 0.125, 0.329, 0, 0.375, 0.279, 0, 0.375 )
+
+[sub_resource type="ConcavePolygonShape" id=23]
+data = PoolVector3Array( 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.5, 0, 0.5, 0.3973, 0, 0.1983, 0.441, 0, 0, 0.5, 0, 0.5, 0.2577, 0, 0.3457, 0.3973, 0, 0.1983, 0.5, 0, 0.5, 0.062, 0, 0.4, 0.2577, 0, 0.3457, 0.062, 0, 0.4, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.3973, 0, 0.1983, 0.2577, 0, 0.3457, 0.2964, 0, 0.3048, 0.062, 0, 0.4, -0.5, 0, 0.5, -0.1337, 0, 0.3457, -0.1337, 0, 0.3457, -0.5, 0, 0.5, -0.2431, 0, 0.2302, -0.2431, 0, 0.2302, -0.5, 0, 0.5, -0.2733, 0, 0.1983, -0.2733, 0, 0.1983, -0.5, 0, 0.5, -0.317, 0, 0, -0.317, 0, 0, -0.5, 0, 0.5, -0.317, 0, -0.125, -0.317, 0, -0.125, -0.5, 0, 0.5, -0.379, 0, -0.375, -0.379, 0, -0.375, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.341, 0, -0.1128, 0.379, 0, -0.5, 0.341, 0, -0.0109, 0.379, 0, -0.5, 0.341, 0, -0.1128, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.1128, 0.279, 0, -0.3628, 0.379, 0, -0.375, 0.341, 0, -0.0109, 0.379, 0, -0.5, 0.379, 0, -0.375, 0.3973, 0, 0.1983, 0.341, 0, -0.0109, 0.441, 0, -0.125, 0.3973, 0, 0.1983, 0.379, 0, -0.375, 0.3973, 0, 0.1983, 0.441, 0, -0.125, 0.441, 0, 0, 0.341, 0, -0.0109, 0.3973, 0, 0.1983, 0.2964, 0, 0.3048, 0.341, 0, -0.0109, 0.2964, 0, 0.3048, 0.3056, 0, 0.1497, 0.3056, 0, 0.1497, 0.2964, 0, 0.3048, 0.2238, 0, 0.236, 0.2238, 0, 0.236, 0.2964, 0, 0.3048, 0.2577, 0, 0.3457, 0.2238, 0, 0.236, 0.2577, 0, 0.3457, 0.2042, 0, 0.2568, 0.2042, 0, 0.2568, 0.2577, 0, 0.3457, 0.062, 0, 0.4, 0.2042, 0, 0.2568, 0.062, 0, 0.4, 0.062, 0, 0.2962, 0.062, 0, 0.2962, 0.062, 0, 0.4, -0.1337, 0, 0.3457, 0.062, 0, 0.2962, -0.1337, 0, 0.3457, -0.0802, 0, 0.2568, -0.0802, 0, 0.2568, -0.1337, 0, 0.3457, -0.1705, 0, 0.1614, -0.1705, 0, 0.1614, -0.1337, 0, 0.3457, -0.2431, 0, 0.2302, -0.1705, 0, 0.1614, -0.2431, 0, 0.2302, -0.1816, 0, 0.1497, -0.1816, 0, 0.1497, -0.2431, 0, 0.2302, -0.217, 0, -0.0109, -0.217, 0, -0.0109, -0.2431, 0, 0.2302, -0.217, 0, -0.1372, -0.217, 0, -0.1372, -0.2431, 0, 0.2302, -0.279, 0, -0.3872, -0.279, 0, -0.3872, -0.2431, 0, 0.2302, -0.2733, 0, 0.1983, -0.279, 0, -0.3872, -0.2733, 0, 0.1983, -0.317, 0, 0, -0.317, 0, -0.125, -0.279, 0, -0.3872, -0.317, 0, 0, -0.379, 0, -0.5, -0.279, 0, -0.3872, -0.317, 0, -0.125, -0.279, 0, -0.3872, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, 0.2488, -0.05, 0.1195, 0.279, -0.05, -0.1052, 0.279, -0.05, -0.0176, 0.279, -0.05, -0.1052, 0.2488, -0.05, 0.1195, 0.217, -0.05, -0.3552, 0.217, -0.05, -0.3552, 0.2488, -0.05, 0.1195, 0.1788, -0.05, 0.1934, 0.217, -0.05, -0.3552, 0.1788, -0.05, 0.1934, 0.217, -0.05, -0.5, 0.217, -0.05, -0.5, 0.1788, -0.05, 0.1934, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1788, -0.05, 0.1934, 0.171, -0.05, 0.2016, -0.217, -0.05, -0.5, 0.171, -0.05, 0.2016, 0.062, -0.05, 0.2319, -0.217, -0.05, -0.5, 0.062, -0.05, 0.2319, -0.047, -0.05, 0.2016, -0.217, -0.05, -0.5, -0.047, -0.05, 0.2016, -0.155, -0.05, -0.1448, -0.155, -0.05, -0.1448, -0.047, -0.05, 0.2016, -0.1248, -0.05, 0.1195, -0.155, -0.05, -0.1448, -0.1248, -0.05, 0.1195, -0.155, -0.05, -0.0176, -0.217, -0.05, -0.5, -0.155, -0.05, -0.1448, -0.217, -0.05, -0.3948, -0.217, -0.05, -0.3948, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.3948, -0.279, 0, -0.3872, 0.279, -0.05, -0.0176, 0.341, 0, -0.1128, 0.341, 0, -0.0109, 0.341, 0, -0.1128, 0.279, -0.05, -0.0176, 0.279, -0.05, -0.1052, 0.217, -0.05, -0.3552, 0.279, 0, -0.5, 0.279, 0, -0.3628, 0.279, 0, -0.5, 0.217, -0.05, -0.3552, 0.217, -0.05, -0.5, 0.062, 0, 0.2962, 0.171, -0.05, 0.2016, 0.2042, 0, 0.2568, 0.171, -0.05, 0.2016, 0.062, 0, 0.2962, 0.062, -0.05, 0.2319, -0.0802, 0, 0.2568, -0.1248, -0.05, 0.1195, -0.047, -0.05, 0.2016, -0.1248, -0.05, 0.1195, -0.0802, 0, 0.2568, -0.1705, 0, 0.1614, -0.1248, -0.05, 0.1195, -0.1705, 0, 0.1614, -0.1816, 0, 0.1497, -0.1816, 0, 0.1497, -0.155, -0.05, -0.0176, -0.1248, -0.05, 0.1195, -0.155, -0.05, -0.0176, -0.1816, 0, 0.1497, -0.217, 0, -0.0109, -0.217, 0, -0.0109, -0.155, -0.05, -0.1448, -0.155, -0.05, -0.0176, -0.155, -0.05, -0.1448, -0.217, 0, -0.0109, -0.217, 0, -0.1372, -0.217, 0, -0.1372, -0.217, -0.05, -0.3948, -0.155, -0.05, -0.1448, -0.217, -0.05, -0.3948, -0.217, 0, -0.1372, -0.279, 0, -0.3872, 0.3056, 0, 0.1497, 0.279, -0.05, -0.0176, 0.341, 0, -0.0109, 0.279, -0.05, -0.0176, 0.3056, 0, 0.1497, 0.2488, -0.05, 0.1195, 0.062, 0, 0.2962, -0.047, -0.05, 0.2016, 0.062, -0.05, 0.2319, -0.047, -0.05, 0.2016, 0.062, 0, 0.2962, -0.0802, 0, 0.2568, 0.2238, 0, 0.236, 0.2488, -0.05, 0.1195, 0.3056, 0, 0.1497, 0.2488, -0.05, 0.1195, 0.2238, 0, 0.236, 0.1788, -0.05, 0.1934, 0.1788, -0.05, 0.1934, 0.2238, 0, 0.236, 0.2042, 0, 0.2568, 0.1788, -0.05, 0.1934, 0.2042, 0, 0.2568, 0.171, -0.05, 0.2016, 0.279, -0.05, -0.1052, 0.279, 0, -0.3628, 0.341, 0, -0.1128, 0.279, 0, -0.3628, 0.279, -0.05, -0.1052, 0.217, -0.05, -0.3552 )
+
+[sub_resource type="ConcavePolygonShape" id=24]
+data = PoolVector3Array( 0.5, -0.05, -0.217, 0.217, -0.05, -0.5, 0.5, -0.05, -0.5, 0.5, -0.05, -0.217, -0.5, -0.05, 0.5, 0.217, -0.05, -0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.5, -0.5, -0.05, 0.5, 0.5, -0.05, 0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, -0.05, 0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.217, -0.05, -0.5, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=25]
+data = PoolVector3Array( 0.279, -0.05, 0.125, 0.341, 0, -0.125, 0.341, 0, 0.125, 0.341, 0, -0.125, 0.279, -0.05, 0.125, 0.279, -0.05, -0.125, 0.279, -0.05, -0.125, 0.279, 0, -0.375, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, 0.279, 0, 0.375, 0.279, -0.05, 0.125, 0.341, 0, 0.125, 0.279, -0.05, 0.125, 0.279, 0, 0.375, 0.217, -0.05, 0.375, -0.217, 0, -0.125, -0.217, -0.05, -0.375, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.279, 0, 0.5, -0.217, -0.05, 0.375, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.375, 0.279, 0, 0.375, 0.217, -0.05, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.5, -0.217, 0, 0.125, -0.155, -0.05, -0.125, -0.155, -0.05, 0.125, -0.155, -0.05, -0.125, -0.217, 0, 0.125, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.217, -0.05, -0.5, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, -0.279, 0, -0.375, -0.279, 0, -0.5, -0.217, -0.05, 0.375, -0.217, 0, 0.125, -0.155, -0.05, 0.125, -0.217, 0, 0.125, -0.217, -0.05, 0.375, -0.279, 0, 0.375, -0.379, 0, 0.375, -0.317, 0, -0.125, -0.317, 0, 0.125, -0.317, 0, -0.125, -0.379, 0, 0.375, -0.379, 0, -0.375, -0.379, 0, -0.375, -0.379, 0, 0.375, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.379, 0, 0.375, -0.379, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, 0.5, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.379, 0, 0.5, 0.441, 0, 0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, 0.5, 0.379, 0, 0.375, -0.317, 0, -0.125, -0.279, 0, -0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, -0.279, 0, -0.5, -0.279, 0, 0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.279, 0, 0.375, -0.279, 0, 0.5, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.279, 0, -0.5, -0.217, 0, -0.125, -0.279, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.217, 0, -0.125, -0.217, 0, 0.125, -0.317, 0, 0.125, -0.279, 0, 0.5, -0.379, 0, 0.5, -0.317, 0, 0.125, -0.379, 0, 0.5, -0.379, 0, 0.375, 0.341, 0, -0.125, 0.379, 0, -0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.379, 0, -0.5, 0.379, 0, 0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.379, 0, 0.375, 0.379, 0, 0.5, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, 0.375, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.441, 0, -0.125, 0.441, 0, 0.125, 0.341, 0, 0.125, 0.379, 0, 0.5, 0.279, 0, 0.5, 0.341, 0, 0.125, 0.279, 0, 0.5, 0.279, 0, 0.375, 0.069, -0.05, -0.191, 0.1443, 0, -0.2187, 0.1652, -0.05, -0.1736, 0.1443, 0, -0.2187, 0.069, -0.05, -0.191, 0.1065, 0, -0.2255, 0.1578, 0, -0.2421, 0.1301, -0.05, -0.3174, 0.2103, -0.05, -0.2517, 0.1301, -0.05, -0.3174, 0.1578, 0, -0.2421, 0.123, 0, -0.2706, 0.1301, -0.05, -0.3174, 0.1028, 0, -0.2624, 0.0593, -0.05, -0.2887, 0.1028, 0, -0.2624, 0.1301, -0.05, -0.3174, 0.123, 0, -0.2706, 0.1028, 0, -0.2624, 0.069, -0.05, -0.191, 0.0593, -0.05, -0.2887, 0.069, -0.05, -0.191, 0.1028, 0, -0.2624, 0.1065, 0, -0.2255, 0.1652, -0.05, -0.1736, 0.1578, 0, -0.2421, 0.2103, -0.05, -0.2517, 0.1578, 0, -0.2421, 0.1652, -0.05, -0.1736, 0.1443, 0, -0.2187, 0.1443, 0, -0.2187, 0.123, 0, -0.2706, 0.1578, 0, -0.2421, 0.123, 0, -0.2706, 0.1443, 0, -0.2187, 0.1065, 0, -0.2255, 0.123, 0, -0.2706, 0.1065, 0, -0.2255, 0.1028, 0, -0.2624, -0.1325, -0.05, 0.3632, -0.0491, 0, 0.313, -0.0113, -0.05, 0.3632, -0.0491, 0, 0.313, -0.1325, -0.05, 0.3632, -0.0949, 0, 0.313, -0.0113, -0.05, 0.3632, -0.0361, 0, 0.2673, 0.0219, -0.05, 0.2471, -0.0361, 0, 0.2673, -0.0113, -0.05, 0.3632, -0.0491, 0, 0.313, -0.1025, 0, 0.2871, -0.0686, -0.05, 0.1822, -0.0632, 0, 0.2479, -0.0686, -0.05, 0.1822, -0.1025, 0, 0.2871, -0.1591, -0.05, 0.2727, -0.0491, 0, 0.313, -0.0632, 0, 0.2479, -0.0361, 0, 0.2673, -0.0632, 0, 0.2479, -0.0491, 0, 0.313, -0.0949, 0, 0.313, -0.0632, 0, 0.2479, -0.0949, 0, 0.313, -0.1025, 0, 0.2871, -0.0361, 0, 0.2673, -0.0686, -0.05, 0.1822, 0.0219, -0.05, 0.2471, -0.0686, -0.05, 0.1822, -0.0361, 0, 0.2673, -0.0632, 0, 0.2479, -0.1325, -0.05, 0.3632, -0.1025, 0, 0.2871, -0.0949, 0, 0.313, -0.1025, 0, 0.2871, -0.1325, -0.05, 0.3632, -0.1591, -0.05, 0.2727, 0.1301, -0.05, -0.3174, 0.217, -0.05, -0.5, 0.2103, -0.05, -0.2517, 0.217, -0.05, -0.5, 0.1301, -0.05, -0.3174, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.1301, -0.05, -0.3174, 0.0593, -0.05, -0.2887, -0.217, -0.05, -0.5, 0.0593, -0.05, -0.2887, 0.0219, -0.05, 0.2471, -0.217, -0.05, -0.5, 0.0219, -0.05, 0.2471, -0.0686, -0.05, 0.1822, -0.217, -0.05, -0.5, -0.0686, -0.05, 0.1822, -0.155, -0.05, -0.125, -0.155, -0.05, -0.125, -0.0686, -0.05, 0.1822, -0.155, -0.05, 0.125, -0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.1591, -0.05, 0.2727, -0.155, -0.05, 0.125, -0.0686, -0.05, 0.1822, -0.155, -0.05, 0.125, -0.1591, -0.05, 0.2727, -0.217, -0.05, 0.375, -0.217, -0.05, 0.375, -0.1591, -0.05, 0.2727, -0.217, -0.05, 0.5, 0.217, -0.05, -0.5, 0.217, -0.05, 0.5, 0.2103, -0.05, -0.2517, 0.217, -0.05, -0.5, 0.217, -0.05, 0.375, 0.217, -0.05, 0.5, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.217, -0.05, -0.5, 0.279, -0.05, -0.125, 0.217, -0.05, 0.375, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.279, -0.05, -0.125, 0.279, -0.05, 0.125, -0.0113, -0.05, 0.3632, 0.217, -0.05, 0.5, -0.217, -0.05, 0.5, 0.2103, -0.05, -0.2517, 0.217, -0.05, 0.5, -0.0113, -0.05, 0.3632, 0.2103, -0.05, -0.2517, -0.0113, -0.05, 0.3632, 0.1652, -0.05, -0.1736, 0.1652, -0.05, -0.1736, -0.0113, -0.05, 0.3632, 0.0219, -0.05, 0.2471, 0.1652, -0.05, -0.1736, 0.0219, -0.05, 0.2471, 0.069, -0.05, -0.191, 0.069, -0.05, -0.191, 0.0219, -0.05, 0.2471, 0.0593, -0.05, -0.2887, -0.0113, -0.05, 0.3632, -0.217, -0.05, 0.5, -0.1325, -0.05, 0.3632, -0.1325, -0.05, 0.3632, -0.217, -0.05, 0.5, -0.1591, -0.05, 0.2727 )
+
+[sub_resource type="ConcavePolygonShape" id=2143]
+data = PoolVector3Array( 0.375, 0, 0.379, 0.5, 0, 0.279, 0.5, 0, 0.379, 0.5, 0, 0.279, 0.375, 0, 0.379, 0.375, 0, 0.279, 0.375, 0, 0.279, 0.375, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.279, 0.125, 0, 0.441, 0.125, 0, 0.341, 0.125, 0, 0.341, 0.125, 0, 0.441, -0.125, 0, 0.441, 0.125, 0, 0.341, -0.125, 0, 0.441, -0.125, 0, 0.341, -0.125, 0, 0.341, -0.125, 0, 0.441, -0.375, 0, 0.379, -0.125, 0, 0.341, -0.375, 0, 0.379, -0.375, 0, 0.279, -0.375, 0, 0.279, -0.375, 0, 0.379, -0.5, 0, 0.379, -0.375, 0, 0.279, -0.5, 0, 0.379, -0.5, 0, 0.279, -0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.375, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, 0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.375, 0, 0.279, 0.5, -0.05, 0.217, 0.5, 0, 0.279, 0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.125, 0, 0.441, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.125, 0, 0.441, 0.5, 0, 0.379, 0.5, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.379, 0.125, 0, 0.441, -0.5, 0, 0.5, -0.125, 0, 0.441, -0.125, 0, 0.441, -0.5, 0, 0.5, -0.375, 0, 0.379, -0.375, 0, 0.379, -0.5, 0, 0.5, -0.5, 0, 0.379, 0.5, -0.05, -0.217, -0.5, -0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, -0.5, 0.5, -0.05, -0.217, 0.375, -0.05, 0.217, -0.5, -0.05, -0.5, 0.375, -0.05, 0.217, 0.125, -0.05, 0.279, -0.5, -0.05, -0.5, 0.125, -0.05, 0.279, -0.125, -0.05, 0.279, -0.5, -0.05, -0.5, -0.125, -0.05, 0.279, -0.375, -0.05, 0.217, -0.5, -0.05, -0.5, -0.375, -0.05, 0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.5, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.375, -0.05, 0.217, 0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=2147]
+data = PoolVector3Array( 0.379, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.379, 0, -0.379, 0.379, 0, -0.5, -0.379, 0, -0.379, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.379, 0, -0.379, -0.5, 0, -0.379, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.279, 0, -0.375, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.279, 0, -0.375, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.5, 0, -0.279, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.375, -0.05, -0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.375, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.24, -0.05, -0.2821, -0.279, 0, -0.375, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.24, -0.05, -0.2821, -0.293, 0, -0.3186, 0.24, -0.05, -0.2821, 0.279, 0, -0.375, 0.293, 0, -0.3186, 0.279, 0, -0.375, 0.24, -0.05, -0.2821, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.293, 0, -0.3186, -0.24, -0.05, -0.2821, -0.293, 0, -0.3186, -0.375, -0.05, -0.217, -0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.293, 0, -0.3186, 0.379, 0, -0.379, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.379, 0, -0.379, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.293, 0, -0.3186, 0.279, 0, -0.5, 0.293, 0, -0.3186, 0.279, 0, -0.375, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.379, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, -0.279, 0, -0.375, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.279, 0, -0.375, -0.293, 0, -0.3186, -0.379, 0, -0.5, -0.293, 0, -0.3186, -0.375, 0, -0.279, -0.379, 0, -0.5, -0.375, 0, -0.279, -0.379, 0, -0.379, -0.379, 0, -0.379, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.379, 0, -0.379, -0.5, 0, -0.279, -0.5, 0, -0.379, 0.217, -0.05, -0.375, -0.217, -0.05, -0.5, 0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, 0.217, -0.05, -0.375, -0.24, -0.05, -0.2821, -0.217, -0.05, -0.375, 0.217, -0.05, -0.375, -0.5, -0.05, 0.5, -0.24, -0.05, -0.2821, 0.24, -0.05, -0.2821, -0.5, -0.05, 0.5, 0.217, -0.05, -0.375, 0.375, -0.05, -0.217, -0.5, -0.05, 0.5, 0.24, -0.05, -0.2821, 0.5, -0.05, -0.217, -0.5, -0.05, 0.5, 0.375, -0.05, -0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.5, -0.5, -0.05, 0.5, 0.5, -0.05, 0.5, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, -0.24, -0.05, -0.2821, -0.5, -0.05, 0.5, -0.375, -0.05, -0.217, -0.375, -0.05, -0.217, -0.5, -0.05, 0.5, -0.5, -0.05, 0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217, -0.375, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=2151]
+data = PoolVector3Array( 0.375, 0, 0.379, 0.5, 0, 0.279, 0.5, 0, 0.379, 0.5, 0, 0.279, 0.375, 0, 0.379, 0.375, 0, 0.279, 0.375, 0, 0.279, 0.375, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.279, 0.125, 0, 0.441, 0.125, 0, 0.341, 0.125, 0, 0.341, 0.125, 0, 0.441, -0.125, 0, 0.441, 0.125, 0, 0.341, -0.125, 0, 0.441, -0.125, 0, 0.341, -0.125, 0, 0.341, -0.125, 0, 0.441, -0.375, 0, 0.379, -0.125, 0, 0.341, -0.375, 0, 0.379, -0.375, 0, 0.279, -0.375, 0, 0.279, -0.375, 0, 0.379, -0.5, 0, 0.379, -0.375, 0, 0.279, -0.5, 0, 0.379, -0.5, 0, 0.279, 0.379, 0, -0.379, 0.279, 0, -0.5, 0.379, 0, -0.5, 0.279, 0, -0.5, 0.379, 0, -0.379, 0.375, 0, -0.279, 0.279, 0, -0.5, 0.375, 0, -0.279, 0.293, 0, -0.3186, 0.279, 0, -0.5, 0.293, 0, -0.3186, 0.279, 0, -0.375, 0.5, 0, -0.379, 0.375, 0, -0.279, 0.379, 0, -0.379, 0.375, 0, -0.279, 0.5, 0, -0.379, 0.5, 0, -0.279, -0.279, 0, -0.375, -0.379, 0, -0.5, -0.279, 0, -0.5, -0.379, 0, -0.5, -0.279, 0, -0.375, -0.293, 0, -0.3186, -0.379, 0, -0.5, -0.293, 0, -0.3186, -0.375, 0, -0.279, -0.379, 0, -0.5, -0.375, 0, -0.279, -0.379, 0, -0.379, -0.379, 0, -0.379, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.379, 0, -0.379, -0.5, 0, -0.279, -0.5, 0, -0.379, -0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, 0.125, 0, 0.341, 0.375, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, 0.125, 0, 0.341, 0.125, -0.05, 0.279, 0.375, 0, 0.279, 0.5, -0.05, 0.217, 0.5, 0, 0.279, 0.5, -0.05, 0.217, 0.375, 0, 0.279, 0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.125, -0.05, 0.279, -0.125, 0, 0.341, -0.125, -0.05, 0.279, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.375, -0.05, 0.217, -0.375, 0, 0.279, -0.375, -0.05, 0.217, -0.5, 0, 0.279, -0.5, -0.05, 0.217, 0.375, -0.05, -0.217, 0.5, 0, -0.279, 0.5, -0.05, -0.217, 0.5, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.279, 0, -0.375, 0.217, -0.05, -0.5, 0.279, 0, -0.5, 0.217, -0.05, -0.5, 0.279, 0, -0.375, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.5, 0, -0.279, -0.375, 0, -0.279, -0.5, 0, -0.279, -0.375, -0.05, -0.217, -0.5, -0.05, -0.217, -0.217, -0.05, -0.375, -0.279, 0, -0.5, -0.217, -0.05, -0.5, -0.279, 0, -0.5, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.24, -0.05, -0.2821, -0.279, 0, -0.375, -0.217, -0.05, -0.375, -0.279, 0, -0.375, -0.24, -0.05, -0.2821, -0.293, 0, -0.3186, 0.24, -0.05, -0.2821, 0.279, 0, -0.375, 0.293, 0, -0.3186, 0.279, 0, -0.375, 0.24, -0.05, -0.2821, 0.217, -0.05, -0.375, -0.375, -0.05, -0.217, -0.293, 0, -0.3186, -0.24, -0.05, -0.2821, -0.293, 0, -0.3186, -0.375, -0.05, -0.217, -0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.375, 0, -0.279, 0.375, -0.05, -0.217, 0.375, 0, -0.279, 0.24, -0.05, -0.2821, 0.293, 0, -0.3186, 0.379, 0, -0.379, 0.5, 0, -0.5, 0.5, 0, -0.379, 0.5, 0, -0.5, 0.379, 0, -0.379, 0.379, 0, -0.5, 0.125, 0, 0.441, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.125, 0, 0.441, 0.5, 0, 0.379, 0.5, 0, 0.379, 0.125, 0, 0.441, 0.375, 0, 0.379, 0.125, 0, 0.441, -0.5, 0, 0.5, -0.125, 0, 0.441, -0.125, 0, 0.441, -0.5, 0, 0.5, -0.375, 0, 0.379, -0.375, 0, 0.379, -0.5, 0, 0.5, -0.5, 0, 0.379, -0.379, 0, -0.379, -0.5, 0, -0.5, -0.379, 0, -0.5, -0.5, 0, -0.5, -0.379, 0, -0.379, -0.5, 0, -0.379, 0.375, -0.05, 0.217, 0.5, -0.05, -0.217, 0.5, -0.05, 0.217, 0.5, -0.05, -0.217, 0.375, -0.05, 0.217, 0.375, -0.05, -0.217, 0.375, -0.05, -0.217, 0.375, -0.05, 0.217, 0.125, -0.05, 0.279, 0.375, -0.05, -0.217, 0.125, -0.05, 0.279, 0.24, -0.05, -0.2821, 0.24, -0.05, -0.2821, 0.125, -0.05, 0.279, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.125, -0.05, 0.279, 0.217, -0.05, -0.5, 0.217, -0.05, -0.5, 0.125, -0.05, 0.279, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, 0.125, -0.05, 0.279, -0.125, -0.05, 0.279, -0.217, -0.05, -0.5, -0.125, -0.05, 0.279, -0.217, -0.05, -0.375, -0.217, -0.05, -0.375, -0.125, -0.05, 0.279, -0.24, -0.05, -0.2821, -0.24, -0.05, -0.2821, -0.125, -0.05, 0.279, -0.375, -0.05, 0.217, -0.24, -0.05, -0.2821, -0.375, -0.05, 0.217, -0.375, -0.05, -0.217, -0.375, -0.05, -0.217, -0.375, -0.05, 0.217, -0.5, -0.05, 0.217, -0.375, -0.05, -0.217, -0.5, -0.05, 0.217, -0.5, -0.05, -0.217 )
+
+[sub_resource type="ConcavePolygonShape" id=29]
+data = PoolVector3Array( 0.279, -0.05, 0.125, 0.341, 0, -0.125, 0.341, 0, 0.125, 0.341, 0, -0.125, 0.279, -0.05, 0.125, 0.279, -0.05, -0.125, 0.279, -0.05, -0.125, 0.279, 0, -0.375, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.279, -0.05, -0.125, 0.217, -0.05, -0.375, 0.217, -0.05, -0.375, 0.279, 0, -0.5, 0.279, 0, -0.375, 0.279, 0, -0.5, 0.217, -0.05, -0.375, 0.217, -0.05, -0.5, 0.279, 0, 0.375, 0.279, -0.05, 0.125, 0.341, 0, 0.125, 0.279, -0.05, 0.125, 0.279, 0, 0.375, 0.217, -0.05, 0.375, -0.217, 0, -0.125, -0.217, -0.05, -0.375, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.279, 0, 0.5, -0.217, -0.05, 0.375, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.279, 0, 0.5, -0.279, 0, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.375, 0.279, 0, 0.375, 0.217, -0.05, 0.375, 0.279, 0, 0.5, 0.217, -0.05, 0.5, -0.217, 0, 0.125, -0.155, -0.05, -0.125, -0.155, -0.05, 0.125, -0.155, -0.05, -0.125, -0.217, 0, 0.125, -0.217, 0, -0.125, -0.279, 0, -0.375, -0.217, -0.05, -0.5, -0.217, -0.05, -0.375, -0.217, -0.05, -0.5, -0.279, 0, -0.375, -0.279, 0, -0.5, -0.217, -0.05, 0.375, -0.217, 0, 0.125, -0.155, -0.05, 0.125, -0.217, 0, 0.125, -0.217, -0.05, 0.375, -0.279, 0, 0.375, -0.379, 0, 0.375, -0.317, 0, -0.125, -0.317, 0, 0.125, -0.317, 0, -0.125, -0.379, 0, 0.375, -0.379, 0, -0.375, -0.379, 0, -0.375, -0.379, 0, 0.375, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.379, 0, 0.375, -0.379, 0, 0.5, -0.379, 0, -0.5, -0.379, 0, 0.5, -0.5, 0, 0.5, -0.379, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, -0.375, 0.379, 0, 0.5, 0.441, 0, 0.125, 0.5, 0, 0.5, 0.441, 0, 0.125, 0.379, 0, 0.5, 0.379, 0, 0.375, -0.155, -0.05, -0.125, 0.217, -0.05, -0.5, -0.155, -0.05, 0.125, 0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.5, -0.217, -0.05, -0.5, -0.155, -0.05, -0.125, -0.217, -0.05, -0.375, 0.217, -0.05, -0.5, -0.217, -0.05, 0.5, -0.155, -0.05, 0.125, 0.217, -0.05, -0.5, 0.217, -0.05, 0.5, -0.217, -0.05, 0.5, 0.217, -0.05, -0.5, 0.217, -0.05, 0.375, 0.217, -0.05, 0.5, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.217, -0.05, -0.5, 0.279, -0.05, -0.125, 0.217, -0.05, 0.375, 0.217, -0.05, -0.375, 0.217, -0.05, 0.375, 0.279, -0.05, -0.125, 0.279, -0.05, 0.125, -0.155, -0.05, 0.125, -0.217, -0.05, 0.5, -0.217, -0.05, 0.375, -0.317, 0, -0.125, -0.279, 0, -0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.5, -0.379, 0, -0.5, -0.317, 0, -0.125, -0.379, 0, -0.375, -0.279, 0, -0.5, -0.279, 0, 0.5, -0.317, 0, 0.125, -0.279, 0, -0.5, -0.279, 0, 0.375, -0.279, 0, 0.5, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.279, 0, -0.5, -0.217, 0, -0.125, -0.279, 0, 0.375, -0.279, 0, -0.375, -0.279, 0, 0.375, -0.217, 0, -0.125, -0.217, 0, 0.125, -0.317, 0, 0.125, -0.279, 0, 0.5, -0.379, 0, 0.5, -0.317, 0, 0.125, -0.379, 0, 0.5, -0.379, 0, 0.375, 0.341, 0, -0.125, 0.379, 0, -0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.5, 0.279, 0, -0.5, 0.341, 0, -0.125, 0.279, 0, -0.375, 0.379, 0, -0.5, 0.379, 0, 0.5, 0.341, 0, 0.125, 0.379, 0, -0.5, 0.379, 0, 0.375, 0.379, 0, 0.5, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.379, 0, -0.5, 0.441, 0, -0.125, 0.379, 0, 0.375, 0.379, 0, -0.375, 0.379, 0, 0.375, 0.441, 0, -0.125, 0.441, 0, 0.125, 0.341, 0, 0.125, 0.379, 0, 0.5, 0.279, 0, 0.5, 0.341, 0, 0.125, 0.279, 0, 0.5, 0.279, 0, 0.375 )
+
+[sub_resource type="ConcavePolygonShape" id=30]
+data = PoolVector3Array( 0.3924, 0, 0.0762, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.3924, 0, 0.0762, 0.3412, 0, -0.0274, 0.5, 0, -0.5, 0.3412, 0, -0.0274, 0.1706, 0, -0.3211, 0.5, 0, -0.5, 0.1706, 0, -0.3211, 0.072, 0, -0.3781, 0.5, 0, -0.5, 0.072, 0, -0.3781, -0.5, 0, -0.5, 0.3924, 0, 0.0762, 0.5, 0, 0.5, 0.3976, 0, 0.19, 0.1706, 0, -0.3211, 0.3412, 0, -0.0274, 0.2276, 0, -0.2225, 0.2276, 0, -0.2225, 0.3412, 0, -0.0274, 0.2609, 0, -0.1117, -0.5, 0, -0.5, 0.072, 0, -0.3781, -0.0419, 0, -0.3781, -0.5, 0, -0.5, -0.0419, 0, -0.3781, -0.1405, 0, -0.3211, -0.5, 0, -0.5, -0.1405, 0, -0.3211, -0.2155, 0, -0.2071, -0.5, 0, -0.5, -0.2155, 0, -0.2071, -0.253, 0, -0.0831, -0.5, 0, -0.5, -0.253, 0, -0.0831, -0.3512, 0, 0.0428, -0.5, 0, -0.5, -0.3512, 0, 0.0428, -0.378, 0, 0.1428, 0.5, 0, 0.5, 0.3453, 0, 0.2911, 0.3976, 0, 0.19, -0.378, 0, 0.1428, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.3512, 0, 0.2428, -0.5, 0, 0.5, -0.378, 0, 0.1428, -0.278, 0, 0.316, -0.5, 0, 0.5, -0.3512, 0, 0.2428, -0.178, 0, 0.3428, -0.5, 0, 0.5, -0.278, 0, 0.316, -0.0681, 0, 0.3109, -0.5, 0, 0.5, -0.178, 0, 0.3428, 0.0498, 0, 0.316, -0.5, 0, 0.5, -0.0681, 0, 0.3109, 0.1356, 0, 0.3577, -0.5, 0, 0.5, 0.0498, 0, 0.316, 0.2494, 0, 0.3525, -0.5, 0, 0.5, 0.1356, 0, 0.3577, 0.2494, 0, 0.3525, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.2494, 0, 0.3525, 0.3453, 0, 0.2911, -0.131, -0.05, -0.0328, -0.2637, 0, 0.0864, -0.1665, 0, -0.0383, -0.2637, 0, 0.0864, -0.131, -0.05, -0.0328, -0.2088, -0.05, 0.067, 0.1391, 0, -0.1843, 0.0827, -0.05, -0.203, 0.1006, 0, -0.2511, 0.0827, -0.05, -0.203, 0.1391, 0, -0.1843, 0.1135, -0.05, -0.1496, -0.179, 0, 0.2434, -0.1805, -0.05, 0.182, -0.141, -0.05, 0.1926, -0.1805, -0.05, 0.182, -0.179, 0, 0.2434, -0.2284, 0, 0.2302, 0.0612, -0.05, 0.1749, -0.0796, 0, 0.2146, -0.0615, -0.05, 0.1695, -0.0796, 0, 0.2146, 0.0612, -0.05, 0.1749, 0.0738, 0, 0.2213, 0.1266, -0.05, 0.2066, 0.0738, 0, 0.2213, 0.0612, -0.05, 0.1749, 0.0738, 0, 0.2213, 0.1266, -0.05, 0.2066, 0.1555, 0, 0.261, 0.1555, 0, 0.261, 0.1777, -0.05, 0.2043, 0.2194, 0, 0.258, 0.1777, -0.05, 0.2043, 0.1555, 0, 0.261, 0.1266, -0.05, 0.2066, 0.2618, 0, 0.0281, 0.2404, -0.05, 0.0784, 0.2117, -0.05, 0.0203, 0.2404, -0.05, 0.0784, 0.2618, 0, 0.0281, 0.2977, 0, 0.1007, -0.2284, 0, 0.2302, -0.2101, -0.05, 0.1525, -0.1805, -0.05, 0.182, -0.2101, -0.05, 0.1525, -0.2284, 0, 0.2302, -0.2653, 0, 0.1933, 0.2618, 0, 0.0281, 0.1428, -0.05, -0.0519, 0.1758, 0, -0.0622, 0.1428, -0.05, -0.0519, 0.2618, 0, 0.0281, 0.2117, -0.05, 0.0203, -0.2209, -0.05, 0.1121, -0.2637, 0, 0.0864, -0.2088, -0.05, 0.067, -0.2637, 0, 0.0864, -0.2209, -0.05, 0.1121, -0.2788, 0, 0.1428, -0.1001, -0.05, -0.135, -0.1665, 0, -0.0383, -0.1279, 0, -0.1661, -0.1665, 0, -0.0383, -0.1001, -0.05, -0.135, -0.131, -0.05, -0.0328, -0.2653, 0, 0.1933, -0.2209, -0.05, 0.1121, -0.2101, -0.05, 0.1525, -0.2209, -0.05, 0.1121, -0.2653, 0, 0.1933, -0.2788, 0, 0.1428, -0.0615, -0.05, 0.1695, -0.179, 0, 0.2434, -0.141, -0.05, 0.1926, -0.179, 0, 0.2434, -0.0615, -0.05, 0.1695, -0.0796, 0, 0.2146, 0.2429, -0.05, 0.1329, 0.2977, 0, 0.1007, 0.3008, 0, 0.1687, 0.2977, 0, 0.1007, 0.2429, -0.05, 0.1329, 0.2404, -0.05, 0.0784, 0.1758, 0, -0.0622, 0.1135, -0.05, -0.1496, 0.1391, 0, -0.1843, 0.1135, -0.05, -0.1496, 0.1758, 0, -0.0622, 0.1428, -0.05, -0.0519, -0.0562, -0.05, -0.2018, -0.0162, 0, -0.2824, -0.0108, -0.05, -0.228, -0.0162, 0, -0.2824, -0.0562, -0.05, -0.2018, -0.073, 0, -0.2496, 0.0827, -0.05, -0.203, 0.0464, 0, -0.2824, 0.1006, 0, -0.2511, 0.0464, 0, -0.2824, 0.0827, -0.05, -0.203, 0.0393, -0.05, -0.228, 0.0393, -0.05, -0.228, -0.0162, 0, -0.2824, 0.0464, 0, -0.2824, -0.0162, 0, -0.2824, 0.0393, -0.05, -0.228, -0.0108, -0.05, -0.228, -0.0562, -0.05, -0.2018, -0.1279, 0, -0.1661, -0.073, 0, -0.2496, -0.1279, 0, -0.1661, -0.0562, -0.05, -0.2018, -0.1001, -0.05, -0.135, 0.2194, 0, 0.258, 0.2199, -0.05, 0.1773, 0.2721, 0, 0.2243, 0.2199, -0.05, 0.1773, 0.2194, 0, 0.258, 0.1777, -0.05, 0.2043, 0.2721, 0, 0.2243, 0.2429, -0.05, 0.1329, 0.3008, 0, 0.1687, 0.2429, -0.05, 0.1329, 0.2721, 0, 0.2243, 0.2199, -0.05, 0.1773, 0.2199, -0.05, 0.1773, 0.2404, -0.05, 0.0784, 0.2429, -0.05, 0.1329, 0.2404, -0.05, 0.0784, 0.2199, -0.05, 0.1773, 0.2117, -0.05, 0.0203, 0.2117, -0.05, 0.0203, 0.2199, -0.05, 0.1773, 0.1777, -0.05, 0.2043, 0.2117, -0.05, 0.0203, 0.1777, -0.05, 0.2043, 0.1428, -0.05, -0.0519, 0.1428, -0.05, -0.0519, 0.1777, -0.05, 0.2043, 0.1266, -0.05, 0.2066, 0.1428, -0.05, -0.0519, 0.1266, -0.05, 0.2066, 0.1135, -0.05, -0.1496, 0.1135, -0.05, -0.1496, 0.1266, -0.05, 0.2066, 0.0612, -0.05, 0.1749, 0.1135, -0.05, -0.1496, 0.0612, -0.05, 0.1749, 0.0827, -0.05, -0.203, 0.0827, -0.05, -0.203, 0.0612, -0.05, 0.1749, 0.0393, -0.05, -0.228, 0.0393, -0.05, -0.228, 0.0612, -0.05, 0.1749, -0.0615, -0.05, 0.1695, 0.0393, -0.05, -0.228, -0.0615, -0.05, 0.1695, -0.0108, -0.05, -0.228, -0.0108, -0.05, -0.228, -0.0615, -0.05, 0.1695, -0.0562, -0.05, -0.2018, -0.0562, -0.05, -0.2018, -0.0615, -0.05, 0.1695, -0.1001, -0.05, -0.135, -0.1001, -0.05, -0.135, -0.0615, -0.05, 0.1695, -0.141, -0.05, 0.1926, -0.1001, -0.05, -0.135, -0.141, -0.05, 0.1926, -0.131, -0.05, -0.0328, -0.131, -0.05, -0.0328, -0.141, -0.05, 0.1926, -0.2088, -0.05, 0.067, -0.2088, -0.05, 0.067, -0.141, -0.05, 0.1926, -0.1805, -0.05, 0.182, -0.2088, -0.05, 0.067, -0.1805, -0.05, 0.182, -0.2101, -0.05, 0.1525, -0.2088, -0.05, 0.067, -0.2101, -0.05, 0.1525, -0.2209, -0.05, 0.1121, 0.2977, 0, 0.1007, 0.3412, 0, -0.0274, 0.3008, 0, 0.1687, 0.3412, 0, -0.0274, 0.2977, 0, 0.1007, 0.2609, 0, -0.1117, 0.2609, 0, -0.1117, 0.2977, 0, 0.1007, 0.2618, 0, 0.0281, 0.2609, 0, -0.1117, 0.2618, 0, 0.0281, 0.1758, 0, -0.0622, 0.2609, 0, -0.1117, 0.1758, 0, -0.0622, 0.2276, 0, -0.2225, 0.2276, 0, -0.2225, 0.1758, 0, -0.0622, 0.1706, 0, -0.3211, 0.1706, 0, -0.3211, 0.1758, 0, -0.0622, 0.1391, 0, -0.1843, 0.1706, 0, -0.3211, 0.1391, 0, -0.1843, 0.072, 0, -0.3781, 0.072, 0, -0.3781, 0.1391, 0, -0.1843, 0.1006, 0, -0.2511, 0.072, 0, -0.3781, 0.1006, 0, -0.2511, 0.0464, 0, -0.2824, 0.072, 0, -0.3781, 0.0464, 0, -0.2824, -0.0419, 0, -0.3781, -0.0419, 0, -0.3781, 0.0464, 0, -0.2824, -0.0162, 0, -0.2824, -0.0419, 0, -0.3781, -0.0162, 0, -0.2824, -0.073, 0, -0.2496, -0.0419, 0, -0.3781, -0.073, 0, -0.2496, -0.1405, 0, -0.3211, -0.1405, 0, -0.3211, -0.073, 0, -0.2496, -0.1279, 0, -0.1661, -0.1405, 0, -0.3211, -0.1279, 0, -0.1661, -0.1665, 0, -0.0383, -0.1405, 0, -0.3211, -0.1665, 0, -0.0383, -0.2155, 0, -0.2071, -0.2155, 0, -0.2071, -0.1665, 0, -0.0383, -0.2637, 0, 0.0864, -0.2155, 0, -0.2071, -0.2637, 0, 0.0864, -0.253, 0, -0.0831, -0.253, 0, -0.0831, -0.2637, 0, 0.0864, -0.3512, 0, 0.0428, -0.3512, 0, 0.0428, -0.2637, 0, 0.0864, -0.2788, 0, 0.1428, -0.2788, 0, 0.1428, -0.3512, 0, 0.2428, -0.3512, 0, 0.0428, -0.2788, 0, 0.1428, -0.278, 0, 0.316, -0.3512, 0, 0.2428, -0.2653, 0, 0.1933, -0.278, 0, 0.316, -0.2788, 0, 0.1428, -0.2284, 0, 0.2302, -0.278, 0, 0.316, -0.2653, 0, 0.1933, -0.179, 0, 0.2434, -0.278, 0, 0.316, -0.2284, 0, 0.2302, -0.179, 0, 0.2434, -0.178, 0, 0.3428, -0.278, 0, 0.316, -0.0796, 0, 0.2146, -0.178, 0, 0.3428, -0.179, 0, 0.2434, -0.0796, 0, 0.2146, -0.0681, 0, 0.3109, -0.178, 0, 0.3428, -0.0796, 0, 0.2146, 0.0498, 0, 0.316, -0.0681, 0, 0.3109, 0.0738, 0, 0.2213, 0.0498, 0, 0.316, -0.0796, 0, 0.2146, 0.0738, 0, 0.2213, 0.1356, 0, 0.3577, 0.0498, 0, 0.316, 0.1555, 0, 0.261, 0.1356, 0, 0.3577, 0.0738, 0, 0.2213, 0.2194, 0, 0.258, 0.1356, 0, 0.3577, 0.1555, 0, 0.261, 0.2194, 0, 0.258, 0.2494, 0, 0.3525, 0.1356, 0, 0.3577, 0.2721, 0, 0.2243, 0.2494, 0, 0.3525, 0.2194, 0, 0.258, 0.3008, 0, 0.1687, 0.2494, 0, 0.3525, 0.2721, 0, 0.2243, 0.3008, 0, 0.1687, 0.3453, 0, 0.2911, 0.2494, 0, 0.3525, 0.3412, 0, -0.0274, 0.3453, 0, 0.2911, 0.3008, 0, 0.1687, 0.3924, 0, 0.0762, 0.3453, 0, 0.2911, 0.3412, 0, -0.0274, 0.3453, 0, 0.2911, 0.3924, 0, 0.0762, 0.3976, 0, 0.19, -0.3512, 0, 0.0428, -0.3512, 0, 0.2428, -0.378, 0, 0.1428 )
+
+[node name="NatureKit" type="Spatial"]
+
+[node name="bed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 4 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bed_floor" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 9 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bridge_center_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 12 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_center_stoneRound" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 11 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_center_wood" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bridge_center_woodRound" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 5 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="bridge_side_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 17 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_side_stoneRound" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 16 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_side_wood" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 13 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bridge_side_woodRound" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 27 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="bridge_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 28 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_stoneNarrow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 6 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_stoneRound" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 26 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_stoneRoundNarrow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 14 )
+material/0 = null
+material/1 = null
+
+[node name="bridge_wood" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 19 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bridge_woodNarrow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="bridge_woodRound" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 29 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="bridge_woodRoundNarrow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 20 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="cactus_short" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="cactus_tall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="campfire_bricks" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="campfire_logs" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 8 )
+material/0 = null
+material/1 = null
+
+[node name="campfire_planks" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="campfire_stones" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 21 )
+material/0 = null
+
+[node name="canoe" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 22 )
+material/0 = null
+material/1 = null
+
+[node name="canoe_paddle" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 18 )
+material/0 = null
+
+[node name="cliff_blockCave_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 23 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockCave_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 24 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockDiagonal_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 25 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockDiagonal_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 54 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockHalf_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 78 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockHalf_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 70 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockQuarter_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 58 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockQuarter_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 76 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockSlopeHalfWalls_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 61 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockSlopeHalfWalls_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 71 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockSlopeWalls_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 55 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockSlopeWalls_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 34 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockSlope_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 30 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_blockSlope_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 82 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_block_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 47 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_block_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 32 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_cave_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 77 )
+material/0 = null
+
+[node name="cliff_cave_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 80 )
+material/0 = null
+
+[node name="cliff_cornerInnerLarge_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 83 )
+material/0 = null
+
+[node name="cliff_cornerInnerLarge_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 39 )
+material/0 = null
+
+[node name="cliff_cornerInnerTop_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 66 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_cornerInnerTop_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 37 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_cornerInner_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 40 )
+material/0 = null
+
+[node name="cliff_cornerInner_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 38 )
+material/0 = null
+
+[node name="cliff_cornerLarge_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 62 )
+material/0 = null
+
+[node name="cliff_cornerLarge_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 69 )
+material/0 = null
+
+[node name="cliff_cornerTop_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 67 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_cornerTop_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 68 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_corner_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 33 )
+material/0 = null
+
+[node name="cliff_corner_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 41 )
+material/0 = null
+
+[node name="cliff_diagonal_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 75 )
+material/0 = null
+
+[node name="cliff_diagonal_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 63 )
+material/0 = null
+
+[node name="cliff_halfCornerInner_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 35 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="cliff_halfCornerInner_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 42 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="cliff_halfCorner_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 81 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_halfCorner_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 79 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_half_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 64 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_half_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 65 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_large_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 84 )
+material/0 = null
+
+[node name="cliff_large_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 44 )
+material/0 = null
+
+[node name="cliff_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 72 )
+material/0 = null
+
+[node name="cliff_stepsCornerInner_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 36 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_stepsCornerInner_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 49 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_stepsCorner_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 59 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_stepsCorner_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 43 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_steps_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 57 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_steps_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 60 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 73 )
+material/0 = null
+
+[node name="cliff_topDiagonal_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 74 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_topDiagonal_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 45 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_top_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 85 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_top_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 46 )
+material/0 = null
+material/1 = null
+
+[node name="cliff_waterfallTop_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 31 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+
+[node name="cliff_waterfallTop_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 48 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+
+[node name="cliff_waterfall_rock" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 50 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="cliff_waterfall_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 51 )
+material/0 = null
+material/1 = null
+
+[node name="crops_bambooStageA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 52 )
+material/0 = null
+
+[node name="crops_bambooStageB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 53 )
+material/0 = null
+
+[node name="crops_cornStageA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 56 )
+material/0 = null
+
+[node name="crops_cornStageB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 112 )
+material/0 = null
+
+[node name="crops_cornStageC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 88 )
+material/0 = null
+
+[node name="crops_cornStageD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 139 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+
+[node name="crops_dirtDoubleRow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 133 )
+material/0 = null
+material/1 = null
+
+[node name="crops_dirtDoubleRowCorner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 131 )
+material/0 = null
+material/1 = null
+
+[node name="crops_dirtDoubleRowEnd" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 111 )
+material/0 = null
+material/1 = null
+
+[node name="crops_dirtRow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 130 )
+material/0 = null
+material/1 = null
+
+[node name="crops_dirtRowCorner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 110 )
+material/0 = null
+material/1 = null
+
+[node name="crops_dirtRowEnd" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 94 )
+material/0 = null
+material/1 = null
+
+[node name="crops_dirtSingle" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 138 )
+material/0 = null
+material/1 = null
+
+[node name="crops_leafsStageA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 113 )
+material/0 = null
+
+[node name="crops_leafsStageB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 121 )
+material/0 = null
+
+[node name="crops_wheatStageA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 140 )
+material/0 = null
+
+[node name="crops_wheatStageB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 141 )
+material/0 = null
+material/1 = null
+
+[node name="crop_carrot" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 132 )
+material/0 = null
+material/1 = null
+
+[node name="crop_melon" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 87 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="crop_pumpkin" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 89 )
+material/0 = null
+material/1 = null
+
+[node name="crop_turnip" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 122 )
+material/0 = null
+material/1 = null
+
+[node name="fence_bend" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 86 )
+material/0 = null
+material/1 = null
+
+[node name="fence_bendCenter" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 126 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="fence_corner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 99 )
+material/0 = null
+material/1 = null
+
+[node name="fence_gate" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 118 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+
+[node name="fence_planks" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 123 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="fence_planks"]
+
+[node name="CollisionShape" type="CollisionShape" parent="fence_planks/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.158664, 0, 0.168401, 0.478121 )
+shape = SubResource( 1995 )
+
+[node name="fence_planksDouble" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 90 )
+material/0 = null
+
+[node name="fence_simple" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 91 )
+material/0 = null
+material/1 = null
+
+[node name="fence_simpleCenter" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 124 )
+material/0 = null
+material/1 = null
+
+[node name="fence_simpleDiagonal" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 92 )
+material/0 = null
+material/1 = null
+
+[node name="fence_simpleDiagonalCenter" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 114 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="fence_simpleHigh" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 116 )
+material/0 = null
+
+[node name="fence_simpleLow" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 95 )
+material/0 = null
+
+[node name="flower_purpleA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 115 )
+material/0 = null
+material/1 = null
+
+[node name="flower_purpleB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 109 )
+material/0 = null
+material/1 = null
+
+[node name="flower_purpleC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 93 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="flower_redA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 135 )
+material/0 = null
+material/1 = null
+
+[node name="flower_redB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 117 )
+material/0 = null
+material/1 = null
+
+[node name="flower_redC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 125 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="flower_yellowA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 103 )
+material/0 = null
+material/1 = null
+
+[node name="flower_yellowB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 134 )
+material/0 = null
+material/1 = null
+
+[node name="flower_yellowC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 96 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="grass" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 136 )
+material/0 = null
+
+[node name="grass_large" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 137 )
+material/0 = null
+
+[node name="grass_leafs" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 128 )
+material/0 = null
+
+[node name="grass_leafsLarge" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 97 )
+material/0 = null
+
+[node name="ground_grass" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 98 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_grass"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_grass/StaticBody"]
+shape = SubResource( 2059 )
+
+[node name="ground_pathBend" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 127 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathBend"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathBend/StaticBody"]
+shape = SubResource( 2063 )
+
+[node name="ground_pathBendBank" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 104 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathBendBank"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathBendBank/StaticBody"]
+shape = SubResource( 2067 )
+
+[node name="ground_pathCorner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 100 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathCorner"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathCorner/StaticBody"]
+shape = SubResource( 2071 )
+
+[node name="ground_pathCornerSmall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 101 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathCornerSmall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathCornerSmall/StaticBody"]
+shape = SubResource( 2075 )
+
+[node name="ground_pathCross" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 102 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathCross"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathCross/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="ground_pathEnd" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 129 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathEnd"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathEnd/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="ground_pathEndClosed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 105 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathEndClosed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathEndClosed/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="ground_pathOpen" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 106 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathOpen"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathOpen/StaticBody"]
+shape = SubResource( 2088 )
+
+[node name="ground_pathRocks" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 107 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathRocks"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathRocks/StaticBody"]
+shape = SubResource( 2092 )
+
+[node name="ground_pathSide" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 108 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathSide"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathSide/StaticBody"]
+shape = SubResource( 2096 )
+
+[node name="ground_pathSideOpen" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 119 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathSideOpen"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathSideOpen/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="ground_pathSplit" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 120 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathSplit"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathSplit/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="ground_pathStraight" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 153 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathStraight"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathStraight/StaticBody"]
+shape = SubResource( 15 )
+
+[node name="ground_pathTile" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 178 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_pathTile"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_pathTile/StaticBody"]
+shape = SubResource( 2109 )
+
+[node name="ground_riverBend" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 165 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverBend"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverBend/StaticBody"]
+shape = SubResource( 2113 )
+
+[node name="ground_riverBendBank" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 154 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverBendBank"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverBendBank/StaticBody"]
+shape = SubResource( 18 )
+
+[node name="ground_riverCorner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 194 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverCorner"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverCorner/StaticBody"]
+shape = SubResource( 19 )
+
+[node name="ground_riverCornerSmall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 150 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverCornerSmall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverCornerSmall/StaticBody"]
+shape = SubResource( 20 )
+
+[node name="ground_riverCross" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 174 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverCross"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverCross/StaticBody"]
+shape = SubResource( 2126 )
+
+[node name="ground_riverEnd" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 151 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverEnd"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverEnd/StaticBody"]
+shape = SubResource( 2130 )
+
+[node name="ground_riverEndClosed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 142 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverEndClosed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverEndClosed/StaticBody"]
+shape = SubResource( 23 )
+
+[node name="ground_riverOpen" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 171 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverOpen"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverOpen/StaticBody"]
+shape = SubResource( 24 )
+
+[node name="ground_riverRocks" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 169 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverRocks"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverRocks/StaticBody"]
+shape = SubResource( 25 )
+
+[node name="ground_riverSide" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 152 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverSide"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverSide/StaticBody"]
+shape = SubResource( 2143 )
+
+[node name="ground_riverSideOpen" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 172 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverSideOpen"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverSideOpen/StaticBody"]
+shape = SubResource( 2147 )
+
+[node name="ground_riverSplit" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 167 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverSplit"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverSplit/StaticBody"]
+shape = SubResource( 2151 )
+
+[node name="ground_riverStraight" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 192 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverStraight"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverStraight/StaticBody"]
+shape = SubResource( 29 )
+
+[node name="ground_riverTile" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 188 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="StaticBody" type="StaticBody" parent="ground_riverTile"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_riverTile/StaticBody"]
+shape = SubResource( 30 )
+
+[node name="hanging_moss" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 168 )
+material/0 = null
+
+[node name="lily_large" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 173 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="lily_small" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 166 )
+material/0 = null
+material/1 = null
+
+[node name="log" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 182 )
+material/0 = null
+material/1 = null
+
+[node name="log_large" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 170 )
+material/0 = null
+material/1 = null
+
+[node name="log_stack" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 175 )
+material/0 = null
+material/1 = null
+
+[node name="log_stackLarge" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 143 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="mushroom_red" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 195 )
+material/0 = null
+material/1 = null
+
+[node name="mushroom_redGroup" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 176 )
+material/0 = null
+material/1 = null
+
+[node name="mushroom_redTall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 177 )
+material/0 = null
+material/1 = null
+
+[node name="mushroom_tan" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 144 )
+material/0 = null
+material/1 = null
+
+[node name="mushroom_tanGroup" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 147 )
+material/0 = null
+material/1 = null
+
+[node name="mushroom_tanTall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 145 )
+material/0 = null
+material/1 = null
+
+[node name="path_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 161 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="path_stoneCircle" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 179 )
+material/0 = null
+material/1 = null
+
+[node name="path_stoneCorner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 160 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="path_stoneEnd" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 180 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="path_wood" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 186 )
+material/0 = null
+material/1 = null
+
+[node name="path_woodCorner" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 181 )
+material/0 = null
+material/1 = null
+
+[node name="path_woodEnd" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 185 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="plant_bush" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 183 )
+material/0 = null
+
+[node name="plant_bushDetailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 187 )
+material/0 = null
+
+[node name="plant_bushLarge" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 184 )
+material/0 = null
+
+[node name="plant_bushLargeTriangle" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 155 )
+material/0 = null
+
+[node name="plant_bushSmall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 146 )
+material/0 = null
+
+[node name="plant_bushTriangle" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 189 )
+material/0 = null
+
+[node name="plant_flatShort" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 162 )
+material/0 = null
+
+[node name="plant_flatTall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 190 )
+material/0 = null
+
+[node name="platform_beach" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 159 )
+material/0 = null
+
+[node name="platform_grass" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 148 )
+material/0 = null
+material/1 = null
+
+[node name="platform_stone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 163 )
+material/0 = null
+material/1 = null
+
+[node name="pot_large" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 149 )
+material/0 = null
+material/1 = null
+
+[node name="pot_small" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 156 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_largeA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 191 )
+material/0 = null
+material/1 = null
+
+[node name="rock_largeB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 193 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_largeC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 157 )
+material/0 = null
+material/1 = null
+
+[node name="rock_largeD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 158 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_largeE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 164 )
+material/0 = null
+material/1 = null
+
+[node name="rock_largeF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 229 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_smallA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 206 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 197 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 239 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 252 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 240 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 241 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallFlatA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 242 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallFlatB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 234 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallFlatC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 212 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallG" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 204 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallH" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 225 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallI" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 208 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallTopA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 224 )
+material/0 = null
+material/1 = null
+
+[node name="rock_smallTopB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 233 )
+material/0 = null
+material/1 = null
+
+[node name="rock_tallA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 213 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 235 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 220 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 248 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 205 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 249 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallG" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 236 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallH" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 237 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallI" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 214 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="rock_tallJ" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 238 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="sign" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 226 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="statue_block" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 227 )
+material/0 = null
+material/1 = null
+
+[node name="statue_column" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 199 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="statue_columnDamaged" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 207 )
+material/0 = null
+material/1 = null
+
+[node name="statue_head" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 230 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="statue_obelisk" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 243 )
+material/0 = null
+material/1 = null
+
+[node name="statue_ring" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 200 )
+material/0 = null
+material/1 = null
+
+[node name="stone_largeA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 253 )
+material/0 = null
+
+[node name="stone_largeB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 244 )
+material/0 = null
+material/1 = null
+
+[node name="stone_largeC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 245 )
+material/0 = null
+
+[node name="stone_largeD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 209 )
+material/0 = null
+material/1 = null
+
+[node name="stone_largeE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 215 )
+material/0 = null
+
+[node name="stone_largeF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 210 )
+material/0 = null
+material/1 = null
+
+[node name="stone_smallA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 196 )
+material/0 = null
+
+[node name="stone_smallB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 246 )
+material/0 = null
+
+[node name="stone_smallC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 251 )
+material/0 = null
+
+[node name="stone_smallD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 216 )
+material/0 = null
+
+[node name="stone_smallE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 203 )
+material/0 = null
+
+[node name="stone_smallF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 247 )
+material/0 = null
+
+[node name="stone_smallFlatA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 250 )
+material/0 = null
+
+[node name="stone_smallFlatB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 254 )
+material/0 = null
+
+[node name="stone_smallFlatC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 217 )
+material/0 = null
+
+[node name="stone_smallG" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 255 )
+material/0 = null
+
+[node name="stone_smallH" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 256 )
+material/0 = null
+
+[node name="stone_smallI" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 201 )
+material/0 = null
+
+[node name="stone_smallTopA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 211 )
+material/0 = null
+
+[node name="stone_smallTopB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 198 )
+material/0 = null
+
+[node name="stone_tallA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 221 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 218 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 257 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 202 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 258 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 219 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallG" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 222 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallH" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 223 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallI" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 228 )
+material/0 = null
+material/1 = null
+
+[node name="stone_tallJ" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 231 )
+material/0 = null
+material/1 = null
+
+[node name="stump_old" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 232 )
+material/0 = null
+
+[node name="stump_oldTall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 300 )
+material/0 = null
+
+[node name="stump_round" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 302 )
+material/0 = null
+material/1 = null
+
+[node name="stump_roundDetailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 284 )
+material/0 = null
+material/1 = null
+
+[node name="stump_square" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 298 )
+material/0 = null
+material/1 = null
+
+[node name="stump_squareDetailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 261 )
+material/0 = null
+material/1 = null
+
+[node name="stump_squareDetailedWide" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 269 )
+material/0 = null
+material/1 = null
+
+[node name="tent_detailedClosed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 263 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tent_detailedOpen" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 276 )
+material/0 = null
+material/1 = null
+
+[node name="tent_smallClosed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 259 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="tent_smallOpen" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 277 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_blocks" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 280 )
+material/0 = null
+material/1 = null
+
+[node name="tree_blocks_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 282 )
+material/0 = null
+material/1 = null
+
+[node name="tree_blocks_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 291 )
+material/0 = null
+material/1 = null
+
+[node name="tree_cone" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 290 )
+material/0 = null
+material/1 = null
+
+[node name="tree_cone_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 266 )
+material/0 = null
+material/1 = null
+
+[node name="tree_cone_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 303 )
+material/0 = null
+material/1 = null
+
+[node name="tree_default" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 281 )
+material/0 = null
+material/1 = null
+
+[node name="tree_default_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 285 )
+material/0 = null
+material/1 = null
+
+[node name="tree_default_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 283 )
+material/0 = null
+material/1 = null
+
+[node name="tree_detailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 286 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_detailed_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 287 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_detailed_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 304 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_fat" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 288 )
+material/0 = null
+material/1 = null
+
+[node name="tree_fat_darkh" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 275 )
+material/0 = null
+material/1 = null
+
+[node name="tree_fat_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 289 )
+material/0 = null
+material/1 = null
+
+[node name="tree_oak" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 292 )
+material/0 = null
+material/1 = null
+
+[node name="tree_oak_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 267 )
+material/0 = null
+material/1 = null
+
+[node name="tree_oak_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 309 )
+material/0 = null
+material/1 = null
+
+[node name="tree_palm" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 293 )
+material/0 = null
+material/1 = null
+
+[node name="tree_palmBend" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 294 )
+material/0 = null
+material/1 = null
+
+[node name="tree_palmDetailedShort" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 295 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_palmDetailedTall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 260 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_palmShort" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 268 )
+material/0 = null
+material/1 = null
+
+[node name="tree_palmTall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 273 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineDefaultA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 271 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineDefaultB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 278 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineGroundA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 310 )
+material/0 = null
+
+[node name="tree_pineGroundB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 274 )
+material/0 = null
+
+[node name="tree_pineRoundA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 296 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineRoundB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 264 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="tree_pineRoundC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 262 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineRoundD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 265 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineRoundE" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 297 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineRoundF" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 279 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineSmallA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 270 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineSmallB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 299 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineSmallC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 301 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineSmallD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 272 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallA" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 305 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallA_detailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 306 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallB" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 307 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallB_detailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 308 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallC" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 323 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallC_detailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 319 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallD" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 326 )
+material/0 = null
+material/1 = null
+
+[node name="tree_pineTallD_detailed" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 312 )
+material/0 = null
+material/1 = null
+
+[node name="tree_plateau" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 321 )
+material/0 = null
+material/1 = null
+
+[node name="tree_plateau_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 324 )
+material/0 = null
+material/1 = null
+
+[node name="tree_plateau_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 327 )
+material/0 = null
+material/1 = null
+
+[node name="tree_simple" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 318 )
+material/0 = null
+material/1 = null
+
+[node name="tree_simple_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 325 )
+material/0 = null
+material/1 = null
+
+[node name="tree_simple_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 314 )
+material/0 = null
+material/1 = null
+
+[node name="tree_small" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 328 )
+material/0 = null
+material/1 = null
+
+[node name="tree_small_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 313 )
+material/0 = null
+material/1 = null
+
+[node name="tree_small_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 329 )
+material/0 = null
+material/1 = null
+
+[node name="tree_tall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 317 )
+material/0 = null
+material/1 = null
+
+[node name="tree_tall_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 322 )
+material/0 = null
+material/1 = null
+
+[node name="tree_tall_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 320 )
+material/0 = null
+material/1 = null
+
+[node name="tree_thin" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 315 )
+material/0 = null
+material/1 = null
+
+[node name="tree_thin_dark" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 311 )
+material/0 = null
+material/1 = null
+
+[node name="tree_thin_fall" type="MeshInstance" parent="."]
+visible = false
+mesh = ExtResource( 316 )
+material/0 = null
+material/1 = null

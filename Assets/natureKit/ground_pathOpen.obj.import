@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_pathOpen.obj-4b49e9ade65a9b9d9df0cab50df12909.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_pathOpen.obj-4b49e9ade65a9b9d9df0cab50df12909.mesh" ]
+
+source_file="res://Assets/natureKit/ground_pathOpen.obj"
+dest_files=[ "res://.import/ground_pathOpen.obj-4b49e9ade65a9b9d9df0cab50df12909.mesh", "res://.import/ground_pathOpen.obj-4b49e9ade65a9b9d9df0cab50df12909.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

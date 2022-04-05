@@ -46,7 +46,7 @@ export(float,0,1,0.01) var rumble_on_grabbable_intensity = 0.2
 func just_grabbed() -> bool:
 	var did_grab: bool
 	#aca veo si el raycast choco con algo y obtener la ubicacion del puntito 
-	grab_area.global_transform = raycast.ui_raycast_hitmarker.globaltransform
+	set_global_transform(raycast.ui_raycast_hitmarker.get_global_transform())
 	did_grab = controller._button_just_pressed(grab_button)
 	
 	return did_grab
@@ -322,7 +322,7 @@ func release_grab_velocity():
 
 
 func _on_GrabArea_body_entered(body):
-	if body is OQClass_GrabbableRigidBody:
+	if body is RayCastGrabbableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)
 			
@@ -335,7 +335,7 @@ func _on_GrabArea_body_entered(body):
 				
 
 func _on_GrabArea_body_exited(body):
-	if body is OQClass_GrabbableRigidBody:
+	if body is RayCastGrabbableRigidBody:
 		var prev_candidate = null
 		
 		# see if body is losing its grab candidacy. if so, notify

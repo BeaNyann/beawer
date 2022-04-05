@@ -86,6 +86,12 @@ vr="*res://OQ_Toolkit/vr_autoload.gd"
 
 singletons=[ "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
 
+[layer_names]
+
+3d_physics/layer_1="User"
+3d_physics/layer_2="Objects"
+3d_physics/layer_3="Floor"
+
 [physics]
 
 common/enable_pause_aware_picking=true

@@ -36,6 +36,35 @@ var _release_next_physics_step := false;
 var _cached_linear_velocity := Vector3(0,0,0); # required for kinematic grab
 var _cached_angular_velocity := Vector3(0,0,0);
 
+
+var last_pos2d = null;
+
+func ui_raycast_hit_event(position, click, release):
+	var local_position = to_local(position);
+	var pos2d = Vector2(local_position.x, -local_position.y)
+	pos2d = pos2d + Vector2(0.5, 0.5)
+	
+
+	if (click || release):
+		var e = InputEventMouseButton.new();
+		e.pressed = click;
+		e.button_index = BUTTON_LEFT;
+		e.position = pos2d;
+		e.global_position = pos2d;
+		
+		#if (click): print("Click");
+		#if (release): print("Release");
+
+		
+	elif (last_pos2d != null && last_pos2d != pos2d):
+		var e = InputEventMouseMotion.new();
+		e.relative = pos2d - last_pos2d;
+		e.speed = (pos2d - last_pos2d) / 16.0; #?? chose an arbitrary scale here for now
+		e.global_position = pos2d;
+		e.position = pos2d;
+		
+	last_pos2d = pos2d;
+
 func grab_init(node, grab_type: int) -> void:
 	feature_grab_node = node
 	_grab_type = grab_type

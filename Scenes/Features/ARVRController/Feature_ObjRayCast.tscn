@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Code/SceneScripts/Features/Feature_ObjRayCast.gd" type="Script" id=1]
 
@@ -15,6 +15,9 @@ height = 0.02
 [sub_resource type="SpatialMaterial" id=4]
 flags_unshaded = true
 flags_fixed_size = true
+
+[sub_resource type="SphereShape" id=5]
+radius = 0.236783
 
 [node name="Feature_ObjRayCast" type="Spatial"]
 script = ExtResource( 1 )
@@ -33,3 +36,11 @@ material/0 = SubResource( 2 )
 [node name="RayCastHitMarker" type="MeshInstance" parent="RayCastPosition"]
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
+
+[node name="GrabArea" type="Area" parent="RayCastPosition/RayCastHitMarker"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RayCastPosition/RayCastHitMarker/GrabArea"]
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="RayCastPosition/RayCastHitMarker/GrabArea" to="." method="_on_GrabArea_body_entered"]
+[connection signal="body_exited" from="RayCastPosition/RayCastHitMarker/GrabArea" to="." method="_on_GrabArea_body_exited"]

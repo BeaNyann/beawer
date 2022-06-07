@@ -10,7 +10,6 @@ extends Spatial
 func _ready():
 	vr.initialize()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

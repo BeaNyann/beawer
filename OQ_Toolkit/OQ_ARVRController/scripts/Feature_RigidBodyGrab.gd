@@ -329,6 +329,7 @@ func release_grab_velocity():
 
 
 func _on_GrabArea_body_entered(body):
+	vr.log_info("nsdjf")
 	if body is OQClass_GrabbableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)

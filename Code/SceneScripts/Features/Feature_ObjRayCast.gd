@@ -1,4 +1,4 @@
-extends Spatial
+extends Feature_RigidBodyGrab
 
 export var active := true;
 export var ui_raycast_length := 3.0;
@@ -9,7 +9,6 @@ export var adjust_left_right := true;
 export(vr.CONTROLLER_BUTTON) var ui_raycast_visible_button := vr.CONTROLLER_BUTTON.TOUCH_INDEX_TRIGGER;
 export(vr.CONTROLLER_BUTTON) var ui_raycast_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER;
 
-var controller : ARVRController = null;
 onready var ui_raycast_position : Spatial = $RayCastPosition;
 onready var ui_raycast : RayCast = $RayCastPosition/RayCast;
 onready var ui_raycast_mesh : MeshInstance = $RayCastPosition/RayCastMesh;
@@ -96,6 +95,13 @@ func _ready():
 	controller = get_parent();
 	if (not controller is ARVRController):
 		vr.log_error(" in Feature_UIRayCast: parent not ARVRController.");
+		
+	vr.log_info("hola estoy en el ready el obj ray cast")	
+	grab_area = $RayCastPosition/RayCastHitMarker/GrabArea;
+	grab_area.collision_mask = grab_layer;
+	#grab_area.connect("body_entered", self, "_on_GrabArea_body_entered")
+	#grab_area.connect("body_exited", self, "_on_GrabArea_body_exited")
+	vr.log_info("conecte las señales")
 	
 	ui_raycast.set_cast_to(Vector3(0, 0, -ui_raycast_length));
 	
@@ -111,3 +117,36 @@ func _physics_process(_dt):
 	if (!active): return;
 	if (!visible): return;
 	_update_raycasts();
+	
+
+func _on_GrabArea_body_entered(body):
+	print("esto debería estar llamandose owo")
+	if body is RayCastGrabbableRigidBody:
+		if body.grab_enabled:
+			grabbable_candidates.push_back(body)
+			
+			if grabbable_candidates.size() == 1:
+				body._notify_became_grabbable(self)
+				
+				# initiate "grabbable" rumble when first candidate acquired
+				if rumble_on_grabbable and controller:
+					controller.simple_rumble(rumble_on_grabbable_intensity,0.1)
+				
+
+func _on_GrabArea_body_exited(body):
+	if body is RayCastGrabbableRigidBody:
+		var prev_candidate = null
+		
+		# see if body is losing its grab candidacy. if so, notify
+		if grabbable_candidates.size() > 0:
+			prev_candidate = grabbable_candidates.front()
+			if prev_candidate == body:
+				prev_candidate._notify_lost_grabbable(self)
+		
+		grabbable_candidates.erase(body)
+		
+		# see if a grab candidacy has changed after removal. if so, notify
+		if grabbable_candidates.size() > 0:
+			var curr_candidate = grabbable_candidates.front()
+			if prev_candidate != curr_candidate:
+				curr_candidate._notify_became_grabbable(self)

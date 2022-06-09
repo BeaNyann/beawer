@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://OQ_Toolkit/OQ_ARVRController/scripts/Feature_RigidBodyGrab.gd"
 }, {
 "base": "Spatial",
+"class": "Feature_RigidBodyRayCastGrab",
+"language": "GDScript",
+"path": "res://Code/SceneScripts/Features/Feature_RigidBodyRayCastGrab.gd"
+}, {
+"base": "Spatial",
 "class": "Feature_ToolGrab",
 "language": "GDScript",
 "path": "res://OQ_Toolkit/OQ_ARVRController/scripts/Feature_ToolGrab.gd"
@@ -61,6 +66,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Feature_RigidBodyGrab": "",
+"Feature_RigidBodyRayCastGrab": "",
 "Feature_ToolGrab": "",
 "Feature_UIRigidBodyGrabRayCast": "",
 "OQClass_GrabbableRigidBody": "",

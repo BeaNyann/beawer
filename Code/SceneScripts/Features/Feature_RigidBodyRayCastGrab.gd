@@ -1,8 +1,8 @@
-# TODO:
-# create the hingejoint and kinematic body maybe only when needed
-#   and not as part of the scene always
+
 extends Spatial
-class_name Feature_RigidBodyGrab
+class_name Feature_RigidBodyRayCastGrab
+
+# Grab variables 
 
 # The controller that this grab feature is bound to
 var controller : ARVRController = null;
@@ -10,7 +10,7 @@ var controller : ARVRController = null;
 # This is needed so that we can release the object from the other controller
 # prior to transferring grab ownership to this controller. If the release isn't
 # performed correctly, strange node reparenting behavior can occur.
-var other_grab_feature : Feature_RigidBodyGrab = null
+var other_grab_feature : Feature_RigidBodyRayCastGrab = null
 var grab_area : Area = null;
 var held_object = null;
 var held_object_data = {};
@@ -22,13 +22,13 @@ var last_gesture := "";
 # initiated, the object at the front of the list will be grabbed.
 var grabbable_candidates = []
 
-export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
+export(vr.CONTROLLER_BUTTON) var raycast_grab_button = vr.CONTROLLER_BUTTON.INDEX_TRIGGER;
 export(String) var grab_gesture := "Fist"
 export(int, LAYERS_3D_PHYSICS) var grab_layer := 1
 export (vr.GrabTypes) var grab_type := vr.GrabTypes.HINGEJOINT;
 export var collision_body_active := false;
 export(int, LAYERS_3D_PHYSICS) var collision_body_layer := 1
-onready var _hinge_joint : HingeJoint = $HingeJoint;
+onready var _hinge_joint : HingeJoint = $RayCastPosition/RayCastHitMarker/HingeJoint
 export var reparent_mesh = false;
 export var hide_model_on_grab := false;
 # set to true to vibrate controller when object is grabbed
@@ -40,6 +40,103 @@ export var rumble_on_grabbable := false;
 # control the intesity of vibration when an object becomes grabbable
 export(float,0,1,0.01) var rumble_on_grabbable_intensity = 0.2
 
+
+# RayCast variables
+
+export var active := true;
+export var raycast_length := 3.0;
+export var mesh_length := 1.0;
+
+export var adjust_left_right := true;
+
+export(vr.CONTROLLER_BUTTON) var raycast_visible_button := vr.CONTROLLER_BUTTON.TOUCH_INDEX_TRIGGER;
+#export(vr.CONTROLLER_BUTTON) var ui_raycast_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER;
+#creo que el click button queda funcionalmente reemplazado por el grab button 
+
+onready var raycast_position : Spatial = $RayCastPosition;
+onready var raycast : RayCast = $RayCastPosition/RayCast;
+onready var raycast_mesh : MeshInstance = $RayCastPosition/RayCastMesh;
+onready var raycast_hitmarker : MeshInstance = $RayCastPosition/RayCastHitMarker;
+onready var collision_kinematic_body : KinematicBody = $RayCastPosition/RayCastHitMarker/CollisionKinematicBody
+onready var collision_body_shape : CollisionShape = $RayCastPosition/RayCastHitMarker/CollisionKinematicBody/CollisionBodyShape
+
+const hand_click_button := vr.CONTROLLER_BUTTON.XA;
+# no se que es eso ^
+
+var is_colliding := false;
+
+
+func _set_raycast_transform():
+	# woraround for now until there is a more standardized way to know the controller
+	# orientation
+	if (controller.is_hand):
+		
+		if (vr.ovrBaseAPI):
+			raycast_position.transform = controller.transform.inverse() * vr.ovrBaseAPI.get_pointer_pose(controller.controller_id);
+		else:
+			raycast_position.transform.basis = Basis(Vector3(deg2rad(-90),0,0));
+	else:
+		raycast_position.transform = Transform();
+		
+		# center the ray cast better to the actual controller position
+		if (adjust_left_right):
+			raycast_position.translation.y = -0.005;
+			raycast_position.translation.z = -0.01;
+		
+			if (controller.controller_id == 1):
+				raycast_position.translation.x = -0.01;
+			if (controller.controller_id == 2):
+				raycast_position.translation.x =  0.01;
+		
+
+func _update_raycasts():
+	raycast_hitmarker.visible = false;
+	
+	
+	if (controller.is_hand && vr.ovrBaseAPI): # hand has separate logic
+		raycast_mesh.visible = vr.ovrBaseAPI.is_pointer_pose_valid(controller.controller_id);
+		if (!raycast_mesh.visible): return;
+	elif (raycast_visible_button == vr.CONTROLLER_BUTTON.None ||
+		  controller._button_pressed(raycast_visible_button) ||
+		  controller._button_pressed(raycast_grab_button)): 
+		raycast_mesh.visible = true;
+	else:
+		# Process when raycast just starts to not be visible,
+		# To allow for button release
+		if (!raycast_mesh.visible): return;
+		raycast_mesh.visible = false;
+		
+	_set_raycast_transform();
+
+		
+	raycast.force_raycast_update(); # need to update here to get the current position; else the marker laggs behind
+	
+	
+	if raycast.is_colliding():
+		var c = raycast.get_collider();
+		if (!c.has_method("ui_raycast_hit_event")): return;
+		#el objetoque vamos a agarrar tiene que tener este metodo
+		
+		var click = false;
+		var release = false;
+		if (controller.is_hand):
+			click = controller._button_just_pressed(hand_click_button);
+			release = controller._button_just_released(hand_click_button);
+		else:
+			click = controller._button_just_pressed(raycast_grab_button);
+			release = controller._button_just_released(raycast_grab_button);
+		
+		var position = raycast.get_collision_point();
+		raycast_hitmarker.visible = true;
+		raycast_hitmarker.global_transform.origin = position;
+		
+		c.ui_raycast_hit_event(position, click, release);
+		# a!
+		is_colliding = true;
+	else:
+		is_colliding = false;
+
+
 # Returns true if controller's grab button was pressed, or hand's grab gesture
 # was detected.
 func just_grabbed() -> bool:
@@ -50,9 +147,10 @@ func just_grabbed() -> bool:
 		did_grab = cur_gesture != last_gesture and cur_gesture == grab_gesture
 		last_gesture = cur_gesture
 	else:
-		did_grab = controller._button_just_pressed(grab_button)
+		did_grab = controller._button_just_pressed(raycast_grab_button)
 	
 	return did_grab
+
 
 # Returns true if controller's grab button is not pressed, or hand's grab
 # gesture is not detected
@@ -63,38 +161,39 @@ func not_grabbing() -> bool:
 		last_gesture = controller.get_hand_model().detect_simple_gesture()
 		not_grabbed = last_gesture != grab_gesture
 	else:
-		not_grabbed = !controller._button_pressed(grab_button)
+		not_grabbed = !controller._button_pressed(raycast_grab_button)
 	
 	return not_grabbed
-
 
 func _ready():
 	controller = get_parent();
 	if (not controller is ARVRController):
-		vr.log_error(" in Feature_RigidBodyGrab: parent not ARVRController.");
-	grab_area = $GrabArea;
+		vr.log_error(" in Feature_UIRayCast: parent not ARVRController.");
+		
+	vr.log_info("hola estoy en el ready el obj ray cast")	
+	grab_area = $RayCastPosition/RayCastHitMarker/GrabArea;
 	grab_area.collision_mask = grab_layer;
-	
-	$CollisionKinematicBody.collision_layer = collision_body_layer;
-	$CollisionKinematicBody.collision_mask = collision_body_layer;
-	
+
+	collision_kinematic_body.collision_layer = collision_body_layer;
+	collision_kinematic_body.collision_mask = collision_body_layer;
+
 	if (!collision_body_active):
-		$CollisionKinematicBody/CollisionBodyShape.disabled = true;
-	
+		collision_body_shape.disabled = true;
+
 	# find the other Feature_RigidBodyGrab if it exists
 	if controller:
 		if controller.controller_id == 1:# left
 			if vr.rightController:
 				for c in vr.rightController.get_children():
 					# can't use "is" because of cyclical dependency issue
-					if c.get_class() == "Feature_RigidBodyGrab":
+					if c.get_class() == "Feature_RigidBodyRayCastGrab":
 						other_grab_feature = c
 						break
 		else:# right
 			if vr.leftController:
 				for c in vr.leftController.get_children():
 					# can't use "is" because of cyclical dependency issue
-					if c.get_class() == "Feature_RigidBodyGrab":
+					if c.get_class() == "Feature_RigidBodyRayCastGrab":
 						other_grab_feature = c
 						break
 						
@@ -102,27 +201,40 @@ func _ready():
 	#controller.connect("button_pressed", self, "_on_ARVRController_button_pressed")
 	#controller.connect("button_release", self, "_on_ARVRController_button_release")
 
+	#grab_area.connect("body_entered", self, "_on_GrabArea_body_entered")
+	#grab_area.connect("body_exited", self, "_on_GrabArea_body_exited")
+	vr.log_info("conecte las señales")
+	
+	raycast.set_cast_to(Vector3(0, 0, -raycast_length));
+	
+	#setup the mesh
+	raycast_mesh.mesh.size.z = mesh_length;
+	raycast_mesh.translation.z = -mesh_length * 0.5;
+	
+	raycast_hitmarker.visible = false;
+	raycast_mesh.visible = false;
+
 # Godot's get_class() method only return native class names
 # we need this because we can't use "is" to test against a class_name within
 # the class itself, Godot complains about a weird cyclical dependency...
 func get_class():
 	return "Feature_RigidBodyGrab"
 
+# we use the physics process here be in sync with the controller position
 func _physics_process(_dt):
-	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+	if (!active): return;
+	if (!visible): return;
+	_update_raycasts();
 	update_grab()
 
-
-# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 func update_grab() -> void:
 	if (just_grabbed()):
 		grab()
 	elif (not_grabbing()):
 		release()
 
-
 func grab() -> void:
-	vr.log_info("holils estoy en featuurerigidbodygrab pa k me borres")
+	vr.log_info("holils estoy en featuurerigidbodygrab ray cast pa k me borres")
 	if (held_object):
 		return
 	
@@ -156,7 +268,6 @@ func grab() -> void:
 				if model:
 					model.hide()
 
-
 func release():
 	if !held_object:
 		return
@@ -180,7 +291,6 @@ func release():
 			model = $"../Feature_ControllerModel_Right"
 			if model:
 				model.show()
-
 
 func start_grab_kinematic(grabbable_rigid_body):
 	if grabbable_rigid_body.is_grabbed:
@@ -238,7 +348,7 @@ func _reparent_mesh():
 			grab_mesh = c;
 			break;
 	if (grab_mesh):
-		vr.log_info("Feature_RigidBodyGrab: reparentin mesh " + grab_mesh.name);
+		vr.log_info("Feature_RigidBodyRayCastGrab: reparentin mesh " + grab_mesh.name);
 		var mesh_global_trafo = grab_mesh.global_transform;
 		held_object.remove_child(grab_mesh);
 		add_child(grab_mesh);
@@ -328,10 +438,11 @@ func release_grab_velocity():
 #	# if grab button, grab
 #	release()
 
+	
 
 func _on_GrabArea_body_entered(body):
-	vr.log_info("nsdjf")
-	if body is OQClass_GrabbableRigidBody:
+	vr.log_info("esto debería estar llamandose owo")
+	if body is RayCastGrabbableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)
 			
@@ -344,7 +455,7 @@ func _on_GrabArea_body_entered(body):
 				
 
 func _on_GrabArea_body_exited(body):
-	if body is OQClass_GrabbableRigidBody:
+	if body is RayCastGrabbableRigidBody:
 		var prev_candidate = null
 		
 		# see if body is losing its grab candidacy. if so, notify

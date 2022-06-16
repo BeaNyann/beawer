@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Code/SceneScripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/furnitureKit/tableRound.obj" type="ArrayMesh" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Assets/furnitureKit/stairs.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://Scenes/Features/Character.tscn" type="PackedScene" id=8]
 [ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DLogWindow.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Code/SceneScripts/Clases/ManipulableRigidBody.gd" type="Script" id=10]
 [ext_resource path="res://Assets/foodKit/apple.obj" type="ArrayMesh" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -191,9 +190,10 @@ material/2 = null
 shape = SubResource( 5 )
 
 [node name="FloatingApple" type="RigidBody" parent="Pickables"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.551142, -0.661635, 0 )
 mode = 1
 gravity_scale = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Pickables/FloatingApple"]
 mesh = ExtResource( 11 )

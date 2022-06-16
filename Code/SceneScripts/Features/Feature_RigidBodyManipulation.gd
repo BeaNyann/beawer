@@ -72,7 +72,7 @@ func _ready():
 	controller = get_parent();
 	if (not controller is ARVRController):
 		vr.log_error(" in Feature_RigidBodyGrab: parent not ARVRController.");
-	grab_area = $GrabArea;
+	grab_area = $InteractiveArea;
 	grab_area.collision_mask = grab_layer;
 	
 	$CollisionKinematicBody.collision_layer = collision_body_layer;

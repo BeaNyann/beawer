@@ -30,20 +30,15 @@ var last_reported_collision_pos : Vector3 = Vector3(0,0,0);
 
 var _orig_can_sleep := true;
 
-var _grab_type := -1;
-
 var _release_next_physics_step := false;
 var _cached_linear_velocity := Vector3(0,0,0); # required for kinematic grab
 var _cached_angular_velocity := Vector3(0,0,0);
 
 func ready():
 	mode = RigidBody.MODE_STATIC
-	_grab_type = vr.GrabTypes.HINGEJOINT
-	gravity_scale = 0
 
 func grab_init(node) -> void:
 	feature_grab_node = node
-	#_grab_type = grab_type
 	
 	is_grabbed = true
 	sleeping = false;
@@ -60,15 +55,7 @@ func _release():
 
 
 func grab_release() -> void:
-	if _grab_type == vr.GrabTypes.KINEMATIC:
-		vr.log_info("pues si se velve kinematic la wa manipulation toi")
-		_release_next_physics_step = true;
-		_cached_linear_velocity = linear_velocity;
-		_cached_angular_velocity = angular_velocity;
-	else:
-		_release();
-	
-
+	_release();
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();
@@ -106,24 +93,6 @@ func _integrate_forces(state):
 	
 	if (_release_next_physics_step):
 		_release_next_physics_step = false;
-		if _grab_type == vr.GrabTypes.KINEMATIC:
-			state.set_linear_velocity(_cached_linear_velocity);
-			state.set_angular_velocity(_cached_angular_velocity);
 		_release();
-		return;
+	return;
 	
-	# TODO: it would be better to use == Feature_RigidBodyGrab.GrabTypes.KINEMATIC
-	# but this leads to an odd cyclic reference error
-	# related to this bug: https://github.com/godotengine/godot/issues/21461
-	if _grab_type == vr.GrabTypes.KINEMATIC:
-		return;
-
-	if _grab_type == vr.GrabTypes.HINGEJOINT:
-		return;
-	
-	if (_grab_type == vr.GrabTypes.VELOCITY):
-		if (!feature_grab_node): return;
-		var target_basis =  feature_grab_node.get_global_transform().basis * delta_orientation;
-		var target_position = feature_grab_node.get_global_transform().origin# + target_basis.xform(delta_position);
-		position_follow(state, get_global_transform().origin, target_position);
-		orientation_follow(state, get_global_transform().basis, target_basis);

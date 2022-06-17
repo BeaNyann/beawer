@@ -135,14 +135,7 @@ func grab() -> void:
 		# rumble controller to acknowledge grab action
 		if rumble_on_grab and controller:
 			controller.simple_rumble(rumble_on_grab_intensity,0.1)
-
-		#match grab_type:
-		#	vr.GrabTypes.KINEMATIC:
-		#		start_grab_kinematic(grabbable_rigid_body);
-		#	vr.GrabTypes.VELOCITY:
-		#		start_grab_velocity(grabbable_rigid_body);
-		#	vr.GrabTypes.HINGEJOINT:
-		#		start_grab_hinge_joint(grabbable_rigid_body);
+			
 		start_interaction(grabbable_rigid_body);
 		
 		# Hiding a hand tracking model disables pose updating,
@@ -161,13 +154,6 @@ func grab() -> void:
 func release():
 	if !held_object:
 		return
-	#match grab_type:
-	#	vr.GrabTypes.KINEMATIC:
-	#		release_grab_kinematic()
-	#	vr.GrabTypes.VELOCITY:
-	#		release_grab_velocity()
-	#	vr.GrabTypes.HINGEJOINT:
-	#		release_grab_hinge_joint()
 	release_interaction()
 	# Hiding a hand tracking model disables pose updating,
 	# so we can't hide it here or we can't ever change gesture again
@@ -208,47 +194,6 @@ func release_interaction():
 	held_object.set_mode(RigidBody.MODE_STATIC)
 	held_object.grab_release();
 	held_object = null;
-	
-func start_grab_kinematic(grabbable_rigid_body):
-	if grabbable_rigid_body.is_grabbed:
-		if grabbable_rigid_body.is_transferable:
-			# release from other hand to we can transfer to this hand
-			other_grab_feature.release()
-		else:
-			# reject grab if object is already held and it's non-transferable
-			return
-	
-	held_object = grabbable_rigid_body
-	
-	# keep initial transform
-	var initial_transform = held_object.get_global_transform()
-	
-	# reparent
-	held_object_initial_parent = held_object.get_parent()
-	held_object_initial_parent.remove_child(held_object)
-	add_child(held_object)
-	
-	held_object.global_transform = initial_transform
-	held_object.set_mode(RigidBody.MODE_KINEMATIC)
-	
-	#held_object.grab_init(self, grab_type)
-
-
-func release_grab_kinematic():
-	# keep initial transform
-	var initial_transform = held_object.get_global_transform()
-	
-	# reparent
-	remove_child(held_object)
-	held_object_initial_parent.add_child(held_object)
-	
-	held_object.global_transform = initial_transform
-	held_object.set_mode(RigidBody.MODE_RIGID)
-	
-	held_object.grab_release()
-	
-	held_object = null
-
 
 	
 func _release_reparent_mesh():
@@ -270,75 +215,8 @@ func _reparent_mesh():
 		held_object.remove_child(grab_mesh);
 		add_child(grab_mesh);
 		
-		#if (grab_type == vr.GrabTypes.VELOCITY):
-			# now set the mesh transform to be the same as used for the rigid body
-		#	grab_mesh.transform = Transform();
-		#	grab_mesh.transform.basis = held_object.delta_orientation;
 		#elif (grab_type == vr.GrabTypes.HINGEJOINT):
 		grab_mesh.global_transform = mesh_global_trafo;
-
-	
-#func start_grab_hinge_joint(grabbable_rigid_body: OQClass_GrabbableRigidBody):
-func start_grab_hinge_joint(grabbable_rigid_body):
-	if (grabbable_rigid_body == null):
-		vr.log_warning("Invalid grabbable_rigid_body in start_grab_hinge_joint()");
-		return;
-	
-	if grabbable_rigid_body.is_grabbed:
-		if grabbable_rigid_body.is_transferable:
-			# release from other hand to we can transfer to this hand
-			other_grab_feature.release()
-		else:
-			# reject grab if object is already held and it's non-transferable
-			return
-		
-	held_object = grabbable_rigid_body
-	#held_object.grab_init(self, grab_type)
-	
-	_hinge_joint.set_node_b(held_object.get_path());
-	
-	if (reparent_mesh): _reparent_mesh();
-
-func release_grab_hinge_joint():
-	_release_reparent_mesh();
-	_hinge_joint.set_node_b("");
-	held_object.grab_release();
-	held_object = null;
-
-
-#func start_grab_velocity(grabbable_rigid_body: OQClass_GrabbableRigidBody):
-func start_grab_velocity(grabbable_rigid_body):
-	if (grabbable_rigid_body == null):
-		vr.log_warning("Invalid grabbable_rigid_body in start_grab_velocity()");
-		return;
-	
-	if grabbable_rigid_body.is_grabbed:
-		if grabbable_rigid_body.is_transferable:
-			# release from other hand to we can transfer to this hand
-			other_grab_feature.release()
-		else:
-			# reject grab if object is already held and it's non-transferable
-			return
-	
-	var temp_global_pos = grabbable_rigid_body.global_transform.origin;
-	var temp_rotation = grabbable_rigid_body.global_transform.basis;
-	
-	
-	grabbable_rigid_body.global_transform.origin = temp_global_pos;
-	grabbable_rigid_body.global_transform.basis = temp_rotation;
-	
-	held_object = grabbable_rigid_body;
-	#held_object.grab_init(self, grab_type);
-
-	if (reparent_mesh): _reparent_mesh();
-
-
-func release_grab_velocity():
-	_release_reparent_mesh();
-	
-	held_object.grab_release()
-	held_object = null
-
 
 # TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 #func _on_ARVRController_button_pressed(button_number):
@@ -354,40 +232,6 @@ func release_grab_velocity():
 #
 #	# if grab button, grab
 #	release()
-
-
-func _on_GrabArea_body_entered(body):
-	vr.log_info("nsdjf")
-	if body is OQClass_GrabbableRigidBody:
-		if body.grab_enabled:
-			grabbable_candidates.push_back(body)
-			
-			if grabbable_candidates.size() == 1:
-				body._notify_became_grabbable(self)
-				
-				# initiate "grabbable" rumble when first candidate acquired
-				if rumble_on_grabbable and controller:
-					controller.simple_rumble(rumble_on_grabbable_intensity,0.1)
-				
-
-func _on_GrabArea_body_exited(body):
-	if body is OQClass_GrabbableRigidBody:
-		var prev_candidate = null
-		
-		# see if body is losing its grab candidacy. if so, notify
-		if grabbable_candidates.size() > 0:
-			prev_candidate = grabbable_candidates.front()
-			if prev_candidate == body:
-				prev_candidate._notify_lost_grabbable(self)
-		
-		grabbable_candidates.erase(body)
-		
-		# see if a grab candidacy has changed after removal. if so, notify
-		if grabbable_candidates.size() > 0:
-			var curr_candidate = grabbable_candidates.front()
-			if prev_candidate != curr_candidate:
-				curr_candidate._notify_became_grabbable(self)
-
 
 func _on_InteractiveArea_body_entered(body):
 	vr.log_info("nsdjf")

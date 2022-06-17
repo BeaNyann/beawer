@@ -38,10 +38,12 @@ var _cached_angular_velocity := Vector3(0,0,0);
 
 func ready():
 	mode = RigidBody.MODE_STATIC
+	_grab_type = vr.GrabTypes.HINGEJOINT
+	gravity_scale = 0
 
-func grab_init(node, grab_type: int) -> void:
+func grab_init(node) -> void:
 	feature_grab_node = node
-	_grab_type = grab_type
+	#_grab_type = grab_type
 	
 	is_grabbed = true
 	sleeping = false;
@@ -59,6 +61,7 @@ func _release():
 
 func grab_release() -> void:
 	if _grab_type == vr.GrabTypes.KINEMATIC:
+		vr.log_info("pues si se velve kinematic la wa manipulation toi")
 		_release_next_physics_step = true;
 		_cached_linear_velocity = linear_velocity;
 		_cached_angular_velocity = angular_velocity;

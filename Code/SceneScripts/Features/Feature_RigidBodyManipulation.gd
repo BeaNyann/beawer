@@ -10,7 +10,7 @@ var controller : ARVRController = null;
 # This is needed so that we can release the object from the other controller
 # prior to transferring grab ownership to this controller. If the release isn't
 # performed correctly, strange node reparenting behavior can occur.
-var other_grab_feature : Feature_RigidBodyGrab = null
+var other_grab_feature : Feature_RigidBodyManipulation = null
 var grab_area : Area = null;
 var held_object = null;
 var held_object_data = {};
@@ -185,6 +185,7 @@ func start_interaction(grabbable_rigid_body):
 	held_object.grab_init(self)
 	
 	_hinge_joint.set_node_b(held_object.get_path());
+	held_object.set_mode(RigidBody.MODE_RIGID)
 	
 	if (reparent_mesh): _reparent_mesh();
 	
@@ -234,7 +235,7 @@ func _reparent_mesh():
 #	release()
 
 func _on_InteractiveArea_body_entered(body):
-	vr.log_info("nsdjf")
+	vr.log_info("nsdjfolaaaaaaaaaaaaa")
 	if body is ManipulableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Code/SceneScripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/furnitureKit/tableRound.obj" type="ArrayMesh" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Scenes/Features/Character.tscn" type="PackedScene" id=8]
 [ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DLogWindow.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Code/SceneScripts/Clases/ManipulableRigidBody.gd" type="Script" id=10]
+[ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DCanvas.tscn" type="PackedScene" id=11]
+[ext_resource path="res://OQ_Toolkit/OQ_UI2D/theme/oq_ui2d_standard.theme" type="Theme" id=12]
+[ext_resource path="res://Code/SceneScripts/Clases/FileSelector.gd" type="Script" id=13]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "red"
@@ -244,6 +247,7 @@ material/2 = null
 shape = SubResource( 5 )
 
 [node name="FloatingApple" type="RigidBody" parent="Pickables"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11448, 0, 0.525062 )
 script = ExtResource( 10 )
 
 [node name="apple" type="MeshInstance" parent="Pickables/FloatingApple"]
@@ -317,5 +321,43 @@ shape = SubResource( 19 )
 
 [node name="OQ_UI2DLogWindow" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.95238, 0, 0.304914, 0, 1, 0, -0.304914, 0, -0.95238, 0, 0, 2.85169 )
+
+[node name="FileSelector" type="Spatial" parent="."]
+transform = Transform( 0.178029, 0, 0.984025, 0, 1, 0, -0.984025, 0, 0.178029, -1.284, 0.351, 0 )
+script = ExtResource( 13 )
+
+[node name="OQ_UI2DCanvas_FileSelector" parent="FileSelector" instance=ExtResource( 11 )]
+
+[node name="ReferenceRect" type="ReferenceRect" parent="FileSelector/OQ_UI2DCanvas_FileSelector"]
+margin_right = 300.0
+margin_bottom = 100.0
+theme = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="FileSelector/OQ_UI2DCanvas_FileSelector/ReferenceRect"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Select an object file :)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileSelectorButton" type="Button" parent="FileSelector/OQ_UI2DCanvas_FileSelector/ReferenceRect"]
+margin_left = 63.0
+margin_top = 45.0
+margin_right = 201.0
+margin_bottom = 84.0
+text = "Click here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="FileSelector"]
+margin_right = 315.0
+margin_bottom = 130.0
+
+[connection signal="pressed" from="FileSelector/OQ_UI2DCanvas_FileSelector/ReferenceRect/FileSelectorButton" to="FileSelector" method="_on_FileSelectorButton_pressed"]
 
 [editable path="Character"]

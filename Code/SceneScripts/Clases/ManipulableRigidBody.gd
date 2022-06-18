@@ -35,7 +35,7 @@ var _cached_linear_velocity := Vector3(0,0,0); # required for kinematic grab
 var _cached_angular_velocity := Vector3(0,0,0);
 
 func ready():
-	mode = RigidBody.MODE_STATIC
+	set_mode(RigidBody.MODE_STATIC)
 
 func grab_init(node) -> void:
 	feature_grab_node = node

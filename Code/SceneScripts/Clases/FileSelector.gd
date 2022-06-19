@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_FileSelectorButton_pressed():
-	pass # Replace with function body.
+	$FileDialog.popup()
+

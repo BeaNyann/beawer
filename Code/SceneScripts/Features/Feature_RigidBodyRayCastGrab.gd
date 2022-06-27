@@ -170,7 +170,6 @@ func _ready():
 	if (not controller is ARVRController):
 		vr.log_error(" in Feature_UIRayCast: parent not ARVRController.");
 		
-	vr.log_info("hola estoy en el ready el obj ray cast")	
 	grab_area = $RayCastPosition/RayCastHitMarker/GrabArea;
 	grab_area.collision_mask = grab_layer;
 
@@ -203,7 +202,7 @@ func _ready():
 
 	#grab_area.connect("body_entered", self, "_on_GrabArea_body_entered")
 	#grab_area.connect("body_exited", self, "_on_GrabArea_body_exited")
-	vr.log_info("conecte las señales")
+	#vr.log_info("conecte las señales")
 	
 	raycast.set_cast_to(Vector3(0, 0, -raycast_length));
 	
@@ -234,7 +233,7 @@ func update_grab() -> void:
 		release()
 
 func grab() -> void:
-	vr.log_info("holils estoy en featuurerigidbodygrab ray cast pa k me borres")
+	vr.log_info("Trigger button pressed on RigidBodyRayCastGrab")
 	if (held_object):
 		return
 	
@@ -441,7 +440,6 @@ func release_grab_velocity():
 	
 
 func _on_GrabArea_body_entered(body):
-	vr.log_info("esto debería estar llamandose owo")
 	if body is RayCastGrabbableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)

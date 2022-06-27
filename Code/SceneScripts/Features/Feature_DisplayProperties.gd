@@ -4,7 +4,6 @@ extends Spatial
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var fileDialogPath = get_node("OQ_UI2DCanvas_FileDialog/ReferenceRect/FileDialog")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_FileSelectorButton_pressed():
-	fileDialogPath.popup()
-
+func _on_EdgesButton_toggled(button_pressed):
+	pass # Replace with function body.

@@ -122,7 +122,7 @@ func update_grab() -> void:
 
 
 func grab() -> void:
-	vr.log_info("holils estoy en featuurerigidbodygrab pa k me borres")
+	vr.log_info("Grip button pressed on RigidBodyGrab")
 	if (held_object):
 		return
 	
@@ -330,7 +330,6 @@ func release_grab_velocity():
 
 
 func _on_GrabArea_body_entered(body):
-	vr.log_info("nsdjf")
 	if body is OQClass_GrabbableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)

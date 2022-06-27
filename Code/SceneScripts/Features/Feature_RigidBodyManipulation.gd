@@ -122,7 +122,7 @@ func update_grab() -> void:
 
 
 func grab() -> void:
-	vr.log_info("holils estoy en featuurerigidmanipulation pa k me borres")
+	vr.log_info("Grip button pressed in RigidBodyManiplation")
 	if (held_object):
 		return
 	
@@ -235,7 +235,6 @@ func _reparent_mesh():
 #	release()
 
 func _on_InteractiveArea_body_entered(body):
-	vr.log_info("nsdjfolaaaaaaaaaaaaa")
 	if body is ManipulableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)

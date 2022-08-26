@@ -10,7 +10,8 @@ var controller : ARVRController = null;
 # This is needed so that we can release the object from the other controller
 # prior to transferring grab ownership to this controller. If the release isn't
 # performed correctly, strange node reparenting behavior can occur.
-var other_grab_feature : Feature_RigidBodyManipulation = null
+var other_manipulation_feature : Feature_RigidBodyManipulation = null
+var other_controller : ARVRController = null
 var grab_area : Area = null;
 var held_object = null;
 var held_object_data = {};
@@ -22,7 +23,10 @@ var last_gesture := "";
 # initiated, the object at the front of the list will be grabbed.
 var grabbable_candidates = []
 
+# Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
+export(vr.CONTROLLER_BUTTON) var xa_button = vr.CONTROLLER_BUTTON.XA;
+
 export(String) var grab_gesture := "Fist"
 export(int, LAYERS_3D_PHYSICS) var grab_layer := 1
 #export (vr.GrabTypes) var grab_type := vr.GrabTypes.HINGEJOINT;
@@ -67,6 +71,9 @@ func not_grabbing() -> bool:
 	
 	return not_grabbed
 
+# Returns true if controller's xa button was pressed
+func zooming() -> bool:
+	return controller._button_pressed(xa_button)
 
 func _ready():
 	controller = get_parent();
@@ -85,17 +92,19 @@ func _ready():
 	if controller:
 		if controller.controller_id == 1:# left
 			if vr.rightController:
+				other_controller = vr.rightController;
 				for c in vr.rightController.get_children():
 					# can't use "is" because of cyclical dependency issue
 					if c.get_class() == "Feature_RigidBodyManipulation":
-						other_grab_feature = c
+						other_manipulation_feature = c
 						break
 		else:# right
 			if vr.leftController:
+				other_controller = vr.leftController;
 				for c in vr.leftController.get_children():
 					# can't use "is" because of cyclical dependency issue
 					if c.get_class() == "Feature_RigidBodyManipulation":
-						other_grab_feature = c
+						other_manipulation_feature = c
 						break
 						
 	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
@@ -111,7 +120,7 @@ func get_class():
 func _physics_process(_dt):
 	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 	update_grab()
-
+	update_zoom()
 
 # TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 func update_grab() -> void:
@@ -119,6 +128,12 @@ func update_grab() -> void:
 		grab()
 	elif (not_grabbing()):
 		release()
+
+func update_zoom() -> void:
+	if (zooming()):
+		start_zooming(held_object)
+	else:
+		stop_zooming(held_object)
 
 
 func grab() -> void:
@@ -176,7 +191,7 @@ func start_interaction(grabbable_rigid_body):
 	if grabbable_rigid_body.is_grabbed:
 		if grabbable_rigid_body.is_transferable:
 			# release from other hand to we can transfer to this hand
-			other_grab_feature.release()
+			other_manipulation_feature.release()
 		else:
 			# reject grab if object is already held and it's non-transferable
 			return
@@ -196,7 +211,31 @@ func release_interaction():
 	held_object.grab_release();
 	held_object = null;
 
+func start_zooming(manipulable_rigidbody):
+	if !manipulable_rigidbody:
+		vr.log_warning("Invalid manipulable_rigid_body in start_zooming()");
+		return;
 	
+	if manipulable_rigidbody.started_zoom:
+		vr.log_info("started zoom esta en tru");
+		manipulable_rigidbody.set_mode(RigidBody.MODE_STATIC)
+		#calculate the distance between the two objects and use that as the zoom distance
+		var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
+		var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
+		var distance = sqrt(x*x + y*y)
+		manipulable_rigidbody.zoom_init(distance, controller, other_controller)
+	else:
+		vr.log_info("started zoom esta en false, pero ahora lo seteo a tru ");
+		manipulable_rigidbody.started_zoom = true;
+		
+# func stop_zooming(manipulable_rigidbody):
+# 	if !manipulable_rigidbody:
+# 		return;
+
+# 	manipulable_rigidbody.zoom_release()
+# 	manipulable_rigidbody.set_mode(RigidBody.MODE_RIGID)
+# 	manipulable_rigidbody.started_zoom = false;
+
 func _release_reparent_mesh():
 	if (grab_mesh):
 		remove_child(grab_mesh);

@@ -9,17 +9,20 @@ class_name ManipulableRigidBody
 # grab distance.
 signal grabbability_changed(body, grabbable, controller)
 
-# Emitted when the object is grabbed by the player.
-signal grabbed(body, controller)
-
-# Emitted when the object is released by the player.
-signal released(body, controller)
+var controller = null;
+var other_controller = null;
 
 # the grab feature class that's currently holding us, null if not held
 var feature_grab_node = null;
 var delta_orientation = Basis();
 var delta_position = Vector3();
 var is_grabbed := false
+
+# zoom variables
+var started_zoom = false;
+var zooming = false;
+var starting_zoom_distance = 0;
+
 
 # set to false to prevent the object from being grabbable
 export var grab_enabled := true
@@ -44,18 +47,31 @@ func grab_init(node) -> void:
 	sleeping = false;
 	_orig_can_sleep = can_sleep;
 	can_sleep = false;
-	emit_signal("grabbed",self,feature_grab_node.controller)
 
 func _release():
 	var controller = feature_grab_node.controller
 	is_grabbed = false
 	feature_grab_node = null
 	can_sleep = _orig_can_sleep;
-	emit_signal("released",self,controller)
 
 
 func grab_release() -> void:
 	_release();
+	
+# The zoom started so we have to start the distance calculation
+# func zoom_init(distance, first_controller, second_controller) -> void:
+# 	vr.log_info("se llamo el zoom init");
+# 	zooming = true
+# 	starting_zoom_distance = distance
+# 	controller = first_controller
+# 	other_controller = second_controller
+
+# func zoom_release() -> void:
+# 	vr.log_info("se llamo el zoom release");
+# 	zooming = false
+# 	controller = null
+# 	other_controller = null
+# 	starting_zoom_distance = 0
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();
@@ -96,3 +112,14 @@ func _integrate_forces(state):
 		_release();
 	return;
 	
+func _physics_process(delta):
+	# if zooming:
+	# 	vr.log_info("fisic proses suming");
+	# 	var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
+	# 	var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
+	# 	var distance = sqrt(x*x + y*y)
+	# 	var zoom_delta = distance - starting_zoom_distance
+	# 	var zoom_speed = zoom_delta * 0.001
+	# 	var zoom_factor = 1.0 + zoom_speed
+	# 	global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));
+	pass

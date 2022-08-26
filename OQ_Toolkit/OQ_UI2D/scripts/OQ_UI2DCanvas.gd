@@ -92,7 +92,7 @@ func _process(_dt):
 		return;
 		
 
-	# Not sure if it is a good idea to do this in the _process but at the moment it seems to 
+	# -_Not sur}e if it is a good idea to do this in the _process but at the moment it seems to 
 	# be the easiest to show the actual canvas size inside the editor
 	var last = ui_control;
 	find_child_control();

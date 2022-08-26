@@ -44,14 +44,14 @@ func grab_init(node, grab_type: int) -> void:
 	sleeping = false;
 	_orig_can_sleep = can_sleep;
 	can_sleep = false;
-	emit_signal("grabbed",self,feature_grab_node.controller)
+	#emit_signal("grabbed",self,feature_grab_node.controller)
 
 func _release():
 	var controller = feature_grab_node.controller
 	is_grabbed = false
 	feature_grab_node = null
 	can_sleep = _orig_can_sleep;
-	emit_signal("released",self,controller)
+	#emit_signal("released",self,controller)
 
 
 func grab_release() -> void:
@@ -62,7 +62,6 @@ func grab_release() -> void:
 	else:
 		_release();
 	
-
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();

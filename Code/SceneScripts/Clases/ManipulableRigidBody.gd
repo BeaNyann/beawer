@@ -11,6 +11,8 @@ signal grabbability_changed(body, grabbable, controller)
 
 var controller = null;
 var other_controller = null;
+var controller_feature = null;
+var other_controller_feature = null;
 
 # the grab feature class that's currently holding us, null if not held
 var feature_grab_node = null;
@@ -58,20 +60,22 @@ func _release():
 func grab_release() -> void:
 	_release();
 	
-# The zoom started so we have to start the distance calculation
-# func zoom_init(distance, first_controller, second_controller) -> void:
-# 	vr.log_info("se llamo el zoom init");
-# 	zooming = true
-# 	starting_zoom_distance = distance
-# 	controller = first_controller
-# 	other_controller = second_controller
+#The zoom started so we have to start the distance calculation
+func zoom_init(distance, first_controller_feature, second_controller_feature, first_controller, second_controller) -> void:
+	vr.log_info("se llamo el zoom init");
+	zooming = true
+	starting_zoom_distance = distance
+	controller = first_controller
+	other_controller = second_controller
+	controller_feature = first_controller_feature
+	other_controller_feature = second_controller_feature
 
-# func zoom_release() -> void:
-# 	vr.log_info("se llamo el zoom release");
-# 	zooming = false
-# 	controller = null
-# 	other_controller = null
-# 	starting_zoom_distance = 0
+func zoom_release() -> void:
+	vr.log_info("se llamo el zoom release");
+	zooming = false
+	controller_feature = null
+	other_controller_feature = null
+	starting_zoom_distance = 0
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();
@@ -113,13 +117,17 @@ func _integrate_forces(state):
 	return;
 	
 func _physics_process(delta):
-	# if zooming:
-	# 	vr.log_info("fisic proses suming");
-	# 	var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
-	# 	var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
-	# 	var distance = sqrt(x*x + y*y)
-	# 	var zoom_delta = distance - starting_zoom_distance
-	# 	var zoom_speed = zoom_delta * 0.001
-	# 	var zoom_factor = 1.0 + zoom_speed
-	# 	global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));
-	pass
+	if zooming:
+		#vr.log_info("fisic proses suming");
+		var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
+		var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
+		var distance = sqrt(x*x + y*y)
+		var zoom_delta = distance - starting_zoom_distance
+		var zoom_speed = zoom_delta * 0.05
+		var zoom_factor = 1.0 + zoom_speed
+		#vr.log_info("ek zoom factor es: " + str(zoom_factor));
+		#vr.log_info("ek zoom delta es: " + str(zoom_delta));
+		#vr.log_info("ek distance es: " + str(distance));
+		#vr.log_info("ek distance es: " + str(starting_zoom_distance));
+
+		global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));

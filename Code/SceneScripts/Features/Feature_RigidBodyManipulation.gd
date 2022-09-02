@@ -15,6 +15,8 @@ var other_controller : ARVRController = null
 var grab_area : Area = null;
 var held_object = null;
 var held_object_data = {};
+var other_held_object = null;
+var other_held_object_data = {};
 var grab_mesh : MeshInstance = null;
 var held_object_initial_parent : Node
 var last_gesture := "";
@@ -22,6 +24,8 @@ var last_gesture := "";
 # First object that entered the grab area is at the front. When grab event is
 # initiated, the object at the front of the list will be grabbed.
 var grabbable_candidates = []
+# zoom var
+var started_zooming = false;
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
@@ -43,6 +47,7 @@ export(float,0,1,0.01) var rumble_on_grab_intensity = 0.4
 export var rumble_on_grabbable := false;
 # control the intesity of vibration when an object becomes grabbable
 export(float,0,1,0.01) var rumble_on_grabbable_intensity = 0.2
+
 
 # Returns true if controller's grab button was pressed, or hand's grab gesture
 # was detected.
@@ -73,7 +78,10 @@ func not_grabbing() -> bool:
 
 # Returns true if controller's xa button was pressed
 func zooming() -> bool:
-	return controller._button_pressed(xa_button)
+	if other_manipulation_feature.held_object != null:
+		return controller._button_pressed(xa_button)
+	else:
+		return false
 
 func _ready():
 	controller = get_parent();
@@ -130,10 +138,10 @@ func update_grab() -> void:
 		release()
 
 func update_zoom() -> void:
-	if (zooming()):
-		start_zooming(held_object)
-	else:
-		stop_zooming(held_object)
+	if (zooming() and !started_zooming):
+		start_zooming(other_manipulation_feature.held_object)
+	elif(!zooming() and started_zooming):
+		stop_zooming(other_manipulation_feature.held_object)
 
 
 func grab() -> void:
@@ -211,30 +219,23 @@ func release_interaction():
 	held_object.grab_release();
 	held_object = null;
 
+#Starts the zoom with the initial distance between the controllers
 func start_zooming(manipulable_rigidbody):
-	if !manipulable_rigidbody:
+	if manipulable_rigidbody == null:
 		vr.log_warning("Invalid manipulable_rigid_body in start_zooming()");
 		return;
-	
-	if manipulable_rigidbody.started_zoom:
-		vr.log_info("started zoom esta en tru");
-		manipulable_rigidbody.set_mode(RigidBody.MODE_STATIC)
-		#calculate the distance between the two objects and use that as the zoom distance
-		var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
-		var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
-		var distance = sqrt(x*x + y*y)
-		manipulable_rigidbody.zoom_init(distance, controller, other_controller)
-	else:
-		vr.log_info("started zoom esta en false, pero ahora lo seteo a tru ");
-		manipulable_rigidbody.started_zoom = true;
-		
-# func stop_zooming(manipulable_rigidbody):
-# 	if !manipulable_rigidbody:
-# 		return;
+	started_zooming = true
+	#calculate the distance between the two objects and use that as the zoom distance
+	var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
+	var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
+	var distance = sqrt(x*x + y*y)
+	manipulable_rigidbody.zoom_init(distance, self, other_manipulation_feature, controller, other_controller)
 
-# 	manipulable_rigidbody.zoom_release()
-# 	manipulable_rigidbody.set_mode(RigidBody.MODE_RIGID)
-# 	manipulable_rigidbody.started_zoom = false;
+#Stops the zoom
+func stop_zooming(manipulable_rigidbody):
+	if manipulable_rigidbody.zooming:
+		manipulable_rigidbody.zoom_release()
+	started_zooming = false
 
 func _release_reparent_mesh():
 	if (grab_mesh):

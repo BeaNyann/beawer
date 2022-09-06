@@ -236,6 +236,7 @@ func stop_zooming(manipulable_rigidbody):
 	if manipulable_rigidbody.zooming:
 		manipulable_rigidbody.zoom_release()
 	started_zooming = false
+	other_manipulation_feature.release()
 
 func _release_reparent_mesh():
 	if (grab_mesh):

@@ -29,6 +29,7 @@ func _ready():
 	#vr.log_info("jewaxuxetumare>:C11")
 
 	# Create mesh surface from mesh array.
+	#quizas se muere porque esta vacio al momento de crerlo, no inserte nada en el generate meshowoo, no les he hechoappend sth
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
 	#vr.log_info("jewaxuxetumare>:C12")
 	

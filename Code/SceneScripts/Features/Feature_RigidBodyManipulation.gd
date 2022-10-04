@@ -26,10 +26,15 @@ var last_gesture := "";
 var grabbable_candidates = []
 # zoom var
 var started_zooming = false;
+var started_cutting = false;
+
+onready var _cutter_collision = $Cutter/CollisionShape
+onready var _cutter_mesh = $Cutter/MeshInstance
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
 export(vr.CONTROLLER_BUTTON) var xa_button = vr.CONTROLLER_BUTTON.XA;
+export(vr.CONTROLLER_BUTTON) var yb_button = vr.CONTROLLER_BUTTON.YB;
 
 export(String) var grab_gesture := "Fist"
 export(int, LAYERS_3D_PHYSICS) var grab_layer := 1
@@ -76,14 +81,23 @@ func not_grabbing() -> bool:
 	
 	return not_grabbed
 
-# Returns true if controller's xa button was pressed
-func zooming() -> bool:
+func check_holding_and_pressing(button) -> bool:
 	if other_manipulation_feature.held_object != null:
-		return controller._button_pressed(xa_button)
+		return controller._button_pressed(button)
 	else:
 		return false
 
+# Returns true if controller's xa button was pressed
+func zooming() -> bool:
+	return check_holding_and_pressing(xa_button)
+
+func cutting() -> bool:
+	return controller._button_pressed(yb_button)
+
 func _ready():
+	_cutter_collision.disabled = true
+	_cutter_mesh.visible = false
+	
 	controller = get_parent();
 	if (not controller is ARVRController):
 		vr.log_error(" in Feature_RigidBodyManipulation: parent not ARVRController.");
@@ -143,6 +157,11 @@ func update_zoom() -> void:
 	elif(!zooming() and started_zooming):
 		stop_zooming(other_manipulation_feature.held_object)
 
+func update_cut() -> void:
+	if (cutting() and !started_cutting):
+		start_cutting()
+	elif(!cutting() and started_cutting):
+		stop_cutting()
 
 func grab() -> void:
 	vr.log_info("Grip button pressed in RigidBodyManiplation")
@@ -238,13 +257,26 @@ func stop_zooming(manipulable_rigidbody):
 	started_zooming = false
 	other_manipulation_feature.release()
 
+func start_cutting():
+	_cutter_collision.disabled = false
+	# ahora la idea es que cuando algo toque el collision revisar si es un objeto que se pueda cortar
+	_cutter_mesh.visible = true
+	started_cutting = true
+	#manipulable_rigidbody.cut_init(self, other_manipulation_feature, controller, other_controller)
+
+func stop_cutting():
+	#if manipulable_rigidbody.cutting:
+	#	manipulable_rigidbody.cut_release()
+	_cutter_collision.disabled = true
+	_cutter_mesh.visible = false
+	started_cutting = false
+
 func _release_reparent_mesh():
 	if (grab_mesh):
 		remove_child(grab_mesh);
 		held_object.add_child(grab_mesh);
 		grab_mesh.transform = Transform();
 		grab_mesh = null;
-
 
 func _reparent_mesh():
 	for c in held_object.get_children():

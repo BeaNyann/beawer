@@ -1,13 +1,12 @@
 extends MeshInstance
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var coll_shape = get_node("../CollisionShape")
 var meta
 var x ="blaz"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Array that holds multiple arrays
 	var arr = Array()
 	arr.resize(Mesh.ARRAY_MAX)
 	
@@ -18,6 +17,7 @@ func _ready():
 	var uvs = PoolVector2Array()
 	var normals = PoolVector3Array()
 	var indices = PoolIntArray()
+	var colors = PoolColorArray()
 	
 	vr.log_info("jewaxuxetumare>:C10")
 
@@ -29,9 +29,18 @@ func _ready():
 	#normals += Mesh.ARRAY_NORMAL
 	#indices += Mesh.ARRAY_INDEX
 	
-	verts.push_back(Vector3(0,1,0))
-	verts.push_back(Vector3(1,0,0))
-	verts.push_back(Vector3(0,0,1))
+	#verts.push_back(Vector3(0,1,0))
+	#verts.push_back(Vector3(1,0,0))
+	#verts.push_back(Vector3(0,0,1))
+
+	verts.append(Vector3(-1,-1,0))
+	indices.append(0)
+	
+	verts.append(Vector3(0,1,0))
+	indices.append(1)
+	
+	verts.append(Vector3(1,-1,0))
+	indices.append(2)
 
 	#var tmpMesh = ArrayMesh.new()
 	#var arrays = Array()
@@ -54,9 +63,10 @@ func _ready():
 	#quizas se muere porque esta vacio al momento de crerlo, no inserte nada en el generate meshowoo, no les he hechoappend sth
 	tmpMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr) # No blendshapes or compression used.
 	vr.log_info("jewaxuxetumare>:C12")
-	
 	mesh = tmpMesh
 	vr.log_info("12.5")
+	coll_shape.shape = mesh.create_trimesh_shape()
+	vr.log_info("12.55")
 	
 	var mdt = MeshDataTool.new()
 	vr.log_info("jewaxuxetumare>:C13")

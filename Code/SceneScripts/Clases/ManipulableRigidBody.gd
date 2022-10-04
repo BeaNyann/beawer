@@ -51,7 +51,7 @@ func grab_init(node) -> void:
 	can_sleep = false;
 
 func _release():
-	var controller = feature_grab_node.controller
+	controller = feature_grab_node.controller
 	is_grabbed = false
 	feature_grab_node = null
 	can_sleep = _orig_can_sleep;
@@ -76,6 +76,17 @@ func zoom_release() -> void:
 	controller_feature = null
 	other_controller_feature = null
 	starting_zoom_distance = 0
+
+func cut_init(first_controller_feature, second_controller_feature, first_controller, second_controller) -> void:
+	vr.log_info("se llamo el cut init");
+	controller = first_controller
+	other_controller = second_controller
+	controller_feature = first_controller_feature
+	other_controller_feature = second_controller_feature
+	
+
+func cut_release():
+	vr.log_info("se llamo el cut release");
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();

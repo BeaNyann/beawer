@@ -83,7 +83,7 @@ func cut_init(first_controller_feature, second_controller_feature, first_control
 	other_controller = second_controller
 	controller_feature = first_controller_feature
 	other_controller_feature = second_controller_feature
-	
+
 
 func cut_release():
 	vr.log_info("se llamo el cut release");
@@ -119,7 +119,7 @@ func _notify_lost_grabbable(feature_grab):
 	# for now, just fire the signal
 	emit_signal("grabbability_changed",self,false,feature_grab.controller)
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	if (!is_grabbed): return;
 	
 	if (_release_next_physics_step):
@@ -127,7 +127,7 @@ func _integrate_forces(state):
 		_release();
 	return;
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if zooming:
 		#vr.log_info("fisic proses suming");
 		var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x

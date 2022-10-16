@@ -28,8 +28,11 @@ var grabbable_candidates = []
 var started_zooming = false;
 var started_cutting = false;
 
+# nodes variables
+onready var _cutter = $Cutter
 onready var _cutter_collision = $Cutter/CollisionShape
 onready var _cutter_mesh = $Cutter/MeshInstance
+onready var _interactive_area = $InteractiveArea
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
@@ -97,7 +100,12 @@ func cutting() -> bool:
 func _ready():
 	_cutter_collision.disabled = true
 	_cutter_mesh.visible = false
-	
+
+	# signals
+	_cutter.connect("body_entered", self, "_on_cutter_collision_body_entered")
+	_interactive_area.connect("body_entered", self, "_on_interactive_area_body_entered")
+	_interactive_area.connect("body_exited", self, "_on_interactive_area_body_exited")
+
 	controller = get_parent();
 	if (not controller is ARVRController):
 		vr.log_error(" in Feature_RigidBodyManipulation: parent not ARVRController.");
@@ -143,6 +151,7 @@ func _physics_process(_dt):
 	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 	update_grab()
 	update_zoom()
+	update_cut()
 
 # TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 func update_grab() -> void:
@@ -307,7 +316,10 @@ func _reparent_mesh():
 #	# if grab button, grab
 #	release()
 
-func _on_InteractiveArea_body_entered(body):
+func _on_cutter_collision_body_entered(body):
+	if body is ManipulableRigidBody:
+		body.cut_init(self, other_manipulation_feature, controller, other_controller)
+func _on_interactive_area_body_entered(body):
 	if body is ManipulableRigidBody:
 		if body.grab_enabled:
 			grabbable_candidates.push_back(body)
@@ -320,7 +332,7 @@ func _on_InteractiveArea_body_entered(body):
 					controller.simple_rumble(rumble_on_grabbable_intensity,0.1)
 				
 
-func _on_InteractiveArea_body_exited(body):
+func _on_interactive_area_body_exited(body):
 	if body is ManipulableRigidBody:
 		var prev_candidate = null
 		

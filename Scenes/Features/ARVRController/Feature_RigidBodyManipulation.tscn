@@ -9,8 +9,8 @@ radius = 0.1
 [sub_resource type="SphereShape" id=2]
 radius = 0.05
 
-[sub_resource type="CapsuleShape" id=3]
-radius = 0.0184542
+[sub_resource type="CylinderShape" id=5]
+radius = 0.01
 
 [sub_resource type="CylinderMesh" id=4]
 top_radius = 0.01
@@ -47,13 +47,10 @@ angular_limit/relaxation = 0.5
 [node name="Cutter" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cutter"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.425861 )
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.949134 )
+shape = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Cutter"]
 transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, -0.950383 )
 mesh = SubResource( 4 )
 material/0 = ExtResource( 2 )
-
-[connection signal="body_entered" from="InteractiveArea" to="." method="_on_InteractiveArea_body_entered"]
-[connection signal="body_exited" from="InteractiveArea" to="." method="_on_InteractiveArea_body_exited"]

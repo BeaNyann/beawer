@@ -9,6 +9,8 @@ class_name ManipulableRigidBody
 # grab distance.
 signal grabbability_changed(body, grabbable, controller)
 
+onready var body_mesh = $ManipulableMesh
+
 var controller = null;
 var other_controller = null;
 var controller_feature = null;
@@ -142,3 +144,11 @@ func _physics_process(_delta):
 		#vr.log_info("ek distance es: " + str(starting_zoom_distance));
 
 		global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));
+
+func setup(mesh: Mesh, position: Transform):
+	body_mesh.mesh = mesh
+	self.transform = position
+
+func cut(origin: Vector3, normal: Vector3):
+	#return $Slicer.slice($MeshInstance.mesh, self.transform, origin, normal, cross_section_material)
+	pass

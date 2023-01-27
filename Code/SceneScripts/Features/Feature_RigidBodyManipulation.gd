@@ -4,6 +4,9 @@
 extends Spatial
 class_name Feature_RigidBodyManipulation
 
+var ManipulableObjectScene = preload("res://Scenes/Features/ManipulableObject.tscn")
+#var ManipulableObjectScene = preload("res://Scenes/Main.tscn")
+
 # The controller that this grab feature is bound to
 var controller : ARVRController = null;
 # The other controller's grab feature. null if it doesn't exist, or isn't found.
@@ -29,9 +32,9 @@ var started_zooming = false;
 var started_cutting = false;
 
 # nodes variables
-onready var _cutter = $Cutter
-onready var _cutter_collision = $Cutter/CollisionShape
-onready var _cutter_mesh = $Cutter/MeshInstance
+onready var _cutter_mesh = $Cutter
+onready var _cutter_collision = $Cutter/CutterArea/CollisionShape
+onready var _cutter_area = $Cutter/CutterArea
 onready var _interactive_area = $InteractiveArea
 
 # Inputs
@@ -102,7 +105,7 @@ func _ready():
 	_cutter_mesh.visible = false
 
 	# signals
-	_cutter.connect("body_entered", self, "_on_cutter_collision_body_entered")
+	_cutter_area.connect("body_entered", self, "_on_cutter_collision_body_entered")
 	_interactive_area.connect("body_entered", self, "_on_interactive_area_body_entered")
 	_interactive_area.connect("body_exited", self, "_on_interactive_area_body_exited")
 
@@ -349,3 +352,44 @@ func _on_interactive_area_body_exited(body):
 			var curr_candidate = grabbable_candidates.front()
 			if prev_candidate != curr_candidate:
 				curr_candidate._notify_became_grabbable(self)
+
+func cut():
+	vr.log_info("se llamo el cut del controller");
+	var cutter_transform = _cutter_mesh.global_transform
+	#vr.log_info("1");
+	for body in _cutter_area.get_overlapping_bodies():
+		#vr.log_info("2");
+		if body is ManipulableRigidBody:
+			#vr.log_info("3");
+			var origin = cutter_transform.origin - body.transform.origin
+			#vr.log_info("3.1");
+			var normal = body.transform.basis.xform_inv(cutter_transform.basis.y)
+			#vr.log_info("3.2");
+			var dist = cutter_transform.basis.y.dot(origin)
+			#vr.log_info("3.3");
+			var plane = Plane(normal, dist)
+			#vr.log_info("3.4");
+#			var sliced_mesh = body.cut_plane(plane)
+			var sliced_mesh = body.cut(cutter_transform.origin, cutter_transform.basis.y)
+			vr.log_info("3.5");
+			if not sliced_mesh:
+				vr.log_info("3.5.1");
+				continue
+				vr.log_info("3.5.2");
+			vr.log_info("4");
+
+			if sliced_mesh.upper_mesh:
+				vr.log_info("5");
+				var upper = ManipulableObjectScene.instance()
+				upper.setup(sliced_mesh.upper_mesh, body.transform)
+				upper.cross_section_material = body.cross_section_material
+				self.get_parent().add_child(upper)
+#
+			if sliced_mesh.lower_mesh:
+				vr.log_info("6");
+				var lower = ManipulableObjectScene.instance()
+				lower.setup(sliced_mesh.lower_mesh, body.transform)
+				lower.cross_section_material = body.cross_section_material
+				self.get_parent().add_child(lower)
+			vr.log_info("7");
+			body.queue_free()

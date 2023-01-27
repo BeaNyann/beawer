@@ -73,6 +73,16 @@ _global_script_classes=[ {
 "class": "RayCastGrabbableRigidBody",
 "language": "GDScript",
 "path": "res://Code/SceneScripts/Clases/RayCastGrabbableRigidBody.gd"
+}, {
+"base": "Reference",
+"class": "slice_calculator",
+"language": "GDScript",
+"path": "res://addons/slicer/slice_calc.gd"
+}, {
+"base": "ManipulableRigidBody",
+"class": "sliceable",
+"language": "GDScript",
+"path": "res://addons/slicer/sliceable_geo.gd"
 } ]
 _global_script_class_icons={
 "Feature_RigidBodyGrab": "",
@@ -87,7 +97,9 @@ _global_script_class_icons={
 "OQClass_ToolGrabController": "",
 "OQClass_ToolGrabLinearController": "",
 "OQ_ARVRController": "",
-"RayCastGrabbableRigidBody": ""
+"RayCastGrabbableRigidBody": "",
+"slice_calculator": "",
+"sliceable": ""
 }
 
 [application]

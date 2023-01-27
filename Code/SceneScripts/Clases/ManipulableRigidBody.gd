@@ -8,6 +8,7 @@ class_name ManipulableRigidBody
 # Example usage could be for making an object "glow" when it is within
 # grab distance.
 signal grabbability_changed(body, grabbable, controller)
+export(Material) var cross_section_material
 
 onready var body_mesh = $ManipulableMesh
 
@@ -85,6 +86,9 @@ func cut_init(first_controller_feature, second_controller_feature, first_control
 	other_controller = second_controller
 	controller_feature = first_controller_feature
 	other_controller_feature = second_controller_feature
+	controller_feature.cut()
+	vr.log_info("adios init");
+	
 
 
 func cut_release():
@@ -146,9 +150,10 @@ func _physics_process(_delta):
 		global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));
 
 func setup(mesh: Mesh, position: Transform):
+	vr.log_info("ssetup setup");
 	body_mesh.mesh = mesh
 	self.transform = position
 
 func cut(origin: Vector3, normal: Vector3):
-	#return $Slicer.slice($MeshInstance.mesh, self.transform, origin, normal, cross_section_material)
-	pass
+	vr.log_info("ola q tal");
+	return $Slicer.slice(body_mesh.mesh, self.transform, origin, normal, cross_section_material)

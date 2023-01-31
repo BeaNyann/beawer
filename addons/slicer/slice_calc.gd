@@ -126,7 +126,7 @@ func _compute_mesh():
 			var meshNormals = _mesh.mesh.surface_get_arrays(_current_surf_idx)[Mesh.ARRAY_NORMAL];
 			var meshUvs = _mesh.mesh.surface_get_arrays(_current_surf_idx)[Mesh.ARRAY_TEX_UV];
 			for i in range(0,meshTriangles.size(),3):
-	#			//We need the verts in order so that we know which way to wind our new mesh triangles.
+	#			We need the verts in order so that we know which way to wind our new mesh triangles.
 				var verts = []
 				var vert1 = meshVerts[meshTriangles[i]];
 				var vert1Index = meshVerts.find(vert1);
@@ -153,10 +153,10 @@ func _compute_mesh():
 				var vert3Side =_plane.is_point_over(vert3);
 				
 #				print("normals= ",[normal1,normal2,normal3])
-#				 //All verts are on the same side
+#				 All verts are on the same side
 #				print(vert1Side,vert2Side,vert3Side)
 				if (vert1Side == vert2Side and vert2Side == vert3Side):
-	#				//push_back the relevant triangle
+	#				push_back the relevant triangle
 					var side 
 					if vert1Side:
 						side = MeshSide.Positive 
@@ -165,7 +165,7 @@ func _compute_mesh():
 	#				print("same side")
 					_set_mesh_side(side,(vert1-_origin)/_scale,normal1,uv1,(vert2-_origin)/_scale,normal2,uv2,(vert3-_origin)/_scale, normal3, uv3, true, false);
 				else:
-	#				//we need the two points where the plane intersects the triangle.
+	#				we need the two points where the plane intersects the triangle.
 					var intersection1;var intersection2;
 					var intersection1Uv;var intersection2Uv;
 					var side1;var side2;
@@ -175,43 +175,43 @@ func _compute_mesh():
 					else:
 						side1 = MeshSide.Negative;
 						side2 = MeshSide.Positive;
-	#					//vert 1 and 2 are on the same side
+	#					vert 1 and 2 are on the same side
 					if (vert1Side == vert2Side):
 	#					print("point 1 , 2 on same side")
-	#					//Cast a ray from v2 to v3 and from v3 to v1 to get the intersections                       
+	#					Cast a ray from v2 to v3 and from v3 to v1 to get the intersections                       
 						intersection1 = _get_plane_intersection_point_uv(vert2, uv2, vert3, uv3,intersection1Uv);
 						intersection1Uv=intersection1[1]
 						intersection1=intersection1[0]
 						intersection2 = _get_plane_intersection_point_uv(vert3, uv3, vert1, uv1,intersection2Uv);
 						intersection2Uv=intersection2[1]
 						intersection2=intersection2[0]
-	#					//push_back the positive or negative triangles
+	#					push_back the positive or negative triangles
 	#					print("new triangle: sending ",vert1,vert2,intersection1)
 						_set_mesh_side(side1, (vert1-_origin)/_scale, null, uv1, (vert2-_origin)/_scale, null, uv2, intersection1, null, intersection1Uv, _useSharedVertices, false);
 	#					print("new triangle: sending ",vert1,intersection1,intersection2)
 						_set_mesh_side(side1, (vert1-_origin)/_scale, null, uv1, intersection1, null, intersection1Uv, intersection2, null, intersection2Uv, _useSharedVertices, false);
 	#					print("new triangle: sending ",intersection1,intersection2,vert3)
 						_set_mesh_side(side2, intersection1, null, intersection1Uv,  (vert3-_origin)/_scale, null, uv3, intersection2, null, intersection2Uv, _useSharedVertices, false);
-	#					//vert 1 and 3 are on the same side
+	#					vert 1 and 3 are on the same side
 					elif (vert1Side == vert3Side):
 	#					print("point 1 , 3 on same side")
-	#					//Cast a ray from v1 to v2 and from v2 to v3 to get the intersections                       
+	#					Cast a ray from v1 to v2 and from v2 to v3 to get the intersections                       
 						intersection1 = _get_plane_intersection_point_uv(vert1, uv1,vert2, uv2,intersection1Uv);
 						intersection1Uv=intersection1[1]
 						intersection1=intersection1[0]
 						intersection2 = _get_plane_intersection_point_uv(vert2, uv2,vert3, uv3,intersection2Uv);
 						intersection2Uv=intersection2[1]
 						intersection2=intersection2[0]
-#						//push_back the positive triangles
+#						push_back the positive triangles
 	#					print("new triangle :sending ",vert1,intersection1,vert3)
 						_set_mesh_side(side1, (vert1-_origin)/_scale, null, uv1, intersection1, null, intersection1Uv,  (vert3-_origin)/_scale, null, uv3, _useSharedVertices, false);
 	#					print("new triangle :sending ",intersection1,intersection2,vert3)
 						_set_mesh_side(side1, intersection1, null, intersection1Uv, intersection2, null, intersection2Uv,  (vert3-_origin)/_scale, null, uv3, _useSharedVertices, false);
 	#					print("new triangle :sending ",intersection1,vert2,intersection2)
 						_set_mesh_side(side2, intersection1, null, intersection1Uv,  (vert2-_origin)/_scale, null, uv2, intersection2, null, intersection2Uv, _useSharedVertices, false);
-	#					//Vert1 is alone
+	#					Vert1 is alone
 					else:
-	#					//Cast a ray from v1 to v2 and from v1 to v3 to get the intersections                       
+	#					Cast a ray from v1 to v2 and from v1 to v3 to get the intersections                       
 	#					print("point 2 , 3 on same side")
 						intersection1 = _get_plane_intersection_point_uv(vert1, uv1,vert2, uv2,intersection1Uv);
 						intersection1Uv=intersection1[1]
@@ -225,7 +225,7 @@ func _compute_mesh():
 						_set_mesh_side(side2,intersection1, null, intersection1Uv, (vert2-_origin)/_scale, null, uv2,  (vert3-_origin)/_scale, null, uv3, _useSharedVertices, false);
 	#					print("new triangle :sending ",intersection1,vert3,intersection2)
 						_set_mesh_side(side2,intersection1, null, intersection1Uv, (vert3-_origin)/_scale, null, uv3, intersection2, null, intersection2Uv, _useSharedVertices, false);
-	#					//push_back the newly created points on the plane.
+	#					push_back the newly created points on the plane.
 #						print("depositing at intersection points at ",_current_surf_idx)
 					_pointsAlongPlane[_current_surf_idx].push_back(intersection1);
 					_pointsAlongPlane[_current_surf_idx].push_back(intersection2);
@@ -252,7 +252,7 @@ func _set_mesh_side(side, vertex1, normal1, uv1, vertex2, normal2,  uv2, vertex3
 func _add_index_normal_uv(vertices,triangles,normals,uvs,vertex1,normal1,uv1,vertex2,normal2,uv2,vertex3,normal3,uv3,shareVertices,addFirst):
 	if (addFirst):
 		_shift_triangle_index(triangles);
-#	//If a the vertex already exists we just push_back a triangle reference to it, if not push_back the vert to the list and then push_back the triindex
+#	If a the vertex already exists we just push_back a triangle reference to it, if not push_back the vert to the list and then push_back the triindex
 	var tri1Index = vertices.find(vertex1);
 	if (tri1Index > -1 and shareVertices):triangles.push_back(tri1Index);
 	else:
@@ -420,18 +420,18 @@ func _add_reverse_winded_triangle():
 	_positiveSideUvs[_current_surf_idx].append_array(_positiveSideUvs[_current_surf_idx]);
 	_positiveSideNormals[_current_surf_idx].append_array(_flip_normal(_positiveSideNormals[_current_surf_idx]));
 	var numPositiveTriangles = _positiveSideTriangles[_current_surf_idx].size();
-#			//push_back reverse windings
+#			push_back reverse windings
 	for i in range(0,numPositiveTriangles,3):
 		_positiveSideTriangles[_current_surf_idx].push_back(positiveVertsStartIndex + _positiveSideTriangles[_current_surf_idx][i]);
 		_positiveSideTriangles[_current_surf_idx].push_back(positiveVertsStartIndex + _positiveSideTriangles[_current_surf_idx][i + 2]);
 		_positiveSideTriangles[_current_surf_idx].push_back(positiveVertsStartIndex + _positiveSideTriangles[_current_surf_idx][i + 1]);
 	var negativeVertextStartIndex = _negativeSideVertices[_current_surf_idx].size();
-#			//Duplicate the original vertices
+#			Duplicate the original vertices
 	_negativeSideVertices[_current_surf_idx].append_array(_negativeSideVertices[_current_surf_idx]);
 	_negativeSideUvs[_current_surf_idx].append_array(_negativeSideUvs[_current_surf_idx]);
 	_negativeSideNormals[_current_surf_idx].append_array(_flip_normal(_negativeSideNormals[_current_surf_idx]));
 	var numNegativeTriangles = _negativeSideTriangles[_current_surf_idx].size();
-#		//push_back reverse windings
+#		push_back reverse windings
 	for i in range(0,numNegativeTriangles,3):
 		_negativeSideTriangles[_current_surf_idx].push_back(negativeVertextStartIndex + _negativeSideTriangles[_current_surf_idx][i]);
 		_negativeSideTriangles[_current_surf_idx].push_back(negativeVertextStartIndex + _negativeSideTriangles[_current_surf_idx][i + 2]);

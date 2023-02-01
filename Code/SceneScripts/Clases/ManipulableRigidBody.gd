@@ -60,6 +60,28 @@ var _cached_angular_velocity := Vector3(0,0,0);
 
 func ready():
 	set_mode(RigidBody.MODE_STATIC)
+	vr.log_info("EXISTO");
+	for child in get_children():
+		if child is MeshInstance:
+			_mesh = child
+#			print("found mesh")
+		if child is CollisionShape:
+			_collider = child
+#			print("found collider")
+		if _mesh!= null and _collider !=null:
+			_mesh.global_transform.origin = global_transform.origin
+			_mesh.create_convex_collision()
+			_collider.shape = _mesh.get_child(0).get_child(0).shape
+			_mesh.get_child(0).queue_free()
+			_collider.scale = _mesh.scale
+			_collider.rotation_degrees = _mesh.rotation_degrees
+	#		print("children of object are ",get_children(),area.get_child(0))
+	#		print("current_number ",current_child_number," delete at ",delete_at_children)
+			if _current_child_number >= _delete_at_children:
+				queue_free()
+			if _current_child_number >= _disable_at_children:
+				enabled = false
+			break
 
 func grab_init(node) -> void:
 	feature_grab_node = node

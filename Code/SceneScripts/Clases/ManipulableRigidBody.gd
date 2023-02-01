@@ -28,6 +28,22 @@ var started_zoom = false;
 var zooming = false;
 var starting_zoom_distance = 0;
 
+# slice variables
+export var enabled:bool = true
+export (int, 1, 10)var _delete_at_children = 3 
+export (int, 1, 10)var _disable_at_children = 3 
+export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_layer
+export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_mask
+export var _cut_body_gravity_scale:float
+export (Material)var _cross_section_material =  null
+export var _cross_section_texture_UV_scale:float = 1
+export var _cross_section_texture_UV_offset:Vector2 = Vector2(0,0)
+export var _apply_force_on_cut:bool = false
+export var _normal_force_on_cut:float  = 1
+var _current_child_number = 0
+var _mesh:MeshInstance = null
+var _collider:CollisionShape = null
+# fin slice variables
 
 # set to false to prevent the object from being grabbable
 export var grab_enabled := true

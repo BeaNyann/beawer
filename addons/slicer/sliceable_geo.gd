@@ -1,5 +1,5 @@
 tool
-extends ManipulableRigidBody
+extends RigidBody
 class_name sliceable
 export var enabled:bool = true
 export (int, 1, 10)var _delete_at_children = 3 
@@ -41,7 +41,7 @@ func _ready():
 			break
 func _create_cut_body(_sign,mesh_instance,cutplane : Plane):
 	vr.log_info("CREar UN CUT BODY");
-	var rigid_body_half = ManipulableRigidBody.new();
+	var rigid_body_half = RigidBody.new();
 	vr.log_info("ahi si se creo")
 	rigid_body_half.collision_layer = _cut_body_collision_layer
 	rigid_body_half.collision_mask = _cut_body_collision_mask

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/OculusQuest2TouchController_Left.obj-7f3d0eed4f7c286d2750a4f2370b7b55.mesh"
+
+[deps]
+
+files=[ "res://.import/OculusQuest2TouchController_Left.obj-7f3d0eed4f7c286d2750a4f2370b7b55.mesh" ]
+
+source_file="res://Assets/controllers/left/OculusQuest2TouchController_Left.obj"
+dest_files=[ "res://.import/OculusQuest2TouchController_Left.obj-7f3d0eed4f7c286d2750a4f2370b7b55.mesh", "res://.import/OculusQuest2TouchController_Left.obj-7f3d0eed4f7c286d2750a4f2370b7b55.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

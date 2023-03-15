@@ -5,6 +5,9 @@ extends Spatial
 # var a = 2
 # var b = "text"
 
+# temporal!¡ tengo que seleccionar un objeto... oh hacerlo solo con la manzana xd
+onready var apple = get_node("../../Pickables/FloatingApple")
+#
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,4 +20,12 @@ func _ready():
 
 
 func _on_EdgesButton_toggled(button_pressed):
-	pass # Replace with function body.
+	vr.log_info("this is the button presed of edgesbutton signal")
+	vr.log_info(str(button_pressed))
+	apple.update_edges_visibility(button_pressed)
+
+
+func _on_NormalsButton_toggled(button_pressed):
+	vr.log_info("this is the button presed of notmalsbutton signal")
+	vr.log_info(str(button_pressed))
+	apple.update_normals_visibility(button_pressed)

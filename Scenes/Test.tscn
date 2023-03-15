@@ -423,6 +423,7 @@ script = ExtResource( 13 )
 [node name="OQ_UI2DCanvas_FileSelector" parent="FileSelector" instance=ExtResource( 11 )]
 
 [node name="ReferenceRect" type="ReferenceRect" parent="FileSelector/OQ_UI2DCanvas_FileSelector"]
+visible = false
 margin_right = 300.0
 margin_bottom = 100.0
 theme = ExtResource( 12 )
@@ -452,6 +453,7 @@ __meta__ = {
 transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 1, 0.0316336, 0.0451152, 0.174849 )
 
 [node name="ReferenceRect" type="ReferenceRect" parent="FileSelector/OQ_UI2DCanvas_FileDialog"]
+visible = false
 margin_right = 300.0
 margin_bottom = 100.0
 __meta__ = {
@@ -480,7 +482,7 @@ _cross_section_material = SubResource( 29 )
 [node name="Features" type="Node" parent="."]
 
 [node name="Feature_DisplayProperties" type="Spatial" parent="Features"]
-transform = Transform( 0.0266655, 0, -0.999644, 0, 1, 0, 0.999644, 0, 0.0266655, 2.37616, 0, -2.2315 )
+transform = Transform( -1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, -0.704473, -0.35152, 1.95006 )
 script = ExtResource( 14 )
 
 [node name="OQ_UI2DCanvas_DisplayProperties" parent="Features/Feature_DisplayProperties" instance=ExtResource( 11 )]
@@ -501,8 +503,19 @@ __meta__ = {
 }
 
 [node name="EdgesButton" type="CheckButton" parent="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect"]
+margin_top = 16.0
 margin_right = 76.0
-margin_bottom = 40.0
+margin_bottom = 56.0
+text = "Edges"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NormalsButton" type="CheckButton" parent="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect"]
+margin_top = 47.0
+margin_right = 117.0
+margin_bottom = 87.0
+text = "Normals "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -512,7 +525,7 @@ material_override = SubResource( 30 )
 script = ExtResource( 15 )
 
 [node name="RigidBody" parent="." instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4096, -0.118854, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14081, -0.118854, 0 )
 
 [node name="CollisionShape" parent="RigidBody" index="0"]
 shape = SubResource( 34 )
@@ -535,6 +548,7 @@ material/0 = null
 [connection signal="body_exited" from="Character/OQ_ARVROrigin/OQ_LeftController/Area" to="Character/OQ_ARVROrigin/OQ_LeftController/Area" method="_on_Area_body_exited"]
 [connection signal="pressed" from="FileSelector/OQ_UI2DCanvas_FileSelector/ReferenceRect/FileSelectorButton" to="FileSelector" method="_on_FileSelectorButton_pressed"]
 [connection signal="toggled" from="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect/EdgesButton" to="Features/Feature_DisplayProperties" method="_on_EdgesButton_toggled"]
+[connection signal="toggled" from="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect/NormalsButton" to="Features/Feature_DisplayProperties" method="_on_NormalsButton_toggled"]
 
 [editable path="Character"]
 [editable path="ManipulableObject"]

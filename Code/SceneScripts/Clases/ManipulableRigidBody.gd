@@ -28,6 +28,10 @@ var started_zoom = false;
 var zooming = false;
 var starting_zoom_distance = 0;
 
+# properties variables
+var edges_ig = null
+var normals_ig = null
+
 # slice variables
 export var enabled:bool = true
 export (int, 1, 10)var _delete_at_children = 3 
@@ -43,6 +47,7 @@ export var _normal_force_on_cut:float  = 1
 var _current_child_number = 0
 var _mesh:MeshInstance = null
 var _collider:CollisionShape = null
+
 #var manipulable_model = preload("res://Scenes/Features/ManipulableModel.tscn")
 # fin slice variables
 
@@ -85,83 +90,89 @@ func _ready():
 			if _current_child_number >= _disable_at_children:
 				enabled = false
 			break
-	vr.log_info("ahora normales???")
-	var modelMesh = _mesh.get_mesh()
-	vr.log_info("im sad")
-	var modelVertices = modelMesh.get_faces()
+	
+	setUpImmediateGeometryInstances()
+	#ogkdsal
+
+func setUpImmediateGeometryInstances():
+	# Edges ImmediateGeometry	
+	edges_ig = ImmediateGeometry.new()
+	var edges_sm = SpatialMaterial.new()
+	edges_sm.flags_unshaded = true
+	edges_sm.vertex_color_use_as_albedo = true
+	edges_ig.material_override = edges_sm
+	edges_ig.name = "Wireframe_ImmediateGeometry"
+
+	# Normals ImmediateGeometry
+	normals_ig = ImmediateGeometry.new()
+	var normals_sm = SpatialMaterial.new()
+	normals_sm.flags_unshaded = true
+	normals_sm.vertex_color_use_as_albedo = true
+	normals_ig.material_override = normals_sm
+	normals_ig.name = "SurfaceNormals_ImmediateGeometry"
+
+func update_edges_visibility(boolean):
+	vr.log_info("showedgesd?")
+	if(boolean):
+		drawWireframe()
+	else:
+		edges_ig.clear()
+	
+func update_normals_visibility(boolean):
+	vr.log_info("wnormals??")
+	if(boolean):
+		drawNormals()
+	else:
+		normals_ig.clear()
+	
+func drawWireframe():
+	edges_ig.begin(Mesh.PRIMITIVE_LINES)
+	edges_ig.set_color(Color.purple)
+
+	var mesh_resource = _mesh.get_mesh()
+	mesh_resource.create_outline(1.0)
+	var vertices = mesh_resource.get_faces()
+	
+	var i = 0
+	while i < vertices.size():
+		edges_ig.add_vertex(vertices[i])
+		edges_ig.add_vertex(vertices[i+1])
+		edges_ig.add_vertex(vertices[i+1])
+		edges_ig.add_vertex(vertices[i+2])
+		edges_ig.add_vertex(vertices[i+2])
+		edges_ig.add_vertex(vertices[i])
+		i += 3
+	edges_ig.end()
+	var sf = 1.001
+	edges_ig.set_scale(Vector3(sf, sf, sf))
+	_mesh.add_child(edges_ig)
+
+func drawNormals():
+	normals_ig.begin(Mesh.PRIMITIVE_LINES)
+	normals_ig.set_color(Color.white)
+
+	var mesh_resource = _mesh.get_mesh()
+	var modelVertices = mesh_resource.get_faces()
 	var arrayMesh = ArrayMesh.new()
-	var arrays2 = []
-	arrays2.resize(ArrayMesh.ARRAY_MAX)
-	arrays2[ArrayMesh.ARRAY_VERTEX] = modelVertices
-	vr.log_info("very sad")
-	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays2)
-	vr.log_info("sad bc u dnt work")
+	var arrays = []
+	arrays.resize(ArrayMesh.ARRAY_MAX)
+	arrays[ArrayMesh.ARRAY_VERTEX] = modelVertices
+	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
 	var meshDataTool = MeshDataTool.new()
-	vr.log_info("sad bcccccccccccccc")
 	meshDataTool.create_from_surface(arrayMesh,0)
-	vr.log_info(":(")
-
-	var ig = ImmediateGeometry.new()
-	vr.log_info("cree instagram")
-	ig.name = "SurfaceNormals_ImmediateGeometry2"
-	var sm = SpatialMaterial.new()
-	sm.flags_unshaded = true
-	sm.vertex_color_use_as_albedo = true
-	ig.material_override = sm
-
-	ig.begin(Mesh.PRIMITIVE_LINES)
-	ig.set_color(Color.white)
-	vr.log_info("setie los instagrams")
 
 	var i = 0
-	vr.log_info("vo y a iterar por las facecountt")
 	while i < meshDataTool.get_face_count():
 		var verticesIndex = i * 3
 		var a = modelVertices[verticesIndex]
 		var b = modelVertices[verticesIndex + 1]
 		var c = modelVertices[verticesIndex + 2]
 		var face_center = (a+b+c)/3
-		vr.log_info("iterazao")
-		ig.add_vertex(face_center)
-		ig.add_vertex(meshDataTool.get_face_normal(i) + face_center)
+		normals_ig.add_vertex(face_center)
+		normals_ig.add_vertex(meshDataTool.get_face_normal(i) + face_center)
 		i += 1
-	vr.log_info("end y add se vienen")
-	ig.end()
-	_mesh.add_child(ig)
-	vr.log_info("le fini")
-
-	drawWireframe()
-
-func drawWireframe():
-	var cubeMesh = _mesh.get_mesh()
-	
-	var ig = ImmediateGeometry.new()
-	var sm = SpatialMaterial.new()
-	sm.flags_unshaded = true
-	sm.vertex_color_use_as_albedo = true
-	ig.material_override = sm
-	ig.name = "Wireframe_ImmediateGeometry"
-
-	ig.begin(Mesh.PRIMITIVE_LINES)
-	ig.set_color(Color.purple)
-	
-	cubeMesh.create_outline(1.0)
-	var vertices = cubeMesh.get_faces()
-	
-	var i = 0
-	while i < vertices.size():
-		ig.add_vertex(vertices[i])
-		ig.add_vertex(vertices[i+1])
-		ig.add_vertex(vertices[i+1])
-		ig.add_vertex(vertices[i+2])
-		ig.add_vertex(vertices[i+2])
-		ig.add_vertex(vertices[i])
-		i += 3
-	
-	ig.end()
-	var sf = 1.001
-	ig.set_scale(Vector3(sf, sf, sf))
-	_mesh.add_child(ig)
+	normals_ig.end()
+	_mesh.add_child(normals_ig)
 
 # funciones del slice
 func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature):
@@ -374,6 +385,7 @@ func _physics_process(_delta):
 		#vr.log_info("ek distance es: " + str(starting_zoom_distance));
 
 		global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));
+	#update_properties()
 
 func setup(mesh: Mesh, position: Transform):
 	vr.log_info("ssetup setup");

@@ -1,5 +1,5 @@
 tool
-extends ManipulableRigidBody
+extends RigidBody
 class_name sliceable
 export var enabled:bool = true
 export (int, 1, 10)var _delete_at_children = 3 
@@ -17,7 +17,7 @@ var _mesh:MeshInstance = null
 var _collider:CollisionShape = null
 
 func _ready():
-	vr.log_info("EXISTO");
+	#vr.log_info("EXISTOgeo");
 	for child in get_children():
 		if child is MeshInstance:
 			_mesh = child
@@ -40,9 +40,9 @@ func _ready():
 				enabled = false
 			break
 func _create_cut_body(_sign,mesh_instance,cutplane : Plane):
-	vr.log_info("CREar UN CUT BODY");
-	var rigid_body_half = ManipulableRigidBody.new();
-	vr.log_info("ahi si se creo")
+	#vr.log_info("CREar UN CUT BODY");
+	var rigid_body_half = RigidBody.new();
+	#vr.log_info("ahi si se creo")
 	rigid_body_half.collision_layer = _cut_body_collision_layer
 	rigid_body_half.collision_mask = _cut_body_collision_mask
 	rigid_body_half.gravity_scale = _cut_body_gravity_scale
@@ -84,7 +84,7 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane):
 	if _apply_force_on_cut:
 		rigid_body_half.apply_central_impulse(_sign*cutplane.normal*_normal_force_on_cut)
 func cut_object(cutplane:Plane):
-	vr.log_info("CORTARRRRR");
+	#vr.log_info("CORTARRRRR");
 	#  there are a lot of parameters for the constructor
 	#-------------------------------------------------
 	#  cutplane = plane to cut mesh with , in global space
@@ -98,11 +98,11 @@ func cut_object(cutplane:Plane):
 	#  smoothVertices
 	#-------------------------------------------------
 	if enabled: 
-		vr.log_info("ESTOY ENABLED");
+		#vr.log_info("ESTOY ENABLED");
 		var slices = slice_calculator.new(cutplane,_mesh,true,_cross_section_material,_cross_section_texture_UV_scale,_cross_section_texture_UV_offset,true,true,true)
 	#	print("+ve mesh is ",slices.negative_mesh())
 	#	print("-ve mesh is ",slices.positive_mesh())
-		vr.log_info("voi a crear las mitades");
+		#vr.log_info("voi a crear las mitades");
 		_create_cut_body(-1,slices.negative_mesh(),cutplane);
 		_create_cut_body( 1,slices.positive_mesh(),cutplane);
 		queue_free();

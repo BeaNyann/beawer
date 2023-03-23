@@ -1,0 +1,68 @@
+# Aspose.3D Wavefront OBJ Exporter
+# Copyright 2004-2023 Aspose Pty Ltd.
+# File created: 03/08/2023 03:24:25
+
+newmtl shell:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 0.86888569593429568 0.86888569593429568 0.86888569593429568
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl right_grip_trigger:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 1 1 1
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl joystick:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 0 0 0
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl left_enter_button:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 1 1 1
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl shell:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 0.86888569593429568 0.86888569593429568 0.86888569593429568
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl left_index_trigger:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 1 1 1
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl shell:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 0.86888569593429568 0.86888569593429568 0.86888569593429568
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20
+newmtl shell:quest2ControllerMAT
+	Ka 0.2 0.2 0.2
+	Kd 0.86888569593429568 0.86888569593429568 0.86888569593429568
+	d 1
+	Tr 0
+	illum 2
+	Ks 0.2 0.2 0.2
+	Ns 20

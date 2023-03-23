@@ -4,8 +4,9 @@
 extends Spatial
 class_name Feature_RigidBodyManipulation
 
-var ManipulableObjectScene = preload("res://Scenes/Features/ManipulableObject.tscn")
+var manipulable_object_scene = preload("res://Scenes/Features/ManipulableModel.tscn")
 #var ManipulableObjectScene = preload("res://Scenes/Main.tscn")
+#var scene = preload("res://Scenes/Features/ManipulableModel.tscn")
 
 # The controller that this grab feature is bound to
 var controller : ARVRController = null;
@@ -155,7 +156,18 @@ func _physics_process(_dt):
 	update_grab()
 	update_zoom()
 	update_cut()
+	if(controller._button_pressed(yb_button)):
+		create_wea() #of course temporal
 
+func create_wea():
+	var wea = manipulable_object_scene.instance()
+	get_tree().get_root().add_child(wea)
+
+
+func instance_model():
+	vr.log_info("instance_model")
+	return manipulable_object_scene.instance()
+	
 # TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 func update_grab() -> void:
 	if (just_grabbed()):
@@ -321,7 +333,8 @@ func _reparent_mesh():
 
 func _on_cutter_collision_body_entered(body):
 	if body is ManipulableRigidBody:
-		body.cut_init(self, other_manipulation_feature, controller, other_controller)
+		#body.cut_init(self, other_manipulation_feature, controller, other_controller)
+		vr.log_info("aca hay algo q descomentar")
 func _on_interactive_area_body_entered(body):
 	if body is ManipulableRigidBody:
 		if body.grab_enabled:
@@ -380,14 +393,14 @@ func cut():
 
 			if sliced_mesh.upper_mesh:
 				vr.log_info("5");
-				var upper = ManipulableObjectScene.instance()
+				var upper = manipulable_object_scene.instance()
 				upper.setup(sliced_mesh.upper_mesh, body.transform)
 				upper.cross_section_material = body.cross_section_material
 				self.get_parent().add_child(upper)
 #
 			if sliced_mesh.lower_mesh:
 				vr.log_info("6");
-				var lower = ManipulableObjectScene.instance()
+				var lower = manipulable_object_scene.instance()
 				lower.setup(sliced_mesh.lower_mesh, body.transform)
 				lower.cross_section_material = body.cross_section_material
 				self.get_parent().add_child(lower)

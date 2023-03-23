@@ -20,12 +20,8 @@ func _ready():
 
 
 func _on_EdgesButton_toggled(button_pressed):
-	vr.log_info("this is the button presed of edgesbutton signal")
-	vr.log_info(str(button_pressed))
 	apple.update_edges_visibility(button_pressed)
 
 
 func _on_NormalsButton_toggled(button_pressed):
-	vr.log_info("this is the button presed of notmalsbutton signal")
-	vr.log_info(str(button_pressed))
 	apple.update_normals_visibility(button_pressed)

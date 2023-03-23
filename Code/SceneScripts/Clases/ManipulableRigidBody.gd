@@ -36,8 +36,8 @@ var normals_ig = null
 export var enabled:bool = true
 export (int, 1, 10)var _delete_at_children = 3 
 export (int, 1, 10)var _disable_at_children = 3 
-export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_layer
-export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_mask
+#export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_layer
+#export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_mask
 export var _cut_body_gravity_scale:float
 export (Material)var _cross_section_material =  null
 export var _cross_section_texture_UV_scale:float = 1
@@ -66,9 +66,11 @@ var _cached_angular_velocity := Vector3(0,0,0);
 
 func _ready():
 	set_mode(RigidBody.MODE_STATIC)
+	set_collision_layer_bit(1, true)
+	#set_collision_layer_bit(2, true)
+	#set_collision_mask_bit(1, true)
 	vr.log_info("ready del manipulable");
 	for child in get_children():
-		vr.log_info("WAT 2 ")
 		vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
 			_mesh = child
@@ -112,14 +114,12 @@ func setUpImmediateGeometryInstances():
 	normals_ig.name = "SurfaceNormals_ImmediateGeometry"
 
 func update_edges_visibility(boolean):
-	vr.log_info("showedgesd?")
 	if(boolean):
 		drawWireframe()
 	else:
 		edges_ig.clear()
 	
 func update_normals_visibility(boolean):
-	vr.log_info("wnormals??")
 	if(boolean):
 		drawNormals()
 	else:
@@ -175,105 +175,105 @@ func drawNormals():
 	_mesh.add_child(normals_ig)
 
 # funciones del slice
-func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature):
-	vr.log_info("CREar UN CUT BODY, llamare instance model");
-	var rigid_body_half = manipulation_feature.instance_model()
-	#var rigid_body_half = manipulable_model.instance()
-	#get_tree().get_root().add_child(rigid_body_half)
-	#get_tree().get_root().add_child(rigid_body_half)
-	#var rigid_body_half = ManipulableRigidBody.new();
-	vr.log_info("ahi si se creo")
-	rigid_body_half.collision_layer = _cut_body_collision_layer
-	rigid_body_half.collision_mask = _cut_body_collision_mask
-	rigid_body_half.gravity_scale = _cut_body_gravity_scale
-#	rigid_body_half.physics_material_override = load("res://scenes/models/BeepCube_Cut.phymat");
-	rigid_body_half.global_transform = global_transform;
-	vr.log_info("ya setie el global transform")
-	#create mesh
-	var object = MeshInstance.new()
-	vr.log_info("cree un new mesh instance")
-	object.mesh = mesh_instance
-	vr.log_info("setie el mesh instance post")
-	object.scale = _mesh.scale
-	vr.log_info("going to ask 4 surface count")
-	if _mesh.mesh.get_surface_count() > 0:
-		vr.log_info("surface count is greater than 0")
-#		print(_mesh.mesh.get_surface_count())
-		var material_count
-		if _cross_section_material != null:
-			 material_count= _mesh.mesh.get_surface_count()+1
-		else:
-			 material_count= _mesh.mesh.get_surface_count()
-		for i in range(material_count):
-			var mat 
-			if i == material_count -1 and _cross_section_material != null:
-				mat = _cross_section_material
-			else:
-				mat = _mesh.mesh.surface_get_material(i)
-			object.mesh.surface_set_material(i,mat)
-	#create collider 
-	#vr.log_info("creando collider antes de setear")
-	#var coll = CollisionShape.new()
-	#vr.log_info("creando collider")
-	#add the body to scene
-	rigid_body_half.add_child(object)
-	vr.log_info("agregue el mesh como child")
-	object.create_convex_collision()
-	vr.log_info("creando convex collision")
-	#rigid_body_half.add_child(coll)
-	vr.log_info("voy a agregar el script")
-	rigid_body_half.set_script(self.get_script())
-	vr.log_info("agrege el script")
-	rigid_body_half._cut_body_collision_layer = _cut_body_collision_layer
-	rigid_body_half._cut_body_collision_mask = _cut_body_collision_mask
-	rigid_body_half._cut_body_gravity_scale = _cut_body_gravity_scale
-	rigid_body_half._current_child_number = _current_child_number+1 
-	rigid_body_half._delete_at_children =  _delete_at_children
-	rigid_body_half._disable_at_children = _disable_at_children
-	rigid_body_half._cross_section_material = _cross_section_material
-	rigid_body_half._normal_force_on_cut = _normal_force_on_cut
-	vr.log_info("agregare al wea como child del padre")
-	get_tree().get_root().add_child(rigid_body_half)
-	vr.log_info("agregue ya al padre")
-	vr.log_info("aca viene info porque equis de")
-	vr.log_info("amount of faces"+str(object.mesh.get_surface_count()))
-	var mesh = object.mesh
-	var vertices = mesh.get_faces()
-	var arrays = object.mesh.surface_get_arrays(2)
-	vr.log_info("why do u die")
-	#var normals = arrays[2]
-	vr.log_info("dont die")
-	#ese de arriba fue el ultimo en aparecer
-	#for i in arrays:
-	#	vr.log_info("olaaaafdskdsklfnklfdn")
-	#	vr.log_info(i)
-	if _apply_force_on_cut:
-		rigid_body_half.apply_central_impulse(_sign*cutplane.normal*_normal_force_on_cut)
+# func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature):
+# 	vr.log_info("CREar UN CUT BODY, llamare instance model");
+# 	var rigid_body_half = manipulation_feature.instance_model()
+# 	#var rigid_body_half = manipulable_model.instance()
+# 	#get_tree().get_root().add_child(rigid_body_half)
+# 	#get_tree().get_root().add_child(rigid_body_half)
+# 	#var rigid_body_half = ManipulableRigidBody.new();
+# 	#vr.log_info("ahi si se creo")
+# 	#rigid_body_half.collision_layer = _cut_body_collision_layer
+# 	#rigid_body_half.collision_mask = _cut_body_collision_mask
+# 	rigid_body_half.gravity_scale = _cut_body_gravity_scale
+# #	rigid_body_half.physics_material_override = load("res://scenes/models/BeepCube_Cut.phymat");
+# 	rigid_body_half.global_transform = global_transform;
+# 	vr.log_info("ya setie el global transform")
+# 	#create mesh
+# 	var object = MeshInstance.new()
+# 	#vr.log_info("cree un new mesh instance")
+# 	object.mesh = mesh_instance
+# 	vr.log_info("setie el mesh instance post")
+# 	object.scale = _mesh.scale
+# 	#vr.log_info("going to ask 4 surface count")
+# 	if _mesh.mesh.get_surface_count() > 0:
+# 		vr.log_info("surface count is greater than 0")
+# #		print(_mesh.mesh.get_surface_count())
+# 		var material_count
+# 		if _cross_section_material != null:
+# 			 material_count= _mesh.mesh.get_surface_count()+1
+# 		else:
+# 			 material_count= _mesh.mesh.get_surface_count()
+# 		for i in range(material_count):
+# 			var mat 
+# 			if i == material_count -1 and _cross_section_material != null:
+# 				mat = _cross_section_material
+# 			else:
+# 				mat = _mesh.mesh.surface_get_material(i)
+# 			object.mesh.surface_set_material(i,mat)
+# 	#create collider 
+# 	#vr.log_info("creando collider antes de setear")
+# 	var coll = CollisionShape.new()
+# 	vr.log_info("creado ya el collider")
+# 	#add the body to scene
+# 	rigid_body_half.add_child(object)
+# 	#vr.log_info("agregue el mesh como child")
+# 	#object.create_convex_collision()
+# 	#vr.log_info("agregare convex collision cmo hijo")
+# 	rigid_body_half.add_child(coll)
+# 	#vr.log_info("voy a agregar el script")
+# 	rigid_body_half.set_script(self.get_script())
+# 	#vr.log_info("agrege el script")
+# 	#rigid_body_half._cut_body_collision_layer = _cut_body_collision_layer
+# 	#rigid_body_half._cut_body_collision_mask = _cut_body_collision_mask
+# 	rigid_body_half._cut_body_gravity_scale = _cut_body_gravity_scale
+# 	rigid_body_half._current_child_number = _current_child_number+1 
+# 	rigid_body_half._delete_at_children =  _delete_at_children
+# 	rigid_body_half._disable_at_children = _disable_at_children
+# 	rigid_body_half._cross_section_material = _cross_section_material
+# 	rigid_body_half._normal_force_on_cut = _normal_force_on_cut
+# 	#vr.log_info("agregare al wea como child del padre")
+# 	get_tree().get_root().add_child(rigid_body_half)
+# 	vr.log_info("agregue ya al padre")
+# 	vr.log_info("aca viene info porque equis de")
+# 	vr.log_info("amount of faces"+str(object.mesh.get_surface_count()))
+# 	var mesh = object.mesh
+# 	var vertices = mesh.get_faces()
+# 	var arrays = object.mesh.surface_get_arrays(2)
+# 	#vr.log_info("why do u die")
+# 	#var normals = arrays[2]
+# 	#vr.log_info("dont die")
+# 	#ese de arriba fue el ultimo en aparecer
+# 	#for i in arrays:
+# 	#	vr.log_info("olaaaafdskdsklfnklfdn")
+# 	#	vr.log_info(i)
+# 	if _apply_force_on_cut:
+# 		rigid_body_half.apply_central_impulse(_sign*cutplane.normal*_normal_force_on_cut)
 	
 
-func cut_object(cutplane:Plane, manipulation_feature):
-	vr.log_info("CORTARRRRR");
-	#  there are a lot of parameters for the constructor
-	#-------------------------------------------------
-	#  cutplane = plane to cut mesh with , in global space
-	#  mesh =  the mesh you want to cut
-	#  is solid = if you want a surface for cross section
-	#  cross_section_material = cross section material you want for the cut pieces , overides is_solid to be true
-	#  cross section texture UV scale , scale of the planar projection UV
-	#  cross section texture UV offset , offset of the Planar projection UV
-	#  createReverseTriangleWindings 
-	#  shareVertices
-	#  smoothVertices
-	#-------------------------------------------------
-	if enabled: 
-		vr.log_info("ESTOY ENABLED");
-		var slices = slice_calculator.new(cutplane,_mesh,true,_cross_section_material,_cross_section_texture_UV_scale,_cross_section_texture_UV_offset,true,true,true)
-	#	print("+ve mesh is ",slices.negative_mesh())
-	#	print("-ve mesh is ",slices.positive_mesh())
-		vr.log_info("voi a crear las mitades");
-		_create_cut_body(-1,slices.negative_mesh(),cutplane, manipulation_feature);
-		_create_cut_body( 1,slices.positive_mesh(),cutplane, manipulation_feature);
-		queue_free();
+# func cut_object(cutplane:Plane, manipulation_feature):
+# 	vr.log_info("CORTARRRRR");
+# 	#  there are a lot of parameters for the constructor
+# 	#-------------------------------------------------
+# 	#  cutplane = plane to cut mesh with , in global space
+# 	#  mesh =  the mesh you want to cut
+# 	#  is solid = if you want a surface for cross section
+# 	#  cross_section_material = cross section material you want for the cut pieces , overides is_solid to be true
+# 	#  cross section texture UV scale , scale of the planar projection UV
+# 	#  cross section texture UV offset , offset of the Planar projection UV
+# 	#  createReverseTriangleWindings 
+# 	#  shareVertices
+# 	#  smoothVertices
+# 	#-------------------------------------------------
+# 	if enabled: 
+# 		vr.log_info("ESTOY ENABLED");
+# 		var slices = slice_calculator.new(cutplane,_mesh,true,_cross_section_material,_cross_section_texture_UV_scale,_cross_section_texture_UV_offset,true,true,true)
+# 	#	print("+ve mesh is ",slices.negative_mesh())
+# 	#	print("-ve mesh is ",slices.positive_mesh())
+# 		vr.log_info("voi a crear las mitades");
+# 		_create_cut_body(-1,slices.negative_mesh(),cutplane, manipulation_feature);
+# 		_create_cut_body( 1,slices.positive_mesh(),cutplane, manipulation_feature);
+# 		queue_free();
 
 func _get_configuration_warning():
 	var warning = PoolStringArray()
@@ -289,6 +289,7 @@ func grab_init(node) -> void:
 	sleeping = false;
 	_orig_can_sleep = can_sleep;
 	can_sleep = false;
+	vr.log_info("se llamo el grab init");
 
 func _release():
 	controller = feature_grab_node.controller

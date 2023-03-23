@@ -156,6 +156,13 @@ func _physics_process(_dt):
 	update_grab()
 	update_zoom()
 	update_cut()
+	if(controller._button_pressed(yb_button)):
+		create_wea() #of course temporal
+
+func create_wea():
+	var wea = manipulable_object_scene.instance()
+	get_tree().get_root().add_child(wea)
+
 
 func instance_model():
 	vr.log_info("instance_model")
@@ -326,7 +333,8 @@ func _reparent_mesh():
 
 func _on_cutter_collision_body_entered(body):
 	if body is ManipulableRigidBody:
-		body.cut_init(self, other_manipulation_feature, controller, other_controller)
+		#body.cut_init(self, other_manipulation_feature, controller, other_controller)
+		vr.log_info("aca hay algo q descomentar")
 func _on_interactive_area_body_entered(body):
 	if body is ManipulableRigidBody:
 		if body.grab_enabled:

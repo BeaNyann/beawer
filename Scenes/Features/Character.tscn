@@ -29,6 +29,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.995802, 0 )
 [node name="Feature_UIRayCast" parent="OQ_ARVROrigin/OQ_RightController" instance=ExtResource( 1 )]
 
 [node name="Feature_RigidBodyManipulation" parent="OQ_ARVROrigin/OQ_RightController" instance=ExtResource( 3 )]
+grab_layer = 2
+collision_body_layer = 2
 
 [node name="ControllerModel" type="Spatial" parent="OQ_ARVROrigin/OQ_RightController"]
 
@@ -54,6 +56,8 @@ material/10 = null
 [node name="Feature_RigidBodyRayCastGrab" parent="OQ_ARVROrigin/OQ_LeftController" instance=ExtResource( 2 )]
 
 [node name="Feature_RigidBodyManipulation" parent="OQ_ARVROrigin/OQ_LeftController" instance=ExtResource( 3 )]
+grab_layer = 2
+collision_body_layer = 2
 
 [node name="ControllerModel" type="Spatial" parent="OQ_ARVROrigin/OQ_LeftController"]
 

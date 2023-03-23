@@ -329,6 +329,7 @@ shape = SubResource( 8 )
 
 [node name="FloatingApple" type="RigidBody" parent="Pickables"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132053, -0.575144, 1.47966 )
+collision_mask = 0
 script = ExtResource( 10 )
 
 [node name="apple" type="MeshInstance" parent="Pickables/FloatingApple"]

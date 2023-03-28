@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Code/SceneScripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/furnitureKit/tableRound.obj" type="ArrayMesh" id=2]
@@ -13,13 +13,14 @@
 [ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DCanvas.tscn" type="PackedScene" id=11]
 [ext_resource path="res://OQ_Toolkit/OQ_UI2D/theme/oq_ui2d_standard.theme" type="Theme" id=12]
 [ext_resource path="res://Code/SceneScripts/Clases/FileSelector.gd" type="Script" id=13]
-[ext_resource path="res://Code/SceneScripts/Features/Feature_DisplayProperties.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Features/Feature_DisplayProperties.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Code/SceneScripts/Clases/ManipulableMesh.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Features/ManipulableObject.tscn" type="PackedScene" id=16]
 [ext_resource path="res://addons/slicer/sliceable_obj.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Features/ManipulableModel.tscn" type="PackedScene" id=18]
 [ext_resource path="res://addons/demo/slicer.gd" type="Script" id=19]
 [ext_resource path="res://Code/SceneScripts/Clases/Meshes.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Features/Feature_ChangeAltitude.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpatialMaterial" id=1]
 emission_enabled = true
@@ -254,6 +255,7 @@ script = ExtResource( 1 )
 
 [node name="Area" type="Area" parent="Character/OQ_ARVROrigin/OQ_LeftController" index="3"]
 transform = Transform( 0.997056, -0.0766667, 0, 0.05667, 0.736997, 0.673515, -0.0516363, -0.671533, 0.739172, 0, 0, 0 )
+visible = false
 script = ExtResource( 19 )
 
 [node name="mesh" type="MeshInstance" parent="Character/OQ_ARVROrigin/OQ_LeftController/Area"]
@@ -482,44 +484,10 @@ _cross_section_material = SubResource( 29 )
 
 [node name="Features" type="Node" parent="."]
 
-[node name="Feature_DisplayProperties" type="Spatial" parent="Features"]
-transform = Transform( -1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, -0.704473, -0.35152, 1.95006 )
-script = ExtResource( 14 )
+[node name="Feature_DisplayProperties" parent="Features" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.549911, 0, 1.2759 )
 
-[node name="OQ_UI2DCanvas_DisplayProperties" parent="Features/Feature_DisplayProperties" instance=ExtResource( 11 )]
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties"]
-margin_right = 300.0
-margin_bottom = 100.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Instructions" type="Label" parent="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "What do you want to see?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EdgesButton" type="CheckButton" parent="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect"]
-margin_top = 16.0
-margin_right = 76.0
-margin_bottom = 56.0
-text = "Edges"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NormalsButton" type="CheckButton" parent="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect"]
-margin_top = 47.0
-margin_right = 117.0
-margin_bottom = 87.0
-text = "Normals "
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Feature_ChangeAltitude" parent="Features" instance=ExtResource( 21 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 material_override = SubResource( 30 )
@@ -548,9 +516,9 @@ material/0 = null
 
 [connection signal="body_exited" from="Character/OQ_ARVROrigin/OQ_LeftController/Area" to="Character/OQ_ARVROrigin/OQ_LeftController/Area" method="_on_Area_body_exited"]
 [connection signal="pressed" from="FileSelector/OQ_UI2DCanvas_FileSelector/ReferenceRect/FileSelectorButton" to="FileSelector" method="_on_FileSelectorButton_pressed"]
-[connection signal="toggled" from="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect/EdgesButton" to="Features/Feature_DisplayProperties" method="_on_EdgesButton_toggled"]
-[connection signal="toggled" from="Features/Feature_DisplayProperties/OQ_UI2DCanvas_DisplayProperties/ReferenceRect/NormalsButton" to="Features/Feature_DisplayProperties" method="_on_NormalsButton_toggled"]
 
 [editable path="Character"]
 [editable path="ManipulableObject"]
+[editable path="Features/Feature_DisplayProperties"]
+[editable path="Features/Feature_ChangeAltitude"]
 [editable path="RigidBody"]

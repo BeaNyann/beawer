@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DCanvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Code/SceneScripts/Features/Feature_ChangeAltitude.gd" type="Script" id=3]
+
+[node name="Feature_ChangeAltitude" type="Spatial"]
+transform = Transform( 0.617214, 0, 0.786795, 0, 1, 0, -0.786795, 0, 0.617214, 1.81099, 0, 1.86631 )
+script = ExtResource( 3 )
+
+[node name="OQ_UI2DCanvas" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="OQ_UI2DCanvas"]
+margin_right = 40.0
+margin_bottom = 308.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSlider" type="VSlider" parent="OQ_UI2DCanvas/ReferenceRect"]
+margin_right = 37.0
+margin_bottom = 296.0
+min_value = -5.0
+max_value = 5.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="OQ_UI2DCanvas/ReferenceRect/VSlider" to="." method="_on_VSlider_value_changed"]

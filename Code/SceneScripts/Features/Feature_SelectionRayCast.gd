@@ -14,8 +14,11 @@ onready var ui_raycast_position : Spatial = $RayCastPosition;
 onready var ui_raycast : RayCast = $RayCastPosition/RayCast;
 onready var ui_raycast_mesh : MeshInstance = $RayCastPosition/RayCastMesh;
 onready var ui_raycast_hitmarker : MeshInstance = $RayCastPosition/RayCastHitMarker;
+onready var root = get_tree().get_root();
+onready var models_holder : Node = root.get_node("Manipulables");
+onready var selected_holder : Node = root.get_node("SelectedModel");
 
-const hand_click_button := vr.CONTROLLER_BUTTON.XA;
+const hand_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER;
 
 var is_colliding := false;
 var cur_selected = null;
@@ -67,36 +70,38 @@ func _update_raycasts():
 
 		
 	ui_raycast.force_raycast_update(); # need to update here to get the current position; else the marker laggs behind
-	
-	
-	if ui_raycast.is_colliding() and !is_colliding:
-		vr.log_info("colliding")
-		cur_selected = ui_raycast.get_collider();
-		cur_selected.set_highlight(true)
-		#vr.log_info(str(c))
-		#var model = c.get_parent();
-		#vr.log_info(str(model))
+
+	if ui_raycast.is_colliding():
+		if !is_colliding:
+			is_colliding = true;
+			vr.log_info("colliding")
+			cur_selected = ui_raycast.get_collider();
+			cur_selected.set_highlight(true)
+			
+			select_model()
+
 		if (not cur_selected is ManipulableRigidBody): return
 		
-		var click = false;
-		var release = false;
-		if (controller.is_hand):
-			click = controller._button_just_pressed(hand_click_button);
-			release = controller._button_just_released(hand_click_button);
-		else:
-			click = controller._button_just_pressed(ui_raycast_click_button);
-			release = controller._button_just_released(ui_raycast_click_button);
-		
+		if(controller._button_just_pressed(ui_raycast_click_button)):
+			select_model()
+
 		var position = ui_raycast.get_collision_point();
 		ui_raycast_hitmarker.visible = true;
 		ui_raycast_hitmarker.global_transform.origin = position;
-		vr.log_info("va a llamar be selected")
-		cur_selected.be_selected();
-		is_colliding = true;
+
 	elif is_colliding:
 		if(cur_selected):
 			cur_selected.set_highlight(false)
 		is_colliding = false;
+
+func select_model():
+	vr.log_info("selecting model")
+	if (models_holder.has_child(cur_selected)):
+		models_holder.remove_child(cur_selected)
+	if (!selected_holder.has_child(cur_selected)):
+		selected_holder.add_child(cur_selected)
+	
+	# cur_selected.be_selected(); maybe this is not needed anymore
 
 func _ready():
 	controller = get_parent();

@@ -11,6 +11,7 @@ signal grabbability_changed(body, grabbable, controller)
 export(Material) var cross_section_material
 
 onready var body_mesh = $ManipulableMesh
+onready var highlight = $ManipulableMesh/HighLight
 
 var controller = null;
 var other_controller = null;
@@ -70,14 +71,15 @@ func _ready():
 	#set_collision_layer_bit(2, true)
 	#set_collision_mask_bit(1, true)
 	vr.log_info("ready del manipulable");
+	set_highlight(false)
 	for child in get_children():
-		vr.log_info("child is "+ str(child))
+		#vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
 			_mesh = child
-			vr.log_info("found mesh")
+			#vr.log_info("found mesh")
 		if child is CollisionShape:
 			_collider = child
-			vr.log_info("found collider")
+			#vr.log_info("found collider")
 		if _mesh!= null and _collider !=null:
 			_mesh.global_transform.origin = global_transform.origin
 			_mesh.create_convex_collision()
@@ -113,6 +115,9 @@ func setUpImmediateGeometryInstances():
 	normals_ig.material_override = normals_sm
 	normals_ig.name = "SurfaceNormals_ImmediateGeometry"
 
+func set_highlight(boolean):
+	highlight.visible = boolean
+	
 func update_edges_visibility(boolean):
 	if(boolean):
 		drawWireframe()
@@ -327,7 +332,10 @@ func zoom_release() -> void:
 #	controller_feature.cut()
 #	vr.log_info("adios init");
 	
-
+func be_selected() -> void:
+	vr.log_info("se llamo el be selected");
+	#selected = true
+	#vr.log_info("se llamo el be selected");
 
 #func cut_release():
 #	vr.log_info("se llamo el cut release");

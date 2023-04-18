@@ -17,6 +17,7 @@ onready var ui_raycast_hitmarker : MeshInstance = $RayCastPosition/RayCastHitMar
 onready var root = get_tree().get_root();
 onready var models_holder : Node = root.get_node("Manipulables");
 onready var selected_holder : Node = root.get_node("SelectedModel");
+onready var last_key_press_time = 0.0;
 
 const hand_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER;
 
@@ -77,31 +78,44 @@ func _update_raycasts():
 			vr.log_info("colliding")
 			cur_selected = ui_raycast.get_collider();
 			cur_selected.set_highlight(true)
-			
-			select_model()
 
 		if (not cur_selected is ManipulableRigidBody): return
 		
 		if(controller._button_just_pressed(ui_raycast_click_button)):
-			select_model()
+			if(OS.get_ticks_msec() - last_key_press_time < 200):
+				deselect_model()
+			else:
+				select_model()
+			last_key_press_time = OS.get_ticks_msec()
+			vr.log_info(str(last_key_press_time))
 
-		var position = ui_raycast.get_collision_point();
-		ui_raycast_hitmarker.visible = true;
-		ui_raycast_hitmarker.global_transform.origin = position;
+		var position = ui_raycast.get_collision_point()
+		ui_raycast_hitmarker.visible = true
+		ui_raycast_hitmarker.global_transform.origin = position
 
 	elif is_colliding:
 		if(cur_selected):
 			cur_selected.set_highlight(false)
 		is_colliding = false;
 
+func deselect_model():
+	vr.log_info("deselecting model")
+	if (selected_holder.has_child(cur_selected)):
+		selected_holder.remove_child(cur_selected)
+	if (!models_holder.has_child(cur_selected)):
+		models_holder.add_child(cur_selected)
+	cur_selected = null
+
 func select_model():
 	vr.log_info("selecting model")
+	if (selected_holder.get_child_count() > 0):
+		for i in range(selected_holder.get_child_count()):
+			models_holder.add_child(selected_holder.get_child(i))
+		selected_holder.remove_all_children()
 	if (models_holder.has_child(cur_selected)):
 		models_holder.remove_child(cur_selected)
 	if (!selected_holder.has_child(cur_selected)):
 		selected_holder.add_child(cur_selected)
-	
-	# cur_selected.be_selected(); maybe this is not needed anymore
 
 func _ready():
 	controller = get_parent();

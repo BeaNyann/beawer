@@ -5,9 +5,8 @@ extends Spatial
 # var a = 2
 # var b = "text"
 
-# temporal!¡ tengo que seleccionar un objeto... oh hacerlo solo con la manzana xd
-onready var apple = get_node("../../Pickables/FloatingApple")
-#
+onready var selected_holder : Node = get_tree().get_root().get_node("SelectedModel");
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,8 +19,14 @@ func _ready():
 
 
 func _on_EdgesButton_toggled(button_pressed):
-	apple.update_edges_visibility(button_pressed)
+	if(selected_holder.get_child_count() > 0):
+		selected_holder.get_child(0).update_edges_visibility(button_pressed)
+	else:
+		vr.log_info("No hay nada seleccionado")
 
 
 func _on_NormalsButton_toggled(button_pressed):
-	apple.update_normals_visibility(button_pressed)
+	if(selected_holder.get_child_count() > 0):
+		selected_holder.get_child(0).update_normals_visibility(button_pressed)
+	else:
+		vr.log_info("No hay nada seleccionado")

@@ -77,7 +77,7 @@ func _update_raycasts():
 			is_colliding = true;
 			vr.log_info("colliding")
 			cur_selected = ui_raycast.get_collider();
-			cur_selected.set_highlight(true)
+			cur_selected.set_highlight(0.1)
 
 		if (not cur_selected is ManipulableRigidBody): return
 		
@@ -95,7 +95,8 @@ func _update_raycasts():
 
 	elif is_colliding:
 		if(cur_selected):
-			cur_selected.set_highlight(false)
+			cur_selected.set_highlight(0.0)
+			pass
 		is_colliding = false;
 
 func deselect_model():

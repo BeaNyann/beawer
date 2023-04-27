@@ -241,7 +241,7 @@ points = PoolVector3Array( -0.0485035, 0.0485035, 0.1979, -0.0485035, 0.097007, 
 [sub_resource type="SpatialMaterial" id=30]
 params_cull_mode = 2
 
-[sub_resource type="ConvexPolygonShape" id=31]
+[sub_resource type="ConvexPolygonShape" id=34]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="CubeMesh" id=32]
@@ -497,7 +497,7 @@ script = ExtResource( 15 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14081, -0.118854, 0 )
 
 [node name="CollisionShape" parent="RigidBody" index="0"]
-shape = SubResource( 31 )
+shape = SubResource( 34 )
 
 [node name="MeshInstance" parent="RigidBody" index="1"]
 mesh = SubResource( 32 )

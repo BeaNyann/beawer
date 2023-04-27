@@ -14,9 +14,8 @@ onready var ui_raycast_position : Spatial = $RayCastPosition;
 onready var ui_raycast : RayCast = $RayCastPosition/RayCast;
 onready var ui_raycast_mesh : MeshInstance = $RayCastPosition/RayCastMesh;
 onready var ui_raycast_hitmarker : MeshInstance = $RayCastPosition/RayCastHitMarker;
-onready var root = get_tree().get_root();
-onready var models_holder : Node = root.get_node("Manipulables");
-onready var selected_holder : Node = root.get_node("SelectedModel");
+onready var models_holder : Node = get_node("../../../../Manipulables");
+onready var selected_holder : Node = get_node("../../../../SelectedModel");
 onready var last_key_press_time = 0.0;
 
 const hand_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER;
@@ -96,26 +95,25 @@ func _update_raycasts():
 	elif is_colliding:
 		if(cur_selected):
 			cur_selected.set_highlight(0.0)
-			pass
 		is_colliding = false;
 
 func deselect_model():
 	vr.log_info("deselecting model")
-	if (selected_holder.has_child(cur_selected)):
+	if (selected_holder.has_node(cur_selected.name)):
 		selected_holder.remove_child(cur_selected)
-	if (!models_holder.has_child(cur_selected)):
+	if (!models_holder.has_node(cur_selected.name)):
 		models_holder.add_child(cur_selected)
 	cur_selected = null
 
 func select_model():
 	vr.log_info("selecting model")
 	if (selected_holder.get_child_count() > 0):
-		for i in range(selected_holder.get_child_count()):
-			models_holder.add_child(selected_holder.get_child(i))
-		selected_holder.remove_all_children()
-	if (models_holder.has_child(cur_selected)):
+		for child in selected_holder.get_children():
+			selected_holder.remove_child(child)
+			models_holder.add_child(child)
+	if (models_holder.has_node(cur_selected.name)):
 		models_holder.remove_child(cur_selected)
-	if (!selected_holder.has_child(cur_selected)):
+	if (!selected_holder.has_node(cur_selected.name)):
 		selected_holder.add_child(cur_selected)
 
 func _ready():

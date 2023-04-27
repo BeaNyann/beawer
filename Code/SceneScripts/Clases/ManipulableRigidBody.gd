@@ -10,8 +10,7 @@ class_name ManipulableRigidBody
 signal grabbability_changed(body, grabbable, controller)
 export(Material) var cross_section_material
 
-onready var body_mesh = $ManipulableMesh
-#onready var highlight = $ManipulableMesh/HighLight
+#onready var body_mesh = $ManipulableMesh
 
 var controller = null;
 var other_controller = null;
@@ -71,8 +70,7 @@ func _ready():
 	#set_collision_layer_bit(2, true)
 	#set_collision_mask_bit(1, true)
 	vr.log_info("ready del manipulable");
-	#body_mesh.shader_param.border_width = 0.0
-	set_highlight(0.0)
+	
 	for child in get_children():
 		#vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
@@ -95,11 +93,24 @@ func _ready():
 			if _current_child_number >= _disable_at_children:
 				enabled = false
 			break
-	
-	setUpImmediateGeometryInstances()
+	set_initial_highlight()
+	set_up_immediate_geometry_instances()
 	#ogkdsal
 
-func setUpImmediateGeometryInstances():
+func set_initial_highlight():
+	var material = _mesh.get_surface_material(0)
+	var shader = material.next_pass.shader
+	var new_shader = Shader.new()
+	new_shader.set_code(shader.get_code())
+	var new_material = SpatialMaterial.new()
+	var new_shader_material = ShaderMaterial.new()
+	new_shader_material.shader = new_shader
+	new_material.next_pass = new_shader_material
+	_mesh.set_surface_material(0,new_material)	
+	_mesh.set_material_override(new_material)
+	set_highlight(0.0)
+
+func set_up_immediate_geometry_instances():
 	# Edges ImmediateGeometry	
 	edges_ig = ImmediateGeometry.new()
 	var edges_sm = SpatialMaterial.new()
@@ -117,21 +128,21 @@ func setUpImmediateGeometryInstances():
 	normals_ig.name = "SurfaceNormals_ImmediateGeometry"
 
 func set_highlight(width:float):
-	body_mesh.shader_param.border_width = width
+	_mesh.get_surface_material(0).next_pass.set_shader_param("border_width",width)
 	
 func update_edges_visibility(boolean):
 	if(boolean):
-		drawWireframe()
+		draw_wireframe()
 	else:
 		edges_ig.clear()
 	
 func update_normals_visibility(boolean):
 	if(boolean):
-		drawNormals()
+		draw_normals()
 	else:
 		normals_ig.clear()
 	
-func drawWireframe():
+func draw_wireframe():
 	edges_ig.begin(Mesh.PRIMITIVE_LINES)
 	edges_ig.set_color(Color.purple)
 
@@ -153,7 +164,7 @@ func drawWireframe():
 	edges_ig.set_scale(Vector3(sf, sf, sf))
 	_mesh.add_child(edges_ig)
 
-func drawNormals():
+func draw_normals():
 	normals_ig.begin(Mesh.PRIMITIVE_LINES)
 	normals_ig.set_color(Color.white)
 
@@ -399,7 +410,7 @@ func _physics_process(_delta):
 
 func setup(mesh: Mesh, position: Transform):
 	vr.log_info("ssetup setup");
-	body_mesh.mesh = mesh
+	_mesh.mesh = mesh
 	self.transform = position
 
 #func cut(origin: Vector3, normal: Vector3):

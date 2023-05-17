@@ -241,7 +241,7 @@ points = PoolVector3Array( -0.0485035, 0.0485035, 0.1979, -0.0485035, 0.097007, 
 [sub_resource type="SpatialMaterial" id=30]
 params_cull_mode = 2
 
-[sub_resource type="ConvexPolygonShape" id=34]
+[sub_resource type="ConvexPolygonShape" id=31]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="CubeMesh" id=32]
@@ -255,7 +255,6 @@ script = ExtResource( 1 )
 
 [node name="Area" type="Area" parent="Character/OQ_ARVROrigin/OQ_LeftController" index="3"]
 transform = Transform( 0.997056, -0.0766667, 0, 0.05667, 0.736997, 0.673515, -0.0516363, -0.671533, 0.739172, 0, 0, 0 )
-visible = false
 script = ExtResource( 19 )
 
 [node name="mesh" type="MeshInstance" parent="Character/OQ_ARVROrigin/OQ_LeftController/Area"]
@@ -497,7 +496,7 @@ script = ExtResource( 15 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14081, -0.118854, 0 )
 
 [node name="CollisionShape" parent="RigidBody" index="0"]
-shape = SubResource( 34 )
+shape = SubResource( 31 )
 
 [node name="MeshInstance" parent="RigidBody" index="1"]
 mesh = SubResource( 32 )
@@ -514,7 +513,7 @@ material/0 = null
 [node name="Manipulables" type="Node" parent="."]
 
 [node name="ManipulableModel" parent="Manipulables" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.92704 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37143, 0, -2.13002 )
 
 [node name="ManipulableModel2" parent="Manipulables" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82111, 0, 0 )

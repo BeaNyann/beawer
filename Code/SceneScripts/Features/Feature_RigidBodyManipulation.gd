@@ -37,6 +37,10 @@ onready var _cutter_mesh = $Cutter
 onready var _cutter_collision = $Cutter/CutterArea/CollisionShape
 onready var _cutter_area = $Cutter/CutterArea
 onready var _interactive_area = $InteractiveArea
+onready var models_holder : Node = get_node("../../../../Manipulables");
+
+#Slicer 
+var mesh_slicer = MeshSlicer.new()
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
@@ -160,8 +164,12 @@ func _physics_process(_dt):
 		create_wea() #of course temporal
 
 func create_wea():
-	var wea = manipulable_object_scene.instance()
-	get_tree().get_root().add_child(wea)
+	#var wea = manipulable_object_scene.instance()
+	#models_holder.add_child(wea)
+	var area = get_node("../Area")
+	for body in area.get_overlapping_bodies().duplicate():
+		if body is ManipulableRigidBody:
+			vr.log_info("body is ManipulableRigidBody")
 
 
 func instance_model():
@@ -333,7 +341,7 @@ func _reparent_mesh():
 
 func _on_cutter_collision_body_entered(body):
 	if body is ManipulableRigidBody:
-		#body.cut_init(self, other_manipulation_feature, controller, other_controller)
+		body.cut_init(self, other_manipulation_feature, controller, other_controller)
 		vr.log_info("aca hay algo q descomentar")
 func _on_interactive_area_body_entered(body):
 	if body is ManipulableRigidBody:
@@ -396,13 +404,13 @@ func cut():
 				var upper = manipulable_object_scene.instance()
 				upper.setup(sliced_mesh.upper_mesh, body.transform)
 				upper.cross_section_material = body.cross_section_material
-				self.get_parent().add_child(upper)
+				models_holder.add_child(upper)
 #
 			if sliced_mesh.lower_mesh:
 				vr.log_info("6");
 				var lower = manipulable_object_scene.instance()
 				lower.setup(sliced_mesh.lower_mesh, body.transform)
 				lower.cross_section_material = body.cross_section_material
-				self.get_parent().add_child(lower)
+				models_holder.add_child(lower)
 			vr.log_info("7");
 			body.queue_free()

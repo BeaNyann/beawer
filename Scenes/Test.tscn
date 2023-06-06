@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Code/SceneScripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/furnitureKit/tableRound.obj" type="ArrayMesh" id=2]
@@ -34,6 +34,14 @@ material = SubResource( 1 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
+
+[sub_resource type="SpatialMaterial" id=34]
+
+[sub_resource type="CubeMesh" id=35]
+material = SubResource( 34 )
+
+[sub_resource type="BoxShape" id=36]
+extents = Vector3( 0.198724, 0.209763, 0.239196 )
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.141176, 0.494118, 0.113725, 1 )
@@ -255,6 +263,7 @@ script = ExtResource( 1 )
 
 [node name="Area" type="Area" parent="Character/OQ_ARVROrigin/OQ_LeftController" index="3"]
 transform = Transform( 0.997056, -0.0766667, 0, 0.05667, 0.736997, 0.673515, -0.0516363, -0.671533, 0.739172, 0, 0, 0 )
+visible = false
 script = ExtResource( 19 )
 
 [node name="mesh" type="MeshInstance" parent="Character/OQ_ARVROrigin/OQ_LeftController/Area"]
@@ -273,6 +282,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1 )
 [node name="CollisionShape" type="CollisionShape" parent="Character/OQ_ARVROrigin/OQ_LeftController/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.361122, -0.300545, 0 )
 shape = SubResource( 3 )
+
+[node name="Slicer" type="Spatial" parent="Character/OQ_ARVROrigin/OQ_LeftController" index="5"]
+
+[node name="MeshInstance" type="MeshInstance" parent="Character/OQ_ARVROrigin/OQ_LeftController/Slicer"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.02, 0, 0, 0 )
+mesh = SubResource( 35 )
+material/0 = null
+
+[node name="Area" type="Area" parent="Character/OQ_ARVROrigin/OQ_LeftController/Slicer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Character/OQ_ARVROrigin/OQ_LeftController/Slicer/Area"]
+shape = SubResource( 36 )
 
 [node name="Pickables" type="Node" parent="."]
 

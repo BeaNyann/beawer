@@ -24,8 +24,8 @@ func _convertToArrayMesh(mesh:Mesh):
 
 ##Slice a mesh in half using Transform3D as the local position and direction. Return an array of the sliced meshes. The cross-section material is positioned and rotated base on the Transform3D
 func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Material = null) -> Array:
+	vr.log_info("Slice Mesh, well i guess...")
 	mesh = _convertToArrayMesh(mesh)
-	
 	var normal = -slice_transform.basis.z
 	var at = slice_transform.origin
 	
@@ -42,6 +42,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 	if cross_section_material == null:
 		if mesh.get_surface_count() != 0:
 			cross_section_material = mesh.surface_get_material(0)
+
 	for surface_idx in range(mesh.get_surface_count()):
 		mdt.create_from_surface(mesh, surface_idx)
 		
@@ -71,10 +72,9 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					if intersect != v2_at and intersect != v1_at:
 						var norm = mdt.get_vertex_normal(v2)
 						var uv = mdt.get_vertex_uv(v1) + (mdt.get_vertex_uv(v2)-mdt.get_vertex_uv(v1))*(v1_at.distance_to(intersect)/v1_at.distance_to(v2_at))
-
 						edge_slice[edge] = [intersect,norm,uv]
-		for face in range(mdt.get_face_count()):
 
+		for face in range(mdt.get_face_count()):
 
 			var face_verts1 = []
 			var face_verts2 = []
@@ -82,6 +82,8 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			for e in range(3):
 				if edge_slice.has(mdt.get_face_edge(face,e)):
 					edge_intersect.append(e)
+			vr.log_info("1ba")
+
 			if len(edge_intersect) == 0:
 				var v1 = mdt.get_face_vertex(face,0)
 				var v2 = mdt.get_face_vertex(face,1)
@@ -100,6 +102,9 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					face_verts2.append(v1)
 					face_verts2.append(v2)
 					face_verts2.append(v3)
+				vr.log_info("1ba2")
+
+
 					
 			elif  len(edge_intersect) == 1:
 				var v1 = null
@@ -129,6 +134,8 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					face_verts1.append(v1)
 					face_verts1.append(v3)
 					face_verts1.append(v4)
+				vr.log_info("1ba3")
+
 						
 
 			elif  len(edge_intersect) == 2:
@@ -155,6 +162,8 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 							v5 = edge_slice[e2]
 						break
 				_add_to_vert_slice(v2,v5)
+				vr.log_info("1ba5")
+
 
 
 				if verts_side[v1] == 1:
@@ -177,22 +186,42 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					face_verts1.append(v3)
 					face_verts1.append(v4)
 					face_verts1.append(v5)
-			for v in face_verts1:
-				var vert = v
-				var uv = Vector2.ZERO
-				var norm = Vector3.ZERO
-				if typeof(v) == TYPE_INT:
-					vert = mdt.get_vertex(v)
-					norm = mdt.get_vertex_normal(v)
-					uv = mdt.get_vertex_uv(v)
-				if typeof(v) == TYPE_ARRAY:
-					vert = v[0]
-					norm = v[1].normalized()
-					uv = v[2]
-				surface_tool.set_normal(norm)
-				surface_tool.set_uv(uv)
-				surface_tool.add_vertex(vert)
+			vr.log_info("1ba6") 
 
+			for v in face_verts1:
+				vr.log_info("for")
+				var vert = v
+				vr.log_info("ola1")
+				var uv = Vector2.ZERO 
+				vr.log_info("ola2")
+				var norm = Vector3.ZERO
+				vr.log_info("ola3")
+				if typeof(v) == TYPE_INT:
+					vr.log_info("ola4")
+					vert = mdt.get_vertex(v)
+					vr.log_info("ola5")
+					norm = mdt.get_vertex_normal(v)
+					vr.log_info("ola6")
+					uv = mdt.get_vertex_uv(v)
+					vr.log_info("ola7")
+				if typeof(v) == TYPE_ARRAY:
+					vr.log_info("ola8")
+					vert = v[0]
+					vr.log_info("ola9")
+					norm = v[1].normalized()
+					vr.log_info("ola10")
+					uv = v[2]
+					vr.log_info("ola11")
+				vr.log_info("ola12")
+				vr.log_info(str(norm))
+				surface_tool.add_normal(norm)
+				vr.log_info("ola13")
+				surface_tool.add_uv(uv)
+				vr.log_info("ola14")
+				surface_tool.add_vertex(vert)
+				vr.log_info("ola15")
+			
+			vr.log_info("1ba7")
 				
 					
 			for v in face_verts2:
@@ -207,16 +236,20 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					vert = v[0]
 					norm = v[1].normalized()
 					uv = v[2]
-				surface_tool2.set_normal(norm)
-				surface_tool2.set_uv(uv)
+				surface_tool2.add_normal(norm)
+				surface_tool2.add_uv(uv)
 				surface_tool2.add_vertex(vert)
-				
+			vr.log_info("1ba8")
+
+		vr.log_info("1ba9")
+
 		surfaces1.append(surface_tool.commit())
 		surfaces_mat1.append(material)
 		surfaces2.append(surface_tool2.commit())
 		surfaces_mat2.append(material)
 
 	
+	vr.log_info("1badmask")
 
 
 
@@ -227,7 +260,8 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 
 	
 	
-	
+	vr.log_info("1bawwww")
+
 
 	for polygon in sorted_verts:
 		var new_polygon = Array()
@@ -244,35 +278,35 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			var vert3 = polygon[(triangulate[v*3+2])%len(triangulate)]
 			
 			if _check_side(_get_triangle_normal(vert1,vert2,vert3),normal,Vector3.ZERO) != -1:
-				surface_tool1_2.set_uv(_get_uv(slice_transform,vert1))
+				surface_tool1_2.add_uv(_get_uv(slice_transform,vert1))
 				surface_tool1_2.add_vertex(vert1)
-				surface_tool1_2.set_uv(_get_uv(slice_transform,vert2))
+				surface_tool1_2.add_uv(_get_uv(slice_transform,vert2))
 				surface_tool1_2.add_vertex(vert2)
-				surface_tool1_2.set_uv(_get_uv(slice_transform,vert3))
+				surface_tool1_2.add_uv(_get_uv(slice_transform,vert3))
 				surface_tool1_2.add_vertex(vert3)
-				surface_tool2_2.set_uv(_get_uv(slice_transform,vert3))
+				surface_tool2_2.add_uv(_get_uv(slice_transform,vert3))
 				surface_tool2_2.add_vertex(vert3)
-				surface_tool2_2.set_uv(_get_uv(slice_transform,vert2))
+				surface_tool2_2.add_uv(_get_uv(slice_transform,vert2))
 				surface_tool2_2.add_vertex(vert2)
-				surface_tool2_2.set_uv(_get_uv(slice_transform,vert1))
+				surface_tool2_2.add_uv(_get_uv(slice_transform,vert1))
 				surface_tool2_2.add_vertex(vert1)
 			else:
 
-				surface_tool1_2.set_uv(_get_uv(slice_transform,vert3))
+				surface_tool1_2.add_uv(_get_uv(slice_transform,vert3))
 				surface_tool1_2.add_vertex(vert3)
-				surface_tool1_2.set_uv(_get_uv(slice_transform,vert2))
+				surface_tool1_2.add_uv(_get_uv(slice_transform,vert2))
 				surface_tool1_2.add_vertex(vert2)
-				surface_tool1_2.set_uv(_get_uv(slice_transform,vert1))
+				surface_tool1_2.add_uv(_get_uv(slice_transform,vert1))
 				surface_tool1_2.add_vertex(vert1)
-				surface_tool2_2.set_uv(_get_uv(slice_transform,vert1))
+				surface_tool2_2.add_uv(_get_uv(slice_transform,vert1))
 				surface_tool2_2.add_vertex(vert1)
-				surface_tool2_2.set_uv(_get_uv(slice_transform,vert2))
+				surface_tool2_2.add_uv(_get_uv(slice_transform,vert2))
 				surface_tool2_2.add_vertex(vert2)
-				surface_tool2_2.set_uv(_get_uv(slice_transform,vert3))
+				surface_tool2_2.add_uv(_get_uv(slice_transform,vert3))
 				surface_tool2_2.add_vertex(vert3)
 							
 
-
+	vr.log_info("1ba31")
 	surface_tool1_2.generate_normals()
 	surface_tool2_2.generate_normals()
 	surfaces1.append(surface_tool1_2.commit())
@@ -280,6 +314,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 	surfaces_mat1.append(cross_section_material)
 	surfaces_mat2.append(cross_section_material)
 	var new_mesh = ArrayMesh.new()
+	vr.log_info("1ba41")
 
 	
 	for i in range(0,len(surfaces1)):
@@ -287,8 +322,10 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			new_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,surfaces1[i].surface_get_arrays(0))
 			new_mesh.surface_set_material(new_mesh.get_surface_count()-1,surfaces_mat1[i])
 			
-		
+	vr.log_info("1ba51")
+
 	var new_mesh2 = ArrayMesh.new()
+	vr.log_info("1ba61")
 
 	
 	for i in range(0,len(surfaces2)):
@@ -296,7 +333,8 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			new_mesh2.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,surfaces2[i].surface_get_arrays(0))
 			new_mesh2.surface_set_material(new_mesh2.get_surface_count()-1,surfaces_mat2[i])
 			
-		
+	vr.log_info("1ba71")
+
 	
 	
 

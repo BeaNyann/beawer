@@ -1,6 +1,3 @@
-# TODO:
-# create the hingejoint and kinematic body maybe only when needed
-#   and not as part of the scene always
 extends Spatial
 class_name Feature_RigidBodyManipulation
 
@@ -41,6 +38,8 @@ onready var models_holder : Node = get_node("../../../../Manipulables");
 
 #Slicer 
 var mesh_slicer = MeshSlicer.new()
+onready var slicer: Node = get_node("../Slicer")
+
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
@@ -145,10 +144,6 @@ func _ready():
 						other_manipulation_feature = c
 						break
 						
-	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
-	#controller.connect("button_pressed", self, "_on_ARVRController_button_pressed")
-	#controller.connect("button_release", self, "_on_ARVRController_button_release")
-
 # Godot's get_class() method only return native class names
 # we need this because we can't use "is" to test against a class_name within
 # the class itself, Godot complains about a weird cyclical dependency...
@@ -156,7 +151,6 @@ func get_class():
 	return "Feature_RigidBodyManipulation"
 
 func _physics_process(_dt):
-	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 	update_grab()
 	update_zoom()
 	update_cut()
@@ -166,17 +160,106 @@ func _physics_process(_dt):
 func create_wea():
 	#var wea = manipulable_object_scene.instance()
 	#models_holder.add_child(wea)
+	#nada de esto se esta llmaando mmm7
 	var area = get_node("../Area")
+	vr.log_info("area is " + str(area))
+	vr.log_info("voy a checkear los overlapping bodies")
 	for body in area.get_overlapping_bodies().duplicate():
+		vr.log_info("body is " + str(body))
 		if body is ManipulableRigidBody:
-			vr.log_info("body is ManipulableRigidBody")
+			vr.log_info("body is ManipulableRigidBody e e ")
+			#The plane transform at the rigidbody local transform
+			var meshinstance = body.get_mesh()
+			vr.log_info("1")
+			var transform = Transform.IDENTITY
+			vr.log_info("2")
+			transform.origin = meshinstance.to_local((slicer.global_transform.origin))
+			vr.log_info("3") #este fue el ultimo
+			vr.log_info("slicer.global_transform.origin is " + str(slicer.global_transform.origin))
+			#body.globalposition maybe doesnt exist? why not use the same shit of transform
+			vr.log_info("body.global_position but using transform is " + str(body.global_transform.origin))
+			vr.log_info("transorm . basis is " + str(transform.basis))
+			vr.log_info("transform basis x" + str(transform.basis.x))
+			vr.log_info("slicer basis x" + str(slicer.global_transform.basis.x))
+			transform.basis.x = meshinstance.to_local((slicer.global_transform.basis.x+body.global_transform.origin))
+			vr.log_info("4")
+			transform.basis.y = meshinstance.to_local((slicer.global_transform.basis.y+body.global_transform.origin))
+			vr.log_info("5")
+			transform.basis.z = meshinstance.to_local((slicer.global_transform.basis.z+body.global_transform.origin))
+			vr.log_info("6") #ahora llega aca,shet
+		
+			vr.log_info(str(body)) # falla el siguiente, no tiene el script atachao? pero no seria manipulable en ese caso...
+			vr.log_info(str(body.get_collider()))
+			var collision = body.get_collider()
+			vr.log_info("7")
+
+			#Slice the mesh
+			var meshes = mesh_slicer.slice_mesh(transform,meshinstance.mesh,body.get_cross_section_material())
+			vr.log_info("8")
+			#ahora llega al 8 dije mmm cual es tu problema con el 9
+			vr.log_info(str(meshes))
+			#nopuede ser da null :(
+			vr.log_info(str(meshes[0]))
+			vr.log_info(str(meshes[1]))
+
+			meshinstance.mesh = meshes[0]
+			vr.log_info("9")
+
+			#generate collision
+			if len(meshes[0].get_faces()) > 2:
+				vr.log_info("10")
+				collision.shape = meshes[0].create_convex_shape()
+				vr.log_info("11")
+			vr.log_info("12")
+
+
+			# #adjust the rigidbody center of mass
+			# body.center_of_mass_mode = 1
+			# body.center_of_mass = body.to_local(meshinstance.to_global(calculate_center_of_mass(meshes[0])))
+			# creo que no necesito eso 
+	
+			#second half of the mesh
+			var body2 = body.duplicate()
+			vr.log_info("13")
+
+			models_holder.add_child(body2)
+			vr.log_info("14")
+			meshinstance = body2.get_mesh()
+			vr.log_info("15")
+			collision = body2.get_collider()
+			vr.log_info("16")
+			meshinstance.mesh = meshes[1]
+			vr.log_info("17")
+
+
+			#generate collision
+			if len(meshes[1].get_faces()) > 2:
+				vr.log_info("18")
+
+				collision.shape = meshes[1].create_convex_shape()
+				vr.log_info("19")
+
+			
+			# #get mesh size
+			# var aabb = meshes[0].get_aabb()
+			# var aabb2 = meshes[1].get_aabb()
+			# #queue_free() if the mesh is too small
+			# if aabb2.size.length() < 0.3:
+			# 	body2.queue_free()
+			# if aabb.size.length() < 0.3:
+			# 	body.queue_free()
+			#no eliminemos para probar
+								
+			#adjust the rigidbody center of mass
+			#body2.center_of_mass = body2.to_local(meshinstance.to_global(calculate_center_of_mass(meshes[1])))
+			#creo que no necesito eso
+						
 
 
 func instance_model():
 	vr.log_info("instance_model")
 	return manipulable_object_scene.instance()
 	
-# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 func update_grab() -> void:
 	if (just_grabbed()):
 		grab()
@@ -324,25 +407,11 @@ func _reparent_mesh():
 		#elif (grab_type == vr.GrabTypes.HINGEJOINT):
 		grab_mesh.global_transform = mesh_global_trafo;
 
-# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
-#func _on_ARVRController_button_pressed(button_number):
-#	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
-#		return
-#
-#	# if grab button, grab
-#	grab()
-#
-#func _on_ARVRController_button_release(button_number):
-#	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
-#		return
-#
-#	# if grab button, grab
-#	release()
-
 func _on_cutter_collision_body_entered(body):
 	if body is ManipulableRigidBody:
-		body.cut_init(self, other_manipulation_feature, controller, other_controller)
+		#body.cut_init(self, other_manipulation_feature, controller, other_controller)
 		vr.log_info("aca hay algo q descomentar")
+
 func _on_interactive_area_body_entered(body):
 	if body is ManipulableRigidBody:
 		if body.grab_enabled:

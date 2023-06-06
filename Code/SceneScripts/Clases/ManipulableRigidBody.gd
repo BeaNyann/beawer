@@ -75,10 +75,10 @@ func _ready():
 		#vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
 			_mesh = child
-			#vr.log_info("found mesh")
+			vr.log_info("found mesh of "+str(self))
 		if child is CollisionShape:
 			_collider = child
-			#vr.log_info("found collider")
+			vr.log_info("found collider of "+str(self))
 		if _mesh!= null and _collider !=null:
 			_mesh.global_transform.origin = global_transform.origin
 			_mesh.create_convex_collision()
@@ -96,6 +96,17 @@ func _ready():
 	set_initial_highlight()
 	set_up_immediate_geometry_instances()
 	#ogkdsal
+
+func get_mesh():
+	vr.log_info("get mesh" + str(_mesh))
+	return _mesh
+
+func get_collider():
+	vr.log_info("get collider" + str(_collider))
+	return _collider
+
+func get_cross_section_material():
+	return _cross_section_material
 
 func set_initial_highlight():
 	var material = _mesh.get_surface_material(0)
@@ -205,16 +216,16 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature
 	rigid_body_half.gravity_scale = _cut_body_gravity_scale
 #	rigid_body_half.physics_material_override = load("res://scenes/models/BeepCube_Cut.phymat");
 	rigid_body_half.global_transform = global_transform;
-	vr.log_info("ya setie el global transform")
+	#vr.log_info("ya setie el global transform")
 	#create mesh
 	var object = MeshInstance.new()
 	#vr.log_info("cree un new mesh instance")
 	object.mesh = mesh_instance
-	vr.log_info("setie el mesh instance post")
+	#vr.log_info("setie el mesh instance post")
 	object.scale = _mesh.scale
 	#vr.log_info("going to ask 4 surface count")
 	if _mesh.mesh.get_surface_count() > 0:
-		vr.log_info("surface count is greater than 0")
+		#vr.log_info("surface count is greater than 0")
 #		print(_mesh.mesh.get_surface_count())
 		var material_count
 		if _cross_section_material != null:
@@ -231,7 +242,7 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature
 	#create collider 
 	#vr.log_info("creando collider antes de setear")
 	var coll = CollisionShape.new()
-	vr.log_info("creado ya el collider")
+	#vr.log_info("creado ya el collider")
 	#add the body to scene
 	rigid_body_half.add_child(object)
 	#vr.log_info("agregue el mesh como child")
@@ -251,9 +262,9 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature
 	rigid_body_half._normal_force_on_cut = _normal_force_on_cut
 	#vr.log_info("agregare al wea como child del padre")
 	get_tree().get_root().add_child(rigid_body_half)
-	vr.log_info("agregue ya al padre")
-	vr.log_info("aca viene info porque equis de")
-	vr.log_info("amount of faces"+str(object.mesh.get_surface_count()))
+	#vr.log_info("agregue ya al padre")
+	#vr.log_info("aca viene info porque equis de")
+	#vr.log_info("amount of faces"+str(object.mesh.get_surface_count()))
 	var mesh = object.mesh
 	var vertices = mesh.get_faces()
 	var arrays = object.mesh.surface_get_arrays(2)
@@ -283,7 +294,7 @@ func cut_object(cutplane:Plane, manipulation_feature):
 	#  smoothVertices
 	#-------------------------------------------------
 	if enabled: 
-		vr.log_info("ESTOY ENABLED");
+		#vr.log_info("ESTOY ENABLED");
 		var slices = slice_calculator.new(cutplane,_mesh,true,_cross_section_material,_cross_section_texture_UV_scale,_cross_section_texture_UV_offset,true,true,true)
 	#	print("+ve mesh is ",slices.negative_mesh())
 	#	print("-ve mesh is ",slices.positive_mesh())
@@ -336,13 +347,13 @@ func zoom_release() -> void:
 	starting_zoom_distance = 0
 
 func cut_init(first_controller_feature, second_controller_feature, first_controller, second_controller) -> void:
-	vr.log_info("se llamo el cut init");
+	#vr.log_info("se llamo el cut init");
 	controller = first_controller
 	other_controller = second_controller
 	controller_feature = first_controller_feature
 	other_controller_feature = second_controller_feature
 	controller_feature.cut()
-	vr.log_info("adios init");
+	#vr.log_info("adios init");
 	
 func be_selected() -> void:
 	vr.log_info("se llamo el be selected");

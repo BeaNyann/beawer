@@ -19,11 +19,11 @@ func _ready():
 
 
 func _on_EdgesButton_toggled(button_pressed):
-	vr.log_info("AAAAAAAAAAAAAAAAAAAAAAAAA")
-	vr.log_info(str(selected_holder))
-	vr.log_info(str(selected_holder.get_child_count()))
+	#vr.log_info("AAAAAAAAAAAAAAAAAAAAAAAAA")
+	#vr.log_info(str(selected_holder))
+	#vr.log_info(str(selected_holder.get_child_count()))
 	if(selected_holder.get_child_count() > 0):
-		vr.log_info(str(selected_holder.get_child(0)))
+		#vr.log_info(str(selected_holder.get_child(0)))
 		selected_holder.get_child(0).update_edges_visibility(button_pressed)
 	else:
 		vr.log_info("No hay nada seleccionado")

@@ -154,14 +154,15 @@ func _physics_process(_dt):
 	update_grab()
 	update_zoom()
 	update_cut()
-	if(controller._button_pressed(yb_button)):
-		create_wea() #of course temporal
+	if(controller._button_just_pressed(yb_button)):
+		create_wea() #of course temporal<
+		vr.log_info("pressed")
 
 func create_wea():
 	#var wea = manipulable_object_scene.instance()
 	#models_holder.add_child(wea)
 	#nada de esto se esta llmaando mmm7
-	var area = get_node("../Area")
+	var area = get_node("../Slicer/Area")
 	vr.log_info("area is " + str(area))
 	vr.log_info("voy a checkear los overlapping bodies")
 	for body in area.get_overlapping_bodies().duplicate():
@@ -170,40 +171,40 @@ func create_wea():
 			vr.log_info("body is ManipulableRigidBody e e ")
 			#The plane transform at the rigidbody local transform
 			var meshinstance = body.get_mesh()
-			vr.log_info("1")
+			#vr.log_info("1")
 			var transform = Transform.IDENTITY
-			vr.log_info("2")
+			#vr.log_info("2")
 			transform.origin = meshinstance.to_local((slicer.global_transform.origin))
-			vr.log_info("3") #este fue el ultimo
-			vr.log_info("slicer.global_transform.origin is " + str(slicer.global_transform.origin))
+			#vr.log_info("3") #este fue el ultimo
+			#vr.log_info("slicer.global_transform.origin is " + str(slicer.global_transform.origin))
 			#body.globalposition maybe doesnt exist? why not use the same shit of transform
-			vr.log_info("body.global_position but using transform is " + str(body.global_transform.origin))
-			vr.log_info("transorm . basis is " + str(transform.basis))
-			vr.log_info("transform basis x" + str(transform.basis.x))
-			vr.log_info("slicer basis x" + str(slicer.global_transform.basis.x))
+			#vr.log_info("body.global_position but using transform is " + str(body.global_transform.origin))
+			#vr.log_info("transorm . basis is " + str(transform.basis))
+			#vr.log_info("transform basis x" + str(transform.basis.x))
+			#vr.log_info("slicer basis x" + str(slicer.global_transform.basis.x))
 			transform.basis.x = meshinstance.to_local((slicer.global_transform.basis.x+body.global_transform.origin))
-			vr.log_info("4")
+			#vr.log_info("4")
 			transform.basis.y = meshinstance.to_local((slicer.global_transform.basis.y+body.global_transform.origin))
-			vr.log_info("5")
+			#vr.log_info("5")
 			transform.basis.z = meshinstance.to_local((slicer.global_transform.basis.z+body.global_transform.origin))
-			vr.log_info("6") #ahora llega aca,shet
+			#vr.log_info("6") #ahora llega aca,shet
 		
-			vr.log_info(str(body)) # falla el siguiente, no tiene el script atachao? pero no seria manipulable en ese caso...
-			vr.log_info(str(body.get_collider()))
+			#vr.log_info(str(body)) # falla el siguiente, no tiene el script atachao? pero no seria manipulable en ese caso...
+			#vr.log_info(str(body.get_collider()))
 			var collision = body.get_collider()
-			vr.log_info("7")
+			#vr.log_info("7")
 
 			#Slice the mesh
 			var meshes = mesh_slicer.slice_mesh(transform,meshinstance.mesh,body.get_cross_section_material())
-			vr.log_info("8")
+			#vr.log_info("8")
 			#ahora llega al 8 dije mmm cual es tu problema con el 9
-			vr.log_info(str(meshes))
+			#vr.log_info(str(meshes))
 			#nopuede ser da null :(
-			vr.log_info(str(meshes[0]))
-			vr.log_info(str(meshes[1]))
+			#vr.log_info(str(meshes[0]))
+			#vr.log_info(str(meshes[1]))
 
 			meshinstance.mesh = meshes[0]
-			vr.log_info("9")
+			#vr.log_info("9")
 
 			#generate collision
 			if len(meshes[0].get_faces()) > 2:

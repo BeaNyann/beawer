@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/apple.obj-f5a0acd79412bf5bbcb9fddb3ec5d66e.mesh"
+
+[deps]
+
+files=[ "res://.import/apple.obj-f5a0acd79412bf5bbcb9fddb3ec5d66e.mesh" ]
+
+source_file="res://Assets/exampleModels/apple.obj"
+dest_files=[ "res://.import/apple.obj-f5a0acd79412bf5bbcb9fddb3ec5d66e.mesh", "res://.import/apple.obj-f5a0acd79412bf5bbcb9fddb3ec5d66e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

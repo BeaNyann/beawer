@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/torso.obj-3cc7d94fa9ef771442f9faac8d9c5939.mesh"
+
+[deps]
+
+files=[ "res://.import/torso.obj-3cc7d94fa9ef771442f9faac8d9c5939.mesh" ]
+
+source_file="res://Assets/exampleModels/torso.obj"
+dest_files=[ "res://.import/torso.obj-3cc7d94fa9ef771442f9faac8d9c5939.mesh", "res://.import/torso.obj-3cc7d94fa9ef771442f9faac8d9c5939.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

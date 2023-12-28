@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "ExampleFiles",
+"language": "GDScript",
+"path": "res://Code/GeneralScripts/Examples.gd"
+}, {
 "base": "Spatial",
 "class": "Feature_RigidBodyGrab",
 "language": "GDScript",
@@ -90,6 +95,7 @@ _global_script_classes=[ {
 "path": "res://addons/slicer/sliceable_geo.gd"
 } ]
 _global_script_class_icons={
+"ExampleFiles": "",
 "Feature_RigidBodyGrab": "",
 "Feature_RigidBodyManipulation": "",
 "Feature_RigidBodyRayCastGrab": "",

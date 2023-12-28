@@ -75,6 +75,11 @@ func _ready():
 		#vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
 			_mesh = child
+			# nrew arratymesh
+			#_mesh.create_outline(2.0)
+			#var material: Material = _mesh.surface_get_material(0)
+			#material.cull_mode = Material.CULL_DISABLED
+			#TODO aca quería agregar lo de setear el mesh
 			vr.log_info("found mesh of "+str(self))
 		if child is CollisionShape:
 			_collider = child
@@ -185,10 +190,11 @@ func draw_normals():
 	var arrays = []
 	arrays.resize(ArrayMesh.ARRAY_MAX)
 	arrays[ArrayMesh.ARRAY_VERTEX] = modelVertices
-	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays)
+	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 	var meshDataTool = MeshDataTool.new()
-	meshDataTool.create_from_surface(arrayMesh,0)
+	meshDataTool.create_from_surface(arrayMesh, 0)
 
+	var scaling_factor = 0.15
 	var i = 0
 	while i < meshDataTool.get_face_count():
 		var verticesIndex = i * 3
@@ -197,7 +203,7 @@ func draw_normals():
 		var c = modelVertices[verticesIndex + 2]
 		var face_center = (a+b+c)/3
 		normals_ig.add_vertex(face_center)
-		normals_ig.add_vertex(meshDataTool.get_face_normal(i) + face_center)
+		normals_ig.add_vertex((meshDataTool.get_face_normal(i) * scaling_factor) + face_center)
 		i += 1
 	normals_ig.end()
 	_mesh.add_child(normals_ig)

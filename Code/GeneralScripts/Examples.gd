@@ -2,6 +2,6 @@
 
 class_name ExampleFiles
 
-var APPLE := "rutaaple"
-var TEAPOT := "Walking"
-var LION := "Running"
+var APPLE := "res://Assets/exampleModels/apple.obj"
+var TEAPOT := "res://Assets/exampleModels/teapot.obj"
+var LION := "res://Assets/exampleModels/lion-dog.obj"

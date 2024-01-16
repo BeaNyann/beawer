@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Code/SceneScripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Assets/furnitureKit/tableRound.obj" type="ArrayMesh" id=2]
@@ -21,8 +21,10 @@
 [ext_resource path="res://addons/demo/slicer.gd" type="Script" id=19]
 [ext_resource path="res://Code/SceneScripts/Clases/Meshes.gd" type="Script" id=20]
 [ext_resource path="res://Scenes/Features/Feature_ChangeAltitude.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/exampleModels/apple.obj" type="ArrayMesh" id=22]
 
 [sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0784314, 0.737255, 0.894118, 0.384314 )
 emission_enabled = true
 emission = Color( 0, 1, 0.858824, 1 )
 emission_energy = 1.0
@@ -31,6 +33,10 @@ emission_on_uv2 = false
 
 [sub_resource type="PlaneMesh" id=2]
 material = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=38]
+params_cull_mode = 2
+albedo_color = Color( 0.152941, 0.894118, 0.745098, 0.309804 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
@@ -249,7 +255,7 @@ points = PoolVector3Array( -0.0485035, 0.0485035, 0.1979, -0.0485035, 0.097007, 
 [sub_resource type="SpatialMaterial" id=33]
 params_cull_mode = 2
 
-[sub_resource type="ConvexPolygonShape" id=34]
+[sub_resource type="ConvexPolygonShape" id=37]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="CubeMesh" id=35]
@@ -268,7 +274,7 @@ script = ExtResource( 19 )
 
 [node name="mesh" type="MeshInstance" parent="Character/OQ_ARVROrigin/OQ_LeftController/Area"]
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 38 )
 
 [node name="A" type="Position3D" parent="Character/OQ_ARVROrigin/OQ_LeftController/Area/mesh"]
 transform = Transform( 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 1, 0, 1 )
@@ -370,7 +376,7 @@ shape = SubResource( 18 )
 environment = SubResource( 20 )
 
 [node name="tableRound" type="MeshInstance" parent="Enviroment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14311, -0.924195, 1.13535 )
+transform = Transform( 0.4, 0, 0, 0, 3, 0, 0, 0, 0.4, -0.845884, -0.394771, 0.641406 )
 mesh = ExtResource( 2 )
 material/0 = null
 material/1 = null
@@ -378,6 +384,28 @@ material/1 = null
 [node name="StaticBody" type="StaticBody" parent="Enviroment/tableRound"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Enviroment/tableRound/StaticBody"]
+shape = SubResource( 21 )
+
+[node name="tableRound2" type="MeshInstance" parent="Enviroment"]
+transform = Transform( 0.4, 0, 0, 0, 3, 0, 0, 0, 0.4, -0.845884, -0.394771, 0.0415487 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="StaticBody" type="StaticBody" parent="Enviroment/tableRound2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Enviroment/tableRound2/StaticBody"]
+shape = SubResource( 21 )
+
+[node name="tableRound3" type="MeshInstance" parent="Enviroment"]
+transform = Transform( 0.4, 0, 0, 0, 3, 0, 0, 0, 0.4, -0.845884, -0.394771, -0.590892 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+
+[node name="StaticBody" type="StaticBody" parent="Enviroment/tableRound3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Enviroment/tableRound3/StaticBody"]
 shape = SubResource( 21 )
 
 [node name="Ground" type="StaticBody" parent="Enviroment"]
@@ -518,7 +546,7 @@ script = ExtResource( 15 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14081, -0.118854, 0 )
 
 [node name="CollisionShape" parent="RigidBody" index="0"]
-shape = SubResource( 34 )
+shape = SubResource( 37 )
 
 [node name="MeshInstance" parent="RigidBody" index="1"]
 mesh = SubResource( 35 )
@@ -535,10 +563,19 @@ material/0 = null
 [node name="Manipulables" type="Node" parent="."]
 
 [node name="ManipulableModel" parent="Manipulables" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37143, 0, -2.13002 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.1, 0.8 )
+
+[node name="ManipulableMesh" parent="Manipulables/ManipulableModel" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 22 )
+material/1 = null
+material/2 = null
 
 [node name="ManipulableModel2" parent="Manipulables" instance=ExtResource( 18 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82111, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.15, 0.2 )
+
+[node name="ManipulableModel3" parent="Manipulables" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.15, -0.4 )
 
 [node name="SelectedModel" type="Node" parent="."]
 
@@ -550,3 +587,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82111, 0, 0 )
 [editable path="Features/Feature_DisplayProperties"]
 [editable path="Features/Feature_ChangeAltitude"]
 [editable path="RigidBody"]
+[editable path="Manipulables/ManipulableModel"]

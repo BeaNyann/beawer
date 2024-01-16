@@ -75,10 +75,11 @@ func _ready():
 		#vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
 			_mesh = child
-			# nrew arratymesh
+			#new arraymesh
 			#_mesh.create_outline(2.0)
 			#var material: Material = _mesh.surface_get_material(0)
 			#material.cull_mode = Material.CULL_DISABLED
+			#_mesh.mesh = preload("res://Assets/exampleModels/apple.obj")
 			#TODO aca quería agregar lo de setear el mesh
 			vr.log_info("found mesh of "+str(self))
 		if child is CollisionShape:

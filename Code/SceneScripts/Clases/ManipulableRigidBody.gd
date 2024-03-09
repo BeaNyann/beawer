@@ -67,6 +67,7 @@ var _cached_angular_velocity := Vector3(0,0,0);
 func _ready():
 	set_mode(RigidBody.MODE_STATIC)
 	set_collision_layer_bit(1, true)
+	# quitar este quizas
 	#set_collision_layer_bit(2, true)
 	#set_collision_mask_bit(1, true)
 	vr.log_info("ready del manipulable");

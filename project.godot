@@ -117,7 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Beawer"
-run/main_scene="res://Scenes/Test.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]

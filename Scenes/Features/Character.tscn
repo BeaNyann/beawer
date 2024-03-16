@@ -23,10 +23,10 @@ albedo_color = Color( 0.129412, 0.890196, 0.290196, 1 )
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0.12549, 0.12549, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.160784, 0.141176, 0.117647, 1 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.278431, 0.243137, 0.2, 1 )
 
 [sub_resource type="SpatialMaterial" id=6]
@@ -38,7 +38,7 @@ albedo_color = Color( 0.87451, 0.792157, 0.0901961, 1 )
 [node name="Character" type="Spatial"]
 
 [node name="OQ_ARVROrigin" parent="." instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.995802, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.995802, 0 )
 
 [node name="Feature_VRSimulator" parent="OQ_ARVROrigin" instance=ExtResource( 11 )]
 
@@ -62,12 +62,12 @@ material/1 = SubResource( 2 )
 material/2 = SubResource( 1 )
 material/3 = SubResource( 3 )
 material/4 = SubResource( 1 )
-material/5 = SubResource( 5 )
-material/6 = SubResource( 4 )
-material/7 = SubResource( 4 )
-material/8 = SubResource( 4 )
+material/5 = SubResource( 4 )
+material/6 = SubResource( 5 )
+material/7 = SubResource( 5 )
+material/8 = SubResource( 5 )
 material/9 = SubResource( 1 )
-material/10 = SubResource( 4 )
+material/10 = SubResource( 5 )
 
 [node name="Feature_SelectionRayCast" parent="OQ_ARVROrigin/OQ_RightController" instance=ExtResource( 6 )]
 
@@ -87,12 +87,12 @@ collision_body_layer = 2
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 mesh = ExtResource( 5 )
 material/0 = SubResource( 1 )
-material/1 = SubResource( 5 )
-material/2 = SubResource( 4 )
-material/3 = SubResource( 4 )
-material/4 = SubResource( 4 )
+material/1 = SubResource( 4 )
+material/2 = SubResource( 5 )
+material/3 = SubResource( 5 )
+material/4 = SubResource( 5 )
 material/5 = SubResource( 1 )
-material/6 = SubResource( 4 )
+material/6 = SubResource( 5 )
 material/7 = SubResource( 1 )
 material/8 = SubResource( 6 )
 material/9 = SubResource( 1 )

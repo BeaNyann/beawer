@@ -51,10 +51,10 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 	#vr.log_info(str(vert_slice))
 	
 	if cross_section_material == null:
-		vr.log_info("cross section material is null")
+		vr.log_info("cross section material is null v2")
 		if mesh.get_surface_count() != 0:
 			cross_section_material = mesh.surface_get_material(0)
-	vr.log_info("pasamos el no material situation")
+	vr.log_info("pasamos el no material situation v2")
 
 	for surface_idx in range(mesh.get_surface_count()):
 		mdt.create_from_surface(mesh, surface_idx)
@@ -251,7 +251,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 		surfaces_mat2.append(material)
 
 	
-	vr.log_info("sali de los fors surface q tenia for face q tenia for vertex y voy a mm set holeS?? or sth dsps recorro poligonos")
+	#vr.log_info("sali de los fors surface q tenia for face q tenia for vertex y voy a mm set holeS?? or sth dsps recorro poligonos")
 
 
 
@@ -262,7 +262,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 
 	
 	
-	vr.log_info("seetie los holes")
+	#vr.log_info("seetie los holes")
 
 
 	for polygon in sorted_verts:
@@ -308,7 +308,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 				surface_tool2_2.add_vertex(vert3)
 							
 
-	vr.log_info("sali del for de los sorted vertexz de los poligon")
+	#vr.log_info("sali del for de los sorted vertexz de los poligon")
 	surface_tool1_2.generate_normals()
 	surface_tool2_2.generate_normals()
 	surfaces1.append(surface_tool1_2.commit())
@@ -316,7 +316,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 	surfaces_mat1.append(cross_section_material)
 	surfaces_mat2.append(cross_section_material)
 	var new_mesh = ArrayMesh.new()
-	vr.log_info("genere normales y apendie cros material")
+	#vr.log_info("genere normales y apendie cros material")
 
 	
 	for i in range(0,len(surfaces1)):
@@ -324,10 +324,10 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			new_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,surfaces1[i].surface_get_arrays(0))
 			new_mesh.surface_set_material(new_mesh.get_surface_count()-1,surfaces_mat1[i])
 			
-	vr.log_info("mm agregue mas amteriales?? creo")
+	vr.log_info("mm agregue mas amteriales?? creo v2")
 
 	var new_mesh2 = ArrayMesh.new()
-	vr.log_info("cree una nueva array mesh")
+	vr.log_info("cree una nueva array mesh v2")
 
 	
 	for i in range(0,len(surfaces2)):
@@ -335,7 +335,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			new_mesh2.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,surfaces2[i].surface_get_arrays(0))
 			new_mesh2.surface_set_material(new_mesh2.get_surface_count()-1,surfaces_mat2[i])
 			
-	vr.log_info("añadi weas a la nueva arrai mesh y dsps de eso retorno")
+	vr.log_info("añadi weas a la nueva arrai mesh y dsps de eso retorno v2")
 
 	
 	

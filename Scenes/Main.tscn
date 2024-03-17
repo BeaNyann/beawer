@@ -252,7 +252,7 @@ points = PoolVector3Array( -0.0485035, 0.0485035, 0.1979, -0.0485035, 0.097007, 
 [sub_resource type="SpatialMaterial" id=33]
 params_cull_mode = 2
 
-[sub_resource type="ConvexPolygonShape" id=34]
+[sub_resource type="ConvexPolygonShape" id=41]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="CubeMesh" id=35]
@@ -475,7 +475,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04, 0 )
 shape = SubResource( 32 )
 
 [node name="OQ_UI2DLogWindow" parent="." instance=ExtResource( 10 )]
-transform = Transform( -0.95238, 0, 0.304914, 0, 1, 0, -0.304914, 0, -0.95238, 0, 0, 2.85169 )
+transform = Transform( -0.95238, 0, 0.304914, 0, 1, 0, -0.304914, 0, -0.95238, 0, 0.2, 2.852 )
 
 [node name="FileSelector" type="Spatial" parent="."]
 transform = Transform( 0.178029, 0, 0.984025, 0, 1, 0, -0.984025, 0, 0.178029, -3.04951, -0.159645, 0 )
@@ -549,7 +549,7 @@ script = ExtResource( 19 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.96871, -0.181015, 7.09112 )
 
 [node name="CollisionShape" parent="RigidBody" index="0"]
-shape = SubResource( 34 )
+shape = SubResource( 41 )
 
 [node name="MeshInstance" parent="RigidBody" index="1"]
 mesh = SubResource( 35 )
@@ -605,3 +605,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772, 0.25, 2.165 )
 [editable path="Features/Feature_ChangeAltitude"]
 [editable path="RigidBody"]
 [editable path="Manipulables/ManipulableModel"]
+[editable path="Manipulables/ManipulableModel2"]

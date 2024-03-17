@@ -67,25 +67,20 @@ var _cached_angular_velocity := Vector3(0,0,0);
 func _ready():
 	set_mode(RigidBody.MODE_STATIC)
 	set_collision_layer_bit(1, true)
-	# quitar este quizas
-	#set_collision_layer_bit(2, true)
-	#set_collision_mask_bit(1, true)
-	vr.log_info("ready del manipulable");
-	
+	vr.log_info("modelo manipulable listo")
 	for child in get_children():
-		#vr.log_info("child is "+ str(child))
 		if child is MeshInstance:
 			_mesh = child
-			#new arraymesh
-			#_mesh.create_outline(2.0)
+			# #####
+			# new arraymesh
 			#var material: Material = _mesh.surface_get_material(0)
 			#material.cull_mode = Material.CULL_DISABLED
-			#_mesh.mesh = preload("res://Assets/exampleModels/apple.obj")
-			#TODO aca quería agregar lo de setear el mesh
-			vr.log_info("found mesh of "+str(self))
+			#var apple = preload("res://Assets/exampleModels/apple.obj")
+			#_mesh.mesh = apple.instance()
+			# lo de arriba es para agregar mallas distintas, no funcionó
+			# #####
 		if child is CollisionShape:
 			_collider = child
-			vr.log_info("found collider of "+str(self))
 		if _mesh!= null and _collider !=null:
 			_mesh.global_transform.origin = global_transform.origin
 			_mesh.create_convex_collision()
@@ -93,8 +88,6 @@ func _ready():
 			_mesh.get_child(0).queue_free()
 			_collider.scale = _mesh.scale
 			_collider.rotation_degrees = _mesh.rotation_degrees
-	#		print("children of object are ",get_children(),area.get_child(0))
-	#		print("current_number ",current_child_number," delete at ",delete_at_children)
 			if _current_child_number >= _delete_at_children:
 				queue_free()
 			if _current_child_number >= _disable_at_children:
@@ -102,7 +95,6 @@ func _ready():
 			break
 	set_initial_highlight()
 	set_up_immediate_geometry_instances()
-	#ogkdsal
 
 func get_mesh():
 	vr.log_info("get mesh" + str(_mesh))

@@ -154,11 +154,11 @@ func _physics_process(_dt):
 	update_grab()
 	update_zoom()
 	update_cut()
-	if(controller._button_just_pressed(yb_button)):
-		create_wea() #of course temporal<
+	if (controller._button_just_pressed(yb_button)):
+		cut_object() #temporal
 		vr.log_info("pressed")
 
-func create_wea():
+func cut_object():
 	#var wea = manipulable_object_scene.instance()
 	#models_holder.add_child(wea)
 	#nada de esto se esta llmaando mmm7

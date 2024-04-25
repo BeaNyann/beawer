@@ -7,7 +7,7 @@ var normals_button: CheckButton
 
 # Called when the node enters the scene tree for the first time
 func _ready():
-	selected_holder = get_node("../../SelectedModel")
+	selected_holder = get_node("../../../SelectedModel")
 	edges_button = $OQ_UI2DCanvas_DisplayProperties/ReferenceRect/EdgesButton
 	normals_button = $OQ_UI2DCanvas_DisplayProperties/ReferenceRect/NormalsButton
 

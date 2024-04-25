@@ -25,11 +25,8 @@ var cur_selected = null;
 
 
 func _set_raycast_transform():
-	# woraround for now until there is a more standardized way to know the controller
-	# orientation
 	
 	if (controller.is_hand):
-		
 		if (vr.ovrBaseAPI):
 			ui_raycast_position.transform = controller.transform.inverse() * vr.ovrBaseAPI.get_pointer_pose(controller.controller_id);
 		else:
@@ -45,10 +42,7 @@ func _set_raycast_transform():
 			if (controller.controller_id == 1):
 				ui_raycast_position.translation.x = -0.01;
 			if (controller.controller_id == 2):
-				ui_raycast_position.translation.x =  0.01;
-		
-	
-		
+				ui_raycast_position.translation.x =  0.01;	
 
 func _update_raycasts():
 	ui_raycast_hitmarker.visible = false;
@@ -67,7 +61,6 @@ func _update_raycasts():
 		ui_raycast_mesh.visible = false;
 		
 	_set_raycast_transform();
-
 		
 	ui_raycast.force_raycast_update(); # need to update here to get the current position; else the marker laggs behind
 
@@ -76,12 +69,12 @@ func _update_raycasts():
 			is_colliding = true;
 			vr.log_info("colliding")
 			cur_selected = ui_raycast.get_collider();
-			cur_selected.set_highlight(0.1)
+			cur_selected.set_highlight(true)
 
 		if (not cur_selected is ManipulableRigidBody): return
 		
-		if(controller._button_just_pressed(ui_raycast_click_button)):
-			if(OS.get_ticks_msec() - last_key_press_time < 200):
+		if (controller._button_just_pressed(ui_raycast_click_button)):
+			if (OS.get_ticks_msec() - last_key_press_time < 200):
 				deselect_model()
 			else:
 				select_model()
@@ -93,14 +86,15 @@ func _update_raycasts():
 		ui_raycast_hitmarker.global_transform.origin = position
 
 	elif is_colliding:
-		if(cur_selected):
-			cur_selected.set_highlight(0.0)
+		if (cur_selected & models_holder.get_child_count == 0):
+			cur_selected.set_highlight(true)
 		is_colliding = false;
 
 func deselect_model():
 	vr.log_info("deselecting model")
 	if (selected_holder.has_node(cur_selected.name)):
 		selected_holder.remove_child(cur_selected)
+		cur_selected.set_highlight(false)
 	if (!models_holder.has_node(cur_selected.name)):
 		models_holder.add_child(cur_selected)
 	cur_selected = null
@@ -111,6 +105,7 @@ func select_model():
 		for child in selected_holder.get_children():
 			selected_holder.remove_child(child)
 			models_holder.add_child(child)
+			child.set_highlight(true)
 	if (models_holder.has_node(cur_selected.name)):
 		models_holder.remove_child(cur_selected)
 	if (!selected_holder.has_node(cur_selected.name)):

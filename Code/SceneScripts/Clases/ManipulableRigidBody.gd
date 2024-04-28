@@ -34,19 +34,18 @@ var normals_ig = null
 
 # slice variables
 export var enabled:bool = true
-export (int, 1, 10)var _delete_at_children = 3 
-export (int, 1, 10)var _disable_at_children = 3 
-#export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_layer
-#export (int,LAYERS_3D_PHYSICS) var _cut_body_collision_mask
+export (int, 1, 10) var _delete_at_children = 3 
+export (int, 1, 10) var _disable_at_children = 3 
 export var _cut_body_gravity_scale:float
-export (Material)var _cross_section_material =  null
+export (Material) var _cross_section_material =  null
 export var _cross_section_texture_UV_scale:float = 1
 export var _cross_section_texture_UV_offset:Vector2 = Vector2(0,0)
 export var _apply_force_on_cut:bool = false
 export var _normal_force_on_cut:float  = 1
 var _current_child_number = 0
-var _mesh:MeshInstance = null
-var _collider:CollisionShape = null
+var _mesh: MeshInstance = null
+var _collider: CollisionShape = null
+var _marker: Texture3D
 
 #var manipulable_model = preload("res://Scenes/Features/ManipulableModel.tscn")
 # fin slice variables
@@ -81,6 +80,8 @@ func _ready():
 			# #####
 		if child is CollisionShape:
 			_collider = child
+		if child is Texture3D:
+			_marker = child
 		if _mesh!= null and _collider !=null:
 			_mesh.global_transform.origin = global_transform.origin
 			_mesh.create_convex_collision()

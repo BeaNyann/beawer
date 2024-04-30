@@ -86,8 +86,8 @@ func _update_raycasts():
 		ui_raycast_hitmarker.global_transform.origin = position
 
 	elif is_colliding:
-		if (cur_selected & models_holder.get_child_count == 0):
-			cur_selected.set_highlight(true)
+		if(cur_selected):
+			cur_selected.set_highlight(false)
 		is_colliding = false;
 
 func deselect_model():

@@ -276,6 +276,14 @@ script = ExtResource( 4 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 
+[node name="Feature_SelectionRayCast" parent="Character/OQ_ARVROrigin/OQ_RightController" index="4"]
+active = null
+ui_raycast_length = null
+ui_mesh_length = null
+adjust_left_right = null
+ui_raycast_visible_button = null
+ui_raycast_click_button = null
+
 [node name="Area" type="Area" parent="Character/OQ_ARVROrigin/OQ_LeftController" index="3"]
 transform = Transform( 0.997056, -0.0766667, 0, 0.05667, 0.736997, 0.673515, -0.0516363, -0.671533, 0.739172, 0, 0, 0 )
 visible = false

@@ -45,7 +45,7 @@ export var _normal_force_on_cut:float  = 1
 var _current_child_number = 0
 var _mesh: MeshInstance = null
 var _collider: CollisionShape = null
-var _marker: Texture3D
+var _marker: MeshInstance = null
 
 #var manipulable_model = preload("res://Scenes/Features/ManipulableModel.tscn")
 # fin slice variables
@@ -55,9 +55,9 @@ export var grab_enabled := true
 # set to true to allow grab to be transferable between hands
 export var is_transferable := true
 
-var last_reported_collision_pos : Vector3 = Vector3(0,0,0);
+var last_reported_collision_pos : Vector3 = Vector3(0,0,0)
 
-var _orig_can_sleep := true;
+var _orig_can_sleep := true
 
 var _release_next_physics_step := false;
 var _cached_linear_velocity := Vector3(0,0,0); # required for kinematic grab
@@ -69,19 +69,12 @@ func _ready():
 	vr.log_info("modelo manipulable listo")
 	for child in get_children():
 		if child is MeshInstance:
-			_mesh = child
-			# #####
-			# new arraymesh
-			#var material: Material = _mesh.surface_get_material(0)
-			#material.cull_mode = Material.CULL_DISABLED
-			#var apple = preload("res://Assets/exampleModels/apple.obj")
-			#_mesh.mesh = apple.instance()
-			# lo de arriba es para agregar mallas distintas, no funcionó
-			# #####
+			if (child.name == "ManipulableMesh"):
+				_mesh = child
+			else:
+				_marker = child
 		if child is CollisionShape:
 			_collider = child
-		if child is Texture3D:
-			_marker = child
 		if _mesh!= null and _collider !=null:
 			_mesh.global_transform.origin = global_transform.origin
 			_mesh.create_convex_collision()
@@ -94,7 +87,7 @@ func _ready():
 			if _current_child_number >= _disable_at_children:
 				enabled = false
 			break
-	set_initial_highlight()
+	#set_initial_highlight()
 	set_up_immediate_geometry_instances()
 
 func get_mesh():
@@ -119,7 +112,7 @@ func set_initial_highlight():
 	new_material.next_pass = new_shader_material
 	_mesh.set_surface_material(0,new_material)	
 	_mesh.set_material_override(new_material)
-	set_highlight(0.0)
+	set_highlight(false)
 
 func set_up_immediate_geometry_instances():
 	# Edges ImmediateGeometry	
@@ -138,8 +131,9 @@ func set_up_immediate_geometry_instances():
 	normals_ig.material_override = normals_sm
 	normals_ig.name = "SurfaceNormals_ImmediateGeometry"
 
-func set_highlight(width:float):
-	_mesh.get_surface_material(0).next_pass.set_shader_param("border_width",width)
+func set_highlight(activate: bool):
+	var color: Color = Color.chartreuse if activate else Color.gold
+	#_marker.get_mesh().surface_get_material().set_color(color)
 	
 func update_edges_visibility(boolean):
 	if(boolean):

@@ -79,7 +79,6 @@ func _update_raycasts():
 			else:
 				select_model()
 			last_key_press_time = OS.get_ticks_msec()
-			vr.log_info(str(last_key_press_time))
 
 		var position = ui_raycast.get_collision_point()
 		ui_raycast_hitmarker.visible = true

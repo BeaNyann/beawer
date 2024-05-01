@@ -64,8 +64,8 @@ func _update_raycasts():
 	_set_raycast_transform()
 	ui_raycast.force_raycast_update() # need to update here to get the current position; else the marker laggs behind
 
-	if ui_raycast.is_colliding():
-		if !is_colliding:
+	if (ui_raycast.is_colliding()):
+		if (!is_colliding):
 			is_colliding = true
 			vr.log_info("colliding")
 			cur_selected = ui_raycast.get_collider()
@@ -73,8 +73,8 @@ func _update_raycasts():
 
 		if (not cur_selected is ManipulableRigidBody): return
 		
-		if(controller._button_just_pressed(ui_raycast_click_button)):
-			if(OS.get_ticks_msec() - last_key_press_time < 200):
+		if (controller._button_just_pressed(ui_raycast_click_button)):
+			if (OS.get_ticks_msec() - last_key_press_time < 200):
 				deselect_model()
 			else:
 				select_model()
@@ -86,7 +86,7 @@ func _update_raycasts():
 		ui_raycast_hitmarker.global_transform.origin = position
 
 	elif is_colliding:
-		if(cur_selected):
+		if (cur_selected):
 			cur_selected.set_highlight(false)
 		is_colliding = false
 

@@ -69,8 +69,8 @@ func _ready():
 				_mesh = child
 			else:
 				_marker = child
-				#var unique_material = _marker.get_surface_material(0).duplicate()
-				#_marker.set_surface_material(0, unique_material)
+				var unique_material = _marker.get_surface_material(0).duplicate()
+				_marker.set_surface_material(0, unique_material)
 		if child is CollisionShape:
 			_collider = child
 		if _mesh != null and _collider != null and _marker != null:

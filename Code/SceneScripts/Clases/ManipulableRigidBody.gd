@@ -45,6 +45,7 @@ var _current_child_number = 0
 var _mesh: MeshInstance = null
 var _collider: CollisionShape = null
 var _marker: MeshInstance = null
+var _keep_marker: bool = false
 
 # set to false to prevent the object from being grabbable
 export var grab_enabled := true
@@ -68,6 +69,8 @@ func _ready():
 				_mesh = child
 			else:
 				_marker = child
+				#var unique_material = _marker.get_surface_material(0).duplicate()
+				#_marker.set_surface_material(0, unique_material)
 		if child is CollisionShape:
 			_collider = child
 		if _mesh != null and _collider != null and _marker != null:
@@ -115,7 +118,7 @@ func set_up_immediate_geometry_instances():
 
 func set_highlight(activate: bool):
 	var color: Color = Color.chartreuse if activate else Color.gold
-	#_marker
+	_marker.get_surface_material(0).albedo_color = color
 	
 func update_edges_visibility(boolean: bool):
 	if boolean:

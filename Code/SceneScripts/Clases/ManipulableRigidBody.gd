@@ -31,20 +31,21 @@ var edges_ig = null
 var normals_ig = null
 
 # slice variables
-export var enabled:bool = true
+export var enabled: bool = true
 export (int, 1, 10) var _delete_at_children = 3 
 export (int, 1, 10) var _disable_at_children = 3 
-export var _cut_body_gravity_scale:float
+export var _cut_body_gravity_scale: float
 export (Material) var _cross_section_material =  null
-export var _cross_section_texture_UV_scale:float = 1
-export var _cross_section_texture_UV_offset:Vector2 = Vector2(0,0)
-export var _apply_force_on_cut:bool = false
-export var _normal_force_on_cut:float  = 1
+export var _cross_section_texture_UV_scale: float = 1
+export var _cross_section_texture_UV_offset: Vector2 = Vector2(0,0)
+export var _apply_force_on_cut: bool = false
+export var _normal_force_on_cut: float  = 1
 var _current_child_number = 0
 
 var _mesh: MeshInstance = null
 var _collider: CollisionShape = null
 var _marker: MeshInstance = null
+var _keep_marker: bool = false
 
 # set to false to prevent the object from being grabbable
 export var grab_enabled := true
@@ -63,26 +64,27 @@ func _ready():
 	set_mode(RigidBody.MODE_STATIC)
 	set_collision_layer_bit(1, true)
 	for child in get_children():
-		if child is MeshInstance:
+		if (child is MeshInstance):
 			if (child.name == "ManipulableMesh"):
 				vr.log_info("normal")
 				_mesh = child
 			else:
 				vr.log_info("marker")
 				_marker = child
-		if child is CollisionShape:
+				var unique_material = _marker.get_surface_material(0).duplicate()
+				_marker.set_surface_material(0, unique_material)
+		if (child is CollisionShape):
 			_collider = child
-		if _mesh != null and _collider != null:
-			# and _marker != null:
+		if (_mesh != null and _collider != null and _marker != null):
 			_mesh.global_transform.origin = global_transform.origin
 			_mesh.create_convex_collision()
 			_collider.shape = _mesh.get_child(0).get_child(0).shape
 			_mesh.get_child(0).queue_free()
 			_collider.scale = _mesh.scale
 			_collider.rotation_degrees = _mesh.rotation_degrees
-			if _current_child_number >= _delete_at_children:
+			if (_current_child_number >= _delete_at_children):
 				queue_free()
-			if _current_child_number >= _disable_at_children:
+			if (_current_child_number >= _disable_at_children):
 				enabled = false
 			break
 	set_highlight(false)
@@ -98,19 +100,6 @@ func get_collider():
 
 func get_cross_section_material():
 	return _cross_section_material
-
-func set_initial_highlight():
-	# var material = _mesh.get_surface_material(0)
-	# var shader = material.next_pass.shader
-	# var new_shader = Shader.new()
-	# new_shader.set_code(shader.get_code())
-	# var new_material = SpatialMaterial.new()
-	# var new_shader_material = ShaderMaterial.new()
-	# new_shader_material.shader = new_shader
-	# new_material.next_pass = new_shader_material
-	# _mesh.set_surface_material(0,new_material)	
-	# _mesh.set_material_override(new_material)
-	set_highlight(false)
 
 func set_up_immediate_geometry_instances():
 	# Edges ImmediateGeometry	
@@ -131,18 +120,16 @@ func set_up_immediate_geometry_instances():
 
 func set_highlight(activate: bool):
 	var color: Color = Color.chartreuse if activate else Color.gold
-	vr.log_info("lailai")
-	#_marker.get_sufrace_material(0).albedo_color = color
+	_marker.get_surface_material(0).albedo_color = color
 	
-func update_edges_visibility(boolean):
-	vr.log_info("te estás llamando??")
-	if boolean:
+func update_edges_visibility(boolean: bool):
+	if (boolean):
 		draw_wireframe()
 	else:
 		edges_ig.clear()
 	
-func update_normals_visibility(boolean):
-	if boolean:
+func update_normals_visibility(boolean: bool):
+	if (boolean):
 		draw_normals()
 	else:
 		normals_ig.clear()
@@ -199,7 +186,7 @@ func draw_normals():
 
 # funciones del slice
 func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature):
-	vr.log_info("Creating halves")
+	vr.log_info("Creating the halves...");
 	var rigid_body_half = manipulation_feature.instance_model()
 	rigid_body_half.gravity_scale = _cut_body_gravity_scale
 	rigid_body_half.global_transform = global_transform;
@@ -207,15 +194,15 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature
 	var object = MeshInstance.new()
 	object.mesh = mesh_instance
 	object.scale = _mesh.scale
-	if _mesh.mesh.get_surface_count() > 0:
+	if (_mesh.mesh.get_surface_count() > 0):
 		var material_count
-		if _cross_section_material != null:
+		if (_cross_section_material != null):
 			 material_count= _mesh.mesh.get_surface_count()+1
 		else:
 			 material_count= _mesh.mesh.get_surface_count()
 		for i in range(material_count):
 			var mat 
-			if i == material_count -1 and _cross_section_material != null:
+			if (i == material_count -1 and _cross_section_material != null):
 				mat = _cross_section_material
 			else:
 				mat = _mesh.mesh.surface_get_material(i)
@@ -233,15 +220,15 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature
 	rigid_body_half._cross_section_material = _cross_section_material
 	rigid_body_half._normal_force_on_cut = _normal_force_on_cut
 	get_tree().get_root().add_child(rigid_body_half)
-	#var mesh = object.mesh
-	#var vertices = mesh.get_faces()
-	#var arrays = object.mesh.surface_get_arrays(2)
-	if _apply_force_on_cut:
+	var mesh = object.mesh
+	var vertices = mesh.get_faces()
+	var arrays = object.mesh.surface_get_arrays(2)
+	if (_apply_force_on_cut):
 		rigid_body_half.apply_central_impulse(_sign*cutplane.normal*_normal_force_on_cut)
 	
 
-func cut_object(cutplane: Plane, manipulation_feature):
-	vr.log_info("cutting an object");
+func cut_object(cutplane:Plane, manipulation_feature):
+	vr.log_info("Cutting object :3");
 	#  there are a lot of parameters for the constructor
 	#-------------------------------------------------
 	#  cutplane = plane to cut mesh with , in global space
@@ -254,7 +241,7 @@ func cut_object(cutplane: Plane, manipulation_feature):
 	#  shareVertices
 	#  smoothVertices
 	#-------------------------------------------------
-	if enabled: 
+	if (enabled): 
 		var slices = slice_calculator.new(cutplane,_mesh,true,_cross_section_material,_cross_section_texture_UV_scale,_cross_section_texture_UV_offset,true,true,true)
 		_create_cut_body(-1,slices.negative_mesh(),cutplane, manipulation_feature);
 		_create_cut_body( 1,slices.positive_mesh(),cutplane, manipulation_feature);
@@ -262,7 +249,7 @@ func cut_object(cutplane: Plane, manipulation_feature):
 
 func _get_configuration_warning():
 	var warning = PoolStringArray()
-	if _mesh == null: 
+	if (_mesh == null): 
 		warning.append("please add a Mesh Instance with some mesh")
 	return warning.join("\n")
 # fin funciones del slice
@@ -305,8 +292,11 @@ func cut_init(first_controller_feature, second_controller_feature, first_control
 	other_controller_feature = second_controller_feature
 	controller_feature.cut()
 	
-func be_selected() -> void:
-	vr.log_info("se llamo el be selected");
+func be_selected(boolean: bool) -> void:
+	_keep_marker = boolean
+
+func get_keep_marker() -> bool:
+	return _keep_marker
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();
@@ -335,25 +325,25 @@ func _notify_became_grabbable(feature_grab):
 # next grabbable object candidacy
 func _notify_lost_grabbable(feature_grab):
 	# for now, just fire the signal
-	emit_signal("grabbability_changed",self,false,feature_grab.controller)
+	emit_signal("grabbability_changed", self, false, feature_grab.controller)
 
 func _integrate_forces(_state):
-	if (!is_grabbed): return;
+	if (!is_grabbed): return
 	
 	if (_release_next_physics_step):
-		_release_next_physics_step = false;
-		_release();
-	return;
+		_release_next_physics_step = false
+		_release()
+	return
 	
 func _physics_process(_delta):
-	if zooming:
+	if (zooming):
 		var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
 		var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
 		var distance = sqrt(x*x + y*y)
 		var zoom_delta = distance - starting_zoom_distance
 		var zoom_speed = zoom_delta * 0.05
 		var zoom_factor = 1.0 + zoom_speed
-		global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor));
+		global_scale(Vector3(zoom_factor, zoom_factor, zoom_factor))
 
 func setup(mesh: Mesh, position: Transform):
 	_mesh.mesh = mesh

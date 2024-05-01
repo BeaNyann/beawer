@@ -157,7 +157,7 @@ func _physics_process(_dt):
 func cut_object():
 	var area = get_node("../Slicer/Area")
 	for body in area.get_overlapping_bodies().duplicate():
-		vr.log_info("el objeto es: " + str(body))
+		vr.log_info("the object is: " + str(body))
 		if (body is ManipulableRigidBody):
 			#The plane transform at the rigidbody local transform
 			var meshinstance = body.get_mesh()
@@ -219,7 +219,7 @@ func update_cut() -> void:
 		stop_cutting()
 
 func grab() -> void:
-	vr.log_info("boton Grip apretado en contorlador derecho")
+	vr.log_info("Grip button pressed on right controller")
 	if (held_object):
 		return
 	# get the next grabbable candidate

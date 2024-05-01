@@ -23,7 +23,6 @@ const hand_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER
 var is_colliding := false
 var cur_selected = null
 
-
 func _set_raycast_transform():
 	# woraround for now until there is a more standardized way to know the controller
 	# orientation
@@ -67,7 +66,6 @@ func _update_raycasts():
 	if (ui_raycast.is_colliding()):
 		if (!is_colliding):
 			is_colliding = true
-			vr.log_info("colliding")
 			cur_selected = ui_raycast.get_collider()
 			cur_selected.set_highlight(true)
 
@@ -79,21 +77,22 @@ func _update_raycasts():
 			else:
 				select_model()
 			last_key_press_time = OS.get_ticks_msec()
-			vr.log_info(str(last_key_press_time))
-
 		var position = ui_raycast.get_collision_point()
 		ui_raycast_hitmarker.visible = true
 		ui_raycast_hitmarker.global_transform.origin = position
 
 	elif is_colliding:
 		if (cur_selected):
-			cur_selected.set_highlight(false)
+			if (!cur_selected.get_keep_marker()):
+				cur_selected.set_highlight(false)
 		is_colliding = false
 
 func deselect_model():
 	vr.log_info("deselecting model")
 	if (selected_holder.has_node(cur_selected.name)):
 		selected_holder.remove_child(cur_selected)
+		cur_selected.set_highlight(false)
+		cur_selected.be_selected(false)
 	if (!models_holder.has_node(cur_selected.name)):
 		models_holder.add_child(cur_selected)
 	cur_selected = null
@@ -104,10 +103,14 @@ func select_model():
 		for child in selected_holder.get_children():
 			selected_holder.remove_child(child)
 			models_holder.add_child(child)
+			child.set_highlight(false)
+			child.be_selected(false)
 	if (models_holder.has_node(cur_selected.name)):
 		models_holder.remove_child(cur_selected)
 	if (!selected_holder.has_node(cur_selected.name)):
 		selected_holder.add_child(cur_selected)
+	cur_selected.set_highlight(true)
+	cur_selected.be_selected(true)
 
 func _ready():
 	controller = get_parent();

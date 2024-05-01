@@ -21,11 +21,11 @@ func _on_EdgesButton_toggled(button_pressed):
 	if (selected_holder.get_child_count() > 0):
 		selected_holder.get_child(0).update_edges_visibility(button_pressed)
 	else:
-		vr.log_info("No hay nada seleccionado")
+		vr.log_info("There is nothing selected")
 
 
 func _on_NormalsButton_toggled(button_pressed):
 	if (selected_holder.get_child_count() > 0):
 		selected_holder.get_child(0).update_normals_visibility(button_pressed)
 	else:
-		vr.log_info("No hay nada seleccionado")
+		vr.log_info("There is nothing selected")

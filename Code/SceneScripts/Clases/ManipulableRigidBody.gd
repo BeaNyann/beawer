@@ -184,7 +184,7 @@ func draw_normals():
 
 # funciones del slice
 func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature):
-	vr.log_info("Creando las mitades...");
+	vr.log_info("Creating the halves...");
 	var rigid_body_half = manipulation_feature.instance_model()
 	rigid_body_half.gravity_scale = _cut_body_gravity_scale
 	rigid_body_half.global_transform = global_transform;
@@ -226,7 +226,7 @@ func _create_cut_body(_sign,mesh_instance,cutplane : Plane, manipulation_feature
 	
 
 func cut_object(cutplane:Plane, manipulation_feature):
-	vr.log_info("Cortando objeto :3");
+	vr.log_info("Cutting object :3");
 	#  there are a lot of parameters for the constructor
 	#-------------------------------------------------
 	#  cutplane = plane to cut mesh with , in global space
@@ -290,8 +290,11 @@ func cut_init(first_controller_feature, second_controller_feature, first_control
 	other_controller_feature = second_controller_feature
 	controller_feature.cut()
 	
-func be_selected() -> void:
-	vr.log_info("se llamo el be selected");
+func be_selected(boolean: bool) -> void:
+	_keep_marker = boolean
+
+func get_keep_marker() -> bool:
+	return _keep_marker
 
 func orientation_follow(state, current_basis : Basis, target_basis : Basis) -> void:
 	var delta : Basis = target_basis * current_basis.inverse();

@@ -1,11 +1,10 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Enviroments/lilienstein_4k.hdr" type="Texture" id=1]
 [ext_resource path="res://Scenes/Features/Character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Code/SceneScripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Features/ManipulableModel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DCanvas.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Features/Feature_DisplayProperties.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Features/Feature_ChangeAltitude.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Code/SceneScripts/Clases/ManipulableRigidBody.gd" type="Script" id=9]
 [ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DLogWindow.tscn" type="PackedScene" id=10]
@@ -276,14 +275,6 @@ script = ExtResource( 4 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
 
-[node name="Feature_SelectionRayCast" parent="Character/OQ_ARVROrigin/OQ_RightController" index="4"]
-active = null
-ui_raycast_length = null
-ui_mesh_length = null
-adjust_left_right = null
-ui_raycast_visible_button = null
-ui_raycast_click_button = null
-
 [node name="Area" type="Area" parent="Character/OQ_ARVROrigin/OQ_LeftController" index="3"]
 transform = Transform( 0.997056, -0.0766667, 0, 0.05667, 0.736997, 0.673515, -0.0516363, -0.671533, 0.739172, 0, 0, 0 )
 visible = false
@@ -544,9 +535,6 @@ __meta__ = {
 
 [node name="Features" type="Node" parent="."]
 
-[node name="Feature_DisplayProperties" parent="Features" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.549911, 0, 1.2759 )
-
 [node name="Feature_ChangeAltitude" parent="Features" instance=ExtResource( 8 )]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
@@ -609,7 +597,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772, 0.25, 2.165 )
 [connection signal="pressed" from="FileSelector/OQ_UI2DCanvas_FileSelector/ReferenceRect/FileSelectorButton" to="FileSelector" method="_on_FileSelectorButton_pressed"]
 
 [editable path="Character"]
-[editable path="Features/Feature_DisplayProperties"]
 [editable path="Features/Feature_ChangeAltitude"]
 [editable path="RigidBody"]
 [editable path="Manipulables/ManipulableModel"]

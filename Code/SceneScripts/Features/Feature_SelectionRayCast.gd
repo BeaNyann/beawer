@@ -10,6 +10,7 @@ export(vr.CONTROLLER_BUTTON) var ui_raycast_visible_button := vr.CONTROLLER_BUTT
 export(vr.CONTROLLER_BUTTON) var ui_raycast_click_button := vr.CONTROLLER_BUTTON.INDEX_TRIGGER
 
 var controller : ARVRController = null
+var display_properties: DisplayProperties = null
 onready var ui_raycast_position : Spatial = $RayCastPosition
 onready var ui_raycast : RayCast = $RayCastPosition/RayCast
 onready var ui_raycast_mesh : MeshInstance = $RayCastPosition/RayCastMesh
@@ -89,6 +90,7 @@ func _update_raycasts():
 
 func deselect_model():
 	vr.log_info("deselecting model")
+	display_properties.restore_properties()
 	if (selected_holder.has_node(cur_selected.name)):
 		selected_holder.remove_child(cur_selected)
 		cur_selected.set_highlight(false)
@@ -99,6 +101,7 @@ func deselect_model():
 
 func select_model():
 	vr.log_info("selecting model")
+	display_properties.restore_properties()
 	if (selected_holder.get_child_count() > 0):
 		for child in selected_holder.get_children():
 			selected_holder.remove_child(child)
@@ -114,6 +117,11 @@ func select_model():
 
 func _ready():
 	controller = get_parent();
+	var children = controller.get_parent().get_children()
+	for child in children:
+		if child is DisplayProperties:
+			display_properties = child
+			break
 	if (not controller is ARVRController):
 		vr.log_error(" in Feature_UIRayCast: parent not ARVRController.")
 	

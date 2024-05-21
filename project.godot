@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Spatial",
+"class": "DisplayProperties",
+"language": "GDScript",
+"path": "res://Code/SceneScripts/Features/Feature_DisplayProperties.gd"
+}, {
 "base": "Reference",
 "class": "ExampleFiles",
 "language": "GDScript",
@@ -95,6 +100,7 @@ _global_script_classes=[ {
 "path": "res://addons/slicer/sliceable_geo.gd"
 } ]
 _global_script_class_icons={
+"DisplayProperties": "",
 "ExampleFiles": "",
 "Feature_RigidBodyGrab": "",
 "Feature_RigidBodyManipulation": "",

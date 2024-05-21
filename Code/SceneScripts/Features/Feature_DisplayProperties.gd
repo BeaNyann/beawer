@@ -50,8 +50,8 @@ func update_size():
 
 func _ready():
 	selected_holder = get_node("../../../SelectedModel")
-	edges_button = get_node("OQ_UI2DCanvas_DisplayProperties")
-	#normals_button = $OQ_UI2DCanvas_DisplayProperties/ReferenceRect/NormalsButton
+	edges_button = $ReferenceRect/EdgesButton
+	normals_button = $ReferenceRect/NormalsButton
 
 	mesh_material = mesh_instance.mesh.surface_get_material(0);
 	# only enable transparency when necessary as it is significantly slower than non-transparent rendering
@@ -111,13 +111,13 @@ func restore_properties():
 	_on_EdgesButton_toggled(false)
 	_on_NormalsButton_toggled(false)
 	vr.log_info("oye pq no printeas :C")
-	for child in edges_button.get_children():
-		vr.log_info(child.name)
-	vr.log_info(edges_button.get_child(0).name)
+	#for child in edges_button.get_children():
+	#	vr.log_info(child.name)
+	#vr.log_info(edges_button.get_child(0).name)
 	vr.log_info(edges_button.name)
 	vr.log_info(edges_button)
-	#vr.log_info(normals_button)
-	#vr.log_info(normals_button.name)
+	vr.log_info(normals_button)
+	vr.log_info(normals_button.name)
 	
 	edges_button.emit_signal("pressed")
 	#normals_button.emit_signal("pressed")

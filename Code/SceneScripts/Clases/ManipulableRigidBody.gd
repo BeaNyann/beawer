@@ -99,7 +99,7 @@ func get_collider():
 func get_cross_section_material():
 	return _cross_section_material
 
-func set_up_immediate_geometry_instances():
+func set_up_edges_ig_instance():
 	# Edges ImmediateGeometry	
 	edges_ig = ImmediateGeometry.new()
 	var edges_sm = SpatialMaterial.new()
@@ -108,6 +108,7 @@ func set_up_immediate_geometry_instances():
 	edges_ig.material_override = edges_sm
 	edges_ig.name = "Wireframe_ImmediateGeometry"
 
+func set_up_normals_ig_instance():
 	# Normals ImmediateGeometry
 	normals_ig = ImmediateGeometry.new()
 	var normals_sm = SpatialMaterial.new()
@@ -115,6 +116,10 @@ func set_up_immediate_geometry_instances():
 	normals_sm.vertex_color_use_as_albedo = true
 	normals_ig.material_override = normals_sm
 	normals_ig.name = "SurfaceNormals_ImmediateGeometry"
+
+func set_up_immediate_geometry_instances():
+	set_up_edges_ig_instance()
+	set_up_normals_ig_instance()
 
 func set_highlight(activate: bool):
 	var color: Color = Color.chartreuse if activate else Color.gold
@@ -125,14 +130,17 @@ func update_edges_visibility(boolean: bool):
 		draw_wireframe()
 	else:
 		edges_ig.clear()
+		#edges_ig.queue_free()
 	
 func update_normals_visibility(boolean: bool):
 	if (boolean):
 		draw_normals()
 	else:
 		normals_ig.clear()
+		#normals_ig.queue_free()
 	
 func draw_wireframe():
+	#set_up_edges_ig_instance()
 	edges_ig.begin(Mesh.PRIMITIVE_LINES)
 	edges_ig.set_color(Color.purple)
 
@@ -155,6 +163,7 @@ func draw_wireframe():
 	_mesh.add_child(edges_ig)
 
 func draw_normals():
+	#set_up_normals_ig_instance()
 	normals_ig.begin(Mesh.PRIMITIVE_LINES)
 	normals_ig.set_color(Color.white)
 
@@ -348,4 +357,5 @@ func setup(mesh: Mesh, position: Transform):
 	self.transform = position
 
 func cut(origin: Vector3, normal: Vector3):
+	vr.log_info("cut in manipulable")
 	return $Slicer.slice(_mesh.mesh, self.transform, origin, normal, cross_section_material)

@@ -32,7 +32,8 @@ onready var _cutter_mesh = $Cutter
 onready var _cutter_collision = $Cutter/CutterArea/CollisionShape
 onready var _cutter_area = $Cutter/CutterArea
 onready var _interactive_area = $InteractiveArea
-onready var models_holder : Node = get_node("../../../../Manipulables");
+onready var models_holder : Node = get_node("../../../../Manipulables")
+onready var _properties_feature = get_node("../../Feature_DisplayProperties")
 
 #Slicer 
 var mesh_slicer = MeshSlicer.new()
@@ -155,9 +156,10 @@ func _physics_process(_dt):
 		vr.log_info("pressed")
 
 func cut_object():
+	_properties_feature.restore_properties()
 	var area = get_node("../Slicer/Area")
 	for body in area.get_overlapping_bodies().duplicate():
-		vr.log_info("the object is: " + str(body))
+		vr.log_info("the object to cut is: " + str(body))
 		if (body is ManipulableRigidBody):
 			#The plane transform at the rigidbody local transform
 			var meshinstance = body.get_mesh()
@@ -375,6 +377,7 @@ func _on_interactive_area_body_exited(body):
 				curr_candidate._notify_became_grabbable(self)
 
 func cut():
+	vr.log_info("cut feature")
 	var cutter_transform = _cutter_mesh.global_transform
 	for body in _cutter_area.get_overlapping_bodies():
 		if (body is ManipulableRigidBody):

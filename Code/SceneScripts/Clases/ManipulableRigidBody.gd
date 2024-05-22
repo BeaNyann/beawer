@@ -130,17 +130,16 @@ func update_edges_visibility(boolean: bool):
 		draw_wireframe()
 	else:
 		edges_ig.clear()
-		edges_ig.queue_free()
+		_mesh.remove_child(edges_ig)
 	
 func update_normals_visibility(boolean: bool):
 	if (boolean):
 		draw_normals()
 	else:
 		normals_ig.clear()
-		normals_ig.queue_free()
+		_mesh.remove_child(normals_ig)
 	
 func draw_wireframe():
-	set_up_edges_ig_instance()
 	edges_ig.begin(Mesh.PRIMITIVE_LINES)
 	edges_ig.set_color(Color.purple)
 
@@ -163,7 +162,6 @@ func draw_wireframe():
 	_mesh.add_child(edges_ig)
 
 func draw_normals():
-	set_up_normals_ig_instance()
 	normals_ig.begin(Mesh.PRIMITIVE_LINES)
 	normals_ig.set_color(Color.white)
 

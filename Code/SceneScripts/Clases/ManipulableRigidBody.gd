@@ -29,6 +29,8 @@ var starting_zoom_distance = 0;
 # properties variables
 var edges_ig = null
 var normals_ig = null
+var edges_active = false
+var normals_active = false
 
 # slice variables
 export var enabled: bool = true
@@ -127,15 +129,19 @@ func set_highlight(activate: bool):
 	
 func update_edges_visibility(boolean: bool):
 	if (boolean):
+		edges_active = true
 		draw_wireframe()
 	else:
+		edges_active = false
 		edges_ig.clear()
 		_mesh.remove_child(edges_ig)
 	
 func update_normals_visibility(boolean: bool):
 	if (boolean):
+		normals_active = true
 		draw_normals()
 	else:
+		normals_active = false
 		normals_ig.clear()
 		_mesh.remove_child(normals_ig)
 	

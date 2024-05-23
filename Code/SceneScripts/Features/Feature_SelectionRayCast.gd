@@ -90,7 +90,8 @@ func _update_raycasts():
 
 func deselect_model():
 	vr.log_info("deselecting model")
-	display_properties.restore_properties()
+	display_properties.set_edges_toggle(false)
+	display_properties.set_normals_toggle(false)
 	if (selected_holder.has_node(cur_selected.name)):
 		selected_holder.remove_child(cur_selected)
 		cur_selected.set_highlight(false)
@@ -101,7 +102,6 @@ func deselect_model():
 
 func select_model():
 	vr.log_info("selecting model")
-	display_properties.restore_properties()
 	if (selected_holder.get_child_count() > 0):
 		for child in selected_holder.get_children():
 			selected_holder.remove_child(child)
@@ -114,6 +114,8 @@ func select_model():
 		selected_holder.add_child(cur_selected)
 	cur_selected.set_highlight(true)
 	cur_selected.be_selected(true)
+	display_properties.set_edges_toggle(cur_selected.edges_active)
+	display_properties.set_normals_toggle(cur_selected.normals_active)
 
 func _ready():
 	controller = get_parent();

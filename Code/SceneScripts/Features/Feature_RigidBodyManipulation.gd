@@ -33,7 +33,6 @@ onready var _cutter_collision = $Cutter/CutterArea/CollisionShape
 onready var _cutter_area = $Cutter/CutterArea
 onready var _interactive_area = $InteractiveArea
 onready var models_holder : Node = get_node("../../../../Manipulables")
-onready var _properties_feature = get_node("../../Feature_DisplayProperties")
 
 #Slicer 
 var mesh_slicer = MeshSlicer.new()
@@ -156,7 +155,6 @@ func _physics_process(_dt):
 		vr.log_info("pressed")
 
 func cut_object():
-	_properties_feature.restore_properties()
 	var area = get_node("../Slicer/Area")
 	for body in area.get_overlapping_bodies().duplicate():
 		vr.log_info("the object to cut is: " + str(body))

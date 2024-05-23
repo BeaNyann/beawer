@@ -34,7 +34,6 @@ onready var _cutter_area = $Cutter/CutterArea
 onready var _interactive_area = $InteractiveArea
 onready var models_holder : Node = get_node("../../../../Manipulables")
 onready var _properties_feature = get_node("../../Feature_DisplayProperties")
-onready var _selection_feature = get_node("../../OQ_RightController/Feature_SelectionRayCast")
 
 #Slicer 
 var mesh_slicer = MeshSlicer.new()
@@ -158,9 +157,6 @@ func _physics_process(_dt):
 
 func cut_object():
 	_properties_feature.restore_properties()
-	_selection_feature.deselect_model()
-	# quizás tambien deseleccionar si hay algo seleccionado?
-	# más bien que pase a estar seleccionado el que estamos cortando
 	var area = get_node("../Slicer/Area")
 	for body in area.get_overlapping_bodies().duplicate():
 		vr.log_info("the object to cut is: " + str(body))

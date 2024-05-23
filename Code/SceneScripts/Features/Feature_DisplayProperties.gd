@@ -106,23 +106,11 @@ func _process(_dt):
 		elif (editor_live_update):
 			_editor_update_preview()
 
-func restore_properties():
-	set_edges_visibility(false)
-	set_normals_visibility(false)
-	set_edges_toggle(false)
-	set_normals_toggle(false)
-
 func set_edges_toggle(pressed):
 	edges_button.pressed = pressed
 
 func set_normals_toggle(pressed):
 	normals_button.pressed = pressed
-
-func set_edges_visibility(pressed):
-	_on_EdgesButton_toggled(pressed)
-
-func set_normals_visibility(pressed):
-	_on_NormalsButton_toggled(pressed)
 
 func _on_EdgesButton_toggled(button_pressed):
 	if (selected_holder.get_child_count() > 0):

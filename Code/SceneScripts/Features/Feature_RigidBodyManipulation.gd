@@ -158,6 +158,8 @@ func cut_object():
 	var area = get_node("../Slicer/Area")
 	for body in area.get_overlapping_bodies().duplicate():
 		vr.log_info("the object to cut is: " + str(body))
+		var pending_edges = body.edges_active
+		var pending_normals = body.normals_active
 		if (body is ManipulableRigidBody):
 			body.update_edges_visibility(false)
 			body.update_normals_visibility(false)
@@ -188,16 +190,23 @@ func cut_object():
 			#generate collision
 			if (len(meshes[1].get_faces()) > 2):
 				collision.shape = meshes[1].create_convex_shape()
+
+			if (pending_edges):
+				body.update_edges_visibility(true)
+				body2.update_edges_visibility(true)
+			if (pending_normals):
+				body.update_normals_visibility(true)
+				body2.update_normals_visibility(true)
 			
 			# #get mesh size
 			# var aabb = meshes[0].get_aabb()
 			# var aabb2 = meshes[1].get_aabb()
+			# no eliminemos esos comentarios de arriba, sirven para probar
 			# #queue_free() if the mesh is too small
 			# if aabb2.size.length() < 0.3:
 			# 	body2.queue_free()
 			# if aabb.size.length() < 0.3:
 			# 	body.queue_free()
-			# no eliminemos para probar
 
 func instance_model():
 	return manipulable_object_scene.instance()

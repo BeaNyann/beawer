@@ -261,6 +261,8 @@ func grab() -> void:
 func release():
 	if (!held_object):
 		return
+	if (held_object.zooming):
+		held_object.zoom_release()
 	release_interaction()
 	# Hiding a hand tracking model disables pose updating,
 	# so we can't hide it here or we can't ever change gesture again
@@ -273,7 +275,6 @@ func release():
 			model = $"../Feature_ControllerModel_Right"
 			if (model):
 				model.show()
-
 
 func start_interaction(grabbable_rigid_body):
 	if (grabbable_rigid_body == null):
@@ -303,19 +304,19 @@ func release_interaction():
 	held_object.grab_release()
 	held_object = null
 
-#Starts the zoom with the initial distance between the controllers
+# Starts the zoom with the initial distance between the controllers
 func start_zooming(manipulable_rigidbody):
 	if (manipulable_rigidbody == null):
 		vr.log_warning("Invalid manipulable_rigid_body in start_zooming()")
 		return;
 	started_zooming = true
-	#calculate the distance between the two objects and use that as the zoom distance
+	# calculate the distance between the two objects and use that as the zoom distance
 	var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
 	var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y
 	var distance = sqrt(x*x + y*y)
 	manipulable_rigidbody.zoom_init(distance, self, other_manipulation_feature, controller, other_controller)
 
-#Stops the zoom
+# Stops the zoom
 func stop_zooming(manipulable_rigidbody):
 	if (manipulable_rigidbody.zooming):
 		manipulable_rigidbody.zoom_release()
@@ -371,7 +372,6 @@ func _on_interactive_area_body_entered(body):
 func _on_interactive_area_body_exited(body):
 	if (body is ManipulableRigidBody):
 		var prev_candidate = null
-		
 		# see if body is losing its grab candidacy. if so, notify
 		if (grabbable_candidates.size() > 0):
 			prev_candidate = grabbable_candidates.front()

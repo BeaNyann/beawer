@@ -24,19 +24,17 @@ var last_gesture := "";
 # initiated, the object at the front of the list will be grabbed.
 var grabbable_candidates = []
 # zoom var
-var started_zooming = false;
-var started_cutting = false;
+var started_zooming = false
+var started_cutting = false
 
 # nodes variables
-onready var _cutter_mesh = $Cutter
-onready var _cutter_collision = $Cutter/CutterArea/CollisionShape
-onready var _cutter_area = $Cutter/CutterArea
 onready var _interactive_area = $InteractiveArea
 onready var models_holder : Node = get_node("../../../../Manipulables")
 
 #Slicer 
 var mesh_slicer = MeshSlicer.new()
 onready var slicer: Node = get_node("../Slicer")
+onready var slicer_mesh = get_node("../Slicer/MeshInstance")
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
@@ -101,11 +99,9 @@ func cutting() -> bool:
 	return controller._button_pressed(yb_button)
 
 func _ready():
-	_cutter_collision.disabled = true
-	_cutter_mesh.visible = false
-
+	#TODO aca hay señales pruebalassss
 	# signals
-	_cutter_area.connect("body_entered", self, "_on_cutter_collision_body_entered")
+	# _cutter_area.connect("body_entered", self, "_on_cutter_collision_body_entered")
 	_interactive_area.connect("body_entered", self, "_on_interactive_area_body_entered")
 	_interactive_area.connect("body_exited", self, "_on_interactive_area_body_exited")
 
@@ -154,7 +150,17 @@ func _physics_process(_dt):
 		cut_object() #temporal
 		vr.log_info("pressed")
 
+
+func toggle_cutter():
+	vr.log_info("ah")
+	vr.log_info(started_cutting)
+	if (started_cutting):
+		stop_cutting()
+	else:
+		start_cutting()
+
 func cut_object():
+	vr.log_info("alo")
 	var area = get_node("../Slicer/Area")
 	for body in area.get_overlapping_bodies().duplicate():
 		vr.log_info("the object to cut is: " + str(body))
@@ -228,6 +234,16 @@ func update_cut() -> void:
 		start_cutting()
 	elif (!cutting() and started_cutting):
 		stop_cutting()
+
+	# if (controller._button_just_pressed(yb_button)):
+	# 	if (controller.controller_id == 1): # is left (is y)
+	# 		toggle_cutter()
+	# 		vr.log_info("hoal")
+	# 	else: 
+	# 		cut_object()
+	# 		vr.log_info("pressed")
+
+
 
 func grab() -> void:
 	vr.log_info("Grip button pressed on right controller")
@@ -324,13 +340,17 @@ func stop_zooming(manipulable_rigidbody):
 	other_manipulation_feature.release()
 
 func start_cutting():
-	_cutter_collision.disabled = false
-	_cutter_mesh.visible = true
+	vr.log_info("start cuttin")
+	slicer.disabled = false
+	slicer.visible = true
+	slicer_mesh.visible = true
 	started_cutting = true
 
 func stop_cutting():
-	_cutter_collision.disabled = true
-	_cutter_mesh.visible = false
+	vr.log_info("stop cutting")
+	slicer.disabled = true
+	slicer.visible = false
+	slicer_mesh.visible = false
 	started_cutting = false
 
 func _release_reparent_mesh():
@@ -353,11 +373,13 @@ func _reparent_mesh():
 		grab_mesh.global_transform = mesh_global_trafo
 
 func _on_cutter_collision_body_entered(body):
+	vr.log_info("oye y esto funciona o no...")
 	if (body is ManipulableRigidBody):
 		#body.cut_init(self, other_manipulation_feature, controller, other_controller)
 		vr.log_info("debería empezar el corte (#comentado)")
 
 func _on_interactive_area_body_entered(body):
+	vr.log_info("esto usa una señal!")
 	if (body is ManipulableRigidBody):
 		if (body.grab_enabled):
 			grabbable_candidates.push_back(body)
@@ -385,28 +407,3 @@ func _on_interactive_area_body_exited(body):
 			if (prev_candidate != curr_candidate):
 				curr_candidate._notify_became_grabbable(self)
 
-func cut():
-	vr.log_info("cut feature")
-	var cutter_transform = _cutter_mesh.global_transform
-	for body in _cutter_area.get_overlapping_bodies():
-		if (body is ManipulableRigidBody):
-			var origin = cutter_transform.origin - body.transform.origin
-			var normal = body.transform.basis.xform_inv(cutter_transform.basis.y)
-			var dist = cutter_transform.basis.y.dot(origin)
-			var plane = Plane(normal, dist)
-			var sliced_mesh = body.cut(cutter_transform.origin, cutter_transform.basis.y)
-			if (not sliced_mesh):
-				continue
-
-			if (sliced_mesh.upper_mesh):
-				var upper = manipulable_object_scene.instance()
-				upper.setup(sliced_mesh.upper_mesh, body.transform)
-				upper.cross_section_material = body.cross_section_material
-				models_holder.add_child(upper)
-#
-			if (sliced_mesh.lower_mesh):
-				var lower = manipulable_object_scene.instance()
-				lower.setup(sliced_mesh.lower_mesh, body.transform)
-				lower.cross_section_material = body.cross_section_material
-				models_holder.add_child(lower)
-			body.queue_free()

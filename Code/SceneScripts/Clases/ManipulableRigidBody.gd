@@ -301,7 +301,7 @@ func cut_init(first_controller_feature, second_controller_feature, first_control
 	other_controller = second_controller
 	controller_feature = first_controller_feature
 	other_controller_feature = second_controller_feature
-	controller_feature.cut()
+	# controller_feature.cut()
 	
 func be_selected(boolean: bool) -> void:
 	_keep_marker = boolean

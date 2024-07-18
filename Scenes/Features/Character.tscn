@@ -37,6 +37,7 @@ albedo_color = Color( 0.0823529, 0.141176, 0.823529, 1 )
 albedo_color = Color( 0.87451, 0.792157, 0.0901961, 1 )
 
 [sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.341176, 0.243137, 0.364706, 1 )
 
 [sub_resource type="CubeMesh" id=9]
 material = SubResource( 8 )
@@ -126,6 +127,7 @@ shape = SubResource( 11 )
 
 [node name="OQ_ARVRCamera" parent="OQ_ARVROrigin" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -0.163748 )
+current = true
 
 [node name="Locomotion_Stick" parent="OQ_ARVROrigin" instance=ExtResource( 20 )]
 

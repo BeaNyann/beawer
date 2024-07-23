@@ -33,8 +33,9 @@ onready var models_holder : Node = get_node("../../../../Manipulables")
 
 #Slicer 
 var mesh_slicer = MeshSlicer.new()
-onready var slicer: Node = get_node("../Slicer")
-onready var slicer_mesh = get_node("../Slicer/MeshInstance")
+onready var slicer: Node = get_node("../../OQ_LeftController/Slicer")
+onready var slicer_mesh = get_node("../../OQ_LeftController/Slicer/MeshInstance")
+onready var slicer_area = get_node("../../OQ_LeftController/Slicer/Area")
 
 # Inputs
 export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
@@ -146,10 +147,6 @@ func _physics_process(_dt):
 	update_grab()
 	update_zoom()
 	update_cut()
-	if (controller._button_just_pressed(yb_button)):
-		cut_object() #temporal
-		vr.log_info("pressed")
-
 
 func toggle_cutter():
 	vr.log_info("ah")
@@ -160,9 +157,7 @@ func toggle_cutter():
 		start_cutting()
 
 func cut_object():
-	vr.log_info("alo")
-	var area = get_node("../Slicer/Area")
-	for body in area.get_overlapping_bodies().duplicate():
+	for body in slicer_area.get_overlapping_bodies().duplicate():
 		vr.log_info("the object to cut is: " + str(body))
 		var pending_edges = body.edges_active
 		var pending_normals = body.normals_active
@@ -230,20 +225,12 @@ func update_zoom() -> void:
 		stop_zooming(other_manipulation_feature.held_object)
 
 func update_cut() -> void:
-	if (cutting() and !started_cutting):
-		start_cutting()
-	elif (!cutting() and started_cutting):
-		stop_cutting()
-
-	# if (controller._button_just_pressed(yb_button)):
-	# 	if (controller.controller_id == 1): # is left (is y)
-	# 		toggle_cutter()
-	# 		vr.log_info("hoal")
-	# 	else: 
-	# 		cut_object()
-	# 		vr.log_info("pressed")
-
-
+	if (controller._button_just_pressed(yb_button)):
+		if (controller.controller_id == 1): # is left (is y)
+			# toggle_cutter()
+			vr.log_info("aca se esconde o desesconde")
+		else: 
+			cut_object()
 
 func grab() -> void:
 	vr.log_info("Grip button pressed on right controller")

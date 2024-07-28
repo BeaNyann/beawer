@@ -229,9 +229,8 @@ func update_cut() -> void:
 	if (controller._button_just_pressed(yb_button)):
 		if (controller.controller_id == 1): # is left (is y)
 			toggle_cutter()
-		else: 
-			if (other_manipulation_feature.started_cutting):
-				cut_object()
+		elif (other_manipulation_feature.started_cutting):
+			cut_object()
 
 func grab() -> void:
 	vr.log_info("Grip button pressed on right controller")
@@ -312,7 +311,7 @@ func release_interaction():
 func start_zooming(manipulable_rigidbody):
 	if (manipulable_rigidbody == null):
 		vr.log_warning("Invalid manipulable_rigid_body in start_zooming()")
-		return;
+		return
 	started_zooming = true
 	# calculate the distance between the two objects and use that as the zoom distance
 	var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x

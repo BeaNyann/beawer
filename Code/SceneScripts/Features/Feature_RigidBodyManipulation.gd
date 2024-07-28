@@ -23,9 +23,9 @@ var last_gesture := "";
 # First object that entered the grab area is at the front. When grab event is
 # initiated, the object at the front of the list will be grabbed.
 var grabbable_candidates = []
-# zoom var
+
 var started_zooming = false
-var started_cutting = false
+var started_cutting = true
 
 # nodes variables
 onready var _interactive_area = $InteractiveArea
@@ -136,6 +136,7 @@ func _ready():
 					if (c.get_class() == "Feature_RigidBodyManipulation"):
 						other_manipulation_feature = c
 						break
+	toggle_cutter()
 						
 # Godot's get_class() method only return native class names
 # we need this because we can't use "is" to test against a class_name within
@@ -227,10 +228,10 @@ func update_zoom() -> void:
 func update_cut() -> void:
 	if (controller._button_just_pressed(yb_button)):
 		if (controller.controller_id == 1): # is left (is y)
-			# toggle_cutter()
-			vr.log_info("aca se esconde o desesconde")
+			toggle_cutter()
 		else: 
-			cut_object()
+			if (other_manipulation_feature.started_cutting):
+				cut_object()
 
 func grab() -> void:
 	vr.log_info("Grip button pressed on right controller")
@@ -327,15 +328,11 @@ func stop_zooming(manipulable_rigidbody):
 	other_manipulation_feature.release()
 
 func start_cutting():
-	vr.log_info("start cuttin")
-	slicer.disabled = false
 	slicer.visible = true
 	slicer_mesh.visible = true
 	started_cutting = true
 
 func stop_cutting():
-	vr.log_info("stop cutting")
-	slicer.disabled = true
 	slicer.visible = false
 	slicer_mesh.visible = false
 	started_cutting = false

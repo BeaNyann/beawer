@@ -37,24 +37,28 @@ onready var slicer: Node = get_node("../../OQ_LeftController/Slicer")
 onready var slicer_mesh = get_node("../../OQ_LeftController/Slicer/MeshInstance")
 onready var slicer_area = get_node("../../OQ_LeftController/Slicer/Area")
 
+# Tutorial
+onready var tutorial: Node = get_node("../../Instructions")
+
 # Inputs
-export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER;
-export(vr.CONTROLLER_BUTTON) var xa_button = vr.CONTROLLER_BUTTON.XA;
-export(vr.CONTROLLER_BUTTON) var yb_button = vr.CONTROLLER_BUTTON.YB;
+export(vr.CONTROLLER_BUTTON) var grab_button = vr.CONTROLLER_BUTTON.GRIP_TRIGGER
+export(vr.CONTROLLER_BUTTON) var xa_button = vr.CONTROLLER_BUTTON.XA
+export(vr.CONTROLLER_BUTTON) var yb_button = vr.CONTROLLER_BUTTON.YB
+export(vr.CONTROLLER_BUTTON) var cut_button = vr.CONTROLLER_BUTTON.INDEX_TRIGGER
 
 export(String) var grab_gesture := "Fist"
 export(int, LAYERS_3D_PHYSICS) var grab_layer := 1
-export var collision_body_active := false;
+export var collision_body_active := false
 export(int, LAYERS_3D_PHYSICS) var collision_body_layer := 1
-onready var _hinge_joint : HingeJoint = $HingeJoint;
-export var reparent_mesh = false;
-export var hide_model_on_grab := false;
+onready var _hinge_joint : HingeJoint = $HingeJoint
+export var reparent_mesh = false
+export var hide_model_on_grab := false
 # set to true to vibrate controller when object is grabbed
-export var rumble_on_grab := false;
+export var rumble_on_grab := false
 # control the intesity of vibration when player grabs an object
 export(float,0,1,0.01) var rumble_on_grab_intensity = 0.4
 # set to true to vibrate controller when object becomes grabbable
-export var rumble_on_grabbable := false;
+export var rumble_on_grabbable := false
 # control the intesity of vibration when an object becomes grabbable
 export(float,0,1,0.01) var rumble_on_grabbable_intensity = 0.2
 
@@ -148,10 +152,12 @@ func _physics_process(_dt):
 	update_grab()
 	update_zoom()
 	update_cut()
+	update_tutorial()
+
+func toggle_tutorial():
+	tutorial.visible = !tutorial.visible
 
 func toggle_cutter():
-	vr.log_info("ah")
-	vr.log_info(started_cutting)
 	if (started_cutting):
 		stop_cutting()
 	else:
@@ -226,11 +232,15 @@ func update_zoom() -> void:
 		stop_zooming(other_manipulation_feature.held_object)
 
 func update_cut() -> void:
-	if (controller._button_just_pressed(yb_button)):
-		if (controller.controller_id == 1): # is left (is y)
+	if (controller.controller_id == 1): # is left
+		if (controller._button_just_pressed(yb_button) ):
 			toggle_cutter()
-		elif (other_manipulation_feature.started_cutting):
+		if (controller._button_just_pressed(cut_button) and started_cutting):
 			cut_object()
+
+func update_tutorial() -> void:
+	if (controller._button_just_pressed(yb_button) and (controller.controller_id != 1)):
+		toggle_tutorial()
 
 func grab() -> void:
 	vr.log_info("Grip button pressed on right controller")

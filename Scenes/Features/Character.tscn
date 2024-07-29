@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://OQ_Toolkit/OQ_ARVRController/Feature_UIRayCast.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Features/ARVRController/Feature_RigidBodyRayCastGrab.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/controllers/left/OculusQuest2TouchController_Left.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://Scenes/Features/ARVRController/Feature_SelectionRayCast.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Features/Feature_DisplayProperties.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Features/Instructions.tscn" type="PackedScene" id=8]
 [ext_resource path="res://OQ_Toolkit/OQ_ARVROrigin/Feature_VRSimulator.tscn" type="PackedScene" id=11]
 [ext_resource path="res://OQ_Toolkit/OQ_ARVRCamera.tscn" type="PackedScene" id=14]
 [ext_resource path="res://OQ_Toolkit/OQ_LeftController.tscn" type="PackedScene" id=16]
@@ -133,3 +134,6 @@ current = true
 
 [node name="Feature_DisplayProperties" parent="OQ_ARVROrigin" instance=ExtResource( 7 )]
 transform = Transform( 0.766044, 0.111619, 0.633022, 0, 0.984808, -0.173648, -0.642788, 0.133022, 0.754406, -0.287841, 1.32291, -0.450822 )
+
+[node name="Instructions" parent="OQ_ARVROrigin" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.788477, 0.824642, -1.61532 )

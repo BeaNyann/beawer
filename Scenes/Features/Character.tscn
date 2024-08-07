@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://OQ_Toolkit/OQ_ARVRController/Feature_UIRayCast.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Features/ARVRController/Feature_RigidBodyRayCastGrab.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Features/ARVRController/Feature_SelectionRayCast.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Features/Feature_DisplayProperties.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Features/Instructions.tscn" type="PackedScene" id=8]
+[ext_resource path="res://OQ_Toolkit/OQ_UI2D/OQ_UI2DCanvas.tscn" type="PackedScene" id=9]
 [ext_resource path="res://OQ_Toolkit/OQ_ARVROrigin/Feature_VRSimulator.tscn" type="PackedScene" id=11]
 [ext_resource path="res://OQ_Toolkit/OQ_ARVRCamera.tscn" type="PackedScene" id=14]
 [ext_resource path="res://OQ_Toolkit/OQ_LeftController.tscn" type="PackedScene" id=16]
@@ -40,31 +41,31 @@ flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.317647, 0.0784314, 0.603922, 1 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=16]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.6, 0.584314, 0.615686, 1 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=17]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.117647, 0.631373, 0.607843, 1 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=18]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.0588235, 0.0941176, 0.533333, 1 )
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=19]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.588235, 0.529412, 0.054902, 1 )
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=20]
 albedo_color = Color( 0.341176, 0.243137, 0.364706, 1 )
 
-[sub_resource type="CubeMesh" id=11]
-material = SubResource( 10 )
+[sub_resource type="CubeMesh" id=21]
+material = SubResource( 20 )
 
 [sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.52549, 0.376471, 0.52549, 1 )
@@ -102,9 +103,9 @@ material/4 = SubResource( 4 )
 material/5 = SubResource( 4 )
 material/6 = SubResource( 14 )
 material/7 = SubResource( 15 )
-material/8 = SubResource( 6 )
+material/8 = SubResource( 16 )
 material/9 = SubResource( 4 )
-material/10 = SubResource( 7 )
+material/10 = SubResource( 17 )
 
 [node name="Feature_SelectionRayCast" parent="OQ_ARVROrigin/OQ_RightController" instance=ExtResource( 6 )]
 
@@ -127,20 +128,20 @@ material/0 = SubResource( 4 )
 material/1 = SubResource( 4 )
 material/2 = SubResource( 14 )
 material/3 = SubResource( 15 )
-material/4 = SubResource( 6 )
+material/4 = SubResource( 16 )
 material/5 = SubResource( 4 )
-material/6 = SubResource( 7 )
+material/6 = SubResource( 17 )
 material/7 = SubResource( 4 )
-material/8 = SubResource( 8 )
+material/8 = SubResource( 18 )
 material/9 = SubResource( 4 )
-material/10 = SubResource( 9 )
+material/10 = SubResource( 19 )
 
 [node name="Slicer" type="Spatial" parent="OQ_ARVROrigin/OQ_LeftController"]
 transform = Transform( 0.985759, -0.0751126, -0.150456, -0.0522241, 0.713725, -0.698476, 0.159849, 0.696387, 0.699638, 0, 0.0167989, -0.0107026 )
 
 [node name="MeshInstance" type="MeshInstance" parent="OQ_ARVROrigin/OQ_LeftController/Slicer"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.005, 0, 0, 0 )
-mesh = SubResource( 11 )
+mesh = SubResource( 21 )
 material/0 = SubResource( 12 )
 
 [node name="Area" type="Area" parent="OQ_ARVROrigin/OQ_LeftController/Slicer"]
@@ -156,7 +157,31 @@ current = true
 [node name="Locomotion_Stick" parent="OQ_ARVROrigin" instance=ExtResource( 20 )]
 
 [node name="Feature_DisplayProperties" parent="OQ_ARVROrigin" instance=ExtResource( 7 )]
-transform = Transform( 0.766044, 0.111619, 0.633022, 0, 0.984808, -0.173648, -0.642788, 0.133022, 0.754406, -0.287841, 1.32291, -0.450822 )
+transform = Transform( 0.766044, 0.111619, 0.633022, 0, 0.984808, -0.173648, -0.642788, 0.133022, 0.754406, -0.288, 1.331, -0.451 )
+
+[node name="InstructionsQuickTip" type="Spatial" parent="OQ_ARVROrigin"]
+transform = Transform( 0.766044, 0.111619, 0.633022, 0, 0.984808, -0.173648, -0.642788, 0.133022, 0.754407, -0.288, 1.41896, -0.451 )
+
+[node name="OQ_UI2DCanvas" parent="OQ_ARVROrigin/InstructionsQuickTip" instance=ExtResource( 9 )]
+
+[node name="ReferenceRect" type="ReferenceRect" parent="OQ_ARVROrigin/InstructionsQuickTip/OQ_UI2DCanvas"]
+margin_right = 338.0
+margin_bottom = 57.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="OQ_ARVROrigin/InstructionsQuickTip/OQ_UI2DCanvas/ReferenceRect"]
+margin_left = 6.0
+margin_top = 20.0
+margin_right = 328.0
+margin_bottom = 50.0
+text = "Botón B (rojo): desplegar/ocultar instrucciones"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Instructions" parent="OQ_ARVROrigin" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.788477, 0.824642, -1.61532 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08004, -0.451 )

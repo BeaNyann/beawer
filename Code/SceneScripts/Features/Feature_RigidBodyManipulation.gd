@@ -138,6 +138,7 @@ func _ready():
 						other_manipulation_feature = c
 						break
 	toggle_cutter()
+	tutorial.visible = false
 						
 # Godot's get_class() method only return native class names
 # we need this because we can't use "is" to test against a class_name within

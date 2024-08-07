@@ -135,6 +135,7 @@ func turn(dt):
 #       the controllers are still rendered in the right position; but we have to keep in mind that this
 #       will be tied to the physics framerate then
 func _physics_process(dt):
+	# si se llama
 	if (enable_vignette) : movement_vignette_rect.visible = false;
 	if (!active): return;
 	if (vr.vrOrigin && vr.vrOrigin.is_fixed): 

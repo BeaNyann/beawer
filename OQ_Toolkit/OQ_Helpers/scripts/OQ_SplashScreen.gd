@@ -28,7 +28,7 @@ func _process(dt):
 	
 	var camPos = vr.vrCamera.global_transform.origin;
 
-	#TODO: rotate instead of move
+	#: rotate instead of move
 	targetPosition = camPos + viewDir * distance;
 	var distToTarget = (targetPosition - currentPosition).length();
 	if moving:

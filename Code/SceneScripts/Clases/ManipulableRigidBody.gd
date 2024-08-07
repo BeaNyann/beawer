@@ -347,6 +347,7 @@ func _integrate_forces(_state):
 	return
 	
 func _physics_process(_delta):
+	# si se llama
 	if (zooming):
 		var x = controller.get_global_transform().origin.x - other_controller.get_global_transform().origin.x
 		var y = controller.get_global_transform().origin.y - other_controller.get_global_transform().origin.y

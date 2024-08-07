@@ -9,7 +9,7 @@
 # See also the python jupyter notebook in the godot_oculus_quest_toolkit repository
 # for the data analysis that was used to define the constants below
 
-# TODO: 
+# : 
 #  - some of the constants need more testing as they are all just tuned to me at the moment
 #  - walk speed should maybe not be constant but depend on step frequency and other values?
 

@@ -188,7 +188,7 @@ func get_finger_state_estimate(finger):
 	angle += _get_bone_angle_diff(_ovrHandFingers_Bone1Start[finger]+1);
 	angle += _get_bone_angle_diff(_ovrHandFingers_Bone1Start[finger]+2);
 	
-	# !!TODO: thresholds need some finetuning here
+	# : thresholds need some finetuning here
 	if (finger == ovrHandFingers.Thumb):
 		if (angle <= 30): return SimpleFingerState.Straight;
 		if (angle >= 35): return SimpleFingerState.Bent; # very low threshold here...

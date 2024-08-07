@@ -58,6 +58,7 @@ func not_grabbing() -> bool:
 
 	
 func _physics_process(_dt):
+	# no se llama
 	grab_area.global_transform = controller.get_palm_transform();
 
 	if (just_grabbed()):

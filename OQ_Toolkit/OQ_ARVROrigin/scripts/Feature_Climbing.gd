@@ -26,6 +26,7 @@ func start_grab():
 
 
 func _physics_process(_dt):
+	# no se llama
 	if (!active): return;
 
 	if (grab_left.is_just_grabbing):

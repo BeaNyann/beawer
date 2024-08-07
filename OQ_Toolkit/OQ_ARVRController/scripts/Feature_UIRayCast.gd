@@ -108,6 +108,8 @@ func _ready():
 
 # we use the physics process here be in sync with the controller position
 func _physics_process(_dt):
+	# si se llama
 	if (!active): return;
 	if (!visible): return;
+	# y suele llegar hasta aca
 	_update_raycasts();

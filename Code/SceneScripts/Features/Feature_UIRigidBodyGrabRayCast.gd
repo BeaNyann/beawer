@@ -1,4 +1,4 @@
-# TODO:
+# :
 # create the hingejoint and kinematic body maybe only when needed
 #   and not as part of the scene always
 extends Spatial
@@ -91,7 +91,7 @@ func _ready():
 						other_grab_feature = c
 						break
 						
-	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+	# : we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 	#controller.connect("button_pressed", self, "_on_ARVRController_button_pressed")
 	#controller.connect("button_release", self, "_on_ARVRController_button_release")
 
@@ -102,11 +102,12 @@ func get_class():
 	return "Feature_UIRigidBodyGrabRayCast"
 
 func _physics_process(_dt):
-	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+	# no se llama
+	# : we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 	update_grab()
 
 
-# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+# : we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 func update_grab() -> void:
 	if (just_grabbed()):
 		grab()
@@ -305,7 +306,7 @@ func release_grab_velocity():
 	held_object = null
 
 
-# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+# : we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 #func _on_ARVRController_button_pressed(button_number):
 #	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
 #		return

@@ -196,7 +196,7 @@ func _ready():
 						other_grab_feature = c
 						break
 						
-	# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+	# we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 	#controller.connect("button_pressed", self, "_on_ARVRController_button_pressed")
 	#controller.connect("button_release", self, "_on_ARVRController_button_release")
 
@@ -221,8 +221,10 @@ func get_class():
 
 # we use the physics process here be in sync with the controller position
 func _physics_process(_dt):
+	# si se llama
 	if (!active): return;
 	if (!visible): return;
+	# suele llegar aca
 	_update_raycasts();
 	update_grab()
 
@@ -422,7 +424,7 @@ func release_grab_velocity():
 	held_object = null
 
 
-# TODO: we will re-implement signals later on when we have compatability with the OQ simulator and recorder
+# we will re-implement signals later on when we have compatability with the OQ simulator and recorder
 #func _on_ARVRController_button_pressed(button_number):
 #	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
 #		return

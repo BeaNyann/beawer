@@ -13,6 +13,7 @@ func _remove_notification_window():
 	queue_free();
 	
 func _physics_process(dt):
+	# no se llama
 	if ((vr.button_just_pressed(vr.BUTTON.X) && vr.button_pressed(vr.BUTTON.A))
 		|| (vr.button_just_pressed(vr.BUTTON.A) && vr.button_pressed(vr.BUTTON.X))):
 		_remove_notification_window();

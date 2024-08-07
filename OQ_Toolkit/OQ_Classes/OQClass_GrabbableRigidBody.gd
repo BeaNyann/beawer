@@ -105,7 +105,7 @@ func _integrate_forces(state):
 		_release();
 		return;
 	
-	# TODO: it would be better to use == Feature_RigidBodyGrab.GrabTypes.KINEMATIC
+	# : it would be better to use == Feature_RigidBodyGrab.GrabTypes.KINEMATIC
 	# but this leads to an odd cyclic reference error
 	# related to this bug: https://github.com/godotengine/godot/issues/21461
 	if _grab_type == vr.GrabTypes.KINEMATIC:

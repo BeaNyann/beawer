@@ -19,7 +19,7 @@ func _process(_dt):
 		if (!cycle_through_children):
 			set_visibility_and_process(!visible);
 		else:
-			print("TODO: non global visibility toggle not yet implemented");
+			print(": non global visibility toggle not yet implemented");
 
 func _ready():
 	if (invisible_on_start): set_visibility_and_process(false);

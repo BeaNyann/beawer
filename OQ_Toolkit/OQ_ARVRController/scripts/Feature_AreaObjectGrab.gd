@@ -28,6 +28,7 @@ func _ready():
 	
 	
 func _physics_process(_dt):
+	# no se llama
 	grab_area.global_transform = controller.get_palm_transform();
 	if (controller._button_just_pressed(grab_button)):
 		var overlapping_areas = grab_area.get_overlapping_areas();

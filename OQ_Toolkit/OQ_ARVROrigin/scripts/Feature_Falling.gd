@@ -94,6 +94,7 @@ func _get_raycast_hit_surrounding(h0, space_state, from, to):
 var fall_speed = 0.0;
 
 func _physics_process(dt):
+	# no se llama
 	if (!active): 
 		fall_speed = 0.0;
 		return;

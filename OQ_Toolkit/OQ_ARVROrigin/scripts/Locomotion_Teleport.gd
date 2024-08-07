@@ -1,6 +1,6 @@
 # This implementation of Locomotion_Teleport comes with some basic visualization
 # This is still a very early implementation; there are still a lot of open points to implement:
-# TODO:
+# :
 #  - add possibility to pre-rotate the target location (via stick)
 #  - add target space check via a collision shape (or callback)
 #  - add export variables to configure the target_marker from the outside
@@ -118,6 +118,7 @@ func _update_arc():
 
 
 func _physics_process(dt):
+	# no se llama
 	if (!active): return;
 	
 	if (teleport_valid && vr.button_just_pressed(perform_teleport_button)):

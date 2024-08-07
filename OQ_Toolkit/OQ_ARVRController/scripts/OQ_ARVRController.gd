@@ -317,7 +317,7 @@ func _update_rumble(dt):
 var first_time = true;
 
 func _physics_process(_dt):
-
+	# si se llama
 	#vr.show_dbg_info(str(controller_id), str(_buttons_pressed));
 
 	_auto_update_controller_model();

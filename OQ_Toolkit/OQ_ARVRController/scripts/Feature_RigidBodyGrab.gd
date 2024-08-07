@@ -99,8 +99,8 @@ func _ready():
 						break
 						
 	# : we will re-implement signals later on when we have compatability with the OQ simulator and recorder
-	#controller.connect("button_pressed", self, "_on_ARVRController_button_pressed")
-	#controller.connect("button_release", self, "_on_ARVRController_button_release")
+	# controller.connect("button_pressed", self, "_on_ARVRController_button_pressed")
+	# controller.connect("button_release", self, "_on_ARVRController_button_release")
 
 # Godot's get_class() method only return native class names
 # we need this because we can't use "is" to test against a class_name within
@@ -315,19 +315,17 @@ func release_grab_velocity():
 
 
 # : we will re-implement signals later on when we have compatability with the OQ simulator and recorder
-#func _on_ARVRController_button_pressed(button_number):
-#	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
-#		return
-#
-#	# if grab button, grab
-#	grab()
-#
-#func _on_ARVRController_button_release(button_number):
-#	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
-#		return
-#
-#	# if grab button, grab
-#	release()
+# func _on_ARVRController_button_pressed(button_number):
+# 	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
+# 		return
+# 	# if grab button, grab
+# 	grab()
+
+# func _on_ARVRController_button_release(button_number):
+# 	if button_number != vr.CONTROLLER_BUTTON.GRIP_TRIGGER:
+# 		return
+# 	# if grab button, release
+# 	release()
 
 
 func _on_GrabArea_body_entered(body):

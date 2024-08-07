@@ -2,13 +2,9 @@ extends Node
 
 class_name MeshSlicer
 
-
-
 var vert_slice = []
 
 var mdt = MeshDataTool.new() 
-
-
 
 func _convertToArrayMesh(mesh:Mesh):
 	var surface_tool := SurfaceTool.new()
@@ -20,41 +16,28 @@ func _convertToArrayMesh(mesh:Mesh):
 	return new_mesh
 
 
-
-
-##Slice a mesh in half using Transform3D as the local position and direction. Return an array of the sliced meshes. The cross-section material is positioned and rotated base on the Transform3D
+# Slice a mesh in half using Transform3D as the local position and direction
+# Return an array of the sliced meshes
+# The cross-section material is positioned and rotated base on the Transform3D
 func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Material = null) -> Array:
-	vr.log_info("Slice Mesh, well i guess...")
-	#vr.log_info(str(slice_transform))
-	#vr.log_info(str(slice_transform.origin))
+	vr.log_info("Slicing Mesh :)")
 	mesh = _convertToArrayMesh(mesh)
-	#vr.log_info(str(mesh))
 	var normal = -slice_transform.basis.z
-	#vr.log_info(str(normal))
 	var at = slice_transform.origin
-	#vr.log_info(str(at))
 	
 	var surfaces1 = []
 	var surfaces_mat1 = []	
 	var surface_tool1_2 := SurfaceTool.new()
-	#vr.log_info(str(surface_tool1_2))
 	surface_tool1_2.begin(Mesh.PRIMITIVE_TRIANGLES)
-	#vr.log_info(str(surface_tool1_2))
 	var surfaces2 = []
 	var surfaces_mat2 = []
 	var surface_tool2_2 := SurfaceTool.new()
-	#vr.log_info(str(surface_tool2_2))
 	surface_tool2_2.begin(Mesh.PRIMITIVE_TRIANGLES)
-	#vr.log_info(str(surface_tool2_2))
-	#vr.log_info(str(vert_slice))
 	vert_slice.clear()
-	#vr.log_info(str(vert_slice))
 	
 	if cross_section_material == null:
-		vr.log_info("cross section material is null v2")
 		if mesh.get_surface_count() != 0:
 			cross_section_material = mesh.surface_get_material(0)
-	vr.log_info("pasamos el no material situation v2")
 
 	for surface_idx in range(mesh.get_surface_count()):
 		mdt.create_from_surface(mesh, surface_idx)
@@ -66,13 +49,11 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 		var verts_side = []
 		var edge_slice = {}
 		var material = mesh.surface_get_material(surface_idx)
-
 		
 		for vert in range(mdt.get_vertex_count()):
 			var v1 = mdt.get_vertex(vert)
 			var side = _check_side(v1,normal,at)
 			verts_side.append(side)
-
 
 		for edge in range(mdt.get_edge_count()):
 			var v1 = mdt.get_edge_vertex(edge,0)
@@ -95,7 +76,6 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			for e in range(3):
 				if edge_slice.has(mdt.get_face_edge(face,e)):
 					edge_intersect.append(e)
-			#vr.log_info("1ba")
 
 			if len(edge_intersect) == 0:
 				var v1 = mdt.get_face_vertex(face,0)
@@ -115,9 +95,6 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					face_verts2.append(v1)
 					face_verts2.append(v2)
 					face_verts2.append(v3)
-				#vr.log_info("1ba2")
-
-
 					
 			elif  len(edge_intersect) == 1:
 				var v1 = null
@@ -146,10 +123,7 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					face_verts2.append(v3)
 					face_verts1.append(v1)
 					face_verts1.append(v3)
-					face_verts1.append(v4)
-				#vr.log_info("1ba3")
-
-						
+					face_verts1.append(v4)						
 
 			elif  len(edge_intersect) == 2:
 				var e1 = mdt.get_face_edge(face,edge_intersect[0])
@@ -175,9 +149,6 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 							v5 = edge_slice[e2]
 						break
 				_add_to_vert_slice(v2,v5)
-				#vr.log_info("1ba5")
-
-
 
 				if verts_side[v1] == 1:
 					face_verts1.append(v1)
@@ -199,10 +170,8 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					face_verts1.append(v3)
 					face_verts1.append(v4)
 					face_verts1.append(v5)
-			#vr.log_info("1ba6") 
 
 			for v in face_verts1:
-				##vr.log_info("for")
 				var vert = v
 				var uv = Vector2.ZERO 
 				var norm = Vector3.ZERO
@@ -214,17 +183,9 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 					vert = v[0]
 					norm = v[1].normalized()
 					uv = v[2]
-				##vr.log_info("ola12")
-				#vr.log_info(str(norm))
 				surface_tool.add_normal(norm)
-				##vr.log_info("ola13")
 				surface_tool.add_uv(uv)
-				##vr.log_info("ola14")
-				surface_tool.add_vertex(vert)
-				##vr.log_info("ola15")
-			
-			#vr.log_info("1ba7")
-				
+				surface_tool.add_vertex(vert)				
 					
 			for v in face_verts2:
 				var vert = v
@@ -241,29 +202,15 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 				surface_tool2.add_normal(norm)
 				surface_tool2.add_uv(uv)
 				surface_tool2.add_vertex(vert)
-			#vr.log_info("1ba8")
-
-		#vr.log_info("1ba9")
 
 		surfaces1.append(surface_tool.commit())
 		surfaces_mat1.append(material)
 		surfaces2.append(surface_tool2.commit())
 		surfaces_mat2.append(material)
 
-	
-	#vr.log_info("sali de los fors surface q tenia for face q tenia for vertex y voy a mm set holeS?? or sth dsps recorro poligonos")
-
-
-
-	var sorted_verts = _sort_verts()
-	
+	var sorted_verts = _sort_verts()	
 
 	sorted_verts = _set_holes(sorted_verts,normal,slice_transform)
-
-	
-	
-	#vr.log_info("seetie los holes")
-
 
 	for polygon in sorted_verts:
 		var new_polygon = Array()
@@ -273,7 +220,6 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 			new_polygon.append(Vector2(local.z,local.y))
 		var triangulate = Geometry.triangulate_polygon(new_polygon)
 		for v in range(len(triangulate)/3):
-			
 			
 			var vert1 = polygon[triangulate[v*3]]
 			var vert2 = polygon[(triangulate[v*3+1])%len(triangulate)]
@@ -307,8 +253,6 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 				surface_tool2_2.add_uv(_get_uv(slice_transform,vert3))
 				surface_tool2_2.add_vertex(vert3)
 							
-
-	#vr.log_info("sali del for de los sorted vertexz de los poligon")
 	surface_tool1_2.generate_normals()
 	surface_tool2_2.generate_normals()
 	surfaces1.append(surface_tool1_2.commit())
@@ -316,29 +260,18 @@ func slice_mesh(slice_transform:Transform,mesh:Mesh,cross_section_material:Mater
 	surfaces_mat1.append(cross_section_material)
 	surfaces_mat2.append(cross_section_material)
 	var new_mesh = ArrayMesh.new()
-	#vr.log_info("genere normales y apendie cros material")
-
 	
 	for i in range(0,len(surfaces1)):
 		if surfaces1[i].get_surface_count() != 0:
 			new_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,surfaces1[i].surface_get_arrays(0))
 			new_mesh.surface_set_material(new_mesh.get_surface_count()-1,surfaces_mat1[i])
-			
-	vr.log_info("mm agregue mas amteriales?? creo v2")
 
 	var new_mesh2 = ArrayMesh.new()
-	vr.log_info("cree una nueva array mesh v2")
-
 	
 	for i in range(0,len(surfaces2)):
 		if surfaces2[i].get_surface_count() != 0:
 			new_mesh2.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,surfaces2[i].surface_get_arrays(0))
-			new_mesh2.surface_set_material(new_mesh2.get_surface_count()-1,surfaces_mat2[i])
-			
-	vr.log_info("añadi weas a la nueva arrai mesh y dsps de eso retorno v2")
-
-	
-	
+			new_mesh2.surface_set_material(new_mesh2.get_surface_count()-1,surfaces_mat2[i])	
 
 	return[new_mesh,new_mesh2]
 	
@@ -349,11 +282,7 @@ func _set_holes(polygons,norm,slice_transform):
 	else:
 		var closest_point = Vector2.ZERO
 		for i in range(len(polygons)):
-			
-			
 			var polygon = polygons[i]
-			
-
 			if len(polygon) > 0:
 				
 				var nearest_intersect_dist = INF
@@ -366,13 +295,8 @@ func _set_holes(polygons,norm,slice_transform):
 			
 					var check_dir = Vector3.ZERO
 					if j != i:
-						
-
 						var polygon_check = polygons[j]
-
-						
 						var polygon2d = []
-
 						
 						var closest_dist = INF
 						for k in range(len(polygon_check)):
@@ -393,9 +317,6 @@ func _set_holes(polygons,norm,slice_transform):
 								nearest_intersect_dist = closest_dist
 								nearest_intersect_polygon = j
 								
-						
-
-
 				if is_inside:
 					var polygon_to = polygons[nearest_intersect_polygon]
 					var polygon_to2 = polygons[nearest_intersect_polygon]
@@ -411,18 +332,15 @@ func _set_holes(polygons,norm,slice_transform):
 							polygon_index += 1
 							continue
 
-
 						for j in range(len(polygon)):
 							var vert = polygon[j]
 							
-
 							for l in range(len(polygon_to)):
 								var is_intersect = false
 								var vert_to = polygon_to[l]
 								var vert_up = vert+norm
 								var n = _get_triangle_normal(vert,vert_to,vert_up)
 
-								
 								for k in range(len(polygons)):
 									
 									var polygon_check = polygons[k]
@@ -442,7 +360,6 @@ func _set_holes(polygons,norm,slice_transform):
 										break
 								if not is_intersect:
 
-
 									var connection_norm = _get_triangle_normal(polygon[j],polygon_to[l],polygon_to[l]+norm)
 									var e_norm = _get_triangle_normal(polygon_to[(l+1)%len(polygon_to)],polygon_to[l],polygon_to[l]+norm)
 									var e_norm2 = _get_triangle_normal(polygon_to[posmod(l-1,len(polygon_to))],polygon_to[l],polygon_to[l]+norm)
@@ -452,7 +369,6 @@ func _set_holes(polygons,norm,slice_transform):
 									e_norm2 = _get_triangle_normal(polygon[j],polygon[posmod((j+1),len(polygon))],polygon[j]+norm)
 									if _find_closest_edge(e_norm2,e_norm,connection_norm,polygon[posmod((j+1),len(polygon))],polygon[posmod((j-1),len(polygon))],polygon_to[l]) == 0:
 
-
 										for k in range(len(polygon)):
 											polygons[nearest_intersect_polygon].insert(l+1+k,polygons[i][(k+j)%len(polygon)])
 									else:
@@ -461,7 +377,6 @@ func _set_holes(polygons,norm,slice_transform):
 											polygons[nearest_intersect_polygon].insert(posmod(l+1+k,len(polygons[nearest_intersect_polygon])),polygons[i][posmod(j-k,len(polygon))])
 									polygons[nearest_intersect_polygon].insert(posmod(l+len(polygon)+1,len(polygons[nearest_intersect_polygon])),polygons[nearest_intersect_polygon][(l)%len(polygon_to)])
 									polygons[nearest_intersect_polygon].insert(posmod(l+len(polygon)+1,len(polygons[nearest_intersect_polygon])),polygons[i][j%len(polygon)])
-
 
 									connected = true
 									break
@@ -523,11 +438,8 @@ func _find_closest_edge(norm1:Vector3,norm2:Vector3,norm_to:Vector3,vert1:Vector
 		else:
 			return 1
 func _sort_verts():
-
-
 	var sorted_list = []
 	var list_of_sorted_list = []
-
 
 	while len(vert_slice) > 0:
 		if len(sorted_list) == 0:
@@ -544,8 +456,6 @@ func _sort_verts():
 			else:
 				vert_slice.erase(vert_slice[0])
 				continue
-			
-			
 				
 		var v_count = len(vert_slice)
 		var closed = false
@@ -554,16 +464,12 @@ func _sort_verts():
 			if (not _is_in_sorted_list(sorted_list,i[1])) or (not _is_in_sorted_list(sorted_list,i[0])):
 				for j in range(2):
 					
-					
 					var l = [sorted_list[0],sorted_list[len(sorted_list)-1]][j]
-					
-
 					
 					if l[1] == false or l[2] == false:
 						if l[0] == i[0]:
 							if not _is_in_sorted_list(sorted_list,i[1]):
 								if l[1] == false:
-
 
 									sorted_list[j][1] = true
 									sorted_list.insert(j,[i[1],false,true])
@@ -581,10 +487,8 @@ func _sort_verts():
 
 									break
 
-
 			else:
 				vert_slice.erase(i)
-				
 				
 			if len(sorted_list) != 0:
 				var srt = sorted_list[sorted_list.size()-1][0]
@@ -600,7 +504,6 @@ func _sort_verts():
 				if srt == srt2:
 					closed = true
 					break
-
 
 		if closed:
 			for i in range(len(sorted_list)):
@@ -622,16 +525,10 @@ func _get_triangle_normal(p1:Vector3,p2:Vector3,p3:Vector3):
 func _is_in_sorted_list(sorted_list,value):
 	return sorted_list.has(value)
 
-
-
-
-
-
 func _check_side(point:Vector3,normal:Vector3,plane_at:Vector3):
 	var relative_pos = plane_at - Vector3(round(point.x*10000), round(point.y*10000), round(point.z*10000))/10000
 	var dot = round(normal.dot(relative_pos)*10000)/10000
 	return -sign(dot)
-
 
 func _get_uv(ttransform: Transform, pos: Vector3) -> Vector2:
 	var value = _to_transform_local2(ttransform,pos)
@@ -661,4 +558,3 @@ func _line_plane_intersection(line_start:Vector3,line_end:Vector3,plane_at:Vecto
 	if k >= 0 and k <= 1:
 		return round((line_start + k * v)*10000)/10000
 	return null
-

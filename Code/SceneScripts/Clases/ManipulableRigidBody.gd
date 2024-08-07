@@ -362,5 +362,5 @@ func setup(mesh: Mesh, position: Transform):
 	self.transform = position
 
 func cut(origin: Vector3, normal: Vector3):
-	vr.log_info("cut in manipulable")
+	vr.log_info("cut a manipulable object")
 	return $Slicer.slice(_mesh.mesh, self.transform, origin, normal, cross_section_material)

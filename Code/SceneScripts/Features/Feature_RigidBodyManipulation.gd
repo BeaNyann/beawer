@@ -104,9 +104,6 @@ func cutting() -> bool:
 	return controller._button_pressed(yb_button)
 
 func _ready():
-	#TODO aca hay señales pruebalassss
-	# signals
-	# _cutter_area.connect("body_entered", self, "_on_cutter_collision_body_entered")
 	_interactive_area.connect("body_entered", self, "_on_interactive_area_body_entered")
 	_interactive_area.connect("body_exited", self, "_on_interactive_area_body_exited")
 
@@ -149,6 +146,7 @@ func get_class():
 	return "Feature_RigidBodyManipulation"
 
 func _physics_process(_dt):
+	# si se llama
 	update_grab()
 	update_zoom()
 	update_cut()
@@ -366,13 +364,13 @@ func _reparent_mesh():
 		grab_mesh.global_transform = mesh_global_trafo
 
 func _on_cutter_collision_body_entered(body):
-	vr.log_info("oye y esto funciona o no...")
+	# vr.log_info("oye y esto funciona o no...")
+	# no se llama al parecer
 	if (body is ManipulableRigidBody):
 		#body.cut_init(self, other_manipulation_feature, controller, other_controller)
 		vr.log_info("debería empezar el corte (#comentado)")
 
 func _on_interactive_area_body_entered(body):
-	vr.log_info("esto usa una señal!")
 	if (body is ManipulableRigidBody):
 		if (body.grab_enabled):
 			grabbable_candidates.push_back(body)

@@ -240,6 +240,7 @@ albedo_color = Color( 0.470588, 0.431373, 0.898039, 1 )
 script = ExtResource( 4 )
 
 [node name="Character" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.37062 )
 
 [node name="Pickables" type="Node" parent="."]
 
@@ -358,7 +359,7 @@ material/0 = SubResource( 18 )
 shape = SubResource( 19 )
 
 [node name="stairs" type="MeshInstance" parent="Enviroment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97547, -1.199, -3.70231 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.05092, -1.199, -3.81755 )
 mesh = ExtResource( 13 )
 material/0 = null
 material/1 = null

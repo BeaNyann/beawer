@@ -17,7 +17,7 @@
 [ext_resource path="res://OQ_Toolkit/OQ_ARVROrigin.tscn" type="PackedScene" id=19]
 [ext_resource path="res://OQ_Toolkit/OQ_ARVROrigin/Locomotion_Stick.tscn" type="PackedScene" id=20]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
 albedo_color = Color( 0.160784, 0.141176, 0.117647, 1 )
 
@@ -31,41 +31,41 @@ flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.568627, 0.0823529, 0.0823529, 1 )
 
-[sub_resource type="SpatialMaterial" id=14]
+[sub_resource type="SpatialMaterial" id=4]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.545098, 0.192157, 0.6, 1 )
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=5]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.317647, 0.0784314, 0.603922, 1 )
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=6]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.6, 0.584314, 0.615686, 1 )
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=7]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.117647, 0.631373, 0.607843, 1 )
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=8]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.0588235, 0.0941176, 0.533333, 1 )
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=9]
 flags_unshaded = true
 params_cull_mode = 2
 albedo_color = Color( 0.588235, 0.529412, 0.054902, 1 )
 
-[sub_resource type="SpatialMaterial" id=20]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.341176, 0.243137, 0.364706, 1 )
 
-[sub_resource type="CubeMesh" id=21]
-material = SubResource( 20 )
+[sub_resource type="CubeMesh" id=11]
+material = SubResource( 10 )
 
 [sub_resource type="SpatialMaterial" id=12]
 albedo_color = Color( 0.52549, 0.376471, 0.52549, 1 )
@@ -95,17 +95,17 @@ collision_body_layer = 2
 [node name="MeshInstance" type="MeshInstance" parent="OQ_ARVROrigin/OQ_RightController/ControllerModel"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 4 )
+material/0 = SubResource( 1 )
 material/1 = SubResource( 2 )
-material/2 = SubResource( 4 )
+material/2 = SubResource( 1 )
 material/3 = SubResource( 3 )
-material/4 = SubResource( 4 )
-material/5 = SubResource( 4 )
-material/6 = SubResource( 14 )
-material/7 = SubResource( 15 )
-material/8 = SubResource( 16 )
-material/9 = SubResource( 4 )
-material/10 = SubResource( 17 )
+material/4 = SubResource( 1 )
+material/5 = SubResource( 1 )
+material/6 = SubResource( 4 )
+material/7 = SubResource( 5 )
+material/8 = SubResource( 6 )
+material/9 = SubResource( 1 )
+material/10 = SubResource( 7 )
 
 [node name="Feature_SelectionRayCast" parent="OQ_ARVROrigin/OQ_RightController" instance=ExtResource( 6 )]
 
@@ -124,24 +124,24 @@ collision_body_layer = 2
 [node name="MeshInstance" type="MeshInstance" parent="OQ_ARVROrigin/OQ_LeftController/ControllerModel"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 mesh = ExtResource( 5 )
-material/0 = SubResource( 4 )
-material/1 = SubResource( 4 )
-material/2 = SubResource( 14 )
-material/3 = SubResource( 15 )
-material/4 = SubResource( 16 )
-material/5 = SubResource( 4 )
-material/6 = SubResource( 17 )
-material/7 = SubResource( 4 )
-material/8 = SubResource( 18 )
-material/9 = SubResource( 4 )
-material/10 = SubResource( 19 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 1 )
+material/2 = SubResource( 4 )
+material/3 = SubResource( 5 )
+material/4 = SubResource( 6 )
+material/5 = SubResource( 1 )
+material/6 = SubResource( 7 )
+material/7 = SubResource( 1 )
+material/8 = SubResource( 8 )
+material/9 = SubResource( 1 )
+material/10 = SubResource( 9 )
 
 [node name="Slicer" type="Spatial" parent="OQ_ARVROrigin/OQ_LeftController"]
 transform = Transform( 0.985759, -0.0751126, -0.150456, -0.0522241, 0.713725, -0.698476, 0.159849, 0.696387, 0.699638, 0, 0.0167989, -0.0107026 )
 
 [node name="MeshInstance" type="MeshInstance" parent="OQ_ARVROrigin/OQ_LeftController/Slicer"]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.005, 0, 0, 0 )
-mesh = SubResource( 21 )
+mesh = SubResource( 11 )
 material/0 = SubResource( 12 )
 
 [node name="Area" type="Area" parent="OQ_ARVROrigin/OQ_LeftController/Slicer"]

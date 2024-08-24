@@ -59,7 +59,7 @@ margin_left = 6.0
 margin_top = 15.0
 margin_right = 294.0
 margin_bottom = 46.0
-text = "What do you want to see?"
+text = "¿Que quieres ver?"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -70,7 +70,7 @@ margin_left = 20.0
 margin_top = 45.0
 margin_right = 137.0
 margin_bottom = 85.0
-text = "Edges"
+text = "Aristas"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -80,7 +80,7 @@ margin_left = 150.0
 margin_top = 45.0
 margin_right = 288.0
 margin_bottom = 85.0
-text = "Normals "
+text = "Normales"
 __meta__ = {
 "_edit_use_anchors_": false
 }

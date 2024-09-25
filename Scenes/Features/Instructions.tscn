@@ -34,7 +34,7 @@ text = "* Botón del índice derecho (celeste): seleccionar objetos e interactua
 
 * Botones trigger (rosado): agarrar objetos (estando cerca)
 
-* Botón X (azul) o botón A (verde): zoom in/zoom out del objeto actualmente agarrado (se usa el botón de la mano opuesta a la que está agarrando el objeto)
+* Botón X (azul) o botón A (verde): zoom in/zoom out (escalar) al objeto actualmente agarrado (se usa el botón de la mano opuesta a la que está agarrando el objeto)
 
 * Palanca derecha (morado): mover cámara
 
